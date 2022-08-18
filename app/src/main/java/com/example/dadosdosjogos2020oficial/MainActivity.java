@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.dadosdosjogos2020oficial.databinding.ActivityMainBinding;
+import com.example.dadosdosjogos2020oficial.fragments.ListaBrA2022Fragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
@@ -24,9 +25,13 @@ public class MainActivity extends AppCompatActivity {
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(),
                 FragmentPagerItems.with(this)
-                    //.add("Brasileiro A 2022", )
+                    .add("Brasileiro A 2022", ListaBrA2022Fragment.class)
                         .create()
         );
+    //Inicio o meu adapter para carregar na tela
+        binding.viewPager.setAdapter(adapter);
+        binding.viewPagerTab.setViewPager(binding.viewPager);
+
 
     }
 }
