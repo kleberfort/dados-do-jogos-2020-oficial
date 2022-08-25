@@ -70,10 +70,11 @@ public class ListaBrA2022Fragment extends Fragment {
     }
 
 
+
     private void setupHttpClient() {
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/")
+                .baseUrl("https://kleberfort.github.io/dados-jogos-partidas-oficial-2022-api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -97,10 +98,10 @@ public class ListaBrA2022Fragment extends Fragment {
                     binding.rvConteudo.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), binding.rvConteudo, new RecyclerItemClickListener.OnItemClickListener() {
                         @Override
                         public void onItemClick(View view, int position) {
-                            TimesBrA2022 timesBrA2022 = listaDeTimes.get(position);
+                            //TimesBrA2022 timesBrA2022 = listaDeTimes.get(position);
 
-                            if(position == 0){
-                                Toast.makeText(getContext(), "abrir intent: " + view, Toast.LENGTH_LONG).show();
+                            if(position == 7){
+                                Toast.makeText(getContext(), "Activity abriu: " + listaDeTimes.get(position), Toast.LENGTH_LONG).show();
 
                                 Intent intent = new Intent(getContext(), CearaActivity.class);
                                 startActivity(intent);
