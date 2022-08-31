@@ -101,8 +101,6 @@ public class ListaBrA2022Fragment extends Fragment {
                             //TimesBrA2022 timesBrA2022 = listaDeTimes.get(position);
 
                             if(position == 7){
-                                Toast.makeText(getContext(), "Activity abriu: " + listaDeTimes.get(position), Toast.LENGTH_LONG).show();
-
                                 Intent intent = new Intent(getContext(), CearaActivity.class);
                                 startActivity(intent);
 

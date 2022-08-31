@@ -1,18 +1,21 @@
 package com.example.dadosdosjogos2020oficial.fragments.ceara;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
+import android.widget.LinearLayout;
 
-import com.example.dadosdosjogos2020oficial.R;
-import com.example.dadosdosjogos2020oficial.data.CearaCasa2022Api;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.example.dadosdosjogos2020oficial.adapter.ceara.CearaCasaA2022Adapter;
+import com.example.dadosdosjogos2020oficial.data.PartidaApi;
+import com.example.dadosdosjogos2020oficial.data.TimesBrA2022Api;
 import com.example.dadosdosjogos2020oficial.databinding.DadosPartidasAdapterBinding;
+import com.example.dadosdosjogos2020oficial.databinding.FragmentCearaCasa2022Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
 
 import java.util.List;
@@ -25,8 +28,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CearaCasa2022Fragment extends Fragment {
 
-    private DadosPartidasAdapterBinding binding;
-    private CearaCasa2022Api cearaCasa2022Api;
+    private FragmentCearaCasa2022Binding binding;
+   private PartidaApi partidaApi;
+    private CearaCasaA2022Adapter cearaCasaA2022Adapter;
 
 
 
@@ -52,7 +56,7 @@ public class CearaCasa2022Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        binding = DadosPartidasAdapterBinding.inflate(inflater, container, false);
+        binding = FragmentCearaCasa2022Binding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
 
@@ -67,37 +71,43 @@ public class CearaCasa2022Fragment extends Fragment {
 
     private void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://kleberfort.github.io/dados-jogos-partidas-oficial-2022-api/ceara/")
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/ceara/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        cearaCasa2022Api  = retrofit.create(CearaCasa2022Api.class);
+        partidaApi  = retrofit.create(PartidaApi.class);
 
     }
 
     private void setupDadosJogos() {
-        cearaCasa2022Api.getCearaCasa2022().enqueue(new Callback<List<Partida>>() {
+        binding.rvCeara.setHasFixedSize(true);
+        binding.rvCeara.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.rvCeara.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
+
+        partidaApi.getPartidas().enqueue(new Callback<List<Partida>>() {
             @Override
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
                 if(response.isSuccessful()){
-                    List<Partida> list = response.body();
-                    Log.i("Sucesso", "sucesso na busca dos dados");
-                }else{
-                    erroBuscarDados();
+                    List<Partida> partidas = response.body();
+                    cearaCasaA2022Adapter = new CearaCasaA2022Adapter(partidas);
+                    binding.rvCeara.setAdapter(cearaCasaA2022Adapter);
+                }else {
+                    erroBuscaDados();
                 }
             }
 
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
-                    erroBuscarDados();
+                    erroBuscaDados();
             }
         });
 
-    }
-
-    private void erroBuscarDados() {
-
-        Toast.makeText(getContext(), "Erro ao buscar dados da Api dos jogos", Toast.LENGTH_LONG).show();
 
     }
+
+    private void erroBuscaDados() {
+        Log.i("ERRO", "Erro na busca dos dados");
+    }
+
+
 }
