@@ -1,4 +1,4 @@
-package com.example.dadosdosjogos2020oficial.fragments.ceara;
+package com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.ceara;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.dadosdosjogos2020oficial.adapter.ceara.CearaCasaA2022Adapter;
-import com.example.dadosdosjogos2020oficial.data.ceara.CearaCasaA2022PartidaApi;
+import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.ceara.CearaCasaA2022PartidaApi;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentCearaCasa2022Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
 
@@ -65,7 +65,11 @@ public class CearaCasa2022Fragment extends Fragment {
         return view;
     }
 
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        binding = null;
+    }
 
     private void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
@@ -78,17 +82,17 @@ public class CearaCasa2022Fragment extends Fragment {
     }
 
     private void setupDadosJogos() {
-        binding.rvCeara.setHasFixedSize(true);
-        binding.rvCeara.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.rvCeara.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
+        binding.rvCearaCasa.setHasFixedSize(true);
+        binding.rvCearaCasa.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.rvCearaCasa.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
 
-        cearaCasaA2022PartidaApi.getPartidas().enqueue(new Callback<List<Partida>>() {
+        cearaCasaA2022PartidaApi.getCearaCasa().enqueue(new Callback<List<Partida>>() {
             @Override
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
                 if(response.isSuccessful()){
                     List<Partida> partidas = response.body();
                     cearaCasaA2022Adapter = new CearaCasaA2022Adapter(partidas);
-                    binding.rvCeara.setAdapter(cearaCasaA2022Adapter);
+                    binding.rvCearaCasa.setAdapter(cearaCasaA2022Adapter);
                 }else {
                     erroBuscaDados();
                 }

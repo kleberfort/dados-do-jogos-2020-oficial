@@ -39,6 +39,7 @@ public class CearaCasaA2022Adapter extends RecyclerView.Adapter<CearaCasaA2022Ad
 
         holder.binding.tvNomeTime.setText(listaPartidaCearaCasa.getNome());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaCearaCasa.getRodada()));
+        holder.binding.tvDataJogo.setText(listaPartidaCearaCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaCearaCasa.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaCearaCasa.getAwayTime().getNome());
         holder.binding.tvclassicacaoCasa.setText(String.valueOf(listaPartidaCearaCasa.getHomeTime().getClassificacao()));

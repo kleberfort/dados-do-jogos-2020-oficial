@@ -72,14 +72,6 @@ public class Partida {
         this.round = rodada;
     }
 
-    public String getData() {
-        return date;
-    }
-
-    public void setData(String data) {
-        this.date = data;
-    }
-
     public Time getHomeTime() {
         return homeTime;
     }

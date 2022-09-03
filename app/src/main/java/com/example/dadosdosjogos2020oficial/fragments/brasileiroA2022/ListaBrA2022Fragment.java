@@ -11,7 +11,26 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.dadosdosjogos2020oficial.activity.AmericaMgActivity;
+import com.example.dadosdosjogos2020oficial.activity.AtleticoGoActivity;
+import com.example.dadosdosjogos2020oficial.activity.AtleticoMgActivity;
+import com.example.dadosdosjogos2020oficial.activity.AtleticoPrActivity;
+import com.example.dadosdosjogos2020oficial.activity.AvaiActivity;
+import com.example.dadosdosjogos2020oficial.activity.BotafogoActivity;
+import com.example.dadosdosjogos2020oficial.activity.BragantinoActivity;
 import com.example.dadosdosjogos2020oficial.activity.CearaActivity;
+import com.example.dadosdosjogos2020oficial.activity.CorinthiansActivity;
+import com.example.dadosdosjogos2020oficial.activity.CoritibaActivity;
+import com.example.dadosdosjogos2020oficial.activity.CuiabaActivity;
+import com.example.dadosdosjogos2020oficial.activity.FlamengoActivity;
+import com.example.dadosdosjogos2020oficial.activity.FluminenseActivity;
+import com.example.dadosdosjogos2020oficial.activity.FortalezaActivity;
+import com.example.dadosdosjogos2020oficial.activity.GoiasActivity;
+import com.example.dadosdosjogos2020oficial.activity.InternacionalActivity;
+import com.example.dadosdosjogos2020oficial.activity.JuventudeActivity;
+import com.example.dadosdosjogos2020oficial.activity.PalmeirasActivity;
+import com.example.dadosdosjogos2020oficial.activity.SantosActivity;
+import com.example.dadosdosjogos2020oficial.activity.SaoPauloActivity;
 import com.example.dadosdosjogos2020oficial.adapter.TimesBrA2022Adapter;
 import com.example.dadosdosjogos2020oficial.data.TimesBrA2022Api;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentListaBrA2022Binding;
@@ -66,7 +85,11 @@ public class ListaBrA2022Fragment extends Fragment {
         return view;
     }
 
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        binding = null;
+    }
 
     private void setupHttpClient() {
 
@@ -97,17 +120,88 @@ public class ListaBrA2022Fragment extends Fragment {
                         public void onItemClick(View view, int position) {
                             //TimesBrA2022 timesBrA2022 = listaDeTimes.get(position);
 
-                            if(position == 7){
-                                Intent intent = new Intent(getContext(), CearaActivity.class);
-                                startActivity(intent);
+                            switch (position){
+                                case 0:
+                                    Intent americaMg = new Intent(getContext(), AmericaMgActivity.class);
+                                    startActivity(americaMg);
+                                    break;
+                                case 1:
+                                    Intent atleticoPr = new Intent(getContext(), AtleticoPrActivity.class);
+                                    startActivity(atleticoPr);
+                                    break;
+                                case 2:
+                                    Intent atleticoMg = new Intent(getContext(), AtleticoMgActivity.class);
+                                    startActivity(atleticoMg);
+                                case 3:
+                                    Intent atleticoGo = new Intent(getContext(), AtleticoGoActivity.class);
+                                    startActivity(atleticoGo);
+                                    break;
+                                case 4:
+                                    Intent avai = new Intent(getContext(), AvaiActivity.class);
+                                    startActivity(avai);
+                                    break;
+                                case 5:
+                                    Intent botafogo = new Intent(getContext(), BotafogoActivity.class);
+                                    startActivity(botafogo);
+                                    break;
+                                case 6:
+                                    Intent bragantino = new Intent(getContext(), BragantinoActivity.class);
+                                    startActivity(bragantino);
+                                    break;
+                                case 7:
+                                    Intent ceara = new Intent(getContext(), CearaActivity.class);
+                                    startActivity(ceara);
+                                    break;
+                                case 8:
+                                    Intent corinthians = new Intent(getContext(), CorinthiansActivity.class);
+                                    startActivity(corinthians);
+                                    break;
+                                case 9:
+                                    Intent coritiba = new Intent(getContext(), CoritibaActivity.class);
+                                    startActivity(coritiba);
+                                    break;
+                                case 10:
+                                    Intent cuiaba = new Intent(getContext(), CuiabaActivity.class);
+                                    startActivity(cuiaba);
+                                    break;
+                                case 11:
+                                    Intent flamengo = new Intent(getContext(), FlamengoActivity.class);
+                                    startActivity(flamengo);
+                                    break;
+                                case 12:
+                                    Intent fluminense = new Intent(getContext(), FluminenseActivity.class);
+                                    startActivity(fluminense);
+                                    break;
+                                case 13:
+                                    Intent fortaleza = new Intent(getContext(), FortalezaActivity.class);
+                                    startActivity(fortaleza);
+                                    break;
+                                case 14:
+                                    Intent goias = new Intent(getContext(), GoiasActivity.class);
+                                    startActivity(goias);
+                                    break;
+                                case 15:
+                                    Intent juventude = new Intent(getContext(), JuventudeActivity.class);
+                                    startActivity(juventude);
+                                    break;
+                                case 16:
+                                    Intent internacional = new Intent(getContext(), InternacionalActivity.class);
+                                    startActivity(internacional);
+                                    break;
+                                case 17:
+                                    Intent palmeiras = new Intent(getContext(), PalmeirasActivity.class);
+                                    startActivity(palmeiras);
+                                    break;
+                                case 18:
+                                    Intent santos = new Intent(getContext(), SantosActivity.class);
+                                    startActivity(santos);
+                                    break;
+                                case 19:
+                                    Intent saopaulo = new Intent(getContext(), SaoPauloActivity.class);
+                                    startActivity(saopaulo);
+                                    break;
 
                             }
-
-
-
-
-
-
 
                         }
 

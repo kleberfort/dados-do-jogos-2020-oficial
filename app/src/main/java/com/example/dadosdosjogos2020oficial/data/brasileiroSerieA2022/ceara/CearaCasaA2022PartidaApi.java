@@ -1,4 +1,4 @@
-package com.example.dadosdosjogos2020oficial.data.ceara;
+package com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.ceara;
 
 import com.example.dadosdosjogos2020oficial.model.Partida;
 
@@ -9,5 +9,5 @@ import retrofit2.http.GET;
 
 public interface CearaCasaA2022PartidaApi {
     @GET("casaA2022.json")
-    Call<List<Partida>> getPartidas();
+    Call<List<Partida>> getCearaCasa();
 }

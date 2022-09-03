@@ -1,4 +1,4 @@
-package com.example.dadosdosjogos2020oficial.fragments.ceara;
+package com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.palmeiras;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.dadosdosjogos2020oficial.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link CearaFora2022Fragment#newInstance} factory method to
+ * Use the {@link PalmeirasCasa2022Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CearaFora2022Fragment extends Fragment {
+public class PalmeirasCasa2022Fragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class CearaFora2022Fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public CearaFora2022Fragment() {
+    public PalmeirasCasa2022Fragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class CearaFora2022Fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fora2022Fragment.
+     * @return A new instance of fragment PalmeirasCasa2022Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static CearaFora2022Fragment newInstance(String param1, String param2) {
-        CearaFora2022Fragment fragment = new CearaFora2022Fragment();
+    public static PalmeirasCasa2022Fragment newInstance(String param1, String param2) {
+        PalmeirasCasa2022Fragment fragment = new PalmeirasCasa2022Fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class CearaFora2022Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ceara_fora_2022, container, false);
+        return inflater.inflate(R.layout.fragment_palmeiras_casa2022, container, false);
     }
 }

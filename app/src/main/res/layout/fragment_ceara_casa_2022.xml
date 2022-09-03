@@ -4,11 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.ceara.CearaCasa2022Fragment">
+    tools:context=".fragments.brasileiroA2022.ceara.CearaCasa2022Fragment">
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCeara"
+        android:id="@+id/rvCearaCasa"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

@@ -12,6 +12,63 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DadosDosJogos2020Oficial">
         <activity
+            android:name=".activity.AtleticoMgActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.InternacionalActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.SaoPauloActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.SantosActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.PalmeirasActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.JuventudeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.GoiasActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.FortalezaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.FluminenseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.FlamengoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.CuiabaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.CoritibaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.CorinthiansActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.BragantinoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.BotafogoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.AvaiActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.AtleticoPrActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.AtleticoGoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.AmericaMgActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.CearaActivity"
             android:exported="true" />
         <activity

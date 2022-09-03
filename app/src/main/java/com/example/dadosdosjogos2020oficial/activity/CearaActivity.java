@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.dadosdosjogos2020oficial.databinding.ActivityCearaBinding;
-import com.example.dadosdosjogos2020oficial.fragments.ceara.CearaCasa2022Fragment;
-import com.example.dadosdosjogos2020oficial.fragments.ceara.CearaFora2022Fragment;
+import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.ceara.CearaCasa2022Fragment;
+import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.ceara.CearaFora2022Fragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
