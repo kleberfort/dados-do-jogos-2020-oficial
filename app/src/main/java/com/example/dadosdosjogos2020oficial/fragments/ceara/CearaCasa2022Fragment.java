@@ -12,9 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.dadosdosjogos2020oficial.adapter.ceara.CearaCasaA2022Adapter;
-import com.example.dadosdosjogos2020oficial.data.PartidaApi;
-import com.example.dadosdosjogos2020oficial.data.TimesBrA2022Api;
-import com.example.dadosdosjogos2020oficial.databinding.DadosPartidasAdapterBinding;
+import com.example.dadosdosjogos2020oficial.data.ceara.CearaCasaA2022PartidaApi;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentCearaCasa2022Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
 
@@ -29,7 +27,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class CearaCasa2022Fragment extends Fragment {
 
     private FragmentCearaCasa2022Binding binding;
-   private PartidaApi partidaApi;
+   private CearaCasaA2022PartidaApi cearaCasaA2022PartidaApi;
     private CearaCasaA2022Adapter cearaCasaA2022Adapter;
 
 
@@ -75,7 +73,7 @@ public class CearaCasa2022Fragment extends Fragment {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        partidaApi  = retrofit.create(PartidaApi.class);
+        cearaCasaA2022PartidaApi = retrofit.create(CearaCasaA2022PartidaApi.class);
 
     }
 
@@ -84,7 +82,7 @@ public class CearaCasa2022Fragment extends Fragment {
         binding.rvCeara.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.rvCeara.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
 
-        partidaApi.getPartidas().enqueue(new Callback<List<Partida>>() {
+        cearaCasaA2022PartidaApi.getPartidas().enqueue(new Callback<List<Partida>>() {
             @Override
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
                 if(response.isSuccessful()){

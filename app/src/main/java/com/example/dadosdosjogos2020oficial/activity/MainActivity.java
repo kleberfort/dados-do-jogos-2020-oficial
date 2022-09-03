@@ -1,4 +1,4 @@
-package com.example.dadosdosjogos2020oficial;
+package com.example.dadosdosjogos2020oficial.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.dadosdosjogos2020oficial.databinding.ActivityMainBinding;
-import com.example.dadosdosjogos2020oficial.fragments.ListaBrA2022Fragment;
+import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.ListaBrA2022Fragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 

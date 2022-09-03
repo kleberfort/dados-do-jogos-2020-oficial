@@ -2,14 +2,12 @@ package com.example.dadosdosjogos2020oficial.adapter.ceara;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.dadosdosjogos2020oficial.data.PartidaApi;
 import com.example.dadosdosjogos2020oficial.databinding.DadosPartidasAdapterBinding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
 

@@ -1,4 +1,4 @@
-package com.example.dadosdosjogos2020oficial;
+package com.example.dadosdosjogos2020oficial.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

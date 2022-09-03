@@ -1,19 +1,17 @@
-package com.example.dadosdosjogos2020oficial.fragments;
+package com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.dadosdosjogos2020oficial.CearaActivity;
+import com.example.dadosdosjogos2020oficial.activity.CearaActivity;
 import com.example.dadosdosjogos2020oficial.adapter.TimesBrA2022Adapter;
 import com.example.dadosdosjogos2020oficial.data.TimesBrA2022Api;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentListaBrA2022Binding;
@@ -21,7 +19,6 @@ import com.example.dadosdosjogos2020oficial.model.RecyclerItemClickListener;
 import com.example.dadosdosjogos2020oficial.model.TimesBrA2022;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
