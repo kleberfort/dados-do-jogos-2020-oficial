@@ -9,7 +9,7 @@ import retrofit2.http.GET;
 
 public interface CearaForaA2022PartidaApi {
 
-    @GET("foraA2022.json")
+    @GET("fora-a-2022.json")
     Call<List<Partida>> getCearaFora();
 
 }

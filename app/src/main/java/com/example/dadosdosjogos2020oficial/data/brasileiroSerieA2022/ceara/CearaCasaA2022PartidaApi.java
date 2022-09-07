@@ -8,6 +8,6 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface CearaCasaA2022PartidaApi {
-    @GET("casaA2022.json")
+    @GET("casa-a-2022.json")
     Call<List<Partida>> getCearaCasa();
 }

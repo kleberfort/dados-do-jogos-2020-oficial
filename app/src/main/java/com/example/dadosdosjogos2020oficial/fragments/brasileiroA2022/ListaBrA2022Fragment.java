@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -31,8 +32,8 @@ import com.example.dadosdosjogos2020oficial.activity.JuventudeActivity;
 import com.example.dadosdosjogos2020oficial.activity.PalmeirasActivity;
 import com.example.dadosdosjogos2020oficial.activity.SantosActivity;
 import com.example.dadosdosjogos2020oficial.activity.SaoPauloActivity;
-import com.example.dadosdosjogos2020oficial.adapter.TimesBrA2022Adapter;
-import com.example.dadosdosjogos2020oficial.data.TimesBrA2022Api;
+import com.example.dadosdosjogos2020oficial.adapter.brasileiroA2022.TimesBrA2022Adapter;
+import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.TimesBrA2022Api;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentListaBrA2022Binding;
 import com.example.dadosdosjogos2020oficial.model.RecyclerItemClickListener;
 import com.example.dadosdosjogos2020oficial.model.TimesBrA2022;
@@ -94,7 +95,7 @@ public class ListaBrA2022Fragment extends Fragment {
     private void setupHttpClient() {
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://kleberfort.github.io/dados-jogos-partidas-oficial-2022-api/")
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/brasileiro-a-2022/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -120,10 +121,12 @@ public class ListaBrA2022Fragment extends Fragment {
                         public void onItemClick(View view, int position) {
                             //TimesBrA2022 timesBrA2022 = listaDeTimes.get(position);
 
+
                             switch (position){
                                 case 0:
                                     Intent americaMg = new Intent(getContext(), AmericaMgActivity.class);
                                     startActivity(americaMg);
+                                    Toast.makeText(getContext(), "América-MG", Toast.LENGTH_LONG).show();
                                     break;
                                 case 1:
                                     Intent atleticoPr = new Intent(getContext(), AtleticoPrActivity.class);
@@ -132,6 +135,7 @@ public class ListaBrA2022Fragment extends Fragment {
                                 case 2:
                                     Intent atleticoMg = new Intent(getContext(), AtleticoMgActivity.class);
                                     startActivity(atleticoMg);
+                                    break;
                                 case 3:
                                     Intent atleticoGo = new Intent(getContext(), AtleticoGoActivity.class);
                                     startActivity(atleticoGo);
@@ -151,6 +155,7 @@ public class ListaBrA2022Fragment extends Fragment {
                                 case 7:
                                     Intent ceara = new Intent(getContext(), CearaActivity.class);
                                     startActivity(ceara);
+                                    Toast.makeText(getContext(), "Ceará", Toast.LENGTH_LONG).show();
                                     break;
                                 case 8:
                                     Intent corinthians = new Intent(getContext(), CorinthiansActivity.class);

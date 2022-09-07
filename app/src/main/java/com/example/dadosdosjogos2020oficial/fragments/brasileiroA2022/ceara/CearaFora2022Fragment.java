@@ -12,8 +12,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.example.dadosdosjogos2020oficial.R;
-import com.example.dadosdosjogos2020oficial.adapter.ceara.CearaForaA2022Adapter;
+import com.example.dadosdosjogos2020oficial.adapter.brasileiroA2022.ceara.CearaForaA2022Adapter;
 import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.ceara.CearaForaA2022PartidaApi;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentCearaFora2022Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
@@ -60,7 +59,7 @@ public class CearaFora2022Fragment extends Fragment {
 
     private void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/ceara/")
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/brasileiro-a-2022/ceara/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

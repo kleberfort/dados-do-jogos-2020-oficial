@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.dadosdosjogos2020oficial.adapter.ceara.CearaCasaA2022Adapter;
+import com.example.dadosdosjogos2020oficial.adapter.brasileiroA2022.ceara.CearaCasaA2022Adapter;
 import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.ceara.CearaCasaA2022PartidaApi;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentCearaCasa2022Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
@@ -36,17 +36,7 @@ public class CearaCasa2022Fragment extends Fragment {
         // Required empty public constructor
     }
 
- /*
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-*/
 
 
 
@@ -73,7 +63,7 @@ public class CearaCasa2022Fragment extends Fragment {
 
     private void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/ceara/")
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/brasileiro-a-2022/ceara/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
