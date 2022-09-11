@@ -104,9 +104,9 @@ public class ListaBrA2022Fragment extends Fragment {
     }
 
     private void setupListaTimes() {
-        binding.rvConteudo.setHasFixedSize(true);
-        binding.rvConteudo.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.rvConteudo.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
+        binding.rvListaBrasileiroSeriaA2022.setHasFixedSize(true);
+        binding.rvListaBrasileiroSeriaA2022.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.rvListaBrasileiroSeriaA2022.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
 
         timesBrA2022Api.getTimesBrA2022().enqueue(new Callback<List<TimesBrA2022>>() {
             @Override
@@ -114,9 +114,9 @@ public class ListaBrA2022Fragment extends Fragment {
                 if(response.isSuccessful()){
                     List<TimesBrA2022> listaDeTimes = response.body();
                     timesBrA2022Adapter = new TimesBrA2022Adapter(listaDeTimes);
-                    binding.rvConteudo.setAdapter(timesBrA2022Adapter);
+                    binding.rvListaBrasileiroSeriaA2022.setAdapter(timesBrA2022Adapter);
 
-                    binding.rvConteudo.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), binding.rvConteudo, new RecyclerItemClickListener.OnItemClickListener() {
+                    binding.rvListaBrasileiroSeriaA2022.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), binding.rvListaBrasileiroSeriaA2022, new RecyclerItemClickListener.OnItemClickListener() {
                         @Override
                         public void onItemClick(View view, int position) {
                             //TimesBrA2022 timesBrA2022 = listaDeTimes.get(position);

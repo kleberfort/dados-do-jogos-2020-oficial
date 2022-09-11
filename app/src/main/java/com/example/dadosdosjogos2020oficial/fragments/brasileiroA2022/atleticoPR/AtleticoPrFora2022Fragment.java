@@ -1,4 +1,4 @@
-package com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.avai;
+package com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.atleticoPR;
 
 import android.os.Bundle;
 
@@ -12,12 +12,13 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.example.dadosdosjogos2020oficial.R;
+import com.example.dadosdosjogos2020oficial.adapter.brasileiroA2022.atleticoPR.AtleticoPrCasaA2022Adapter;
 import com.example.dadosdosjogos2020oficial.adapter.brasileiroA2022.atleticoPR.AtleticoPrForaA2022Adapter;
-import com.example.dadosdosjogos2020oficial.adapter.brasileiroA2022.avai.AvaiCasaA2022Adapter;
 import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.atleticoPR.AtleticoPrCasaA2022PartidaApi;
-import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.avai.AvaiCasaA2022PartidaApi;
+import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.atleticoPR.AtleticoPrForaA2022PartidaApi;
+import com.example.dadosdosjogos2020oficial.databinding.FragmentAtleticoMgFora2022Binding;
+import com.example.dadosdosjogos2020oficial.databinding.FragmentAtleticoPRCasa2022Binding;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentAtleticoPRFora2022Binding;
-import com.example.dadosdosjogos2020oficial.databinding.FragmentAvaiCasa2022Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
 
 import java.util.List;
@@ -29,15 +30,15 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class AvaiCasa2022Fragment extends Fragment {
+public class AtleticoPrFora2022Fragment extends Fragment {
 
-    private FragmentAvaiCasa2022Binding binding;
-    private AvaiCasaA2022Adapter avaiCasaA2022Adapter;
-    private AvaiCasaA2022PartidaApi avaiCasaA2022PartidaApi;
+    private FragmentAtleticoPRFora2022Binding binding;
+    private AtleticoPrForaA2022Adapter atleticoPrForaA2022Adapter;
+    private AtleticoPrForaA2022PartidaApi atleticoPrForaA2022PartidaApi;
 
 
 
-    public AvaiCasa2022Fragment() {
+    public AtleticoPrFora2022Fragment() {
         // Required empty public constructor
     }
 
@@ -47,7 +48,7 @@ public class AvaiCasa2022Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentAvaiCasa2022Binding.inflate(inflater, container, false);
+        binding = FragmentAtleticoPRFora2022Binding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
 
@@ -64,25 +65,25 @@ public class AvaiCasa2022Fragment extends Fragment {
 
     private void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/brasileiro-a-2022/avai/")
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/brasileiro-a-2022/atletico-pr/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        avaiCasaA2022PartidaApi = retrofit.create(AvaiCasaA2022PartidaApi.class);
+        atleticoPrForaA2022PartidaApi = retrofit.create(AtleticoPrForaA2022PartidaApi.class);
     }
 
     private void setupDadosJogos() {
-        binding.rvAvaiCasa.setHasFixedSize(true);
-        binding.rvAvaiCasa.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.rvAvaiCasa.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
-
-        avaiCasaA2022PartidaApi.getAvaiCasa().enqueue(new Callback<List<Partida>>() {
+        binding.rvAtleticoPrFora.setHasFixedSize(true);
+        binding.rvAtleticoPrFora.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.rvAtleticoPrFora.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
+        
+        atleticoPrForaA2022PartidaApi.getAtleticoPrFora().enqueue(new Callback<List<Partida>>() {
             @Override
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
                 if(response.isSuccessful()){
                     List<Partida> partidas = response.body();
-                    avaiCasaA2022Adapter = new AvaiCasaA2022Adapter(partidas);
-                    binding.rvAvaiCasa.setAdapter(avaiCasaA2022Adapter);
+                    atleticoPrForaA2022Adapter = new AtleticoPrForaA2022Adapter(partidas);
+                    binding.rvAtleticoPrFora.setAdapter(atleticoPrForaA2022Adapter);
                 }else {
                     erroBuscaDados();
                 }
@@ -93,7 +94,7 @@ public class AvaiCasa2022Fragment extends Fragment {
 
             }
         });
-
+        
     }
 
     private void erroBuscaDados() {

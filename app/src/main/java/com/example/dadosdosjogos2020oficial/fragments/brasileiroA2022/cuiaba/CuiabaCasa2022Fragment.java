@@ -3,64 +3,100 @@ package com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.cuiaba;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.example.dadosdosjogos2020oficial.R;
+import com.example.dadosdosjogos2020oficial.adapter.brasileiroA2022.coritiba.CoritibaForaA2022Adapter;
+import com.example.dadosdosjogos2020oficial.adapter.brasileiroA2022.cuiaba.CuiabaCasaA2022Adapter;
+import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.coritiba.CoritibaForaA2022PartidaApi;
+import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.cuiaba.CuiabaCasaA2022PartidaApi;
+import com.example.dadosdosjogos2020oficial.databinding.FragmentAtleticoPRFora2022Binding;
+import com.example.dadosdosjogos2020oficial.databinding.FragmentCuiabaCasa2022Binding;
+import com.example.dadosdosjogos2020oficial.model.Partida;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CuiabaCasa2022Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class CuiabaCasa2022Fragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private FragmentCuiabaCasa2022Binding binding;
+    private CuiabaCasaA2022Adapter cuiabaCasaA2022Adapter;
+    private CuiabaCasaA2022PartidaApi cuiabaCasaA2022PartidaApi;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
+
 
     public CuiabaCasa2022Fragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CuiabaCasa2022Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CuiabaCasa2022Fragment newInstance(String param1, String param2) {
-        CuiabaCasa2022Fragment fragment = new CuiabaCasa2022Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cuiaba_casa2022, container, false);
+        binding = FragmentCuiabaCasa2022Binding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+
+
+        setupHttpClient();
+        setupDadosJogos();
+
+
+        return view;
+
+
+
+
+    }
+
+    private void setupHttpClient() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/brasileiro-a-2022/cuiaba/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        cuiabaCasaA2022PartidaApi = retrofit.create(CuiabaCasaA2022PartidaApi.class);
+    }
+
+    private void setupDadosJogos() {
+        binding.rvCuiabaCasa.setHasFixedSize(true);
+        binding.rvCuiabaCasa.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.rvCuiabaCasa.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
+
+        cuiabaCasaA2022PartidaApi.getCuiabaCasa().enqueue(new Callback<List<Partida>>() {
+            @Override
+            public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
+                if(response.isSuccessful()){
+                    List<Partida> partidas = response.body();
+                    cuiabaCasaA2022Adapter = new CuiabaCasaA2022Adapter(partidas);
+                    binding.rvCuiabaCasa.setAdapter(cuiabaCasaA2022Adapter);
+                }else {
+                    erroBuscaDados();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Partida>> call, Throwable t) {
+
+            }
+        });
+
+    }
+
+    private void erroBuscaDados() {
     }
 }
