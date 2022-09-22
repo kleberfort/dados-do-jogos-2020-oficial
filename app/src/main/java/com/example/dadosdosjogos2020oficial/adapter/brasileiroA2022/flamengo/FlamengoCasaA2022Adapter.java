@@ -38,8 +38,8 @@ public class FlamengoCasaA2022Adapter extends RecyclerView.Adapter<FlamengoCasaA
 
         Partida listaPartidaFlamengoCasa = flamengoCasa2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaFlamengoCasa.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaFlamengoCasa.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaFlamengoCasa.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaFlamengoCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaFlamengoCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaFlamengoCasa.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaFlamengoCasa.getAwayTime().getNome());
@@ -49,6 +49,12 @@ public class FlamengoCasaA2022Adapter extends RecyclerView.Adapter<FlamengoCasaA
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaFlamengoCasa.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaFlamengoCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaFlamengoCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

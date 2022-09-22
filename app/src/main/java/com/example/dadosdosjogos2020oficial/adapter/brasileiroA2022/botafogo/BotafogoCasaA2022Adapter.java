@@ -37,8 +37,8 @@ public class BotafogoCasaA2022Adapter extends RecyclerView.Adapter<BotafogoCasaA
 
         Partida listaPartidaBotafogoCasa = botafogoCasa2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaBotafogoCasa.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaBotafogoCasa.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaBotafogoCasa.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaBotafogoCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaBotafogoCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaBotafogoCasa.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaBotafogoCasa.getAwayTime().getNome());
@@ -48,6 +48,12 @@ public class BotafogoCasaA2022Adapter extends RecyclerView.Adapter<BotafogoCasaA
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaBotafogoCasa.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaBotafogoCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaBotafogoCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

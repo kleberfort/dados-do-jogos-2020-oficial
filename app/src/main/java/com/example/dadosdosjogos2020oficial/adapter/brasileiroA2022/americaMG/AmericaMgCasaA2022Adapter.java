@@ -36,17 +36,37 @@ public class AmericaMgCasaA2022Adapter extends RecyclerView.Adapter<AmericaMgCas
 
         Partida listaPartidaAmericaMgCasa = americaMgCasa2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaAmericaMgCasa.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAmericaMgCasa.getRodada()));
+        //DADOS DO JOGO
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaAmericaMgCasa.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAmericaMgCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaAmericaMgCasa.getDate());
+
+
+        //DADOS TIME CASA
         holder.binding.tvNomeCasa.setText(listaPartidaAmericaMgCasa.getHomeTime().getNome());
-        holder.binding.tvNomeFora.setText(listaPartidaAmericaMgCasa.getAwayTime().getNome());
         holder.binding.tvclassicacaoCasa.setText(String.valueOf(listaPartidaAmericaMgCasa.getHomeTime().getClassificacao()));
-        holder.binding.tvClassificacaoFora.setText(String.valueOf(listaPartidaAmericaMgCasa.getAwayTime().getClassificacao()));
         holder.binding.tvPlacarCasa.setText(String.valueOf(listaPartidaAmericaMgCasa.getHomeTime().getPlacar()));
-        holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaAmericaMgCasa.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaAmericaMgCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
+
+        holder.binding.tvCasaEscanteiosTres.setText(listaPartidaAmericaMgCasa.getHomeTimeEscanteios().getThree());
+        holder.binding.tvCasaEscanteiosCinco.setText(listaPartidaAmericaMgCasa.getHomeTimeEscanteios().getFive());
+        holder.binding.tvCasaEscanteiosSete.setText(listaPartidaAmericaMgCasa.getHomeTimeEscanteios().getSeven());
+        holder.binding.tvCasaEscanteiosNove.setText(listaPartidaAmericaMgCasa.getHomeTimeEscanteios().getNine());
+
+        //DADOS TIME VISITANTE
+        holder.binding.tvNomeFora.setText(listaPartidaAmericaMgCasa.getAwayTime().getNome());
+        holder.binding.tvClassificacaoFora.setText(String.valueOf(listaPartidaAmericaMgCasa.getAwayTime().getClassificacao()));
+        holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaAmericaMgCasa.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaAmericaMgCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        holder.binding.tvForaEscanteiosTres.setText(listaPartidaAmericaMgCasa.getAwayTimeEscanteios().getThree());
+        holder.binding.tvForaEscanteiosCinco.setText(listaPartidaAmericaMgCasa.getAwayTimeEscanteios().getFive());
+        holder.binding.tvForaEscanteiosSete.setText(listaPartidaAmericaMgCasa.getAwayTimeEscanteios().getSeven());
+        holder.binding.tvForaEscanteiosNove.setText(listaPartidaAmericaMgCasa.getAwayTimeEscanteios().getNine());
+
+
+
+
 
     }
 

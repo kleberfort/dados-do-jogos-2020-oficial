@@ -1,6 +1,7 @@
 package com.example.dadosdosjogos2020oficial.adapter.brasileiroA2022.ceara;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -37,8 +38,8 @@ public class CearaCasaA2022Adapter extends RecyclerView.Adapter<CearaCasaA2022Ad
 
         Partida listaPartidaCearaCasa = cearaCasaA2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaCearaCasa.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaCearaCasa.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaCearaCasa.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaCearaCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaCearaCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaCearaCasa.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaCearaCasa.getAwayTime().getNome());
@@ -46,10 +47,19 @@ public class CearaCasaA2022Adapter extends RecyclerView.Adapter<CearaCasaA2022Ad
         holder.binding.tvClassificacaoFora.setText(String.valueOf(listaPartidaCearaCasa.getAwayTime().getClassificacao()));
         holder.binding.tvPlacarCasa.setText(String.valueOf(listaPartidaCearaCasa.getHomeTime().getPlacar()));
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaCearaCasa.getAwayTime().getPlacar()));
+
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
+
+
         Glide.with(context).load(listaPartidaCearaCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaCearaCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
 
-        // holder.binding.tvDataJogo.setText(listaPartidaCearaCasa.getRodada());
+
 
 
     }
@@ -61,7 +71,7 @@ public class CearaCasaA2022Adapter extends RecyclerView.Adapter<CearaCasaA2022Ad
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
-        private DadosPartidasAdapterBinding binding;
+        private final DadosPartidasAdapterBinding binding;
 
         public ViewHolder(DadosPartidasAdapterBinding binding) {
             super(binding.getRoot());

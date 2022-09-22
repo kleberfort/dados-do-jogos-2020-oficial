@@ -22,13 +22,13 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/tvNomeTime"
+                android:id="@+id/tvDescricaoCampeonato"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#03A9F4"
                 android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                tools:text="Nome do Time" />
+                tools:text="Descrição do Campeonato" />
         </LinearLayout>
 
         <LinearLayout

@@ -35,8 +35,8 @@ public class CorinthiansCasaA2022Adapter extends RecyclerView.Adapter<Corinthian
 
         Partida listaPartidaCorinthiansCasa = corinthiansCasa2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaCorinthiansCasa.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaCorinthiansCasa.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaCorinthiansCasa.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaCorinthiansCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaCorinthiansCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaCorinthiansCasa.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaCorinthiansCasa.getAwayTime().getNome());
@@ -47,6 +47,11 @@ public class CorinthiansCasaA2022Adapter extends RecyclerView.Adapter<Corinthian
         Glide.with(context).load(listaPartidaCorinthiansCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaCorinthiansCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
 
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

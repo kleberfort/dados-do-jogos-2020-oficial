@@ -38,7 +38,7 @@ public class TimesBrA2022Adapter extends RecyclerView.Adapter<TimesBrA2022Adapte
         TimesBrA2022 timesBrA2022 = listaTimes.get(position);
 
         Glide.with(context).load(timesBrA2022.getImage()).into(holder.binding.ivTime);
-        holder.binding.tvNomeTime.setText(timesBrA2022.getName());
+        holder.binding.tvDescricaoCampeonato.setText(timesBrA2022.getName());
 
 
 

@@ -38,8 +38,8 @@ public class SaopauloForaA2022Adapter extends RecyclerView.Adapter<SaopauloForaA
 
         Partida listaPartidaSaopauloFora = saopauloFora2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaSaopauloFora.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaSaopauloFora.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaSaopauloFora.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaSaopauloFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaSaopauloFora.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaSaopauloFora.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaSaopauloFora.getAwayTime().getNome());
@@ -49,6 +49,12 @@ public class SaopauloForaA2022Adapter extends RecyclerView.Adapter<SaopauloForaA
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaSaopauloFora.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaSaopauloFora.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaSaopauloFora.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

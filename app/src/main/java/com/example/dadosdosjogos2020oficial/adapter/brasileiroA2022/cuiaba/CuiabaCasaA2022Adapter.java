@@ -36,8 +36,8 @@ public class CuiabaCasaA2022Adapter extends RecyclerView.Adapter<CuiabaCasaA2022
 
         Partida listaPartidaCuiabaCasa = cuiabaCasa2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaCuiabaCasa.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaCuiabaCasa.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaCuiabaCasa.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaCuiabaCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaCuiabaCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaCuiabaCasa.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaCuiabaCasa.getAwayTime().getNome());
@@ -47,6 +47,12 @@ public class CuiabaCasaA2022Adapter extends RecyclerView.Adapter<CuiabaCasaA2022
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaCuiabaCasa.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaCuiabaCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaCuiabaCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

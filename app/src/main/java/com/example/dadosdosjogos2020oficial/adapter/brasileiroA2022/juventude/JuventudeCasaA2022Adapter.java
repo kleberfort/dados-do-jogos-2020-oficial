@@ -37,8 +37,8 @@ public class JuventudeCasaA2022Adapter extends RecyclerView.Adapter<JuventudeCas
 
         Partida listaPartidaJuventudeCasa = juventudeCasa2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaJuventudeCasa.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaJuventudeCasa.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaJuventudeCasa.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaJuventudeCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaJuventudeCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaJuventudeCasa.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaJuventudeCasa.getAwayTime().getNome());
@@ -48,6 +48,12 @@ public class JuventudeCasaA2022Adapter extends RecyclerView.Adapter<JuventudeCas
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaJuventudeCasa.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaJuventudeCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaJuventudeCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

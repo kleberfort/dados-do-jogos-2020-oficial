@@ -37,8 +37,8 @@ public class PalmeirasCasaA2022Adapter extends RecyclerView.Adapter<PalmeirasCas
 
         Partida listaPartidaPalmeirasCasa = palmeirasCasa2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaPalmeirasCasa.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaPalmeirasCasa.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaPalmeirasCasa.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaPalmeirasCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaPalmeirasCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaPalmeirasCasa.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaPalmeirasCasa.getAwayTime().getNome());
@@ -48,6 +48,12 @@ public class PalmeirasCasaA2022Adapter extends RecyclerView.Adapter<PalmeirasCas
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaPalmeirasCasa.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaPalmeirasCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaPalmeirasCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

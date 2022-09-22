@@ -1,41 +1,48 @@
 package com.example.dadosdosjogos2020oficial.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class PrimeiroMarcarEscanteios {
 
-    private String tres;
-    private String cinco;
-    private String sete;
-    private String nove;
+    @SerializedName("tres")
+    private String three;
+    @SerializedName("cinco")
+    private String five;
+    @SerializedName("sete")
+    private String seven;
+    @SerializedName("nove")
+    private String nine;
 
-    public String getTres() {
-        return tres;
+
+    public String getThree() {
+        return three;
     }
 
-    public void setTres(String tres) {
-        this.tres = tres;
+    public void setThree(String three) {
+        this.three = three;
     }
 
-    public String getCinco() {
-        return cinco;
+    public String getFive() {
+        return five;
     }
 
-    public void setCinco(String cinco) {
-        this.cinco = cinco;
+    public void setFive(String five) {
+        this.five = five;
     }
 
-    public String getSete() {
-        return sete;
+    public String getSeven() {
+        return seven;
     }
 
-    public void setSete(String sete) {
-        this.sete = sete;
+    public void setSeven(String seven) {
+        this.seven = seven;
     }
 
-    public String getNove() {
-        return nove;
+    public String getNine() {
+        return nine;
     }
 
-    public void setNove(String nove) {
-        this.nove = nove;
+    public void setNine(String nine) {
+        this.nine = nine;
     }
 }

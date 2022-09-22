@@ -37,8 +37,8 @@ public class CearaForaA2022Adapter extends RecyclerView.Adapter<CearaForaA2022Ad
 
         Partida listaPartidaCearaFora = listCearaFora.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaCearaFora.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaCearaFora.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaCearaFora.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaCearaFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaCearaFora.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaCearaFora.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaCearaFora.getAwayTime().getNome());
@@ -48,6 +48,12 @@ public class CearaForaA2022Adapter extends RecyclerView.Adapter<CearaForaA2022Ad
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaCearaFora.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaCearaFora.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaCearaFora.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

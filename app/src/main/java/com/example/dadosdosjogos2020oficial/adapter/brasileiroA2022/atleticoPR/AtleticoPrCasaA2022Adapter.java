@@ -16,7 +16,7 @@ import java.util.List;
 public class AtleticoPrCasaA2022Adapter extends RecyclerView.Adapter<AtleticoPrCasaA2022Adapter.ViewHolder> {
     private List<Partida> atleticoPrCasa2022;
 
-    public AtleticoPrCasaA2022Adapter(List<Partida> atleticoMgCasa2022) {
+    public AtleticoPrCasaA2022Adapter(List<Partida> atleticoPrCasa2022) {
         this.atleticoPrCasa2022 = atleticoPrCasa2022;
     }
 
@@ -34,19 +34,37 @@ public class AtleticoPrCasaA2022Adapter extends RecyclerView.Adapter<AtleticoPrC
 
         Context context = holder.itemView.getContext();
 
-        Partida listaPartidaAtleticoMgCasa = atleticoPrCasa2022.get(position);
+        Partida listaPartidaAtleticoPrCasa = atleticoPrCasa2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaAtleticoMgCasa.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAtleticoMgCasa.getRodada()));
-        holder.binding.tvDataJogo.setText(listaPartidaAtleticoMgCasa.getDate());
-        holder.binding.tvNomeCasa.setText(listaPartidaAtleticoMgCasa.getHomeTime().getNome());
-        holder.binding.tvNomeFora.setText(listaPartidaAtleticoMgCasa.getAwayTime().getNome());
-        holder.binding.tvclassicacaoCasa.setText(String.valueOf(listaPartidaAtleticoMgCasa.getHomeTime().getClassificacao()));
-        holder.binding.tvClassificacaoFora.setText(String.valueOf(listaPartidaAtleticoMgCasa.getAwayTime().getClassificacao()));
-        holder.binding.tvPlacarCasa.setText(String.valueOf(listaPartidaAtleticoMgCasa.getHomeTime().getPlacar()));
-        holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaAtleticoMgCasa.getAwayTime().getPlacar()));
-        Glide.with(context).load(listaPartidaAtleticoMgCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
-        Glide.with(context).load(listaPartidaAtleticoMgCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaAtleticoPrCasa.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAtleticoPrCasa.getRound()));
+        holder.binding.tvDataJogo.setText(listaPartidaAtleticoPrCasa.getDate());
+        holder.binding.tvNomeCasa.setText(listaPartidaAtleticoPrCasa.getHomeTime().getNome());
+        holder.binding.tvNomeFora.setText(listaPartidaAtleticoPrCasa.getAwayTime().getNome());
+        holder.binding.tvclassicacaoCasa.setText(String.valueOf(listaPartidaAtleticoPrCasa.getHomeTime().getClassificacao()));
+        holder.binding.tvClassificacaoFora.setText(String.valueOf(listaPartidaAtleticoPrCasa.getAwayTime().getClassificacao()));
+        holder.binding.tvPlacarCasa.setText(String.valueOf(listaPartidaAtleticoPrCasa.getHomeTime().getPlacar()));
+        holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaAtleticoPrCasa.getAwayTime().getPlacar()));
+        Glide.with(context).load(listaPartidaAtleticoPrCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
+        Glide.with(context).load(listaPartidaAtleticoPrCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        holder.binding.tvCasaEscanteiosTres.setText(listaPartidaAtleticoPrCasa.getHomeTimeEscanteios().getThree());
+        holder.binding.tvCasaEscanteiosCinco.setText(listaPartidaAtleticoPrCasa.getHomeTimeEscanteios().getFive());
+        holder.binding.tvCasaEscanteiosSete.setText(listaPartidaAtleticoPrCasa.getHomeTimeEscanteios().getSeven());
+        holder.binding.tvCasaEscanteiosNove.setText(listaPartidaAtleticoPrCasa.getHomeTimeEscanteios().getNine());
+
+        holder.binding.tvForaEscanteiosTres.setText(listaPartidaAtleticoPrCasa.getAwayTimeEscanteios().getThree());
+        holder.binding.tvForaEscanteiosCinco.setText(listaPartidaAtleticoPrCasa.getAwayTimeEscanteios().getFive());
+        holder.binding.tvForaEscanteiosSete.setText(listaPartidaAtleticoPrCasa.getAwayTimeEscanteios().getSeven());
+        holder.binding.tvForaEscanteiosNove.setText(listaPartidaAtleticoPrCasa.getAwayTimeEscanteios().getNine());
+
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
+
 
     }
 
@@ -57,7 +75,7 @@ public class AtleticoPrCasaA2022Adapter extends RecyclerView.Adapter<AtleticoPrC
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
-        private DadosPartidasAdapterBinding binding;
+        private final DadosPartidasAdapterBinding binding;
 
         public ViewHolder(DadosPartidasAdapterBinding binding) {
             super(binding.getRoot());

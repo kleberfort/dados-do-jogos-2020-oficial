@@ -37,8 +37,8 @@ public class FortalezaForaA2022Adapter extends RecyclerView.Adapter<FortalezaFor
 
         Partida listaPartidaFortalezaFora = fortalezaFora2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaFortalezaFora.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaFortalezaFora.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaFortalezaFora.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaFortalezaFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaFortalezaFora.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaFortalezaFora.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaFortalezaFora.getAwayTime().getNome());
@@ -48,6 +48,12 @@ public class FortalezaForaA2022Adapter extends RecyclerView.Adapter<FortalezaFor
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaFortalezaFora.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaFortalezaFora.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaFortalezaFora.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

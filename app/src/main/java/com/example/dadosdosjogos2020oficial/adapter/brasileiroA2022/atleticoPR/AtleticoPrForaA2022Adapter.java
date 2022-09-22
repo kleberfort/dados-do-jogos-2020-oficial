@@ -36,19 +36,25 @@ public class AtleticoPrForaA2022Adapter extends RecyclerView.Adapter<AtleticoPrF
 
         Context context = holder.itemView.getContext();
 
-        Partida listaPartidaAtleticoMgFora = atleticoPrFora2022.get(position);
+        Partida listaPartidaAtleticoPrFora = atleticoPrFora2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaAtleticoMgFora.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAtleticoMgFora.getRodada()));
-        holder.binding.tvDataJogo.setText(listaPartidaAtleticoMgFora.getDate());
-        holder.binding.tvNomeCasa.setText(listaPartidaAtleticoMgFora.getHomeTime().getNome());
-        holder.binding.tvNomeFora.setText(listaPartidaAtleticoMgFora.getAwayTime().getNome());
-        holder.binding.tvclassicacaoCasa.setText(String.valueOf(listaPartidaAtleticoMgFora.getHomeTime().getClassificacao()));
-        holder.binding.tvClassificacaoFora.setText(String.valueOf(listaPartidaAtleticoMgFora.getAwayTime().getClassificacao()));
-        holder.binding.tvPlacarCasa.setText(String.valueOf(listaPartidaAtleticoMgFora.getHomeTime().getPlacar()));
-        holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaAtleticoMgFora.getAwayTime().getPlacar()));
-        Glide.with(context).load(listaPartidaAtleticoMgFora.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
-        Glide.with(context).load(listaPartidaAtleticoMgFora.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaAtleticoPrFora.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAtleticoPrFora.getRound()));
+        holder.binding.tvDataJogo.setText(listaPartidaAtleticoPrFora.getDate());
+        holder.binding.tvNomeCasa.setText(listaPartidaAtleticoPrFora.getHomeTime().getNome());
+        holder.binding.tvNomeFora.setText(listaPartidaAtleticoPrFora.getAwayTime().getNome());
+        holder.binding.tvclassicacaoCasa.setText(String.valueOf(listaPartidaAtleticoPrFora.getHomeTime().getClassificacao()));
+        holder.binding.tvClassificacaoFora.setText(String.valueOf(listaPartidaAtleticoPrFora.getAwayTime().getClassificacao()));
+        holder.binding.tvPlacarCasa.setText(String.valueOf(listaPartidaAtleticoPrFora.getHomeTime().getPlacar()));
+        holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaAtleticoPrFora.getAwayTime().getPlacar()));
+        Glide.with(context).load(listaPartidaAtleticoPrFora.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
+        Glide.with(context).load(listaPartidaAtleticoPrFora.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

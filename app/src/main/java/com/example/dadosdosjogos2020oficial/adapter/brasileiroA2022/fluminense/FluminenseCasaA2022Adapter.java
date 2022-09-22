@@ -37,8 +37,8 @@ public class FluminenseCasaA2022Adapter extends RecyclerView.Adapter<FluminenseC
 
         Partida listaPartidaFluminenseCasa = fluminenseCasa2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaFluminenseCasa.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaFluminenseCasa.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaFluminenseCasa.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaFluminenseCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaFluminenseCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaFluminenseCasa.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaFluminenseCasa.getAwayTime().getNome());
@@ -48,6 +48,12 @@ public class FluminenseCasaA2022Adapter extends RecyclerView.Adapter<FluminenseC
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaFluminenseCasa.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaFluminenseCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaFluminenseCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

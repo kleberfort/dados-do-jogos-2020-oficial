@@ -37,8 +37,8 @@ public class BragantinoForaA2022Adapter extends RecyclerView.Adapter<BragantinoF
 
         Partida listaPartidaBragantinoFora = bragantinoFora2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaBragantinoFora.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaBragantinoFora.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaBragantinoFora.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaBragantinoFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaBragantinoFora.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaBragantinoFora.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaBragantinoFora.getAwayTime().getNome());
@@ -48,6 +48,12 @@ public class BragantinoForaA2022Adapter extends RecyclerView.Adapter<BragantinoF
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaBragantinoFora.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaBragantinoFora.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaBragantinoFora.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

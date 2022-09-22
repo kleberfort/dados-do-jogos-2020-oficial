@@ -36,8 +36,8 @@ public class SantosCasaA2022Adapter extends RecyclerView.Adapter<SantosCasaA2022
 
         Partida listaPartidaSantosCasa = santosCasa2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaSantosCasa.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaSantosCasa.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaSantosCasa.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaSantosCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaSantosCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaSantosCasa.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaSantosCasa.getAwayTime().getNome());
@@ -47,6 +47,12 @@ public class SantosCasaA2022Adapter extends RecyclerView.Adapter<SantosCasaA2022
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaSantosCasa.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaSantosCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaSantosCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

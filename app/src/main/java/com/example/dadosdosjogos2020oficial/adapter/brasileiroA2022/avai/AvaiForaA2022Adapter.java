@@ -36,8 +36,8 @@ public class AvaiForaA2022Adapter extends RecyclerView.Adapter<AvaiForaA2022Adap
 
         Partida listaPartidaAvaiFora = avaiFora2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaAvaiFora.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAvaiFora.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaAvaiFora.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAvaiFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaAvaiFora.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaAvaiFora.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaAvaiFora.getAwayTime().getNome());
@@ -47,6 +47,12 @@ public class AvaiForaA2022Adapter extends RecyclerView.Adapter<AvaiForaA2022Adap
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaAvaiFora.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaAvaiFora.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaAvaiFora.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

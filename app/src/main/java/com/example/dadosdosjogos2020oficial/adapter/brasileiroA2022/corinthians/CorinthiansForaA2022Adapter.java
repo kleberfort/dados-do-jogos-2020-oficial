@@ -37,8 +37,8 @@ public class CorinthiansForaA2022Adapter extends RecyclerView.Adapter<Corinthian
 
         Partida listaPartidaCorinthiansFora = corinthiansFora2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaCorinthiansFora.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaCorinthiansFora.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaCorinthiansFora.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaCorinthiansFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaCorinthiansFora.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaCorinthiansFora.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaCorinthiansFora.getAwayTime().getNome());
@@ -48,6 +48,12 @@ public class CorinthiansForaA2022Adapter extends RecyclerView.Adapter<Corinthian
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaCorinthiansFora.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaCorinthiansFora.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaCorinthiansFora.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

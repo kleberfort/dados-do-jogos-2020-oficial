@@ -21,6 +21,8 @@ public class CearaActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        getSupportActionBar().setElevation(10);
+
         //configurar o adapter para abas do time do Ceará
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(),

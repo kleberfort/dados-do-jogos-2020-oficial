@@ -37,8 +37,8 @@ public class InternacionalCasaA2022Adapter extends RecyclerView.Adapter<Internac
 
         Partida listaPartidaInternacionalCasa = internacionalCasa2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaInternacionalCasa.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaInternacionalCasa.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaInternacionalCasa.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaInternacionalCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaInternacionalCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaInternacionalCasa.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaInternacionalCasa.getAwayTime().getNome());
@@ -48,6 +48,12 @@ public class InternacionalCasaA2022Adapter extends RecyclerView.Adapter<Internac
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaInternacionalCasa.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaInternacionalCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaInternacionalCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

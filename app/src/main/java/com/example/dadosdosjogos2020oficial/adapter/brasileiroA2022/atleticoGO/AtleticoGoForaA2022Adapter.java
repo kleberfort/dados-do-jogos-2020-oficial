@@ -37,8 +37,8 @@ public class AtleticoGoForaA2022Adapter extends RecyclerView.Adapter<AtleticoGoF
 
         Partida listaPartidaAtleticoGoFora = atleticoGoFora2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaAtleticoGoFora.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAtleticoGoFora.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaAtleticoGoFora.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAtleticoGoFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaAtleticoGoFora.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaAtleticoGoFora.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaAtleticoGoFora.getAwayTime().getNome());
@@ -48,6 +48,13 @@ public class AtleticoGoForaA2022Adapter extends RecyclerView.Adapter<AtleticoGoF
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaAtleticoGoFora.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaAtleticoGoFora.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaAtleticoGoFora.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 

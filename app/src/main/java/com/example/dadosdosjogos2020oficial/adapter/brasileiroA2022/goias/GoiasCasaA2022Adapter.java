@@ -37,8 +37,8 @@ public class GoiasCasaA2022Adapter extends RecyclerView.Adapter<GoiasCasaA2022Ad
 
         Partida listaPartidaGoiasCasa = goiasCasa2022.get(position);
 
-        holder.binding.tvNomeTime.setText(listaPartidaGoiasCasa.getNome());
-        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaGoiasCasa.getRodada()));
+        holder.binding.tvDescricaoCampeonato.setText(listaPartidaGoiasCasa.getName());
+        holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaGoiasCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaGoiasCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaGoiasCasa.getHomeTime().getNome());
         holder.binding.tvNomeFora.setText(listaPartidaGoiasCasa.getAwayTime().getNome());
@@ -48,6 +48,12 @@ public class GoiasCasaA2022Adapter extends RecyclerView.Adapter<GoiasCasaA2022Ad
         holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaGoiasCasa.getAwayTime().getPlacar()));
         Glide.with(context).load(listaPartidaGoiasCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
         Glide.with(context).load(listaPartidaGoiasCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+
+        //DADOS DO JOGO
+
+        //DADOS TIME CASA
+
+        //DADOS TIME FORA
 
     }
 
