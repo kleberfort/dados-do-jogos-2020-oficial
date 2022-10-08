@@ -8,6 +8,12 @@
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/Usando fragmento para recuperar dados da api/app/src/main/res/layout/activity_main.xml" value="0.5840336134453782" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/Usando fragmento para recuperar dados da api/app/src/main/res/layout/fragment_lista_br_a2022.xml" value="0.25462962962962965" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/Usando fragmento para recuperar dados da api/app/src/main/res/layout/list_times_br_a_2022_adapter.xml" value="0.28888888888888886" />
+        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/drawable/background_borda_linha_coluna.xml" value="0.274" />
+        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/drawable/background_borda_titulo_coluna.xml" value="0.2335" />
+        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/drawable/background_classification.xml" value="0.161" />
+        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/drawable/background_fundo_verde.xml" value="0.217" />
+        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/drawable/background_fundo_vermelho.xml" value="0.217" />
+        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/drawable/background_score.xml" value="0.161" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1495" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_america_mg.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_atletico_go.xml" value="0.36666666666666664" />
@@ -30,7 +36,7 @@
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_palmeiras.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_santos.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_sao_paulo.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/dados_partidas_adapter.xml" value="0.5" />
+        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/dados_partidas_adapter.xml" value="0.33" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_america_mg_casa2022.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_america_mg_fora2022.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atletico_g_o_casa2022.xml" value="0.36666666666666664" />
@@ -68,6 +74,8 @@
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_juventude_casa2022.xml" value="0.2546875" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_juventude_fora2022.xml" value="0.2546875" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_lista_br_a2022.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_lista_ingles_a2022a2.xml" value="0.27708333333333335" />
+        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_lista_ingles_a2022a23.xml" value="0.23148148148148148" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_palmeiras_casa2022.xml" value="0.2546875" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_palmeiras_fora2022.xml" value="0.2546875" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_santos_casa2022.xml" value="0.2546875" />

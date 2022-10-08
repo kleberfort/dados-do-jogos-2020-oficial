@@ -1,4 +1,4 @@
-package com.example.dadosdosjogos2020oficial.activity;
+package com.example.dadosdosjogos2020oficial.activity.BrasilA2022;
 
 import androidx.appcompat.app.AppCompatActivity;
 

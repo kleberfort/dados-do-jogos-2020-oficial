@@ -12,67 +12,67 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DadosDosJogos2020Oficial">
         <activity
-            android:name=".activity.AtleticoMgActivity"
+            android:name=".activity.BrasilA2022.AtleticoMgActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.InternacionalActivity"
+            android:name=".activity.BrasilA2022.InternacionalActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.SaoPauloActivity"
+            android:name=".activity.BrasilA2022.SaoPauloActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.SantosActivity"
+            android:name=".activity.BrasilA2022.SantosActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.PalmeirasActivity"
+            android:name=".activity.BrasilA2022.PalmeirasActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.JuventudeActivity"
+            android:name=".activity.BrasilA2022.JuventudeActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.GoiasActivity"
+            android:name=".activity.BrasilA2022.GoiasActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.FortalezaActivity"
+            android:name=".activity.BrasilA2022.FortalezaActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.FluminenseActivity"
+            android:name=".activity.BrasilA2022.FluminenseActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.FlamengoActivity"
+            android:name=".activity.BrasilA2022.FlamengoActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.CuiabaActivity"
+            android:name=".activity.BrasilA2022.CuiabaActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.CoritibaActivity"
+            android:name=".activity.BrasilA2022.CoritibaActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.CorinthiansActivity"
+            android:name=".activity.BrasilA2022.CorinthiansActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BragantinoActivity"
+            android:name=".activity.BrasilA2022.BragantinoActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BotafogoActivity"
+            android:name=".activity.BrasilA2022.BotafogoActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.AvaiActivity"
+            android:name=".activity.BrasilA2022.AvaiActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.AtleticoPrActivity"
+            android:name=".activity.BrasilA2022.AtleticoPrActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.AtleticoGoActivity"
+            android:name=".activity.BrasilA2022.AtleticoGoActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.AmericaMgActivity"
+            android:name=".activity.BrasilA2022.AmericaMgActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.CearaActivity"
+            android:name=".activity.BrasilA2022.CearaActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.BrasilA2022.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

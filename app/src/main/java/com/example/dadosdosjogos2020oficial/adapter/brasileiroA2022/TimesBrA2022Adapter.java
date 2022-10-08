@@ -9,15 +9,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.dadosdosjogos2020oficial.databinding.ListTimesBrA2022AdapterBinding;
-import com.example.dadosdosjogos2020oficial.model.TimesBrA2022;
+import com.example.dadosdosjogos2020oficial.model.ListaTimeCampeonatoPrincipal;
 
 import java.util.List;
 
 public class TimesBrA2022Adapter extends RecyclerView.Adapter<TimesBrA2022Adapter.ViewHolder> {
 
-    private List<TimesBrA2022> listaTimes;
+    private List<ListaTimeCampeonatoPrincipal> listaTimes;
 
-    public TimesBrA2022Adapter(List<TimesBrA2022> listaTimes) {
+    public TimesBrA2022Adapter(List<ListaTimeCampeonatoPrincipal> listaTimes) {
         this.listaTimes = listaTimes;
     }
 
@@ -35,10 +35,10 @@ public class TimesBrA2022Adapter extends RecyclerView.Adapter<TimesBrA2022Adapte
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Context context = holder.itemView.getContext();
 
-        TimesBrA2022 timesBrA2022 = listaTimes.get(position);
+        ListaTimeCampeonatoPrincipal listaTimeCampeonatoPrincipal = listaTimes.get(position);
 
-        Glide.with(context).load(timesBrA2022.getImage()).into(holder.binding.ivTime);
-        holder.binding.tvDescricaoCampeonato.setText(timesBrA2022.getName());
+        Glide.with(context).load(listaTimeCampeonatoPrincipal.getImage()).into(holder.binding.ivTime);
+        holder.binding.tvDescricaoCampeonato.setText(listaTimeCampeonatoPrincipal.getName());
 
 
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.JuventudeActivity">
+    tools:context=".activity.BrasilA2022.JuventudeActivity">
 
     <com.ogaclejapan.smarttablayout.SmartTabLayout
         android:id="@+id/viewPagerTab"

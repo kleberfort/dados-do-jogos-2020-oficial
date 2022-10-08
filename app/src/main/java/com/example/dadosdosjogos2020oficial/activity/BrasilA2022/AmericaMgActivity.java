@@ -1,4 +1,4 @@
-package com.example.dadosdosjogos2020oficial.activity;
+package com.example.dadosdosjogos2020oficial.activity.BrasilA2022;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,8 +8,6 @@ import android.view.View;
 import com.example.dadosdosjogos2020oficial.databinding.ActivityAmericaMgBinding;
 import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.americaMG.AmericaMgCasa2022Fragment;
 import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.americaMG.AmericaMgFora2022Fragment;
-import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.ceara.CearaCasa2022Fragment;
-import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.ceara.CearaFora2022Fragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 

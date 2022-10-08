@@ -1,6 +1,7 @@
 package com.example.dadosdosjogos2020oficial.adapter.brasileiroA2022.santos;
 
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -8,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.dadosdosjogos2020oficial.R;
 import com.example.dadosdosjogos2020oficial.databinding.DadosPartidasAdapterBinding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
 
@@ -36,23 +38,52 @@ public class SantosCasaA2022Adapter extends RecyclerView.Adapter<SantosCasaA2022
 
         Partida listaPartidaSantosCasa = santosCasa2022.get(position);
 
+        //DADOS DO JOGO
         holder.binding.tvDescricaoCampeonato.setText(listaPartidaSantosCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaSantosCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaSantosCasa.getDate());
-        holder.binding.tvNomeCasa.setText(listaPartidaSantosCasa.getHomeTime().getNome());
-        holder.binding.tvNomeFora.setText(listaPartidaSantosCasa.getAwayTime().getNome());
-        holder.binding.tvclassicacaoCasa.setText(String.valueOf(listaPartidaSantosCasa.getHomeTime().getClassificacao()));
-        holder.binding.tvClassificacaoFora.setText(String.valueOf(listaPartidaSantosCasa.getAwayTime().getClassificacao()));
-        holder.binding.tvPlacarCasa.setText(String.valueOf(listaPartidaSantosCasa.getHomeTime().getPlacar()));
-        holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaSantosCasa.getAwayTime().getPlacar()));
-        Glide.with(context).load(listaPartidaSantosCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
-        Glide.with(context).load(listaPartidaSantosCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
-
-        //DADOS DO JOGO
 
         //DADOS TIME CASA
+        holder.binding.tvNomeCasa.setText(listaPartidaSantosCasa.getHomeTime().getNome());
+        holder.binding.tvclassicacaoCasa.setText(String.valueOf(listaPartidaSantosCasa.getHomeTime().getClassificacao()));
+        holder.binding.tvPlacarCasa.setText(String.valueOf(listaPartidaSantosCasa.getHomeTime().getPlacar()));
+        Glide.with(context).load(listaPartidaSantosCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
+        holder.binding.tvCasaEscanteiosTres.setText(listaPartidaSantosCasa.getHomeTimeEscanteios().getThree());
+
+
+           // holder.binding.tvCasaEscanteiosTres.setText(listaPartidaSantosCasa.getHomeTimeEscanteios().getThree());
+
+           // String casaTres = listaPartidaSantosCasa.getHomeTimeEscanteios().getThree();
+
+            if(listaPartidaSantosCasa.getHomeTimeEscanteios().getThree() == "SIM")
+            holder.binding.tvCasaEscanteiosTres.setBackgroundResource(R.drawable.background_fundo_verde);
+            else
+                holder.binding.tvCasaEscanteiosTres.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+        if(listaPartidaSantosCasa.getHomeTimeEscanteios().getFive() == "SIM")
+            holder.binding.tvCasaEscanteiosCinco.setBackgroundResource(R.drawable.background_fundo_verde);
+        else
+            holder.binding.tvCasaEscanteiosCinco.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+        if(listaPartidaSantosCasa.getHomeTimeEscanteios().getSeven() == "SIM")
+            holder.binding.tvCasaEscanteiosSete.setBackgroundResource(R.drawable.background_fundo_verde);
+        else
+            holder.binding.tvForaEscanteiosSete.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+        if(listaPartidaSantosCasa.getHomeTimeEscanteios().getNine() == "SIM")
+            holder.binding.tvForaEscanteiosNove.setBackgroundResource(R.drawable.background_fundo_verde);
+        else
+            holder.binding.tvForaEscanteiosNove.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+
+
+
 
         //DADOS TIME FORA
+        holder.binding.tvNomeFora.setText(listaPartidaSantosCasa.getAwayTime().getNome());
+        holder.binding.tvClassificacaoFora.setText(String.valueOf(listaPartidaSantosCasa.getAwayTime().getClassificacao()));
+        holder.binding.tvPlacarFora.setText(String.valueOf(listaPartidaSantosCasa.getAwayTime().getPlacar()));
+        Glide.with(context).load(listaPartidaSantosCasa.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
 
     }
 

@@ -2,7 +2,7 @@ package com.example.dadosdosjogos2020oficial.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class TimesBrA2022 {
+public class ListaTimeCampeonatoPrincipal {
 
     @SerializedName("nome")
     private String name;

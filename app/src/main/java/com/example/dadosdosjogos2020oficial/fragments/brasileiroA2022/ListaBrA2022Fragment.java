@@ -12,31 +12,31 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.dadosdosjogos2020oficial.activity.AmericaMgActivity;
-import com.example.dadosdosjogos2020oficial.activity.AtleticoGoActivity;
-import com.example.dadosdosjogos2020oficial.activity.AtleticoMgActivity;
-import com.example.dadosdosjogos2020oficial.activity.AtleticoPrActivity;
-import com.example.dadosdosjogos2020oficial.activity.AvaiActivity;
-import com.example.dadosdosjogos2020oficial.activity.BotafogoActivity;
-import com.example.dadosdosjogos2020oficial.activity.BragantinoActivity;
-import com.example.dadosdosjogos2020oficial.activity.CearaActivity;
-import com.example.dadosdosjogos2020oficial.activity.CorinthiansActivity;
-import com.example.dadosdosjogos2020oficial.activity.CoritibaActivity;
-import com.example.dadosdosjogos2020oficial.activity.CuiabaActivity;
-import com.example.dadosdosjogos2020oficial.activity.FlamengoActivity;
-import com.example.dadosdosjogos2020oficial.activity.FluminenseActivity;
-import com.example.dadosdosjogos2020oficial.activity.FortalezaActivity;
-import com.example.dadosdosjogos2020oficial.activity.GoiasActivity;
-import com.example.dadosdosjogos2020oficial.activity.InternacionalActivity;
-import com.example.dadosdosjogos2020oficial.activity.JuventudeActivity;
-import com.example.dadosdosjogos2020oficial.activity.PalmeirasActivity;
-import com.example.dadosdosjogos2020oficial.activity.SantosActivity;
-import com.example.dadosdosjogos2020oficial.activity.SaoPauloActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.AmericaMgActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.AtleticoGoActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.AtleticoMgActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.AtleticoPrActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.AvaiActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.BotafogoActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.BragantinoActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.CearaActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.CorinthiansActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.CoritibaActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.CuiabaActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.FlamengoActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.FluminenseActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.FortalezaActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.GoiasActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.InternacionalActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.JuventudeActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.PalmeirasActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.SantosActivity;
+import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.SaoPauloActivity;
 import com.example.dadosdosjogos2020oficial.adapter.brasileiroA2022.TimesBrA2022Adapter;
 import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.TimesBrA2022Api;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentListaBrA2022Binding;
 import com.example.dadosdosjogos2020oficial.model.RecyclerItemClickListener;
-import com.example.dadosdosjogos2020oficial.model.TimesBrA2022;
+import com.example.dadosdosjogos2020oficial.model.ListaTimeCampeonatoPrincipal;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
@@ -108,11 +108,11 @@ public class ListaBrA2022Fragment extends Fragment {
         binding.rvListaBrasileiroSeriaA2022.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.rvListaBrasileiroSeriaA2022.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
 
-        timesBrA2022Api.getTimesBrA2022().enqueue(new Callback<List<TimesBrA2022>>() {
+        timesBrA2022Api.getTimesBrA2022().enqueue(new Callback<List<ListaTimeCampeonatoPrincipal>>() {
             @Override
-            public void onResponse(Call<List<TimesBrA2022>> call, Response<List<TimesBrA2022>> response) {
+            public void onResponse(Call<List<ListaTimeCampeonatoPrincipal>> call, Response<List<ListaTimeCampeonatoPrincipal>> response) {
                 if(response.isSuccessful()){
-                    List<TimesBrA2022> listaDeTimes = response.body();
+                    List<ListaTimeCampeonatoPrincipal> listaDeTimes = response.body();
                     timesBrA2022Adapter = new TimesBrA2022Adapter(listaDeTimes);
                     binding.rvListaBrasileiroSeriaA2022.setAdapter(timesBrA2022Adapter);
 
@@ -222,7 +222,7 @@ public class ListaBrA2022Fragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<List<TimesBrA2022>> call, Throwable t) {
+            public void onFailure(Call<List<ListaTimeCampeonatoPrincipal>> call, Throwable t) {
                 errorMensagem();
             }
         });

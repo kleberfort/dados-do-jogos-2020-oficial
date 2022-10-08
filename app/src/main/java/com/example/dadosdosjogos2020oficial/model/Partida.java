@@ -17,6 +17,26 @@ public class Partida {
     private PrimeiroMarcarEscanteios homeTimeEscanteios;
     @SerializedName("escanteiosPrimeiroVisitante")
     private PrimeiroMarcarEscanteios awayTimeEscanteios;
+    @SerializedName("estatistiticaJogoMandante")
+    private EstatisticaJogo homeEstatisticaJogo;
+    @SerializedName("estatisticaJogoVisitante")
+    private EstatisticaJogo awayEstatisticaJogo;
+
+    public EstatisticaJogo getHomeEstatisticaJogo() {
+        return homeEstatisticaJogo;
+    }
+
+    public void setHomeEstatisticaJogo(EstatisticaJogo homeEstatisticaJogo) {
+        this.homeEstatisticaJogo = homeEstatisticaJogo;
+    }
+
+    public EstatisticaJogo getAwayEstatisticaJogo() {
+        return awayEstatisticaJogo;
+    }
+
+    public void setAwayEstatisticaJogo(EstatisticaJogo awayEstatisticaJogo) {
+        this.awayEstatisticaJogo = awayEstatisticaJogo;
+    }
 
     public String getName() {
         return description;

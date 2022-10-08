@@ -1,32 +1,32 @@
-package com.example.dadosdosjogos2020oficial.activity;
+package com.example.dadosdosjogos2020oficial.activity.BrasilA2022;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.dadosdosjogos2020oficial.databinding.ActivityCorinthiansBinding;
+import com.example.dadosdosjogos2020oficial.databinding.ActivityPalmeirasBinding;
 import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.AtleticoGO.AtleticoGOCasa2022Fragment;
 import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.AtleticoGO.AtleticoGOFora2022Fragment;
-import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.corinthians.CorinthiansCasa2022Fragment;
-import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.corinthians.CorinthiansFora2022Fragment;
+import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.palmeiras.PalmeirasCasa2022Fragment;
+import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.palmeiras.PalmeirasFora2022Fragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
-public class CorinthiansActivity extends AppCompatActivity {
-    private ActivityCorinthiansBinding binding;
+public class PalmeirasActivity extends AppCompatActivity {
+    private ActivityPalmeirasBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityCorinthiansBinding.inflate(getLayoutInflater());
+        binding = ActivityPalmeirasBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         //configurar o adapter para abas do time do Ceará
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(),
                 FragmentPagerItems.with(getApplicationContext())
-                        .add("Casa 2022", CorinthiansCasa2022Fragment.class)
-                        .add("Fora 2022", CorinthiansFora2022Fragment.class)
+                        .add("Casa 2022", PalmeirasCasa2022Fragment.class)
+                        .add("Fora 2022", PalmeirasFora2022Fragment.class)
                         .create()
         );
 
