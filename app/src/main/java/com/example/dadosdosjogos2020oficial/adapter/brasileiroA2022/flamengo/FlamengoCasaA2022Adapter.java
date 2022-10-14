@@ -38,7 +38,7 @@ public class FlamengoCasaA2022Adapter extends RecyclerView.Adapter<FlamengoCasaA
 
         Partida listaPartidaFlamengoCasa = flamengoCasa2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaFlamengoCasa.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaFlamengoCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaFlamengoCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaFlamengoCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaFlamengoCasa.getHomeTime().getNome());

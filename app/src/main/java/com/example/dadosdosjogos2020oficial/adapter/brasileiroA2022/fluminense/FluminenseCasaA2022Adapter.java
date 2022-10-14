@@ -37,7 +37,7 @@ public class FluminenseCasaA2022Adapter extends RecyclerView.Adapter<FluminenseC
 
         Partida listaPartidaFluminenseCasa = fluminenseCasa2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaFluminenseCasa.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaFluminenseCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaFluminenseCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaFluminenseCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaFluminenseCasa.getHomeTime().getNome());

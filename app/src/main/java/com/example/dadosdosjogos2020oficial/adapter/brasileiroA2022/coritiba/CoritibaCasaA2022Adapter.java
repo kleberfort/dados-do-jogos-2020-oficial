@@ -36,7 +36,7 @@ public class CoritibaCasaA2022Adapter extends RecyclerView.Adapter<CoritibaCasaA
 
         Partida listaPartidaCoritibaCasa = coritibaCasa2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaCoritibaCasa.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaCoritibaCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaCoritibaCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaCoritibaCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaCoritibaCasa.getHomeTime().getNome());

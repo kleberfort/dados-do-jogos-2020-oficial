@@ -38,7 +38,7 @@ public class SaopauloForaA2022Adapter extends RecyclerView.Adapter<SaopauloForaA
 
         Partida listaPartidaSaopauloFora = saopauloFora2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaSaopauloFora.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaSaopauloFora.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaSaopauloFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaSaopauloFora.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaSaopauloFora.getHomeTime().getNome());

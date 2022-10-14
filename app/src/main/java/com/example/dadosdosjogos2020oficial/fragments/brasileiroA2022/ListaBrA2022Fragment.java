@@ -12,26 +12,26 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.AmericaMgActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.AtleticoGoActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.AtleticoMgActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.AtleticoPrActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.AvaiActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.BotafogoActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.BragantinoActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.CearaActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.CorinthiansActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.CoritibaActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.CuiabaActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.FlamengoActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.FluminenseActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.FortalezaActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.GoiasActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.InternacionalActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.JuventudeActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.PalmeirasActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.SantosActivity;
-import com.example.dadosdosjogos2020oficial.activity.BrasilA2022.SaoPauloActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.AmericaMgActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.AtleticoGoActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.AtleticoMgActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.AtleticoPrActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.AvaiActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.BotafogoActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.BragantinoActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.CearaActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.CorinthiansActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.CoritibaActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.CuiabaActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.FlamengoActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.FluminenseActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.FortalezaActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.GoiasActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.InternacionalActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.JuventudeActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.PalmeirasActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.SantosActivity;
+import com.example.dadosdosjogos2020oficial.activity.brasilA2022.SaoPauloActivity;
 import com.example.dadosdosjogos2020oficial.adapter.brasileiroA2022.TimesBrA2022Adapter;
 import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.TimesBrA2022Api;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentListaBrA2022Binding;
@@ -60,16 +60,6 @@ public class ListaBrA2022Fragment extends Fragment {
     }
 
 
-/*
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-
-
-
-    }
-*/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -37,7 +37,7 @@ public class FortalezaForaA2022Adapter extends RecyclerView.Adapter<FortalezaFor
 
         Partida listaPartidaFortalezaFora = fortalezaFora2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaFortalezaFora.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaFortalezaFora.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaFortalezaFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaFortalezaFora.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaFortalezaFora.getHomeTime().getNome());

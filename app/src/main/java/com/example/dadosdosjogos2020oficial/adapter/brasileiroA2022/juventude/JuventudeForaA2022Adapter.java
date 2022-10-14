@@ -37,7 +37,7 @@ public class JuventudeForaA2022Adapter extends RecyclerView.Adapter<JuventudeFor
 
         Partida listaPartidaJuventudeFora = juventudeFora2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaJuventudeFora.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaJuventudeFora.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaJuventudeFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaJuventudeFora.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaJuventudeFora.getHomeTime().getNome());

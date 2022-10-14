@@ -37,7 +37,7 @@ public class InternacionalCasaA2022Adapter extends RecyclerView.Adapter<Internac
 
         Partida listaPartidaInternacionalCasa = internacionalCasa2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaInternacionalCasa.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaInternacionalCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaInternacionalCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaInternacionalCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaInternacionalCasa.getHomeTime().getNome());

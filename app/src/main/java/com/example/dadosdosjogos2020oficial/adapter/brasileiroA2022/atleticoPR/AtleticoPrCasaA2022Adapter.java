@@ -36,7 +36,7 @@ public class AtleticoPrCasaA2022Adapter extends RecyclerView.Adapter<AtleticoPrC
 
         Partida listaPartidaAtleticoPrCasa = atleticoPrCasa2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaAtleticoPrCasa.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaAtleticoPrCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAtleticoPrCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaAtleticoPrCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaAtleticoPrCasa.getHomeTime().getNome());

@@ -39,7 +39,7 @@ public class SantosCasaA2022Adapter extends RecyclerView.Adapter<SantosCasaA2022
         Partida listaPartidaSantosCasa = santosCasa2022.get(position);
 
         //DADOS DO JOGO
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaSantosCasa.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaSantosCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaSantosCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaSantosCasa.getDate());
 

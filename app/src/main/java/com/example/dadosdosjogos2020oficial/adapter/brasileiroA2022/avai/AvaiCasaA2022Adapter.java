@@ -37,7 +37,7 @@ public class AvaiCasaA2022Adapter extends RecyclerView.Adapter<AvaiCasaA2022Adap
 
         Partida listaPartidaAvaiCasa = avaiCasa2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaAvaiCasa.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaAvaiCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAvaiCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaAvaiCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaAvaiCasa.getHomeTime().getNome());

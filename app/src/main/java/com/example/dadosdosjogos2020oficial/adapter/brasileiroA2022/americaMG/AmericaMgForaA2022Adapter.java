@@ -38,7 +38,7 @@ public class AmericaMgForaA2022Adapter extends RecyclerView.Adapter<AmericaMgFor
         Partida listaPartidaAmericaMgFora = americaMgFora2022.get(position);
 
         //DADOS DO JOGO
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaAmericaMgFora.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaAmericaMgFora.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAmericaMgFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaAmericaMgFora.getDate());
 

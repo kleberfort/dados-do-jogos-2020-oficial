@@ -36,7 +36,7 @@ public class AvaiForaA2022Adapter extends RecyclerView.Adapter<AvaiForaA2022Adap
 
         Partida listaPartidaAvaiFora = avaiFora2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaAvaiFora.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaAvaiFora.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAvaiFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaAvaiFora.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaAvaiFora.getHomeTime().getNome());

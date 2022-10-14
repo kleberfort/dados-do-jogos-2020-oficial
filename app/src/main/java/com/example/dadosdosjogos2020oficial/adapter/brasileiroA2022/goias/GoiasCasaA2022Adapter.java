@@ -37,7 +37,7 @@ public class GoiasCasaA2022Adapter extends RecyclerView.Adapter<GoiasCasaA2022Ad
 
         Partida listaPartidaGoiasCasa = goiasCasa2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaGoiasCasa.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaGoiasCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaGoiasCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaGoiasCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaGoiasCasa.getHomeTime().getNome());

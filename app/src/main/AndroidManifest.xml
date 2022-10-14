@@ -12,67 +12,361 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DadosDosJogos2020Oficial">
         <activity
-            android:name=".activity.BrasilA2022.AtleticoMgActivity"
+            android:name=".activity.italiaA2022a23.UdineseActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.InternacionalActivity"
+            android:name=".activity.italiaA2022a23.TorinoActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.SaoPauloActivity"
+            android:name=".activity.italiaA2022a23.SpeziaActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.SantosActivity"
+            android:name=".activity.italiaA2022a23.SassuoloActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.PalmeirasActivity"
+            android:name=".activity.italiaA2022a23.SampdoriaActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.JuventudeActivity"
+            android:name=".activity.italiaA2022a23.SalernitanaActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.GoiasActivity"
+            android:name=".activity.italiaA2022a23.RomaActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.FortalezaActivity"
+            android:name=".activity.italiaA2022a23.NapoliActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.FluminenseActivity"
+            android:name=".activity.italiaA2022a23.MonzaActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.FlamengoActivity"
+            android:name=".activity.italiaA2022a23.MilanActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.CuiabaActivity"
+            android:name=".activity.italiaA2022a23.LecceActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.CoritibaActivity"
+            android:name=".activity.italiaA2022a23.LazioActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.CorinthiansActivity"
+            android:name=".activity.italiaA2022a23.JuventusActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.BragantinoActivity"
+            android:name=".activity.italiaA2022a23.InterMilanActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.BotafogoActivity"
+            android:name=".activity.italiaA2022a23.HellasVeronaActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.AvaiActivity"
+            android:name=".activity.italiaA2022a23.FiorentinaActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.AtleticoPrActivity"
+            android:name=".activity.italiaA2022a23.EmpoliActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.AtleticoGoActivity"
+            android:name=".activity.italiaA2022a23.CremoneseActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.AmericaMgActivity"
+            android:name=".activity.italiaA2022a23.BolognaActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.CearaActivity"
+            android:name=".activity.italiaA2022a23.AtalantaActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.BrasilA2022.MainActivity"
+            android:name=".activity.francaA2022a23.TroyesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.ToulouseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.StrasbourgActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.RennesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.ReimsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.PsgActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.NiceActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.NantesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.MontpellierActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.MonacoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.MarseilleActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.LyonActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.LorientActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.LilleActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.LensActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.ClermontActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.BrestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.AuxerreActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.AngersActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.francaA2022a23.AjaccioActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.VillarrealActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.ValenciaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.SevillaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.RealValladolidActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.RealSociedadActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.RealMadridActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.RealBetisActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.RayoVallecanoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.OsasunaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.MallorcaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.GironaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.GetafeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.EspanyolActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.ElcheActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.CeltaVigoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.CadizActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.BarcelonaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.AtleticoMadridActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.AthleticBilbaoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.espanhaA2022a23.AlmeriaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.WolfsburgActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.WerderBremenActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.UnionBerlinActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.StuttgartActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.Schalke04Activity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.RBLeipzigActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.Mainz05Activity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.HoffenheimActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.HerthaBerlinActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.FreiburgActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.EintrachtFrankfurtActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.KolnActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.BorussiaMonchengladbachActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.BorussiaDortmundActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.BochumActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.BayernMuniqueActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.BayerLeverkusenActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.alemanhaA2022a23.AugsburgActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.WolverhamptonActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.WesthamActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.TottenhamActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.SouthamptonActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.NottinghamForestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.NewcastleActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.ManchesterUnitedActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.ManchesterCityActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.LiverpoolActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.LeicesterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.LeedsUnitedActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.FulhamActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.EvertonActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.CrystalPalaceActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.ChelseaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.BrentfordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.BournemouthActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.AstonVillaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.ArsenalActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.inglesA2022a23.BrightonActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.AtleticoMgActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.InternacionalActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.SaoPauloActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.SantosActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.PalmeirasActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.JuventudeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.GoiasActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.FortalezaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.FluminenseActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.FlamengoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.CuiabaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.CoritibaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.CorinthiansActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.BragantinoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.BotafogoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.AvaiActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.AtleticoPrActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.AtleticoGoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.AmericaMgActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.CearaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.brasilA2022.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

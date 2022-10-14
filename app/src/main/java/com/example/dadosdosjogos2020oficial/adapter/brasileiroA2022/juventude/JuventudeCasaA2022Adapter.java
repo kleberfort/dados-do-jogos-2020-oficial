@@ -37,7 +37,7 @@ public class JuventudeCasaA2022Adapter extends RecyclerView.Adapter<JuventudeCas
 
         Partida listaPartidaJuventudeCasa = juventudeCasa2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaJuventudeCasa.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaJuventudeCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaJuventudeCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaJuventudeCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaJuventudeCasa.getHomeTime().getNome());

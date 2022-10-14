@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.dadosdosjogos2020oficial.databinding.ListTimesBrA2022AdapterBinding;
+import com.example.dadosdosjogos2020oficial.databinding.ListTimesCampeonatoPrincipalAdapterBinding;
 import com.example.dadosdosjogos2020oficial.model.ListaTimeCampeonatoPrincipal;
 
 import java.util.List;
@@ -25,7 +25,7 @@ public class TimesBrA2022Adapter extends RecyclerView.Adapter<TimesBrA2022Adapte
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        ListTimesBrA2022AdapterBinding binding = ListTimesBrA2022AdapterBinding.inflate(layoutInflater, parent, false);
+        ListTimesCampeonatoPrincipalAdapterBinding binding = ListTimesCampeonatoPrincipalAdapterBinding.inflate(layoutInflater, parent, false);
 
 
         return new ViewHolder(binding);
@@ -38,7 +38,7 @@ public class TimesBrA2022Adapter extends RecyclerView.Adapter<TimesBrA2022Adapte
         ListaTimeCampeonatoPrincipal listaTimeCampeonatoPrincipal = listaTimes.get(position);
 
         Glide.with(context).load(listaTimeCampeonatoPrincipal.getImage()).into(holder.binding.ivTime);
-        holder.binding.tvDescricaoCampeonato.setText(listaTimeCampeonatoPrincipal.getName());
+        holder.binding.tvNomeTime.setText(listaTimeCampeonatoPrincipal.getName());
 
 
 
@@ -50,9 +50,9 @@ public class TimesBrA2022Adapter extends RecyclerView.Adapter<TimesBrA2022Adapte
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        private ListTimesBrA2022AdapterBinding binding;
+        private ListTimesCampeonatoPrincipalAdapterBinding binding;
 
-        public ViewHolder(ListTimesBrA2022AdapterBinding binding) {
+        public ViewHolder(ListTimesCampeonatoPrincipalAdapterBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

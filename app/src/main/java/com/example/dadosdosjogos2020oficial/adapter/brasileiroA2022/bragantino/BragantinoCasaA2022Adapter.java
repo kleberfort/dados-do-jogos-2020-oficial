@@ -39,7 +39,7 @@ public class BragantinoCasaA2022Adapter extends RecyclerView.Adapter<BragantinoC
         Partida listaPartidaBragantinoCasa = bragantinoCasa2022.get(position);
 
         //DADOS DO JOGO
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaBragantinoCasa.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaBragantinoCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaBragantinoCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaBragantinoCasa.getDate());
 

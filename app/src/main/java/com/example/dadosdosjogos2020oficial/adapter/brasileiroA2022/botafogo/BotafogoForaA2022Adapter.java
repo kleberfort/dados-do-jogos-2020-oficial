@@ -36,7 +36,7 @@ public class BotafogoForaA2022Adapter extends RecyclerView.Adapter<BotafogoForaA
 
         Partida listaPartidaBotafogoFora = botafogoFora2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaBotafogoFora.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaBotafogoFora.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaBotafogoFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaBotafogoFora.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaBotafogoFora.getHomeTime().getNome());

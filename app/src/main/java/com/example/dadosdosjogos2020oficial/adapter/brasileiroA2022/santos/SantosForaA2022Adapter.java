@@ -37,7 +37,7 @@ public class SantosForaA2022Adapter extends RecyclerView.Adapter<SantosForaA2022
 
         Partida listaPartidaSantosFora = santosFora2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaSantosFora.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaSantosFora.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaSantosFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaSantosFora.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaSantosFora.getHomeTime().getNome());

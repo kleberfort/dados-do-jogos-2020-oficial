@@ -37,7 +37,7 @@ public class CearaForaA2022Adapter extends RecyclerView.Adapter<CearaForaA2022Ad
 
         Partida listaPartidaCearaFora = listCearaFora.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaCearaFora.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaCearaFora.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaCearaFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaCearaFora.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaCearaFora.getHomeTime().getNome());

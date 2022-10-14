@@ -37,7 +37,7 @@ public class BragantinoForaA2022Adapter extends RecyclerView.Adapter<BragantinoF
 
         Partida listaPartidaBragantinoFora = bragantinoFora2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaBragantinoFora.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaBragantinoFora.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaBragantinoFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaBragantinoFora.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaBragantinoFora.getHomeTime().getNome());

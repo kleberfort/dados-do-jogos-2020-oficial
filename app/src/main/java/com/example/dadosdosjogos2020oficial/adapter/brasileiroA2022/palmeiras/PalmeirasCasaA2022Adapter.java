@@ -39,7 +39,7 @@ public class PalmeirasCasaA2022Adapter extends RecyclerView.Adapter<PalmeirasCas
         Partida listaPartidaPalmeirasCasa = palmeirasCasa2022.get(position);
 
         //DADOS DO JOGO
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaPalmeirasCasa.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaPalmeirasCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaPalmeirasCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaPalmeirasCasa.getDate());
 

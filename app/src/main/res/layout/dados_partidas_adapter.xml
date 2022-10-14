@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    tools:context=".activity.BrasilA2022.MainActivity">
+    tools:context=".activity.brasilA2022.MainActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/tvDescricaoCampeonato"
+                android:id="@+id/tvNomeTime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#03A9F4"

@@ -36,7 +36,7 @@ public class CuiabaCasaA2022Adapter extends RecyclerView.Adapter<CuiabaCasaA2022
 
         Partida listaPartidaCuiabaCasa = cuiabaCasa2022.get(position);
 
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaCuiabaCasa.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaCuiabaCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaCuiabaCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaCuiabaCasa.getDate());
         holder.binding.tvNomeCasa.setText(listaPartidaCuiabaCasa.getHomeTime().getNome());

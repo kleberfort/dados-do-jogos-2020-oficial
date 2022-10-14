@@ -37,7 +37,7 @@ public class AmericaMgCasaA2022Adapter extends RecyclerView.Adapter<AmericaMgCas
         Partida listaPartidaAmericaMgCasa = americaMgCasa2022.get(position);
 
         //DADOS DO JOGO
-        holder.binding.tvDescricaoCampeonato.setText(listaPartidaAmericaMgCasa.getName());
+        holder.binding.tvNomeTime.setText(listaPartidaAmericaMgCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAmericaMgCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaAmericaMgCasa.getDate());
 
