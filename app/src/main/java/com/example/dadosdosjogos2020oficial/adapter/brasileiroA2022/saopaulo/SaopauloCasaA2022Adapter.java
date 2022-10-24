@@ -38,7 +38,7 @@ public class SaopauloCasaA2022Adapter extends RecyclerView.Adapter<SaopauloCasaA
 
         Partida listaPartidaSaopauloCasa = saopauloCasa2022.get(position);
 
-        //DADOS DO JOGO
+//DADOS DO JOGO
         holder.binding.tvNomeTime.setText(listaPartidaSaopauloCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaSaopauloCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaSaopauloCasa.getDate());

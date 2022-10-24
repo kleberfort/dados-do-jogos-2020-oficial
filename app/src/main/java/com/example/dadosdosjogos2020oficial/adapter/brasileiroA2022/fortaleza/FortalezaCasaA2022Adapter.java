@@ -38,7 +38,7 @@ public class FortalezaCasaA2022Adapter extends RecyclerView.Adapter<FortalezaCas
 
         Partida listaPartidaFortalezaCasa = fortalezaCasa2022.get(position);
 
-        //DADOS DO JOGO
+//DADOS DO JOGO
         holder.binding.tvNomeTime.setText(listaPartidaFortalezaCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaFortalezaCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaFortalezaCasa.getDate());

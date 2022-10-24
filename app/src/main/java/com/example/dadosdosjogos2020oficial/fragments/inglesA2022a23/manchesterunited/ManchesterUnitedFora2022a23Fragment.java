@@ -3,64 +3,64 @@ package com.example.dadosdosjogos2020oficial.fragments.inglesA2022a23.manchester
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.example.dadosdosjogos2020oficial.R;
+import com.example.dadosdosjogos2020oficial.adapter.alemanhaA2022a23.bayerleverkusen.BayerLeverkusenCasa2022a23Adapter;
+import com.example.dadosdosjogos2020oficial.adapter.inglesA2022a2023.manchesterunited.ManchesterUnitedFora2022a23Adapter;
+import com.example.dadosdosjogos2020oficial.data.alemanhaA2022a23.bayerleverkusen.BayerLeverkusenCasaA2022a23PartidaApi;
+import com.example.dadosdosjogos2020oficial.data.inglesA2022a23.manchesterunited.ManchesterUnitedForaA2022a23PartidaApi;
+import com.example.dadosdosjogos2020oficial.databinding.FragmentBayerLeverkusenCasa2022a23Binding;
+import com.example.dadosdosjogos2020oficial.databinding.FragmentManchesterUnitedFora2022a23Binding;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ManchesterUnitedFora2022a23Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+
 public class ManchesterUnitedFora2022a23Fragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private FragmentManchesterUnitedFora2022a23Binding binding;
+    private ManchesterUnitedForaA2022a23PartidaApi manchesterUnitedForaA2022a23PartidaApi;
+    private ManchesterUnitedFora2022a23Adapter manchesterUnitedFora2022a23Adapter;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public ManchesterUnitedFora2022a23Fragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ManchesterUnitedFora2022a23Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ManchesterUnitedFora2022a23Fragment newInstance(String param1, String param2) {
-        ManchesterUnitedFora2022a23Fragment fragment = new ManchesterUnitedFora2022a23Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_manchester_united_fora2022a23, container, false);
+        binding = FragmentManchesterUnitedFora2022a23Binding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+
+
+        setupHttpClient();
+        setupDadosJogos();
+
+
+        return view;
+    }
+
+    private void setupHttpClient() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/ingles-a-2022-23/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+    }
+
+    private void setupDadosJogos() {
+        binding.rvManchesterUnitedFora.setHasFixedSize(true);
+        binding.rvManchesterUnitedFora.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.rvManchesterUnitedFora.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
     }
 }
+

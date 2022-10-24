@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.dadosdosjogos2020oficial.R;
 import com.example.dadosdosjogos2020oficial.databinding.DadosPartidasAdapterBinding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
 
@@ -42,6 +43,18 @@ public class AmericaMgForaA2022Adapter extends RecyclerView.Adapter<AmericaMgFor
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaAmericaMgFora.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaAmericaMgFora.getDate());
 
+        holder.binding.tvEscanteiosTotalPrimeiroTempo.setText(String.valueOf(listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo() + listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getEscanteiosPrimeiroTempo()));
+        holder.binding.tvEscanteiosTotalSegundoTempo.setText(String.valueOf(listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getEscanteioSegundoTempo() + listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getEscanteioSegundoTempo()));
+        int escanteiosPrimeiroTempo = listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo() + listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getEscanteiosPrimeiroTempo();
+        int escanteiosSegundoTempo = listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getEscanteioSegundoTempo() + listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getEscanteioSegundoTempo();
+        holder.binding.tvEscanteiosTotal.setText(String.valueOf(escanteiosPrimeiroTempo + escanteiosSegundoTempo));
+
+        holder.binding.tvGolsTotalPrimeiroTempo.setText(String.valueOf(listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getGolsPrimeiroTempo() + listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getGolsPrimeiroTempo()));
+        holder.binding.tvGolsTotalSegundoTempo.setText(String.valueOf(listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getGolsSegundoTempo() + listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getGolsSegundoTempo()));
+        int golsPrimeiroTempo = listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getGolsPrimeiroTempo() + listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getGolsPrimeiroTempo();
+        int golsSegundtoTempo = listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getGolsSegundoTempo() + listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getGolsSegundoTempo();
+        holder.binding.tvGolsTotal.setText(String.valueOf(golsPrimeiroTempo + golsSegundtoTempo));
+
         //DADOS TIME CASA
         holder.binding.tvNomeCasa.setText(listaPartidaAmericaMgFora.getHomeTime().getNome());
         holder.binding.tvclassicacaoCasa.setText(String.valueOf(listaPartidaAmericaMgFora.getHomeTime().getClassificacao()));
@@ -52,6 +65,35 @@ public class AmericaMgForaA2022Adapter extends RecyclerView.Adapter<AmericaMgFor
         holder.binding.tvCasaEscanteiosCinco.setText(listaPartidaAmericaMgFora.getHomeTimeEscanteios().getFive());
         holder.binding.tvCasaEscanteiosSete.setText(listaPartidaAmericaMgFora.getHomeTimeEscanteios().getSeven());
         holder.binding.tvCasaEscanteiosNove.setText(listaPartidaAmericaMgFora.getHomeTimeEscanteios().getNine());
+
+        holder.binding.tvCasaEscanteiosPrimeiroTempo.setText(String.valueOf(listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo()));
+        holder.binding.tvCasaEscanteiosSegundoTempo.setText(String.valueOf(listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getEscanteioSegundoTempo()));
+        holder.binding.tvCasaEscanteiosTotal.setText(String.valueOf(listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo() + listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getEscanteioSegundoTempo()));
+
+        holder.binding.tvCasaGolsPrimeiroTempo.setText(String.valueOf(listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getGolsPrimeiroTempo()));
+        holder.binding.tvCasaGolsSegundoTempo.setText(String.valueOf(listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getGolsSegundoTempo()));
+        holder.binding.tvCasaGolsTotal.setText(String.valueOf(listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getGolsPrimeiroTempo() + listaPartidaAmericaMgFora.getHomeEstatisticaJogo().getGolsSegundoTempo()));
+
+        if(listaPartidaAmericaMgFora.getHomeTimeEscanteios().getThree().contains("SIM"))
+            holder.binding.tvCasaEscanteiosTres.setBackgroundResource(R.drawable.background_fundo_verde);
+        else
+            holder.binding.tvCasaEscanteiosTres.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+        if(listaPartidaAmericaMgFora.getHomeTimeEscanteios().getFive().contains("SIM"))
+            holder.binding.tvCasaEscanteiosCinco.setBackgroundResource(R.drawable.background_fundo_verde);
+        else
+            holder.binding.tvCasaEscanteiosCinco.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+        if(listaPartidaAmericaMgFora.getHomeTimeEscanteios().getSeven().contains("SIM"))
+            holder.binding.tvCasaEscanteiosSete.setBackgroundResource(R.drawable.background_fundo_verde);
+        else
+            holder.binding.tvCasaEscanteiosSete.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+        if(listaPartidaAmericaMgFora.getHomeTimeEscanteios().getNine().contains("SIM"))
+            holder.binding.tvCasaEscanteiosNove.setBackgroundResource(R.drawable.background_fundo_verde);
+        else
+            holder.binding.tvCasaEscanteiosNove.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
 
         //DADOS TIME FORA
         holder.binding.tvNomeFora.setText(listaPartidaAmericaMgFora.getAwayTime().getNome());
@@ -64,6 +106,33 @@ public class AmericaMgForaA2022Adapter extends RecyclerView.Adapter<AmericaMgFor
         holder.binding.tvForaEscanteiosSete.setText(listaPartidaAmericaMgFora.getAwayTimeEscanteios().getSeven());
         holder.binding.tvForaEscanteiosNove.setText(listaPartidaAmericaMgFora.getAwayTimeEscanteios().getNine());
 
+        holder.binding.tvForaEscanteiosPrimeiroTempo.setText(String.valueOf(listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getEscanteiosPrimeiroTempo()));
+        holder.binding.tvForaEscanteiosSegundoTempo.setText(String.valueOf(listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getEscanteioSegundoTempo()));
+        holder.binding.tvForaEscanteiosTotal.setText(String.valueOf(listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getEscanteiosPrimeiroTempo() + listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getEscanteioSegundoTempo()));
+
+        holder.binding.tvForaGolsPrimeiroTempo.setText(String.valueOf(listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getGolsPrimeiroTempo()));
+        holder.binding.tvForaGolsSegundoTempo.setText(String.valueOf(listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getGolsSegundoTempo()));
+        holder.binding.tvForaGolsTotal.setText(String.valueOf(listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getGolsPrimeiroTempo() + listaPartidaAmericaMgFora.getAwayEstatisticaJogo().getGolsSegundoTempo()));
+
+        if(listaPartidaAmericaMgFora.getAwayTimeEscanteios().getThree().contains("SIM"))
+            holder.binding.tvForaEscanteiosTres.setBackgroundResource(R.drawable.background_fundo_verde);
+        else
+            holder.binding.tvForaEscanteiosTres.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+        if(listaPartidaAmericaMgFora.getAwayTimeEscanteios().getFive().contains("SIM"))
+            holder.binding.tvForaEscanteiosCinco.setBackgroundResource(R.drawable.background_fundo_verde);
+        else
+            holder.binding.tvForaEscanteiosCinco.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+        if(listaPartidaAmericaMgFora.getAwayTimeEscanteios().getSeven().contains("SIM"))
+            holder.binding.tvForaEscanteiosSete.setBackgroundResource(R.drawable.background_fundo_verde);
+        else
+            holder.binding.tvForaEscanteiosSete.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+        if(listaPartidaAmericaMgFora.getAwayTimeEscanteios().getNine().contains("SIM"))
+            holder.binding.tvForaEscanteiosNove.setBackgroundResource(R.drawable.background_fundo_verde);
+        else
+            holder.binding.tvForaEscanteiosNove.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
 
 

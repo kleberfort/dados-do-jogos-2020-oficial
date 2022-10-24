@@ -38,16 +38,29 @@ public class BragantinoCasaA2022Adapter extends RecyclerView.Adapter<BragantinoC
 
         Partida listaPartidaBragantinoCasa = bragantinoCasa2022.get(position);
 
-        //DADOS DO JOGO
+//DADOS DO JOGO
         holder.binding.tvNomeTime.setText(listaPartidaBragantinoCasa.getName());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(listaPartidaBragantinoCasa.getRound()));
         holder.binding.tvDataJogo.setText(listaPartidaBragantinoCasa.getDate());
+
+        holder.binding.tvEscanteiosTotalPrimeiroTempo.setText(String.valueOf(listaPartidaBragantinoCasa.getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo() + listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getEscanteiosPrimeiroTempo()));
+        holder.binding.tvEscanteiosTotalSegundoTempo.setText(String.valueOf(listaPartidaBragantinoCasa.getHomeEstatisticaJogo().getEscanteioSegundoTempo() + listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getEscanteioSegundoTempo()));
+        int escanteiosPrimeiroTempo = listaPartidaBragantinoCasa.getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo() + listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getEscanteiosPrimeiroTempo();
+        int escanteiosSegundoTempo = listaPartidaBragantinoCasa.getHomeEstatisticaJogo().getEscanteioSegundoTempo() + listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getEscanteioSegundoTempo();
+        holder.binding.tvEscanteiosTotal.setText(String.valueOf(escanteiosPrimeiroTempo + escanteiosSegundoTempo));
+
+        holder.binding.tvGolsTotalPrimeiroTempo.setText(String.valueOf(listaPartidaBragantinoCasa.getHomeEstatisticaJogo().getGolsPrimeiroTempo() + listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getGolsPrimeiroTempo()));
+        holder.binding.tvGolsTotalSegundoTempo.setText(String.valueOf(listaPartidaBragantinoCasa.getHomeEstatisticaJogo().getGolsSegundoTempo() + listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getGolsSegundoTempo()));
+        int golsPrimeiroTempo = listaPartidaBragantinoCasa.getHomeEstatisticaJogo().getGolsPrimeiroTempo() + listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getGolsPrimeiroTempo();
+        int golsSegundtoTempo = listaPartidaBragantinoCasa.getHomeEstatisticaJogo().getGolsSegundoTempo() + listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getGolsSegundoTempo();
+        holder.binding.tvGolsTotal.setText(String.valueOf(golsPrimeiroTempo + golsSegundtoTempo));
 
         //DADOS TIME CASA
         holder.binding.tvNomeCasa.setText(listaPartidaBragantinoCasa.getHomeTime().getNome());
         holder.binding.tvclassicacaoCasa.setText(String.valueOf(listaPartidaBragantinoCasa.getHomeTime().getClassificacao()));
         holder.binding.tvPlacarCasa.setText(String.valueOf(listaPartidaBragantinoCasa.getHomeTime().getPlacar()));
         Glide.with(context).load(listaPartidaBragantinoCasa.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
+
         holder.binding.tvCasaEscanteiosTres.setText(listaPartidaBragantinoCasa.getHomeTimeEscanteios().getThree());
         holder.binding.tvCasaEscanteiosCinco.setText(listaPartidaBragantinoCasa.getHomeTimeEscanteios().getFive());
         holder.binding.tvCasaEscanteiosSete.setText(listaPartidaBragantinoCasa.getHomeTimeEscanteios().getSeven());
@@ -57,10 +70,14 @@ public class BragantinoCasaA2022Adapter extends RecyclerView.Adapter<BragantinoC
         holder.binding.tvCasaEscanteiosSegundoTempo.setText(String.valueOf(listaPartidaBragantinoCasa.getHomeEstatisticaJogo().getEscanteioSegundoTempo()));
         holder.binding.tvCasaEscanteiosTotal.setText(String.valueOf(listaPartidaBragantinoCasa.getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo() + listaPartidaBragantinoCasa.getHomeEstatisticaJogo().getEscanteioSegundoTempo()));
 
+        holder.binding.tvCasaGolsPrimeiroTempo.setText(String.valueOf(listaPartidaBragantinoCasa.getHomeEstatisticaJogo().getGolsPrimeiroTempo()));
+        holder.binding.tvCasaGolsSegundoTempo.setText(String.valueOf(listaPartidaBragantinoCasa.getHomeEstatisticaJogo().getGolsSegundoTempo()));
+        holder.binding.tvCasaGolsTotal.setText(String.valueOf(listaPartidaBragantinoCasa.getHomeEstatisticaJogo().getGolsPrimeiroTempo() + listaPartidaBragantinoCasa.getHomeEstatisticaJogo().getGolsSegundoTempo()));
+
         if(listaPartidaBragantinoCasa.getHomeTimeEscanteios().getThree().contains("SIM"))
-           holder.binding.tvCasaEscanteiosTres.setBackgroundResource(R.drawable.background_fundo_verde);
-         else
-             holder.binding.tvCasaEscanteiosTres.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            holder.binding.tvCasaEscanteiosTres.setBackgroundResource(R.drawable.background_fundo_verde);
+        else
+            holder.binding.tvCasaEscanteiosTres.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
         if(listaPartidaBragantinoCasa.getHomeTimeEscanteios().getFive().contains("SIM"))
             holder.binding.tvCasaEscanteiosCinco.setBackgroundResource(R.drawable.background_fundo_verde);
@@ -77,6 +94,7 @@ public class BragantinoCasaA2022Adapter extends RecyclerView.Adapter<BragantinoC
         else
             holder.binding.tvCasaEscanteiosNove.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
+
         //DADOS TIME FORA
         holder.binding.tvNomeFora.setText(listaPartidaBragantinoCasa.getAwayTime().getNome());
         holder.binding.tvClassificacaoFora.setText(String.valueOf(listaPartidaBragantinoCasa.getAwayTime().getClassificacao()));
@@ -87,6 +105,14 @@ public class BragantinoCasaA2022Adapter extends RecyclerView.Adapter<BragantinoC
         holder.binding.tvForaEscanteiosCinco.setText(listaPartidaBragantinoCasa.getAwayTimeEscanteios().getFive());
         holder.binding.tvForaEscanteiosSete.setText(listaPartidaBragantinoCasa.getAwayTimeEscanteios().getSeven());
         holder.binding.tvForaEscanteiosNove.setText(listaPartidaBragantinoCasa.getAwayTimeEscanteios().getNine());
+
+        holder.binding.tvForaEscanteiosPrimeiroTempo.setText(String.valueOf(listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getEscanteiosPrimeiroTempo()));
+        holder.binding.tvForaEscanteiosSegundoTempo.setText(String.valueOf(listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getEscanteioSegundoTempo()));
+        holder.binding.tvForaEscanteiosTotal.setText(String.valueOf(listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getEscanteiosPrimeiroTempo() + listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getEscanteioSegundoTempo()));
+
+        holder.binding.tvForaGolsPrimeiroTempo.setText(String.valueOf(listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getGolsPrimeiroTempo()));
+        holder.binding.tvForaGolsSegundoTempo.setText(String.valueOf(listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getGolsSegundoTempo()));
+        holder.binding.tvForaGolsTotal.setText(String.valueOf(listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getGolsPrimeiroTempo() + listaPartidaBragantinoCasa.getAwayEstatisticaJogo().getGolsSegundoTempo()));
 
         if(listaPartidaBragantinoCasa.getAwayTimeEscanteios().getThree().contains("SIM"))
             holder.binding.tvForaEscanteiosTres.setBackgroundResource(R.drawable.background_fundo_verde);
