@@ -13,12 +13,22 @@ import android.widget.LinearLayout;
 
 import com.example.dadosdosjogos2020oficial.R;
 import com.example.dadosdosjogos2020oficial.adapter.alemanhaA2022a23.bayerleverkusen.BayerLeverkusenCasa2022a23Adapter;
+import com.example.dadosdosjogos2020oficial.adapter.alemanhaA2022a23.stuttgart.StuttgartFora2022a23Adapter;
 import com.example.dadosdosjogos2020oficial.adapter.francaA2022a23.strasbourg.StrasbourgFora2022a23Adapter;
 import com.example.dadosdosjogos2020oficial.data.alemanhaA2022a23.bayerleverkusen.BayerLeverkusenCasaA2022a23PartidaApi;
+import com.example.dadosdosjogos2020oficial.data.alemanhaA2022a23.stuttgart.StuttgartForaA2022a23PartidaApi;
 import com.example.dadosdosjogos2020oficial.data.francaA2022a23.strasbourg.StrasbourgForaA2022a23PartidaApi;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentBayerLeverkusenCasa2022a23Binding;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentStrasbourgFora2022a23Binding;
+import com.example.dadosdosjogos2020oficial.databinding.FragmentStuttgartFora2022a23Binding;
+import com.example.dadosdosjogos2020oficial.model.Partida;
+import com.google.android.material.snackbar.Snackbar;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -26,9 +36,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class StuttgartFora2022a23Fragment extends Fragment {
 
 
-    private FragmentStrasbourgFora2022a23Binding binding;
-    private StrasbourgForaA2022a23PartidaApi strasbourgForaA2022a23PartidaApi;
-    private StrasbourgFora2022a23Adapter strasbourgFora2022a23Adapter;
+    private FragmentStuttgartFora2022a23Binding binding;
+    private StuttgartForaA2022a23PartidaApi stuttgartForaA2022a23PartidaApi;
+    private StuttgartFora2022a23Adapter stuttgartFora2022a23Adapter;
 
     public StuttgartFora2022a23Fragment() {
         // Required empty public constructor
@@ -41,7 +51,7 @@ public class StuttgartFora2022a23Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentStrasbourgFora2022a23Binding.inflate(inflater, container, false);
+        binding = FragmentStuttgartFora2022a23Binding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
 
@@ -58,12 +68,36 @@ public class StuttgartFora2022a23Fragment extends Fragment {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
+        stuttgartForaA2022a23PartidaApi = retrofit.create(StuttgartForaA2022a23PartidaApi.class);
+
     }
 
     private void setupDadosJogos() {
-        binding.rvStrasbourgFora.setHasFixedSize(true);
-        binding.rvStrasbourgFora.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.rvStrasbourgFora.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
+        binding.rvStuttgartFora.setHasFixedSize(true);
+        binding.rvStuttgartFora.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.rvStuttgartFora.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
+
+        stuttgartForaA2022a23PartidaApi.getStuttgartFora().enqueue(new Callback<List<Partida>>() {
+            @Override
+            public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
+                if(response.isSuccessful()){
+                    List<Partida> partidas = response.body();
+
+
+
+                }else {
+                    errorBuscarDados();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Partida>> call, Throwable t) {
+
+            }
+        });
+    }
+    private void errorBuscarDados() {
+        Snackbar.make(binding.getRoot(), "Verifique a conexão de Internet", Snackbar.LENGTH_LONG).show();
     }
 }
 

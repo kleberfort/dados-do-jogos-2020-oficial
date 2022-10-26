@@ -17,6 +17,24 @@ import android.widget.Toast;
 import com.example.dadosdosjogos2020oficial.R;
 import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.ArsenalActivity;
 import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.AstonVillaActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.BournemouthActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.BrentfordActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.BrightonActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.ChelseaActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.CrystalPalaceActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.EvertonActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.FulhamActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.LeedsUnitedActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.LeicesterActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.LiverpoolActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.ManchesterCityActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.ManchesterUnitedActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.NewcastleActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.NottinghamForestActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.SouthamptonActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.TottenhamActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.WesthamActivity;
+import com.example.dadosdosjogos2020oficial.activity.inglesA2022a23.WolverhamptonActivity;
 import com.example.dadosdosjogos2020oficial.adapter.inglesA2022a2023.TimesInglesA2022a23Adapter;
 import com.example.dadosdosjogos2020oficial.data.inglesA2022a23.TimesInglesA2022a23Api;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentListaInglesA2022a23Binding;
@@ -37,6 +55,42 @@ public class ListaInglesA2022a23Fragment extends Fragment {
     private FragmentListaInglesA2022a23Binding binding;
     private TimesInglesA2022a23Api timesInglesA2022a23Api;
     private TimesInglesA2022a23Adapter timesInglesA2022a23Adapter;
+
+    public enum TimesInglesesA{
+        ARSENAL(0, "Arsenal"),
+        ASTON_VILLA(1, "Aston Villa"),
+        BOURNEMOUTH(2, "Bournemouth"),
+        BRENTFORD(3, "Brentford"),
+        BRIGHTON(4, "Brighton"),
+        CHELSEA(5, "Chelsea"),
+        CRYSTAL_PALACE(6, "Crystal Palace"),
+        EVERTON(7,"Everton"),
+        FULHAM(8,"Fulham"),
+        LEEDS_UNITED(9,"Leeds United"),
+        LEICESTER(10, "Leicester"),
+        LIVERPOOL(11, "Liverpool"),
+        MANCHESTER_CITY(12,"Manchester City"),
+        MANCHESTER_UNITED(13,"Manchester United"),
+        NEWCASTLE(14,"Newcastle"),
+        NOTTINGHAM_FOREST(15,"Nottingham Forest"),
+        SOUTHAMPTON(16,"Southampton"),
+        TOTTENHAM(17,"Tottenham"),
+        WEST_HAM(18,"West Ham"),
+        WOLVERHAMPTON(19,"Wolverhampton");
+
+        private final int valor;
+        private final String nome;
+
+        private TimesInglesesA(int valor, String nome){
+            this.valor = valor;
+            this.nome = nome;
+        }
+
+        public int getValor(){
+            return this.valor;
+        }
+
+    }
 
 
     public ListaInglesA2022a23Fragment() {
@@ -108,6 +162,96 @@ public class ListaInglesA2022a23Fragment extends Fragment {
                             case "Aston Villa":
                                 Intent astonVilla = new Intent(getContext(), AstonVillaActivity.class);
                                 startActivity(astonVilla);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Bournemouth":
+                                Intent bournemouth = new Intent(getContext(), BournemouthActivity.class);
+                                startActivity(bournemouth);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Brentford":
+                                Intent brentford = new Intent(getContext(), BrentfordActivity.class);
+                                startActivity(brentford);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Brighton":
+                                Intent brighton = new Intent(getContext(), BrightonActivity.class);
+                                startActivity(brighton);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Chelsea":
+                                Intent chelsea = new Intent(getContext(), ChelseaActivity.class);
+                                startActivity(chelsea);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Crystal Palace":
+                                Intent crystalPalace = new Intent(getContext(), CrystalPalaceActivity.class);
+                                startActivity(crystalPalace);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Everton":
+                                Intent everton = new Intent(getContext(), EvertonActivity.class);
+                                startActivity(everton);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Fulham":
+                                Intent fulham = new Intent(getContext(), FulhamActivity.class);
+                                startActivity(fulham);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Leeds United":
+                                Intent leedsUnited = new Intent(getContext(), LeedsUnitedActivity.class);
+                                startActivity(leedsUnited);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Leicester":
+                                Intent leicester = new Intent(getContext(), LeicesterActivity.class);
+                                startActivity(leicester);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Liverpool":
+                                Intent liverpool = new Intent(getContext(), LiverpoolActivity.class);
+                                startActivity(liverpool);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Manchester City":
+                                Intent manchesterCity = new Intent(getContext(), ManchesterCityActivity.class);
+                                startActivity(manchesterCity);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Manchester United":
+                                Intent manchesterUnited = new Intent(getContext(), ManchesterUnitedActivity.class);
+                                startActivity(manchesterUnited);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Newcastle":
+                                Intent newcastle = new Intent(getContext(), NewcastleActivity.class);
+                                startActivity(newcastle);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Nottingham Forestla":
+                                Intent nottingham = new Intent(getContext(), NottinghamForestActivity.class);
+                                startActivity(nottingham);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Southampton":
+                                Intent southampton = new Intent(getContext(), SouthamptonActivity.class);
+                                startActivity(southampton);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Tottenham":
+                                Intent tottenham = new Intent(getContext(), TottenhamActivity.class);
+                                startActivity(tottenham);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "West Ham":
+                                Intent westHam = new Intent(getContext(), WesthamActivity.class);
+                                startActivity(westHam);
+                                Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                break;
+                            case "Wolverhampton":
+                                Intent wolverhampton = new Intent(getContext(), WolverhamptonActivity.class);
+                                startActivity(wolverhampton);
                                 Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
                                 break;
                         }

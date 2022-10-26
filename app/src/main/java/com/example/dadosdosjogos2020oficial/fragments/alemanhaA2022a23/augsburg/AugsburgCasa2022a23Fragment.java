@@ -16,6 +16,7 @@ import com.example.dadosdosjogos2020oficial.adapter.alemanhaA2022a23.augsburg.Au
 import com.example.dadosdosjogos2020oficial.data.alemanhaA2022a23.augsburg.AugsburgCasaA2022a23PartidaApi;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentAugsburgCasa2022a23Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -57,7 +58,7 @@ public class AugsburgCasa2022a23Fragment extends Fragment {
 
     private void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/alemanha-a-2022-23/")
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/alemanha-a-2022-23/augsburg/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -74,12 +75,28 @@ public class AugsburgCasa2022a23Fragment extends Fragment {
             @Override
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
 
+                if(response.isSuccessful()){
+                    List<Partida> partidas = response.body();
+                    augsburgCasa2022a23Adapter = new AugsburgCasa2022a23Adapter(partidas);
+                    binding.rvAugsburgCasa.setAdapter(augsburgCasa2022a23Adapter);
+
+
+                }else {
+                    errorBuscarDados();
+                }
+
+
             }
 
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
+                errorBuscarDados();
 
             }
         });
+    }
+
+    private void errorBuscarDados() {
+            Snackbar.make(binding.getRoot(), "Verifique a conexão de Internet", Snackbar.LENGTH_LONG).show();
     }
 }

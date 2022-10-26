@@ -19,7 +19,14 @@ import com.example.dadosdosjogos2020oficial.data.inglesA2022a23.arsenal.ArsenalF
 import com.example.dadosdosjogos2020oficial.databinding.FragmentArsenalCasa2022a23Binding;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentArsenalFora2022a23Binding;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentBayerLeverkusenCasa2022a23Binding;
+import com.example.dadosdosjogos2020oficial.model.Partida;
+import com.google.android.material.snackbar.Snackbar;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -53,15 +60,42 @@ public class ArsenalFora2022a23Fragment extends Fragment {
 
     private void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/ingles-a-2022-23/")
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/ingles-a-2022-23/arsenal/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+
+        arsenalForaA2022a23PartidaApi = retrofit.create(ArsenalForaA2022a23PartidaApi.class);
+
+
     }
 
     private void setupDadosJogos() {
         binding.rvArsenalFora.setHasFixedSize(true);
         binding.rvArsenalFora.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.rvArsenalFora.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
+
+        arsenalForaA2022a23PartidaApi.getArsenalFora().enqueue(new Callback<List<Partida>>() {
+            @Override
+            public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
+                if(response.isSuccessful()){
+                    List<Partida> partidas = response.body();
+                    arsenalFora2022a23Adapter = new ArsenalFora2022a23Adapter(partidas);
+                    binding.rvArsenalFora.setAdapter(arsenalFora2022a23Adapter);
+
+
+                }else {
+                    errorBuscarDados();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Partida>> call, Throwable t) {
+                errorBuscarDados();
+            }
+        });
+    }
+    private void errorBuscarDados() {
+        Snackbar.make(binding.getRoot(), "Verifique a conexão de Internet", Snackbar.LENGTH_LONG).show();
     }
 }
 

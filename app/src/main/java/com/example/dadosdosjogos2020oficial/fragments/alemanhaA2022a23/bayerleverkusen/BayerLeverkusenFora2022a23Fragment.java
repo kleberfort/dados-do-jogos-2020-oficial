@@ -19,6 +19,7 @@ import com.example.dadosdosjogos2020oficial.data.alemanhaA2022a23.bayerleverkuse
 import com.example.dadosdosjogos2020oficial.databinding.FragmentBayerLeverkusenCasa2022a23Binding;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentBayerLeverkusenFora2022a23Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -75,7 +76,14 @@ public class BayerLeverkusenFora2022a23Fragment extends Fragment {
         bayerLeverkusenForaA2022a23PartidaApi.getBayerLeverkusenFora().enqueue(new Callback<List<Partida>>() {
             @Override
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
+                if(response.isSuccessful()){
+                    List<Partida> partidas = response.body();
 
+
+
+                }else {
+                    errorBuscarDados();
+                }
             }
 
             @Override
@@ -83,6 +91,10 @@ public class BayerLeverkusenFora2022a23Fragment extends Fragment {
 
             }
         });
+    }
+
+    private void errorBuscarDados() {
+        Snackbar.make(binding.getRoot(), "Verifique a conexão de Internet", Snackbar.LENGTH_LONG).show();
     }
 }
 

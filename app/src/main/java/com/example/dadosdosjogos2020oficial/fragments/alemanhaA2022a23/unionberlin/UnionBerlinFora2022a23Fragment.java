@@ -17,8 +17,16 @@ import com.example.dadosdosjogos2020oficial.adapter.alemanhaA2022a23.unionberlin
 import com.example.dadosdosjogos2020oficial.data.alemanhaA2022a23.bayerleverkusen.BayerLeverkusenCasaA2022a23PartidaApi;
 import com.example.dadosdosjogos2020oficial.data.alemanhaA2022a23.unionberlin.UnionBerlinForaA2022a23PartidaApi;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentBayerLeverkusenCasa2022a23Binding;
+import com.example.dadosdosjogos2020oficial.databinding.FragmentStuttgartFora2022a23Binding;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentUnionBerlinFora2022a23Binding;
+import com.example.dadosdosjogos2020oficial.model.Partida;
+import com.google.android.material.snackbar.Snackbar;
 
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -58,11 +66,35 @@ public class UnionBerlinFora2022a23Fragment extends Fragment {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
+        unionBerlinForaA2022a23PartidaApi = retrofit.create(UnionBerlinForaA2022a23PartidaApi.class);
+
     }
 
     private void setupDadosJogos() {
         binding.rvUnionBerlinFora.setHasFixedSize(true);
         binding.rvUnionBerlinFora.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.rvUnionBerlinFora.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
+
+        unionBerlinForaA2022a23PartidaApi.getUnionBerlinFora().enqueue(new Callback<List<Partida>>() {
+            @Override
+            public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
+                if(response.isSuccessful()){
+                    List<Partida> partidas = response.body();
+
+
+
+                }else {
+                    errorBuscarDados();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Partida>> call, Throwable t) {
+
+            }
+        });
+    }
+    private void errorBuscarDados() {
+        Snackbar.make(binding.getRoot(), "Verifique a conexão de Internet", Snackbar.LENGTH_LONG).show();
     }
 }
