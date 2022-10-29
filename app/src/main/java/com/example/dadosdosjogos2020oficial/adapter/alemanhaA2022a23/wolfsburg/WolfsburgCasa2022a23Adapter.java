@@ -139,7 +139,7 @@ public class WolfsburgCasa2022a23Adapter extends RecyclerView.Adapter<WolfsburgC
 
     @Override
     public int getItemCount() {
-        return 0;
+        return wolfsburgCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

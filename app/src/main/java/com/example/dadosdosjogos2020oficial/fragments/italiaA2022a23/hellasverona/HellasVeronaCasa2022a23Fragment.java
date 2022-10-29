@@ -76,6 +76,8 @@ public class HellasVeronaCasa2022a23Fragment extends Fragment {
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
                 if(response.isSuccessful()){
                     List<Partida> partidas = response.body();
+                    hellasVeronaCasa2022a23Adapter = new HellasVeronaCasa2022a23Adapter(partidas);
+                    binding.rvhellasVeronaCasa.setAdapter(hellasVeronaCasa2022a23Adapter);
 
 
 
@@ -86,6 +88,7 @@ public class HellasVeronaCasa2022a23Fragment extends Fragment {
 
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
+                errorBuscarDados();
 
             }
         });

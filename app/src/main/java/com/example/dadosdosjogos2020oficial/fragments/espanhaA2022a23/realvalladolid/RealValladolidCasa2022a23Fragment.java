@@ -57,7 +57,7 @@ public class RealValladolidCasa2022a23Fragment extends Fragment {
 
     private void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/espanhol-a-2022-23/")
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/espanhol-a-2022-23/real-valladolid/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -74,6 +74,8 @@ public class RealValladolidCasa2022a23Fragment extends Fragment {
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
                 if(response.isSuccessful()){
                     List<Partida> partidas = response.body();
+                    realValladolidCasa2022a23Adapter = new RealValladolidCasa2022a23Adapter(partidas);
+                    binding.rvRealValladolidCasa.setAdapter(realValladolidCasa2022a23Adapter);
 
 
 
@@ -84,6 +86,7 @@ public class RealValladolidCasa2022a23Fragment extends Fragment {
 
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
+                errorBuscarDados();
 
             }
         });

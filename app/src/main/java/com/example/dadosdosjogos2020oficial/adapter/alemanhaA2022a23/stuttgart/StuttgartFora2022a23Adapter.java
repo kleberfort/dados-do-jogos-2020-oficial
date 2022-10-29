@@ -138,7 +138,7 @@ public class StuttgartFora2022a23Adapter extends RecyclerView.Adapter<StuttgartF
 
     @Override
     public int getItemCount() {
-        return 0;
+        return stuttgartFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

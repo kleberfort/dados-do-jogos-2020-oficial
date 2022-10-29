@@ -85,6 +85,7 @@ public class AugsburgFora2022a23Fragment extends Fragment {
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
                 errorBuscarDados();
+
             }
         });
 

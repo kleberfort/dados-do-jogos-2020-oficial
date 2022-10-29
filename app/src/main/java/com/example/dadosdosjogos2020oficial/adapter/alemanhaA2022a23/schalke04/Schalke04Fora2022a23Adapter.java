@@ -138,7 +138,7 @@ public class Schalke04Fora2022a23Adapter extends RecyclerView.Adapter<Schalke04F
 
     @Override
     public int getItemCount() {
-        return 0;
+        return schalke04Fora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

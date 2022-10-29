@@ -58,7 +58,7 @@ public class BolognaCasa2022a23Fragment extends Fragment {
 
     private void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/italia-a-2022-23/")
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/italia-a-2022-23/bologna/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -76,7 +76,8 @@ public class BolognaCasa2022a23Fragment extends Fragment {
 
                 if(response.isSuccessful()){
                     List<Partida> partidas = response.body();
-
+                    bolognaCasa2022a23Adapter = new BolognaCasa2022a23Adapter(partidas);
+                    binding.rvBolognaCasa.setAdapter(bolognaCasa2022a23Adapter);
 
 
                 }else {
@@ -86,6 +87,7 @@ public class BolognaCasa2022a23Fragment extends Fragment {
 
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
+                errorBuscarDados();
 
             }
         });

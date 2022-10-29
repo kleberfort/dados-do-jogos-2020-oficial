@@ -14,6 +14,7 @@ import android.widget.LinearLayout;
 import com.example.dadosdosjogos2020oficial.R;
 import com.example.dadosdosjogos2020oficial.adapter.alemanhaA2022a23.bayerleverkusen.BayerLeverkusenCasa2022a23Adapter;
 import com.example.dadosdosjogos2020oficial.adapter.inglesA2022a2023.westham.WesthamCasa2022a23Adapter;
+import com.example.dadosdosjogos2020oficial.adapter.inglesA2022a2023.westham.WesthamFora2022a23Adapter;
 import com.example.dadosdosjogos2020oficial.data.alemanhaA2022a23.bayerleverkusen.BayerLeverkusenCasaA2022a23PartidaApi;
 import com.example.dadosdosjogos2020oficial.data.inglesA2022a23.westham.WestHamForaA2022a23PartidaApi;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentBayerLeverkusenCasa2022a23Binding;
@@ -34,7 +35,7 @@ public class WestHamFora2022a23Fragment extends Fragment {
 
     private FragmentWestHamFora2022a23Binding binding;
     private WestHamForaA2022a23PartidaApi westHamForaA2022a23PartidaApi;
-    private WesthamCasa2022a23Adapter westhamCasa2022a23Adapter;
+    private WesthamFora2022a23Adapter westhamFora2022a23Adapter;
 
     public WestHamFora2022a23Fragment() {
         // Required empty public constructor
@@ -58,7 +59,7 @@ public class WestHamFora2022a23Fragment extends Fragment {
 
     private void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/ingles-a-2022-23/")
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/ingles-a-2022-23/west-ham/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -75,6 +76,8 @@ public class WestHamFora2022a23Fragment extends Fragment {
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
                 if(response.isSuccessful()){
                     List<Partida> partidas = response.body();
+                    westhamFora2022a23Adapter = new WesthamFora2022a23Adapter(partidas);
+                    binding.rvWesthamFora.setAdapter(westhamFora2022a23Adapter);
 
 
 
@@ -85,6 +88,7 @@ public class WestHamFora2022a23Fragment extends Fragment {
 
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
+                errorBuscarDados();
 
             }
         });

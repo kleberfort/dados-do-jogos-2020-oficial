@@ -138,7 +138,7 @@ public class BochumFora2022a23Adapter extends RecyclerView.Adapter<BochumFora202
 
     @Override
     public int getItemCount() {
-        return 0;
+        return bochumFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

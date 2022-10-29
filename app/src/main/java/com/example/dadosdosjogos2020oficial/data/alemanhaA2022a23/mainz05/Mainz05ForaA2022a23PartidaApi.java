@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 
 public interface Mainz05ForaA2022a23PartidaApi {
 
-    @GET("fora-a-2022.json")
+    @GET("fora-a-2022-23.json")
     Call<List<Partida>> getMainz05Fora();
 }

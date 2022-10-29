@@ -62,7 +62,7 @@ public class LeipzigFora2022a23Fragment extends Fragment {
 
     private void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/alemanha-a-2022-23/")
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/alemanha-a-2022-23/leipzig/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -80,6 +80,8 @@ public class LeipzigFora2022a23Fragment extends Fragment {
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
                 if(response.isSuccessful()){
                     List<Partida> partidas = response.body();
+                    leipzigFora2022a23Adapter = new LeipzigFora2022a23Adapter(partidas);
+                    binding.rvLeipzigFora.setAdapter(leipzigFora2022a23Adapter);
 
 
 
@@ -90,6 +92,7 @@ public class LeipzigFora2022a23Fragment extends Fragment {
 
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
+                errorBuscarDados();
 
             }
         });

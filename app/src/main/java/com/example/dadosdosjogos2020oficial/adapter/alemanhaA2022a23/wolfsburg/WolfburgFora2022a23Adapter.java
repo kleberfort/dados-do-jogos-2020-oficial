@@ -138,7 +138,7 @@ public class WolfburgFora2022a23Adapter extends RecyclerView.Adapter<WolfburgFor
 
     @Override
     public int getItemCount() {
-        return 0;
+        return wolfburgFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

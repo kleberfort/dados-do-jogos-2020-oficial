@@ -138,7 +138,7 @@ public class Mainz05Fora2022a23Adapter extends RecyclerView.Adapter<Mainz05Fora2
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mainz05Fora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

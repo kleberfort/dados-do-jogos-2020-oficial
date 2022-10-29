@@ -138,7 +138,7 @@ public class BorussiaMonchengladbachFora2022a23Adapter extends RecyclerView.Adap
 
     @Override
     public int getItemCount() {
-        return 0;
+        return borussiaMonchengladbachFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

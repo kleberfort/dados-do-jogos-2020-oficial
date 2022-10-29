@@ -138,7 +138,7 @@ public class HerthaBerlinCasa2022a23Adapter extends RecyclerView.Adapter<HerthaB
 
     @Override
     public int getItemCount() {
-        return 0;
+        return herthaBerlinCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
