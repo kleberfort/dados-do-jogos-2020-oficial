@@ -518,6 +518,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/primary_200"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
 
@@ -530,6 +531,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/primary_200"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
 
@@ -542,6 +544,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/secondary_200"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
                     </TableRow>
@@ -572,6 +575,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/primary_200"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
 
@@ -584,6 +588,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/primary_200"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
 
@@ -596,6 +601,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/secondary_200"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
                     </TableRow>
@@ -627,6 +633,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/primary_700"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
 
@@ -639,6 +646,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/primary_700"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
 
@@ -651,6 +659,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/primary_700"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
                     </TableRow>
@@ -758,6 +767,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/primary_200"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
 
@@ -770,19 +780,21 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/primary_200"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
 
                         <TextView
                             android:id="@+id/tvCasaGolsTotal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_marginEnd="2dp"
                             android:layout_weight="2"
                             android:background="@drawable/background_borda_linha_coluna"
+                            android:backgroundTint="@color/secondary_200"
                             android:gravity="center"
-                            android:textStyle="bold"
                             android:textColor="@color/secondary_900"
+                            android:textStyle="bold"
                             tools:text="0" />
                     </TableRow>
 
@@ -814,6 +826,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/primary_200"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
 
@@ -826,6 +839,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/primary_200"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
 
@@ -838,6 +852,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/secondary_200"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
                     </TableRow>
@@ -869,6 +884,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/primary_700"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
 
@@ -881,6 +897,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/primary_700"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
 
@@ -893,6 +910,7 @@
                             android:background="@drawable/background_borda_linha_coluna"
                             android:gravity="center"
                             android:textStyle="bold"
+                            android:backgroundTint="@color/primary_700"
                             android:textColor="@color/secondary_900"
                             tools:text="0" />
                     </TableRow>

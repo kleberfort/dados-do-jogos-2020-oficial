@@ -122,7 +122,6 @@ public class ListaAlemaoA2022a23Fragment extends Fragment {
                     timesAlemaoA022a23Adapter = new TimesAlemaoA022a23Adapter(listaDeTimes);
                     binding.rvListaAlemaoA2022a23.setAdapter(timesAlemaoA022a23Adapter);
 
-
                     binding.rvListaAlemaoA2022a23.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), binding.rvListaAlemaoA2022a23, new RecyclerItemClickListener.OnItemClickListener() {
                         @Override
                         public void onItemClick(View view, int position) {

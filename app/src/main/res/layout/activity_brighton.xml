@@ -36,6 +36,9 @@
 
 
 
+
+
+
         app:stl_indicatorAlwaysInCenter="false"
         app:stl_indicatorWithoutPadding="false"
         app:stl_indicatorInFront="false"

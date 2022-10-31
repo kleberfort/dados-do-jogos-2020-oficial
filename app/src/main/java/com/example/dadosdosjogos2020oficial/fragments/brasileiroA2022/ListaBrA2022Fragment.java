@@ -109,89 +109,89 @@ public class ListaBrA2022Fragment extends Fragment {
                     binding.rvListaBrasileiroSeriaA2022.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), binding.rvListaBrasileiroSeriaA2022, new RecyclerItemClickListener.OnItemClickListener() {
                         @Override
                         public void onItemClick(View view, int position) {
-                            //TimesBrA2022 timesBrA2022 = listaDeTimes.get(position);
+                            ListaTimeCampeonatoPrincipal lista = listaDeTimes.get(position);
 
 
-                            switch (position){
-                                case 0:
+                            switch (lista.getName()){
+                                case "América-MG":
                                     Intent americaMg = new Intent(getContext(), AmericaMgActivity.class);
                                     startActivity(americaMg);
                                     Toast.makeText(getContext(), "América-MG", Toast.LENGTH_LONG).show();
                                     break;
-                                case 1:
+                                case "Atlético-PR":
                                     Intent atleticoPr = new Intent(getContext(), AtleticoPrActivity.class);
                                     startActivity(atleticoPr);
                                     break;
-                                case 2:
+                                case "Atlético-MG":
                                     Intent atleticoMg = new Intent(getContext(), AtleticoMgActivity.class);
                                     startActivity(atleticoMg);
                                     break;
-                                case 3:
+                                case "Atlético-GO":
                                     Intent atleticoGo = new Intent(getContext(), AtleticoGoActivity.class);
                                     startActivity(atleticoGo);
                                     break;
-                                case 4:
+                                case "Avaí":
                                     Intent avai = new Intent(getContext(), AvaiActivity.class);
                                     startActivity(avai);
                                     break;
-                                case 5:
+                                case "Botafogo":
                                     Intent botafogo = new Intent(getContext(), BotafogoActivity.class);
                                     startActivity(botafogo);
                                     break;
-                                case 6:
+                                case "Bragantino":
                                     Intent bragantino = new Intent(getContext(), BragantinoActivity.class);
                                     startActivity(bragantino);
                                     break;
-                                case 7:
+                                case "Ceará":
                                     Intent ceara = new Intent(getContext(), CearaActivity.class);
                                     startActivity(ceara);
                                     Toast.makeText(getContext(), "Ceará", Toast.LENGTH_LONG).show();
                                     break;
-                                case 8:
+                                case "Corinthians":
                                     Intent corinthians = new Intent(getContext(), CorinthiansActivity.class);
                                     startActivity(corinthians);
                                     break;
-                                case 9:
+                                case "Coritiba":
                                     Intent coritiba = new Intent(getContext(), CoritibaActivity.class);
                                     startActivity(coritiba);
                                     break;
-                                case 10:
+                                case "Cuiabá":
                                     Intent cuiaba = new Intent(getContext(), CuiabaActivity.class);
                                     startActivity(cuiaba);
                                     break;
-                                case 11:
+                                case "Flamengo":
                                     Intent flamengo = new Intent(getContext(), FlamengoActivity.class);
                                     startActivity(flamengo);
                                     break;
-                                case 12:
+                                case "Fluminense":
                                     Intent fluminense = new Intent(getContext(), FluminenseActivity.class);
                                     startActivity(fluminense);
                                     break;
-                                case 13:
+                                case "Fortaleza":
                                     Intent fortaleza = new Intent(getContext(), FortalezaActivity.class);
                                     startActivity(fortaleza);
                                     break;
-                                case 14:
+                                case "Goiás":
                                     Intent goias = new Intent(getContext(), GoiasActivity.class);
                                     startActivity(goias);
                                     break;
-                                case 15:
+                                case "Juventude":
                                     Intent juventude = new Intent(getContext(), JuventudeActivity.class);
                                     startActivity(juventude);
                                     break;
-                                case 16:
+                                case "Internacional":
                                     Intent internacional = new Intent(getContext(), InternacionalActivity.class);
                                     startActivity(internacional);
                                     break;
-                                case 17:
+                                case "Palmeiras":
                                     Intent palmeiras = new Intent(getContext(), PalmeirasActivity.class);
                                     startActivity(palmeiras);
                                     break;
-                                case 18:
+                                case "Santos":
                                     Intent santos = new Intent(getContext(), SantosActivity.class);
                                     startActivity(santos);
                                     break;
-                                case 19:
+                                case "São-Paulo":
                                     Intent saopaulo = new Intent(getContext(), SaoPauloActivity.class);
                                     startActivity(saopaulo);
                                     break;
