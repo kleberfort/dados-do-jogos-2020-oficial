@@ -138,7 +138,7 @@ public class LyonCasa2022a23Adapter extends RecyclerView.Adapter<LyonCasa2022a23
 
     @Override
     public int getItemCount() {
-        return 0;
+        return lyonCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

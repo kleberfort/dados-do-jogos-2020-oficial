@@ -138,7 +138,7 @@ public class UdineseCasa2022a23Adapter extends RecyclerView.Adapter<UdineseCasa2
 
     @Override
     public int getItemCount() {
-        return 0;
+        return udineseCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

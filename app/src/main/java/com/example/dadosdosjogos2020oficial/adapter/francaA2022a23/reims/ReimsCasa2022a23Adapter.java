@@ -138,7 +138,7 @@ public class ReimsCasa2022a23Adapter extends RecyclerView.Adapter<ReimsCasa2022a
 
     @Override
     public int getItemCount() {
-        return 0;
+        return reimsCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

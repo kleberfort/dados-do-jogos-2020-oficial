@@ -138,7 +138,7 @@ public class MarseilleCasa2022a23Adapter extends RecyclerView.Adapter<MarseilleC
 
     @Override
     public int getItemCount() {
-        return 0;
+        return marseilleCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

@@ -138,7 +138,7 @@ public class NiceFora2022a23Adapter extends RecyclerView.Adapter<NiceFora2022a23
 
     @Override
     public int getItemCount() {
-        return 0;
+        return niceFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

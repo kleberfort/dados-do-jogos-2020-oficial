@@ -139,7 +139,7 @@ public class ManchesterCityCasa2022a23Adapter extends RecyclerView.Adapter<Manch
 
     @Override
     public int getItemCount() {
-        return 0;
+        return machesterCityCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

@@ -138,7 +138,7 @@ public class AtalantaCasa2022a23Adapter extends RecyclerView.Adapter<AtalantaCas
 
     @Override
     public int getItemCount() {
-        return 0;
+        return atalantaCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

@@ -138,7 +138,7 @@ public class ToulouseFora2022a23Adapter extends RecyclerView.Adapter<ToulouseFor
 
     @Override
     public int getItemCount() {
-        return 0;
+        return toulouseFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

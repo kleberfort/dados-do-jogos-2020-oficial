@@ -138,7 +138,7 @@ public class RealSociedadCasa2022a23Adapter extends RecyclerView.Adapter<RealSoc
 
     @Override
     public int getItemCount() {
-        return 0;
+        return realSociedadCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

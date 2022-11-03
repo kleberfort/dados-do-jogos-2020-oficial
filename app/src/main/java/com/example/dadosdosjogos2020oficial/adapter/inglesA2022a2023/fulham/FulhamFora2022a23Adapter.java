@@ -140,7 +140,7 @@ public class FulhamFora2022a23Adapter extends RecyclerView.Adapter<FulhamFora202
 
     @Override
     public int getItemCount() {
-        return 0;
+        return fulhamFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

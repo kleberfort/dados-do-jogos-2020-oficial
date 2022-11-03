@@ -139,7 +139,7 @@ public class WesthamCasa2022a23Adapter extends RecyclerView.Adapter<WesthamCasa2
 
     @Override
     public int getItemCount() {
-        return 0;
+        return westhamCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

@@ -19,6 +19,7 @@ import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.ceara.Cear
 import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.fortaleza.FortalezaForaA2022PartidaApi;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentFortalezaFora2022Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -82,7 +83,7 @@ public class FortalezaFora2022Fragment extends Fragment {
                     fortalezaForaA2022Adapter = new FortalezaForaA2022Adapter(partidas);
                     binding.rvFortalezaFora.setAdapter(fortalezaForaA2022Adapter);
                 }else {
-                    erroBuscaDados();
+                    errorBuscarDados();
                 }
 
             }
@@ -90,13 +91,15 @@ public class FortalezaFora2022Fragment extends Fragment {
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
 
+                errorBuscarDados();
+
             }
         });
 
     }
 
-    private void erroBuscaDados() {
-        Log.i("ERRO", "Erro na busca dos dados");
+    private void errorBuscarDados() {
+        Snackbar.make(binding.getRoot(), "erro ao buscar dados da API, Verifique a conexão de Internet, ", Snackbar.LENGTH_LONG).show();
     }
 
 }

@@ -138,7 +138,7 @@ public class CeltaVigoFora2022a23Adapter extends RecyclerView.Adapter<CeltaVigoF
 
     @Override
     public int getItemCount() {
-        return 0;
+        return celtaVigoFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

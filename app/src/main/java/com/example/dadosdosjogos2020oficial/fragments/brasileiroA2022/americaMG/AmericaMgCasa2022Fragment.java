@@ -40,6 +40,7 @@ import com.example.dadosdosjogos2020oficial.databinding.FragmentAmericaMgCasa202
 import com.example.dadosdosjogos2020oficial.model.ListaTimeCampeonatoPrincipal;
 import com.example.dadosdosjogos2020oficial.model.Partida;
 import com.example.dadosdosjogos2020oficial.model.RecyclerItemClickListener;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -199,7 +200,7 @@ public class AmericaMgCasa2022Fragment extends Fragment {
                     }));
 
                 }else {
-                    erroBuscaDados();
+                    errorBuscarDados();
                 }
 
 
@@ -207,13 +208,13 @@ public class AmericaMgCasa2022Fragment extends Fragment {
 
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
-                    erroBuscaDados();
+                errorBuscarDados() ;
             }
         });
 
     }
 
-    private void erroBuscaDados() {
-        Log.i("ERRO", "Erro na busca dos dados");
+    private void errorBuscarDados() {
+        Snackbar.make(binding.getRoot(), "erro ao buscar dados da API, Verifique a conexão de Internet, ", Snackbar.LENGTH_LONG).show();
     }
 }

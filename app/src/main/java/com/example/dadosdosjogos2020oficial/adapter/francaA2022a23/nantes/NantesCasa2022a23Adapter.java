@@ -138,7 +138,7 @@ public class NantesCasa2022a23Adapter extends RecyclerView.Adapter<NantesCasa202
 
     @Override
     public int getItemCount() {
-        return 0;
+        return nantesCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

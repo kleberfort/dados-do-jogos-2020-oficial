@@ -207,21 +207,21 @@ public class ListaBrA2022Fragment extends Fragment {
                     }));
 
                 }else{
-                    errorMensagem();
+                    errorBuscarDados();
                 }
             }
 
             @Override
             public void onFailure(Call<List<ListaTimeCampeonatoPrincipal>> call, Throwable t) {
-                errorMensagem();
+                errorBuscarDados();
             }
         });
 
     }
 
-    private void errorMensagem() {
+    private void errorBuscarDados() {
 
-        Snackbar.make(binding.getRoot(), "Error ao buscar dados da Api", Snackbar.LENGTH_LONG).show();
+        Snackbar.make(binding.getRoot(), "erro ao buscar dados da API, Verifique a conexão de Internet, ", Snackbar.LENGTH_LONG).show();
 
     }
 

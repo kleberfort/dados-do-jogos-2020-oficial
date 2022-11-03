@@ -139,7 +139,7 @@ public class WolverhamptonFora2022a23Adapter extends RecyclerView.Adapter<Wolver
 
     @Override
     public int getItemCount() {
-        return 0;
+        return wolverhamptonFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

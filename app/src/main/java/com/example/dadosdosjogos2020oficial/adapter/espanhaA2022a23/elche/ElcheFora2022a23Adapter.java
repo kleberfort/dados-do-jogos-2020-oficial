@@ -138,7 +138,7 @@ public class ElcheFora2022a23Adapter extends RecyclerView.Adapter<ElcheFora2022a
 
     @Override
     public int getItemCount() {
-        return 0;
+        return elcheFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

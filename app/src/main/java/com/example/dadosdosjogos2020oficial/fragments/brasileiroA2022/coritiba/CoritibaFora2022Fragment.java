@@ -19,6 +19,7 @@ import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.coritiba.C
 import com.example.dadosdosjogos2020oficial.databinding.FragmentAtleticoPRFora2022Binding;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentCoritibaFora2022Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -84,18 +85,21 @@ public class CoritibaFora2022Fragment extends Fragment {
                     coritibaForaA2022Adapter = new CoritibaForaA2022Adapter(partidas);
                     binding.rvCoritibaFora.setAdapter(coritibaForaA2022Adapter);
                 }else {
-                    erroBuscaDados();
+                    errorBuscarDados();
                 }
             }
 
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
 
+                errorBuscarDados();
+
             }
         });
 
     }
 
-    private void erroBuscaDados() {
+    private void errorBuscarDados() {
+        Snackbar.make(binding.getRoot(), "erro ao buscar dados da API, Verifique a conexão de Internet, ", Snackbar.LENGTH_LONG).show();
     }
 }

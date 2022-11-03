@@ -139,7 +139,7 @@ public class LeedsUnitedCasa2022a23Adapter extends RecyclerView.Adapter<LeedsUni
 
     @Override
     public int getItemCount() {
-        return 0;
+        return leedsUnitedCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

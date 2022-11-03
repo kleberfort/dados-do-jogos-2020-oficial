@@ -138,7 +138,7 @@ public class PsgCasa2022a23Adapter extends RecyclerView.Adapter<PsgCasa2022a23Ad
 
     @Override
     public int getItemCount() {
-        return 0;
+        return psgCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

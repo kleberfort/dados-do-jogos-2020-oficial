@@ -138,7 +138,7 @@ public class LorientCasa2022a23Adapter extends RecyclerView.Adapter<LorientCasa2
 
     @Override
     public int getItemCount() {
-        return 0;
+        return lorientCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

@@ -139,7 +139,7 @@ public class BrightonFora2022a23Adapter extends RecyclerView.Adapter<BrightonFor
 
     @Override
     public int getItemCount() {
-        return 0;
+        return brightonFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

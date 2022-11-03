@@ -138,7 +138,7 @@ public class TroyesFora2022a23Adapter extends RecyclerView.Adapter<TroyesFora202
 
     @Override
     public int getItemCount() {
-        return 0;
+        return troyesFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

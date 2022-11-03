@@ -138,7 +138,7 @@ public class FiorentinaFora2022a23Adapter extends RecyclerView.Adapter<Fiorentin
 
     @Override
     public int getItemCount() {
-        return 0;
+        return fiorentinaFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

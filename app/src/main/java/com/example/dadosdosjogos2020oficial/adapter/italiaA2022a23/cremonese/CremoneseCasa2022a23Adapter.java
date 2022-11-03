@@ -138,7 +138,7 @@ public class CremoneseCasa2022a23Adapter extends RecyclerView.Adapter<CremoneseC
 
     @Override
     public int getItemCount() {
-        return 0;
+        return cremoneseCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

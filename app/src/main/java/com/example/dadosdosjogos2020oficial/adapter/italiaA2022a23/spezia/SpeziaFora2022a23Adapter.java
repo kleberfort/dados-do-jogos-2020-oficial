@@ -138,7 +138,7 @@ public class SpeziaFora2022a23Adapter extends RecyclerView.Adapter<SpeziaFora202
 
     @Override
     public int getItemCount() {
-        return 0;
+        return speziaFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

@@ -138,7 +138,7 @@ public class RomaFora2022a23Adapter extends RecyclerView.Adapter<RomaFora2022a23
 
     @Override
     public int getItemCount() {
-        return 0;
+        return romaFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

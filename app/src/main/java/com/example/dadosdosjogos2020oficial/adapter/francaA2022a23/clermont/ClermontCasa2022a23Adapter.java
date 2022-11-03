@@ -138,7 +138,7 @@ public class ClermontCasa2022a23Adapter extends RecyclerView.Adapter<ClermontCas
 
     @Override
     public int getItemCount() {
-        return 0;
+        return clermontCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

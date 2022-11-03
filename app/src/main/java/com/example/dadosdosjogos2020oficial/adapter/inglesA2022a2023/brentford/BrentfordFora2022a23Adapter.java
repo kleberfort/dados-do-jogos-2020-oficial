@@ -139,7 +139,7 @@ public class BrentfordFora2022a23Adapter extends RecyclerView.Adapter<BrentfordF
 
     @Override
     public int getItemCount() {
-        return 0;
+        return brentfordFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

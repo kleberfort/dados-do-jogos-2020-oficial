@@ -15,6 +15,7 @@ import com.example.dadosdosjogos2020oficial.adapter.brasileiroA2022.ceara.CearaC
 import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.ceara.CearaCasaA2022PartidaApi;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentCearaCasa2022Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -84,21 +85,21 @@ public class CearaCasa2022Fragment extends Fragment {
                     cearaCasaA2022Adapter = new CearaCasaA2022Adapter(partidas);
                     binding.rvCearaCasa.setAdapter(cearaCasaA2022Adapter);
                 }else {
-                    erroBuscaDados();
+                    errorBuscarDados();
                 }
             }
 
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
-                    erroBuscaDados();
+                errorBuscarDados();
             }
         });
 
 
     }
 
-    private void erroBuscaDados() {
-        Log.i("ERRO", "Erro na busca dos dados");
+    private void errorBuscarDados() {
+        Snackbar.make(binding.getRoot(), "erro ao buscar dados da API, Verifique a conexão de Internet, ", Snackbar.LENGTH_LONG).show();
     }
 
 

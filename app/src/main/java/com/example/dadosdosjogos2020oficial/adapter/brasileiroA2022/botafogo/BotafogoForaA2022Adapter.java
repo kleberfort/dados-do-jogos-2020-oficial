@@ -18,7 +18,7 @@ public class BotafogoForaA2022Adapter extends RecyclerView.Adapter<BotafogoForaA
     private List<Partida> botafogoFora2022;
 
     public BotafogoForaA2022Adapter(List<Partida> botafogoFora2022) {
-        botafogoFora2022 = botafogoFora2022;
+        this.botafogoFora2022 = botafogoFora2022;
     }
 
     @NonNull

@@ -19,6 +19,7 @@ import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.flamengo.F
 import com.example.dadosdosjogos2020oficial.databinding.FragmentAtleticoPRFora2022Binding;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentFlamengoFora2022Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -84,18 +85,21 @@ public class FlamengoFora2022Fragment extends Fragment {
                     flamengoForaA2022Adapter = new FlamengoForaA2022Adapter(partidas);
                     binding.rvFlamengoFora.setAdapter(flamengoForaA2022Adapter);
                 }else {
-                    erroBuscaDados();
+                    errorBuscarDados();
                 }
             }
 
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
 
+                errorBuscarDados();
+
             }
         });
         
     }
 
-    private void erroBuscaDados() {
+    private void errorBuscarDados() {
+        Snackbar.make(binding.getRoot(), "erro ao buscar dados da API, Verifique a conexão de Internet, ", Snackbar.LENGTH_LONG).show();
     }
 }

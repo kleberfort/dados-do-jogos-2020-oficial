@@ -139,7 +139,7 @@ public class TottenhamFora2022a23Adapter extends RecyclerView.Adapter<TottenhamF
 
     @Override
     public int getItemCount() {
-        return 0;
+        return tottenhamFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

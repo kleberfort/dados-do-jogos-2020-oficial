@@ -138,7 +138,7 @@ public class SevillaFora2022a23Adapter extends RecyclerView.Adapter<SevillaFora2
 
     @Override
     public int getItemCount() {
-        return 0;
+        return sevillaFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

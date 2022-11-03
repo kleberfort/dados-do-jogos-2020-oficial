@@ -139,7 +139,7 @@ public class BournemouthFora2022a23Adapter extends RecyclerView.Adapter<Bournemo
 
     @Override
     public int getItemCount() {
-        return 0;
+        return bournemouthFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

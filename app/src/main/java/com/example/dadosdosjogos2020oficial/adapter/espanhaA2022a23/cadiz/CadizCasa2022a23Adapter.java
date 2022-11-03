@@ -138,7 +138,7 @@ public class CadizCasa2022a23Adapter extends RecyclerView.Adapter<CadizCasa2022a
 
     @Override
     public int getItemCount() {
-        return 0;
+        return cadizCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

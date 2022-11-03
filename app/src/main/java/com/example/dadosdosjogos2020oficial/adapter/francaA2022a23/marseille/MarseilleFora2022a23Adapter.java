@@ -138,7 +138,7 @@ public class MarseilleFora2022a23Adapter extends RecyclerView.Adapter<MarseilleF
 
     @Override
     public int getItemCount() {
-        return 0;
+        return marseilleFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

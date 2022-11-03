@@ -97,7 +97,7 @@ public class BorussiaDortmundFora2022a23Fragment extends Fragment {
         });
     }
     private void errorBuscarDados() {
-        Snackbar.make(binding.getRoot(), "Verifique a conexão de Internet", Snackbar.LENGTH_LONG).show();
+        Snackbar.make(binding.getRoot(), "erro ao buscar dados da API, Verifique a conexão de Internet, ", Snackbar.LENGTH_LONG).show();
     }
 }
 

@@ -138,7 +138,7 @@ public class AjaccioCasa2022a23Adapter extends RecyclerView.Adapter<AjaccioCasa2
 
     @Override
     public int getItemCount() {
-        return 0;
+        return ajaccioCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

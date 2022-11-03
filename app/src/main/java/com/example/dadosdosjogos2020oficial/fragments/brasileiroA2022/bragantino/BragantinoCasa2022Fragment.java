@@ -19,6 +19,7 @@ import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.bragantino
 import com.example.dadosdosjogos2020oficial.databinding.FragmentAtleticoPRFora2022Binding;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentBragantinoCasa2022Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -82,18 +83,20 @@ public class BragantinoCasa2022Fragment extends Fragment {
                     bragantinoCasaA2022Adapter = new BragantinoCasaA2022Adapter(partidas);
                     binding.rvBragantinoCasa.setAdapter(bragantinoCasaA2022Adapter);
                 }else {
-                    erroBuscaDados();
+                    errorBuscarDados();
                 }
             }
 
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
+                errorBuscarDados();
 
             }
         });
 
     }
 
-    private void erroBuscaDados() {
+    private void errorBuscarDados() {
+        Snackbar.make(binding.getRoot(), "erro ao buscar dados da API, Verifique a conexão de Internet, ", Snackbar.LENGTH_LONG).show();
     }
 }

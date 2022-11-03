@@ -138,7 +138,7 @@ public class LecceCasa2022a23Adapter extends RecyclerView.Adapter<LecceCasa2022a
 
     @Override
     public int getItemCount() {
-        return 0;
+        return lecceCasa2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

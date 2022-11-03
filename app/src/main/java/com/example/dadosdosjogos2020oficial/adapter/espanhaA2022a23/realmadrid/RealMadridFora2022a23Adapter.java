@@ -138,7 +138,7 @@ public class RealMadridFora2022a23Adapter extends RecyclerView.Adapter<RealMadri
 
     @Override
     public int getItemCount() {
-        return 0;
+        return realMadridFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

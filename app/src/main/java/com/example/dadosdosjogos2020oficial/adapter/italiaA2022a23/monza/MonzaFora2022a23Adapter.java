@@ -138,7 +138,7 @@ public class MonzaFora2022a23Adapter extends RecyclerView.Adapter<MonzaFora2022a
 
     @Override
     public int getItemCount() {
-        return 0;
+        return monzaFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

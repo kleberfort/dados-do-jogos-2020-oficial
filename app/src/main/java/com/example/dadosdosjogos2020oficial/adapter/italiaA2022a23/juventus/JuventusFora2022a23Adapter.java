@@ -138,7 +138,7 @@ public class JuventusFora2022a23Adapter extends RecyclerView.Adapter<JuventusFor
 
     @Override
     public int getItemCount() {
-        return 0;
+        return juventusFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

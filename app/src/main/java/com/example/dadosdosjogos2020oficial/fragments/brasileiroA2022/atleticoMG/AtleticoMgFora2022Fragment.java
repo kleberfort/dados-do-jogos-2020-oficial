@@ -19,6 +19,7 @@ import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.atleticoMG
 import com.example.dadosdosjogos2020oficial.databinding.FragmentAtleticoGOCasa2022Binding;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentAtleticoMgFora2022Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -86,18 +87,20 @@ public class AtleticoMgFora2022Fragment extends Fragment {
                     atleticoMgForaA2022Adapter = new AtleticoMgForaA2022Adapter(partidas);
                     binding.rvAtleticoMgFora.setAdapter(atleticoMgForaA2022Adapter);
                 }else {
-                    erroBuscaDados();
+                    errorBuscarDados();
                 }
             }
 
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
+                errorBuscarDados();
 
             }
         });
 
     }
 
-    private void erroBuscaDados() {
+    private void errorBuscarDados() {
+        Snackbar.make(binding.getRoot(), "erro ao buscar dados da API, Verifique a conexão de Internet, ", Snackbar.LENGTH_LONG).show();
     }
 }

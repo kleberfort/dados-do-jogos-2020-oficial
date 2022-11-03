@@ -15,6 +15,7 @@ import com.example.dadosdosjogos2020oficial.adapter.brasileiroA2022.fortaleza.Fo
 import com.example.dadosdosjogos2020oficial.data.brasileiroSerieA2022.fortaleza.FortalezaCasaA2022PartidaApi;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentFortalezaCasa2022Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -74,7 +75,7 @@ public class FortalezaCasa2022Fragment extends Fragment {
                     fortalezaCasaA2022Adapter = new FortalezaCasaA2022Adapter(partidas);
                     binding.rvFortalezaCasa.setAdapter(fortalezaCasaA2022Adapter);
                 } else {
-                    erroBuscaDados();
+                    errorBuscarDados();
                 }
 
             }
@@ -82,13 +83,15 @@ public class FortalezaCasa2022Fragment extends Fragment {
             @Override
             public void onFailure(Call<List<Partida>> call, Throwable t) {
 
+                errorBuscarDados();
+
             }
         });
 
     }
 
-    private void erroBuscaDados() {
-        Log.i("ERRO", "Erro na busca dos dados");
+    private void errorBuscarDados() {
+        Snackbar.make(binding.getRoot(), "erro ao buscar dados da API, Verifique a conexão de Internet, ", Snackbar.LENGTH_LONG).show();
     }
 
 }

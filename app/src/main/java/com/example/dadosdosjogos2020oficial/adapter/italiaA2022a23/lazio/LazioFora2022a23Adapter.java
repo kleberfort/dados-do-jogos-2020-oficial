@@ -138,7 +138,7 @@ public class LazioFora2022a23Adapter extends RecyclerView.Adapter<LazioFora2022a
 
     @Override
     public int getItemCount() {
-        return 0;
+        return lazioFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

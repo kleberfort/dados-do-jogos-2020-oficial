@@ -138,7 +138,7 @@ public class SassuoloFora2022a23Adapter extends RecyclerView.Adapter<SassuoloFor
 
     @Override
     public int getItemCount() {
-        return 0;
+        return sassuoloFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

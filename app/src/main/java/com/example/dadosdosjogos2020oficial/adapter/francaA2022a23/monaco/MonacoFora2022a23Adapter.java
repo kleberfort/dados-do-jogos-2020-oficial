@@ -138,7 +138,7 @@ public class MonacoFora2022a23Adapter extends RecyclerView.Adapter<MonacoFora202
 
     @Override
     public int getItemCount() {
-        return 0;
+        return monacoFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

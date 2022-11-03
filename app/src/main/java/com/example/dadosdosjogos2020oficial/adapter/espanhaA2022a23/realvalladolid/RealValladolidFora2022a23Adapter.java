@@ -138,7 +138,7 @@ public class RealValladolidFora2022a23Adapter extends RecyclerView.Adapter<RealV
 
     @Override
     public int getItemCount() {
-        return 0;
+        return realValladolidFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{

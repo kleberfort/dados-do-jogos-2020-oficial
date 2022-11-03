@@ -138,7 +138,7 @@ public class LilleFora2022a23Adapter extends RecyclerView.Adapter<LilleFora2022a
 
     @Override
     public int getItemCount() {
-        return 0;
+        return lilleFora2022_23.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
