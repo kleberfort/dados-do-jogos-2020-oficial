@@ -19,7 +19,7 @@ public class FreiburgCasa2022a23Adapter extends RecyclerView.Adapter<FreiburgCas
     private List<Partida> freiburgCasa2022_23;
 
     public FreiburgCasa2022a23Adapter(List<Partida> freiburgCasa2022_23) {
-        freiburgCasa2022_23 = freiburgCasa2022_23;
+        this.freiburgCasa2022_23 = freiburgCasa2022_23;
     }
 
     @NonNull

@@ -3,6 +3,7 @@ package com.example.dadosdosjogos2020oficial.activity.brasilA2022;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.dadosdosjogos2020oficial.databinding.ActivityMainBinding;
@@ -12,6 +13,10 @@ import com.example.dadosdosjogos2020oficial.fragments.francaA2022a23.ListaFrance
 import com.example.dadosdosjogos2020oficial.fragments.inglesA2022a23.ListaInglesA2022a23Fragment;
 import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.ListaBrA2022Fragment;
 import com.example.dadosdosjogos2020oficial.fragments.italiaA2022a23.ListaItalianoA2022a23Fragment;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
@@ -25,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+
+        getSupportActionBar().hide();
 
     //Configurar adapter para abas
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
@@ -42,6 +49,15 @@ public class MainActivity extends AppCompatActivity {
         binding.viewPager.setAdapter(adapter);
         binding.viewPagerTab.setViewPager(binding.viewPager);
 
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+
+            }
+        });
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        binding.adViewBsA22Principal.loadAd(adRequest);
 
     }
 }

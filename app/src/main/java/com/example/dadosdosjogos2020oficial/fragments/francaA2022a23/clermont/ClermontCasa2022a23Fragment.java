@@ -1,5 +1,6 @@
 package com.example.dadosdosjogos2020oficial.fragments.francaA2022a23.clermont;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -10,8 +11,29 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.dadosdosjogos2020oficial.R;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.AjaccioActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.AngersActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.AuxerreActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.BrestActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.ClermontActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.LensActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.LilleActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.LorientActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.LyonActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.MarseilleActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.MonacoActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.MontpellierActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.NantesActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.NiceActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.PsgActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.ReimsActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.RennesActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.StrasbourgActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.ToulouseActivity;
+import com.example.dadosdosjogos2020oficial.activity.francaA2022a23.TroyesActivity;
 import com.example.dadosdosjogos2020oficial.adapter.alemanhaA2022a23.bayerleverkusen.BayerLeverkusenCasa2022a23Adapter;
 import com.example.dadosdosjogos2020oficial.adapter.francaA2022a23.clermont.ClermontCasa2022a23Adapter;
 import com.example.dadosdosjogos2020oficial.data.alemanhaA2022a23.bayerleverkusen.BayerLeverkusenCasaA2022a23PartidaApi;
@@ -19,6 +41,7 @@ import com.example.dadosdosjogos2020oficial.data.francaA2022a23.clermont.Clermon
 import com.example.dadosdosjogos2020oficial.databinding.FragmentBayerLeverkusenCasa2022a23Binding;
 import com.example.dadosdosjogos2020oficial.databinding.FragmentClermontCasa2022a23Binding;
 import com.example.dadosdosjogos2020oficial.model.Partida;
+import com.example.dadosdosjogos2020oficial.model.RecyclerItemClickListener;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
@@ -81,7 +104,116 @@ public class ClermontCasa2022a23Fragment extends Fragment {
                     clermontCasa2022a23Adapter = new ClermontCasa2022a23Adapter(partidas);
                     binding.rvClermontCasa.setAdapter(clermontCasa2022a23Adapter);
 
+                    binding.rvClermontCasa.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), binding.rvClermontCasa, new RecyclerItemClickListener.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(View view, int position) {
+                            Partida lista = partidas.get(position);
 
+                            switch (lista.getAwayTime().getNome()){
+                                case "Ajaccio":
+                                    Intent ajaccio = new Intent(getContext(), AjaccioActivity.class);
+                                    startActivity(ajaccio);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Angers":
+                                    Intent angers = new Intent(getContext(), AngersActivity.class);
+                                    startActivity(angers);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Auxerre":
+                                    Intent auxerre = new Intent(getContext(), AuxerreActivity.class);
+                                    startActivity(auxerre);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Brest":
+                                    Intent brest = new Intent(getContext(), BrestActivity.class);
+                                    startActivity(brest);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Lens":
+                                    Intent lens = new Intent(getContext(), LensActivity.class);
+                                    startActivity(lens);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Lille":
+                                    Intent lille = new Intent(getContext(), LilleActivity.class);
+                                    startActivity(lille);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Lorient":
+                                    Intent lorient = new Intent(getContext(), LorientActivity.class);
+                                    startActivity(lorient);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Lyon":
+                                    Intent lyon = new Intent(getContext(), LyonActivity.class);
+                                    startActivity(lyon);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Marseille":
+                                    Intent marseille = new Intent(getContext(), MarseilleActivity.class);
+                                    startActivity(marseille);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Monaco":
+                                    Intent monaco = new Intent(getContext(), MonacoActivity.class);
+                                    startActivity(monaco);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Montpellier":
+                                    Intent montpellier = new Intent(getContext(), MontpellierActivity.class);
+                                    startActivity(montpellier);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Nantes":
+                                    Intent nantes = new Intent(getContext(), NantesActivity.class);
+                                    startActivity(nantes);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Nice":
+                                    Intent nice = new Intent(getContext(), NiceActivity.class);
+                                    startActivity(nice);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "PSG":
+                                    Intent psg = new Intent(getContext(), PsgActivity.class);
+                                    startActivity(psg);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Reims":
+                                    Intent reims = new Intent(getContext(), ReimsActivity.class);
+                                    startActivity(reims);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Rennes":
+                                    Intent rennes = new Intent(getContext(), RennesActivity.class);
+                                    startActivity(rennes);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Strasbourg":
+                                    Intent strasbourg = new Intent(getContext(), StrasbourgActivity.class);
+                                    startActivity(strasbourg);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Toulouse":
+                                    Intent toulouse = new Intent(getContext(), ToulouseActivity.class);
+                                    startActivity(toulouse);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                                case "Troyes":
+                                    Intent troyes = new Intent(getContext(), TroyesActivity.class);
+                                    startActivity(troyes);
+                                    Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                                    break;
+                            }
+
+                        }
+
+                        @Override
+                        public void onLongItemClick(View view, int position) {
+
+                        }
+                    }));
 
                 }else {
                     errorBuscarDados();

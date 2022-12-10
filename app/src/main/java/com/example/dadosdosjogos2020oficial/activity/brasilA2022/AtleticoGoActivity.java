@@ -22,7 +22,8 @@ public class AtleticoGoActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        //configurar o adapter para abas do time do Ceará
+
+        //configurar o adapter para abas
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(),
                 FragmentPagerItems.with(getApplicationContext())

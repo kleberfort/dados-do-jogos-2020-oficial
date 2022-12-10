@@ -26,12 +26,12 @@ public class EintrachtFrankfurtActivity extends AppCompatActivity {
 
         setContentView(view);
 
-        //configurar o adapter para abas do time do Ceará
+        //configurar o adapter para abas
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(),
                 FragmentPagerItems.with(getApplicationContext())
-                        .add("Casa 2022", EintrachtFrankfurtCasa2022a23Fragment.class)
-                        .add("Fora 2022", EintrachtFrankfurtFora2022a23Fragment.class)
+                        .add("Casa 2022-23", EintrachtFrankfurtCasa2022a23Fragment.class)
+                        .add("Fora 2022-23", EintrachtFrankfurtFora2022a23Fragment.class)
                         .create()
         );
 

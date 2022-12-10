@@ -25,12 +25,12 @@ public class BayerLeverkusenActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        //configurar o adapter para abas do time do Ceará
+        //configurar o adapter para abas
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(),
                 FragmentPagerItems.with(getApplicationContext())
-                        .add("Casa 2022", BayerLeverkusenCasa2022a23Fragment.class)
-                        .add("Fora 2022", BayerLeverkusenFora2022a23Fragment.class)
+                        .add("Casa 2022-23", BayerLeverkusenCasa2022a23Fragment.class)
+                        .add("Fora 2022-23", BayerLeverkusenFora2022a23Fragment.class)
                         .create()
         );
 

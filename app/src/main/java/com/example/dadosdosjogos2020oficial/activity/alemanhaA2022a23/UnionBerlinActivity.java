@@ -27,12 +27,12 @@ public class UnionBerlinActivity extends AppCompatActivity {
 
         setContentView(view);
 
-        //configurar o adapter para abas do time do Ceará
+        //configurar o adapter para abas
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(),
                 FragmentPagerItems.with(getApplicationContext())
-                        .add("Casa 2022", UnionBerlinCasa2022a23Fragment.class)
-                        .add("Fora 2022", UnionBerlinFora2022a23Fragment.class)
+                        .add("Casa 2022-23", UnionBerlinCasa2022a23Fragment.class)
+                        .add("Fora 2022-23", UnionBerlinFora2022a23Fragment.class)
                         .create()
         );
 

@@ -19,7 +19,8 @@ public class FortalezaActivity extends AppCompatActivity {
         binding = ActivityFortalezaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        //configurar o adapter para abas do time do Ceará
+
+        //configurar o adapter para abas
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(),
                 FragmentPagerItems.with(getApplicationContext())

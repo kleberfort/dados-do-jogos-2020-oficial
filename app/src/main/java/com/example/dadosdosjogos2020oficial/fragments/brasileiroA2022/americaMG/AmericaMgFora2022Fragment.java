@@ -107,7 +107,6 @@ public class AmericaMgFora2022Fragment extends Fragment {
 
                             Partida lista = partidas.get(position);
 
-
                             switch (lista.getHomeTime().getNome()){
                                 case "Atlético-PR":
                                     Intent atleticoPr = new Intent(getContext(), AtleticoPrActivity.class);
