@@ -33,6 +33,16 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+
+            }
+        });
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        binding.adViewBsA22Principal.loadAd(adRequest);
+
     //Configurar adapter para abas
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(),
@@ -49,15 +59,7 @@ public class MainActivity extends AppCompatActivity {
         binding.viewPager.setAdapter(adapter);
         binding.viewPagerTab.setViewPager(binding.viewPager);
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
 
-            }
-        });
-
-        AdRequest adRequest = new AdRequest.Builder().build();
-        binding.adViewBsA22Principal.loadAd(adRequest);
 
     }
 }

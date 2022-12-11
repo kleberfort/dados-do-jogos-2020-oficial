@@ -1,5 +1,6 @@
 package com.example.dadosdosjogos2020oficial.activity.brasilA2022;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -7,6 +8,10 @@ import android.os.Bundle;
 import com.example.dadosdosjogos2020oficial.databinding.ActivityAvaiBinding;
 import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.avai.AvaiCasa2022Fragment;
 import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.avai.AvaiFora2022Fragment;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
@@ -18,6 +23,16 @@ public class AvaiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityAvaiBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+
+            }
+        });
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        binding.avAvai.loadAd(adRequest);
 
 
         //configurar o adapter para abas

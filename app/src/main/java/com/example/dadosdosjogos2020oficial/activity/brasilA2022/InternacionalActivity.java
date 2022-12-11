@@ -1,5 +1,6 @@
 package com.example.dadosdosjogos2020oficial.activity.brasilA2022;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -7,6 +8,10 @@ import android.os.Bundle;
 import com.example.dadosdosjogos2020oficial.databinding.ActivityInternacionalBinding;
 import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.internacional.InternacionalCasa2022Fragment;
 import com.example.dadosdosjogos2020oficial.fragments.brasileiroA2022.internacional.InternacionalFora2022Fragment;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
@@ -18,6 +23,16 @@ public class InternacionalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityInternacionalBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+
+            }
+        });
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        binding.avInternacional.loadAd(adRequest);
 
 
         //configurar o adapter para abas

@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".activity.italiaA2022a23.BolognaActivity">
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/avBologna"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-9829174762244357/7559948366"
+        />
+
     <com.ogaclejapan.smarttablayout.SmartTabLayout
         android:id="@+id/viewPagerTab"
         android:layout_width="match_parent"
