@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf2289.fragments.estatistica.francaA2022a23.ajaccio.ajaccio;
+package com.jogos.dadosoficialkf2289.fragments.estatistica.francaA2022a23.angers;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,8 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.jogos.dadosoficialkf2289.data.francaA2022a23.ajaccio.AjaccioCasaA2022a23PartidaApi;
-import com.jogos.dadosoficialkf2289.data.francaA2022a23.ajaccio.AjaccioForaA2022a23PartidaApi;
+import com.jogos.dadosoficialkf2289.data.francaA2022a23.angers.AngersCasaA2022a23PartidaApi;
 import com.jogos.dadosoficialkf2289.databinding.TelaEstatisticaOficialBinding;
 import com.jogos.dadosoficialkf2289.model.Partida;
 
@@ -23,10 +22,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class AjaccioForaEstatisticaFragment extends Fragment {
+public class AngersCasaEstatisticaFragment extends Fragment {
 
     private TelaEstatisticaOficialBinding binding;
-    private AjaccioForaA2022a23PartidaApi ajaccioForaA2022a23PartidaApi;
+    private AngersCasaA2022a23PartidaApi angersCasaA2022a23PartidaApi;
 
     private int golsTotalPrimeiroTempoZeroCincoMarcados;
     private int golsTotalPrimeiroTempoZeroCincoNaoMarcados;
@@ -69,7 +68,6 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
     private int escanteiosTotalMaiorIgualDezNaoMarcados;
 
 
-
     private int totalVitoria;
     private int totalEmpate;
     private int totalDerrota;
@@ -80,7 +78,6 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         binding = TelaEstatisticaOficialBinding.inflate(inflater, container, false);
-
 
 
         setupHttpClient();
@@ -94,26 +91,26 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
 
     private void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/franca-a-2022-23/ajaccio/")
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/franca-a-2022-23/angers/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        ajaccioForaA2022a23PartidaApi = retrofit.create(AjaccioForaA2022a23PartidaApi.class);
+        angersCasaA2022a23PartidaApi = retrofit.create(AngersCasaA2022a23PartidaApi.class);
     }
 
-    private void setupDadosJogos(){
+    private void setupDadosJogos() {
 
-        ajaccioForaA2022a23PartidaApi.getAjaccioFora().enqueue(new Callback<List<Partida>>() {
+        angersCasaA2022a23PartidaApi.getAngersCasa().enqueue(new Callback<List<Partida>>() {
             @Override
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
-                if(response.isSuccessful()) {
+                if (response.isSuccessful()) {
                     List<Partida> partidas = response.body();
 
                     for (int i = 0; i < partidas.size(); i++) {
 
                         //GOLS 0.5 1°TEMPO
 
-                        if((partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() ) + (partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo()) > 0){
+                        if ((partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo()) + (partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo()) > 0) {
                             golsTotalPrimeiroTempoZeroCincoMarcados += 1;
 
                             golsTotalPrimeiroTempoZeroCincoNaoMarcados = partidas.size() - golsTotalPrimeiroTempoZeroCincoMarcados;
@@ -123,7 +120,7 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
 
                         //GOLS 1.5 1°TEMPO
 
-                        if((partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() ) + (partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo()) > 1){
+                        if ((partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo()) + (partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo()) > 1) {
                             golsTotalPrimeiroTempoUmCincoMarcados += 1;
 
                             golsTotalPrimeiroTempoUmCincoNaoMarcados = partidas.size() - golsTotalPrimeiroTempoUmCincoMarcados;
@@ -132,10 +129,9 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
                         }
 
 
-
                         //GOLS 0.5 2°TEMPO
 
-                        if((partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() ) + (partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo()) > 0){
+                        if ((partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo()) + (partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo()) > 0) {
                             golsTotalSegundoTempoZeroCincoMarcados += 1;
 
                             golsTotalSegundoTempoZeroCincoNaoMarcados = partidas.size() - golsTotalSegundoTempoZeroCincoMarcados;
@@ -145,7 +141,7 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
 
                         //GOLS 1.5 2°TEMPO
 
-                        if((partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() ) + (partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo()) > 1){
+                        if ((partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo()) + (partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo()) > 1) {
                             golsTotalSegundoTempoUmCincoMarcados += 1;
 
                             golsTotalSegundoTempoUmCincoNaoMarcados = partidas.size() - golsTotalSegundoTempoUmCincoMarcados;
@@ -153,9 +149,8 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
                         }
 
 
-
                         //GOLS ACIMA 0.5
-                        if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() > 0 || partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo() > 0 || partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() > 0 || partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo() > 0){
+                        if (partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() > 0 || partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo() > 0 || partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() > 0 || partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo() > 0) {
                             golsTotalZeroCincoMarcados += 1;
 
                             golsTotalZeroCincoNaoMarcados = partidas.size() - golsTotalZeroCincoMarcados;
@@ -164,15 +159,14 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
 
 
                         //GOLS ACIMA 1.5
-                        if(
+                        if (
                                 (partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo()) +
                                         (partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo()) +
                                         (partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo()) +
                                         (partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo()) > 1
 
 
-
-                        ){
+                        ) {
                             golsTotalUmCincoMarcados += 1;
 
                             golsTotalUmCincoNaoMarcados = partidas.size() - golsTotalUmCincoMarcados;
@@ -180,15 +174,14 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
 
 
                         //GOLS ACIMA 2.5
-                        if(
+                        if (
                                 (partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo()) +
                                         (partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo()) +
                                         (partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo()) +
                                         (partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo()) > 2
 
 
-
-                        ){
+                        ) {
                             golsTotalDoisCincoMarcados += 1;
 
                             golsTotalDoisCincoNaoMarcados = partidas.size() - golsTotalDoisCincoMarcados;
@@ -196,8 +189,8 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
 
 
                         //AMBAS MARCAM
-                        if(((partidas.get(i).getHomeTime().getPlacar()) > 0) &&
-                                ((partidas.get(i).getAwayTime().getPlacar() > 0))){
+                        if (((partidas.get(i).getHomeTime().getPlacar()) > 0) &&
+                                ((partidas.get(i).getAwayTime().getPlacar() > 0))) {
                             totalAmbasMarcados += 1;
 
                             totalAmbasNaoMarcados = partidas.size() - totalAmbasMarcados;
@@ -205,30 +198,30 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
                         }
 
                         //ESCANTEIO 1T >= 5
-                        if((partidas.get(i).getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo()) +
-                                (partidas.get(i).getAwayEstatisticaJogo().getEscanteiosPrimeiroTempo()) >= 5){
+                        if ((partidas.get(i).getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo()) +
+                                (partidas.get(i).getAwayEstatisticaJogo().getEscanteiosPrimeiroTempo()) >= 5) {
                             escanteiosTotalPrimeiroTempoMaiorIgualCincoMarcados += 1;
 
-                            escanteiosTotalPrimeiroTempoMaiorIgualCincoNaoMarcados = partidas.size() -  escanteiosTotalPrimeiroTempoMaiorIgualCincoMarcados;
+                            escanteiosTotalPrimeiroTempoMaiorIgualCincoNaoMarcados = partidas.size() - escanteiosTotalPrimeiroTempoMaiorIgualCincoMarcados;
                         }
 
 
                         //ESCANTEIO 2T >= 5
-                        if((partidas.get(i).getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo()) +
-                                (partidas.get(i).getAwayEstatisticaJogo().getEscanteiosPrimeiroTempo()) >= 5){
+                        if ((partidas.get(i).getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo()) +
+                                (partidas.get(i).getAwayEstatisticaJogo().getEscanteiosPrimeiroTempo()) >= 5) {
                             escanteiosTotalSegundoTempoMaiorIgualCincoMarcados += 1;
 
-                            escanteiosTotalSegundoTempoMaiorIgualCincoNaoMarcados = partidas.size() -  escanteiosTotalPrimeiroTempoMaiorIgualCincoMarcados;
+                            escanteiosTotalSegundoTempoMaiorIgualCincoNaoMarcados = partidas.size() - escanteiosTotalPrimeiroTempoMaiorIgualCincoMarcados;
                         }
 
 
                         //ESCANTEIOS TOTAL >=8
-                        if((partidas.get(i).getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo() +
+                        if ((partidas.get(i).getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo() +
                                 partidas.get(i).getHomeEstatisticaJogo().getEscanteioSegundoTempo() +
                                 partidas.get(i).getAwayEstatisticaJogo().getEscanteiosPrimeiroTempo() +
                                 partidas.get(i).getAwayEstatisticaJogo().getEscanteioSegundoTempo() >= 8)
 
-                        ){
+                        ) {
                             escanteiosTotalMaiorIgualOitoMarcados += 1;
 
                             escanteiosTotalMaiorIgualOitoNaoMarcados = partidas.size() - escanteiosTotalMaiorIgualOitoMarcados;
@@ -236,14 +229,13 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
                         }
 
 
-
                         //ESCANTEIOS TOTAL >=9
-                        if((partidas.get(i).getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo() +
+                        if ((partidas.get(i).getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo() +
                                 partidas.get(i).getHomeEstatisticaJogo().getEscanteioSegundoTempo() +
                                 partidas.get(i).getAwayEstatisticaJogo().getEscanteiosPrimeiroTempo() +
                                 partidas.get(i).getAwayEstatisticaJogo().getEscanteioSegundoTempo() >= 9)
 
-                        ){
+                        ) {
                             escanteiosTotalMaiorIgualNoveMarcados += 1;
 
                             escanteiosTotalMaiorIgualNoveNaoMarcados = partidas.size() - escanteiosTotalMaiorIgualNoveMarcados;
@@ -251,16 +243,13 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
                         }
 
 
-
-
-
                         //ESCANTEIOS TOTAL >=10
-                        if((partidas.get(i).getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo() +
+                        if ((partidas.get(i).getHomeEstatisticaJogo().getEscanteiosPrimeiroTempo() +
                                 partidas.get(i).getHomeEstatisticaJogo().getEscanteioSegundoTempo() +
                                 partidas.get(i).getAwayEstatisticaJogo().getEscanteiosPrimeiroTempo() +
                                 partidas.get(i).getAwayEstatisticaJogo().getEscanteioSegundoTempo() >= 10)
 
-                        ){
+                        ) {
                             escanteiosTotalMaiorIgualDezMarcados += 1;
 
                             escanteiosTotalMaiorIgualDezNaoMarcados = partidas.size() - escanteiosTotalMaiorIgualDezMarcados;
@@ -268,23 +257,19 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
                         }
 
                         //TOTAL VIÓRIA
-                        if(partidas.get(i).getHomeTime().getPlacar() < partidas.get(i).getAwayTime().getPlacar()){
+                        if (partidas.get(i).getHomeTime().getPlacar() > partidas.get(i).getAwayTime().getPlacar()) {
                             totalVitoria += 1;
                         }
 
                         //TOTAL EMPATE
-                        if(partidas.get(i).getHomeTime().getPlacar() == partidas.get(i).getAwayTime().getPlacar()){
+                        if (partidas.get(i).getHomeTime().getPlacar() == partidas.get(i).getAwayTime().getPlacar()) {
                             totalEmpate += 1;
                         }
 
                         //TOTAL DERROTA
-                        if(partidas.get(i).getHomeTime().getPlacar() > partidas.get(i).getAwayTime().getPlacar()){
+                        if (partidas.get(i).getHomeTime().getPlacar() < partidas.get(i).getAwayTime().getPlacar()) {
                             totalDerrota += 1;
                         }
-
-
-
-
 
 
                     }
@@ -336,14 +321,10 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
                     binding.tvTotalDerrota.setText(String.valueOf(totalDerrota));
 
 
-
-
-
                     binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
 
 
                 }
-
 
 
             }
@@ -361,11 +342,6 @@ public class AjaccioForaEstatisticaFragment extends Fragment {
     private void errorBuscarDados() {
         Snackbar.make(binding.getRoot(), "erro ao Retornar Dados Estatístico. ", Snackbar.LENGTH_LONG).show();
     }
-
-
-
-
-
 
 
 }

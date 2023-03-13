@@ -2,18 +2,17 @@ package com.jogos.dadosoficialkf2289.fragments.francaA2022a23.angers;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.jogos.dadosoficialkf2289.R;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.jogos.dadosoficialkf2289.activity.francaA2022a23.AjaccioActivity;
 import com.jogos.dadosoficialkf2289.activity.francaA2022a23.AuxerreActivity;
 import com.jogos.dadosoficialkf2289.activity.francaA2022a23.BrestActivity;
@@ -36,10 +35,8 @@ import com.jogos.dadosoficialkf2289.activity.francaA2022a23.TroyesActivity;
 import com.jogos.dadosoficialkf2289.adapter.francaA2022a23.angers.AngersFora2022a23Adapter;
 import com.jogos.dadosoficialkf2289.data.francaA2022a23.angers.AngersForaA2022a23PartidaApi;
 import com.jogos.dadosoficialkf2289.databinding.FragmentAngersFora2022a23Binding;
-import com.jogos.dadosoficialkf2289.databinding.FragmentBayerLeverkusenCasa2022a23Binding;
 import com.jogos.dadosoficialkf2289.model.Partida;
 import com.jogos.dadosoficialkf2289.model.RecyclerItemClickListener;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 

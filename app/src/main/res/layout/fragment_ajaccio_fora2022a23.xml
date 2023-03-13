@@ -25,7 +25,7 @@
             android:orientation="vertical">
 
 
-            <fragment android:name="com.jogos.dadosoficialkf2289.fragments.estatistica.francaA2022a23.ajaccio.ajaccio.AjaccioForaEstatisticaFragment"
+            <fragment android:name="com.jogos.dadosoficialkf2289.fragments.estatistica.francaA2022a23.ajaccio.AjaccioForaEstatisticaFragment"
                 android:id="@+id/fragmento_estatistica"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
