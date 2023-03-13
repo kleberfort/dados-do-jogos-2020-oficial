@@ -2,10 +2,13 @@ package com.jogos.dadosoficialkf2289.activity.francaA2022a23;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
 
+import com.jogos.dadosoficialkf2289.R;
 import com.jogos.dadosoficialkf2289.databinding.ActivityAjaccioBinding;
 import com.jogos.dadosoficialkf2289.databinding.ActivityVillarrealBinding;
 import com.jogos.dadosoficialkf2289.fragments.francaA2022a23.ajaccio.AjaccioCasa2022a23Fragment;
@@ -27,7 +30,11 @@ public class AjaccioActivity extends AppCompatActivity {
         binding = ActivityAjaccioBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
+
         setContentView(view);
+
+
+
 
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
@@ -51,5 +58,12 @@ public class AjaccioActivity extends AppCompatActivity {
         //Inicio o meu adpter para carregar na tela
         binding.viewPager.setAdapter(adapter);
         binding.viewPagerTab.setViewPager(binding.viewPager);
+
+
     }
+
+
+
+
+
 }

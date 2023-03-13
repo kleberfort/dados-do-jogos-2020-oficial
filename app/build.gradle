@@ -1,5 +1,7 @@
 plugins {
     id 'com.android.application'
+
+
 }
 
 android {
@@ -9,8 +11,8 @@ android {
         applicationId "com.jogos.dadosoficialkf2289"
         minSdk 27
         targetSdk 32
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

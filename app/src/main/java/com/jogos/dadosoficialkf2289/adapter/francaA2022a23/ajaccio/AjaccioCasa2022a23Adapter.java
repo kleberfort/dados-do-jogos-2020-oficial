@@ -22,6 +22,13 @@ public class AjaccioCasa2022a23Adapter extends RecyclerView.Adapter<AjaccioCasa2
         this.ajaccioCasa2022_23 = ajaccioCasa2022_23;
     }
 
+
+    public List<Partida> getAjaccioCasa2022_23() {
+        return ajaccioCasa2022_23;
+    }
+
+
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -37,6 +44,7 @@ public class AjaccioCasa2022a23Adapter extends RecyclerView.Adapter<AjaccioCasa2
         Context context = holder.itemView.getContext();
 
         Partida listaPartidaAjaccioCasa = ajaccioCasa2022_23.get(position);
+
 
         //DADOS DO JOGO
         holder.binding.tvNomeTime.setText(listaPartidaAjaccioCasa.getName());

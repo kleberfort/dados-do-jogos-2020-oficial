@@ -85,7 +85,7 @@
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_liverpool.xml" value="0.2196969696969697" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_lorient.xml" value="0.17676767676767677" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_lyon.xml" value="0.17676767676767677" />
-        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_mainz05.xml" value="0.17676767676767677" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_mallorca.xml" value="0.17676767676767677" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_manchester_city.xml" value="0.17676767676767677" />
@@ -135,8 +135,8 @@
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_westham.xml" value="0.17676767676767677" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_wolfsburg.xml" value="0.17676767676767677" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_wolverhampton.xml" value="0.17676767676767677" />
-        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/dados_partidas_adapter.xml" value="0.33" />
-        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_ajaccio_casa2022a23.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/dados_partidas_adapter.xml" value="0.5" />
+        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_ajaccio_casa2022a23.xml" value="0.21481481481481482" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_ajaccio_fora2022a23.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_almeria_casa2022a23.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_almeria_fora2022a23.xml" value="0.36666666666666664" />
@@ -383,6 +383,8 @@
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_wolverhampton_fora2022a23.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/list_times_br_a_2022_adapter.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/list_times_campeonato_principal_adapter.xml" value="0.1" />
+        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/tela_estatistica.xml" value="0.33" />
+        <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/tela_estatistica_oficial.xml" value="0.33" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1495" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>

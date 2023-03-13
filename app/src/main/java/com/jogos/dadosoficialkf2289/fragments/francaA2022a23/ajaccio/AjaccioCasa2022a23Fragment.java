@@ -2,18 +2,17 @@ package com.jogos.dadosoficialkf2289.fragments.francaA2022a23.ajaccio;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.jogos.dadosoficialkf2289.R;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.jogos.dadosoficialkf2289.activity.francaA2022a23.AngersActivity;
 import com.jogos.dadosoficialkf2289.activity.francaA2022a23.AuxerreActivity;
 import com.jogos.dadosoficialkf2289.activity.francaA2022a23.BrestActivity;
@@ -36,10 +35,8 @@ import com.jogos.dadosoficialkf2289.activity.francaA2022a23.TroyesActivity;
 import com.jogos.dadosoficialkf2289.adapter.francaA2022a23.ajaccio.AjaccioCasa2022a23Adapter;
 import com.jogos.dadosoficialkf2289.data.francaA2022a23.ajaccio.AjaccioCasaA2022a23PartidaApi;
 import com.jogos.dadosoficialkf2289.databinding.FragmentAjaccioCasa2022a23Binding;
-import com.jogos.dadosoficialkf2289.databinding.FragmentBayerLeverkusenCasa2022a23Binding;
 import com.jogos.dadosoficialkf2289.model.Partida;
 import com.jogos.dadosoficialkf2289.model.RecyclerItemClickListener;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -56,6 +53,17 @@ public class AjaccioCasa2022a23Fragment extends Fragment {
     private AjaccioCasaA2022a23PartidaApi ajaccioCasaA2022a23PartidaApi;
     private AjaccioCasa2022a23Adapter ajaccioCasa2022a23Adapter;
 
+
+
+
+
+
+
+
+
+
+
+
     public AjaccioCasa2022a23Fragment() {
         // Required empty public constructor
     }
@@ -69,12 +77,33 @@ public class AjaccioCasa2022a23Fragment extends Fragment {
         View view = binding.getRoot();
 
 
+
+
+
         setupHttpClient();
         setupDadosJogos();
 
 
+
+
+
+
+
+
+
+
         return view;
+
+
+
+
+
     }
+
+
+
+
+
 
     private void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
@@ -93,12 +122,19 @@ public class AjaccioCasa2022a23Fragment extends Fragment {
         ajaccioCasaA2022a23PartidaApi.getAjaccioCasa().enqueue(new Callback<List<Partida>>() {
             @Override
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
+
                 if(response.isSuccessful()){
                     List<Partida> partidas = response.body();
+
+
                     ajaccioCasa2022a23Adapter = new AjaccioCasa2022a23Adapter(partidas);
+
+
                     binding.rvAjaccioCasa.setAdapter(ajaccioCasa2022a23Adapter);
 
                     binding.rvAjaccioCasa.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), binding.rvAjaccioCasa, new RecyclerItemClickListener.OnItemClickListener() {
+                        private List<Partida> Partida;
+
                         @Override
                         public void onItemClick(View view, int position) {
                             Partida lista = partidas.get(position);
@@ -201,7 +237,10 @@ public class AjaccioCasa2022a23Fragment extends Fragment {
                                     break;
                             }
 
+
+
                         }
+
 
                         @Override
                         public void onLongItemClick(View view, int position) {
@@ -209,9 +248,15 @@ public class AjaccioCasa2022a23Fragment extends Fragment {
                         }
                     }));
 
+
+
+
                 }else {
                     errorBuscarDados();
                 }
+
+
+
             }
 
             @Override
@@ -220,10 +265,19 @@ public class AjaccioCasa2022a23Fragment extends Fragment {
 
             }
         });
-    }
+
+
+
+    }//fim do método setupDadosJogos
+
+
+
     private void errorBuscarDados() {
         Snackbar.make(binding.getRoot(), "erro ao buscar dados da API, Verifique a conexão de Internet, ", Snackbar.LENGTH_LONG).show();
     }
+
+
+
 }
 
 
