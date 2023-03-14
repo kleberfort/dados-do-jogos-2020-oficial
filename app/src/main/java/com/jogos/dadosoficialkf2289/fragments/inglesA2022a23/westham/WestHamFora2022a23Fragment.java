@@ -90,7 +90,7 @@ public class WestHamFora2022a23Fragment extends Fragment {
         binding.rvWesthamFora.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.rvWesthamFora.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
 
-        westHamForaA2022a23PartidaApi.getWestHamCasa().enqueue(new Callback<List<Partida>>() {
+        westHamForaA2022a23PartidaApi.getWestHamFora().enqueue(new Callback<List<Partida>>() {
             @Override
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
                 if(response.isSuccessful()){

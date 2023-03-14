@@ -92,7 +92,7 @@ public class SouthamptonFora2022a23Fragment extends Fragment {
         binding.rvSouthamptonFora.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.rvSouthamptonFora.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
 
-        southamptonForaA2022a23PartidaApi.getSouthamptonCasa().enqueue(new Callback<List<Partida>>() {
+        southamptonForaA2022a23PartidaApi.getSouthamptonFora().enqueue(new Callback<List<Partida>>() {
             @Override
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
                 if(response.isSuccessful()){

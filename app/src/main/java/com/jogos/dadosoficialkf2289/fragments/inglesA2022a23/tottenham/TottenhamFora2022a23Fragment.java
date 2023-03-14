@@ -91,7 +91,7 @@ public class TottenhamFora2022a23Fragment extends Fragment {
         binding.rvTottenhamFora.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.rvTottenhamFora.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
 
-        tottenhamForaA2022a23PartidaApi.getTottenhamCasa().enqueue(new Callback<List<Partida>>() {
+        tottenhamForaA2022a23PartidaApi.getTottenhamFora().enqueue(new Callback<List<Partida>>() {
             @Override
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
                 if(response.isSuccessful()){

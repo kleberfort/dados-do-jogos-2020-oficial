@@ -94,7 +94,7 @@ public class WolverhamptonFora2022a23Fragment extends Fragment {
         binding.rvWolverhamptonFora.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.rvWolverhamptonFora.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
 
-        wolverhamptonForaA2022a23PartidaApi.getWolverhamptonCasa().enqueue(new Callback<List<Partida>>() {
+        wolverhamptonForaA2022a23PartidaApi.getWolverhamptonFora().enqueue(new Callback<List<Partida>>() {
             @Override
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
                 if(response.isSuccessful()){

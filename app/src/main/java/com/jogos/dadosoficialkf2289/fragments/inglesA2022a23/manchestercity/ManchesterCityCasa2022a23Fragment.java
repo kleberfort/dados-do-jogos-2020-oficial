@@ -2,18 +2,17 @@ package com.jogos.dadosoficialkf2289.fragments.inglesA2022a23.manchestercity;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.jogos.dadosoficialkf2289.R;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.jogos.dadosoficialkf2289.activity.inglesA2022a23.ArsenalActivity;
 import com.jogos.dadosoficialkf2289.activity.inglesA2022a23.AstonVillaActivity;
 import com.jogos.dadosoficialkf2289.activity.inglesA2022a23.BournemouthActivity;
@@ -35,11 +34,9 @@ import com.jogos.dadosoficialkf2289.activity.inglesA2022a23.WesthamActivity;
 import com.jogos.dadosoficialkf2289.activity.inglesA2022a23.WolverhamptonActivity;
 import com.jogos.dadosoficialkf2289.adapter.inglesA2022a2023.manchestercity.ManchesterCityCasa2022a23Adapter;
 import com.jogos.dadosoficialkf2289.data.inglesA2022a23.manchestercity.ManchesterCityCasaA2022a23PartidaApi;
-import com.jogos.dadosoficialkf2289.databinding.FragmentBayerLeverkusenCasa2022a23Binding;
 import com.jogos.dadosoficialkf2289.databinding.FragmentManchesterCityCasa2022a23Binding;
 import com.jogos.dadosoficialkf2289.model.Partida;
 import com.jogos.dadosoficialkf2289.model.RecyclerItemClickListener;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
