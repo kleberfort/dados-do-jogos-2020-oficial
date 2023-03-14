@@ -47,12 +47,12 @@ public class MainActivity extends AppCompatActivity {
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(),
                 FragmentPagerItems.with(this)
-                    .add("Brasileiro A 2022", ListaBrA2022Fragment.class)
                         .add("Inglês A 2022-23", ListaInglesA2022a23Fragment.class)
                         .add("Espanhol A 2022-23", ListaEspanholA2022a23Fragment.class)
                         .add("Alemão A 2022-23", ListaAlemaoA2022a23Fragment.class)
                         .add("Italiano A 2022-23", ListaItalianoA2022a23Fragment.class)
                         .add("Françês A 2022-23", ListaFrancesA2022a23Fragment.class)
+                        .add("Brasileiro A 2022", ListaBrA2022Fragment.class)
                         .create()
         );
     //Inicio o meu adapter para carregar na tela
