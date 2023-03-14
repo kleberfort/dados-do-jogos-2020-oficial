@@ -2,18 +2,17 @@ package com.jogos.dadosoficialkf2289.fragments.alemanhaA2022a23.koln;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.jogos.dadosoficialkf2289.R;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.google.android.material.snackbar.Snackbar;
 import com.jogos.dadosoficialkf2289.activity.alemanhaA2022a23.AugsburgActivity;
 import com.jogos.dadosoficialkf2289.activity.alemanhaA2022a23.BayerLeverkusenActivity;
 import com.jogos.dadosoficialkf2289.activity.alemanhaA2022a23.BayernMuniqueActivity;
@@ -33,11 +32,9 @@ import com.jogos.dadosoficialkf2289.activity.alemanhaA2022a23.WerderBremenActivi
 import com.jogos.dadosoficialkf2289.activity.alemanhaA2022a23.WolfsburgActivity;
 import com.jogos.dadosoficialkf2289.adapter.alemanhaA2022a23.koln.KolnFora2022a23Adapter;
 import com.jogos.dadosoficialkf2289.data.alemanhaA2022a23.koln.KolnForaA2022a23PartidaApi;
-import com.jogos.dadosoficialkf2289.databinding.FragmentBayerLeverkusenCasa2022a23Binding;
 import com.jogos.dadosoficialkf2289.databinding.FragmentKolnFora2022a23Binding;
 import com.jogos.dadosoficialkf2289.model.Partida;
 import com.jogos.dadosoficialkf2289.model.RecyclerItemClickListener;
-import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 

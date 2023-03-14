@@ -25,7 +25,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <fragment android:name="com.jogos.dadosoficialkf2289.fragments.estatisticainglesA2022a23.westham.WesthamForaEstatisticaFragment"
+            <fragment android:name="com.jogos.dadosoficialkf2289.fragments.estatistica.inglesA2022a23.westham.WesthamForaEstatisticaFragment"
                 android:id="@+id/fragmento_estatistica"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
