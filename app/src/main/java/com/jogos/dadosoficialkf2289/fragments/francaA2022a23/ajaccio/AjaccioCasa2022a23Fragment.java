@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf2289.fragments.francaA2022a23.ajaccio;
+package com.jogos.dadosoficialkf2289.fragments.francaA2022a23.ajaccio_dados_geral;
 
 import android.content.Intent;
 import android.os.Bundle;

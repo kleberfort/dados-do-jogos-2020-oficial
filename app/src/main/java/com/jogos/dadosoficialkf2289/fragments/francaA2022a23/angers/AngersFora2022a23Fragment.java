@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf2289.fragments.francaA2022a23.angers;
+package com.jogos.dadosoficialkf2289.fragments.francaA2022a23.angers_dados_geral;
 
 import android.content.Intent;
 import android.os.Bundle;

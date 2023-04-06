@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf2289.fragments.francaA2022a23.auxerre;
+package com.jogos.dadosoficialkf2289.fragments.francaA2022a23.auxerre_dados_geral;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.jogos.dadosoficialkf2289.R;
 import com.jogos.dadosoficialkf2289.activity.francaA2022a23.AjaccioActivity;
 import com.jogos.dadosoficialkf2289.activity.francaA2022a23.AngersActivity;
 import com.jogos.dadosoficialkf2289.activity.francaA2022a23.BrestActivity;
@@ -36,7 +35,6 @@ import com.jogos.dadosoficialkf2289.activity.francaA2022a23.TroyesActivity;
 import com.jogos.dadosoficialkf2289.adapter.francaA2022a23.auxerre.AuxerreFora2022a23Adapter;
 import com.jogos.dadosoficialkf2289.data.francaA2022a23.auxerre.AuxerreForaA2022a23PartidaApi;
 import com.jogos.dadosoficialkf2289.databinding.FragmentAuxerreFora2022a23Binding;
-import com.jogos.dadosoficialkf2289.databinding.FragmentBayerLeverkusenCasa2022a23Binding;
 import com.jogos.dadosoficialkf2289.model.Partida;
 import com.jogos.dadosoficialkf2289.model.RecyclerItemClickListener;
 import com.google.android.material.snackbar.Snackbar;
