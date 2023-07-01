@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.espanhaA2022a23.GetafeActivity">
+    tools:context="com.jogos.dadosoficialkf228920.activity.espanhaA2022a23.GetafeActivity">
 
 
 
@@ -51,23 +51,9 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-        android:layout_above="@id/avGetafe"
         android:layout_below="@id/viewPagerTab"
         />
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/avGetafe"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
-        android:layout_marginTop="2dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-9829174762244357/8100920137"
-        />
 
 </RelativeLayout>

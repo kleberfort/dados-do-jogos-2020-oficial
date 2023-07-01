@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "874012003337",
+    "project_id": "dados-jogos-oficial-d7fd4",
+    "storage_bucket": "dados-jogos-oficial-d7fd4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874012003337:android:1da31d97acc20aedb2bcd8",
+        "android_client_info": {
+          "package_name": "com.jogos.dadosoficialkf228920"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVUP2Lsr9S2I8S_aZp0VdI1xyHvD755ec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

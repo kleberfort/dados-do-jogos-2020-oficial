@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.inglesA2022a23.ListaInglesA2022a23Fragment">
+    tools:context="com.jogos.dadosoficialkf228920.fragments.inglesA2022a23.ListaInglesA2022a23Fragment">
 
 
     <androidx.recyclerview.widget.RecyclerView

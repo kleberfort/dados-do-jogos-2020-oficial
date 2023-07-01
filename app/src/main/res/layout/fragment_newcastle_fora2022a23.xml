@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.inglesA2022a23.newcastle.NewcastleFora2022a23Fragment">
+    tools:context="com.jogos.dadosoficialkf228920.fragments.inglesA2022a23.newcastle.NewcastleFora2022a23Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <fragment android:name="com.jogos.dadosoficialkf2289.fragments.estatistica.inglesA2022a23.newcastle.NewcastleForaEstatisticaFragment"
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.estatistica.geral.inglesA2022a23.newcastle.NewcastleForaEstatisticaFragment"
                 android:id="@+id/fragmento_estatistica"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>

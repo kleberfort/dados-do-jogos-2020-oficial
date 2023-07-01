@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.italiaA2022a23.SassuoloActivity">
+    tools:context="com.jogos.dadosoficialkf228920.activity.italiaA2022a23.SassuoloActivity">
 
 
 
@@ -52,23 +52,9 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-        android:layout_above="@id/avSassuolo"
         android:layout_below="@id/viewPagerTab" />
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/avSassuolo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
 
-        android:layout_marginTop="2dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-9829174762244357/6135186053"
-        />
 
 
 </RelativeLayout>

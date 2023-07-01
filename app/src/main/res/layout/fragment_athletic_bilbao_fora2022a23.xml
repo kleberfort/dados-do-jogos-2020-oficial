@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.espanhaA2022a23.athleticbilbao.AthleticBilbaoFora2022a23Fragment">
+    tools:context="com.jogos.dadosoficialkf228920.fragments.espanhaA2022a23.athleticbilbao.AthleticBilbaoFora2022a23Fragment">
 
 
     <LinearLayout
@@ -25,7 +25,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <fragment android:name="com.jogos.dadosoficialkf2289.fragments.estatistica.espanhaA2022a23.athleticobilbao.AthleticobilbaoForaEstatisticaFragment"
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.estatistica.geral.espanhaA2022a23.athleticobilbao.AthleticobilbaoForaEstatisticaFragment"
                 android:id="@+id/fragmento_estatistica"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>

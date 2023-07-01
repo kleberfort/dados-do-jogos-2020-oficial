@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.francaA2022a23.nantes.NantesCasa2022a23Fragment">
+    tools:context="com.jogos.dadosoficialkf228920.fragments.francaA2022a23.nantes.NantesCasa2022a23Fragment">
 
 
     <LinearLayout
@@ -25,7 +25,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <fragment android:name="com.jogos.dadosoficialkf2289.fragments.estatistica.francaA2022a23.nantes.NantesCasaEstatisticaFragment"
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.estatistica.geral.francaA2022a23.nantes.NantesCasaEstatisticaFragment"
                 android:id="@+id/fragmento_estatistica"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>

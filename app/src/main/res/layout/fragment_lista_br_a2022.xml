@@ -7,7 +7,7 @@
     tools:context=".fragments.brasileiroA2022.ListaBrA2022Fragment" >
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvListaBrasileiroSeriaA2022"
+        android:id="@+id/rvListaBrasileiroSeriaB2023"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

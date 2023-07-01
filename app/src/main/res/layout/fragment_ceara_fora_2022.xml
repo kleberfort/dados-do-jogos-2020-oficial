@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.brasileiroA2022.ceara.CearaFora2022Fragment" >
+    tools:context="com.jogos.dadosoficialkf228920.fragments.brasileiroB2023.ceara.CearaFora2023Fragment">
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCearaFora"
