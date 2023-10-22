@@ -93,6 +93,9 @@ public class ListaBrA2023Fragment extends Fragment {
         binding = FragmentListaBrA2023Binding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
+
+
+
         setupHttpClient();
         setupListaTimes();
 

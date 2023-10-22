@@ -3,11 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     android:orientation="vertical"
-    tools:context="com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.ListaBrA2023Fragment" >
+    tools:context="com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.ListaBrA2023Fragment">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvListaBrasileiroSerieA2023"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListaBrasileiroSerieA2023"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+
 </LinearLayout>

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.data.brasileiroA2023.bragantino.BragantinoForaA2023PartidaApi;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaOficialBinding;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaOficialPorcentagemBinding;
@@ -239,47 +240,288 @@ public class BragantinoForaEstatisticaFragment extends Fragment {
 
                     //Inicio Porcentagem
 
+
                     binding.tvGols1T05McdPct.setText(String.valueOf(Math.round(((double)golsTotalPrimeiroTempoZeroCincoMarcados * 100 ) / partidas.size()) + "%"));
                     binding.tvGols1T05CtPct.setText(String.valueOf(Math.round((double)golsTotalPrimeiroTempoZeroCincoNaoMarcados * 100 / partidas.size()) + "%"));
+
+                    if(Math.round(((double) golsTotalPrimeiroTempoZeroCincoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvGols1T05McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) golsTotalPrimeiroTempoZeroCincoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvGols1T05McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) golsTotalPrimeiroTempoZeroCincoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvGols1T05McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvGols1T05McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+
+                    if(Math.round(((double) golsTotalPrimeiroTempoZeroCincoNaoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvGols1T05CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) golsTotalPrimeiroTempoZeroCincoNaoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvGols1T05CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) golsTotalPrimeiroTempoZeroCincoNaoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvGols1T05CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvGols1T05CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
 
                     binding.tvGols1T15McdPct.setText(String.valueOf(Math.round(((double)golsTotalPrimeiroTempoUmCincoMarcados * 100 ) / partidas.size()) + "%"));
                     binding.tvGols1T15CtPct.setText(String.valueOf(Math.round(((double)golsTotalPrimeiroTempoUmCincoNaoMarcados * 100 ) / partidas.size()) + "%"));
 
+                    if(Math.round(((double) golsTotalPrimeiroTempoUmCincoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvGols1T15McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) golsTotalPrimeiroTempoUmCincoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvGols1T15McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) golsTotalPrimeiroTempoUmCincoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvGols1T15McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvGols1T15McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+                    if(Math.round(((double) golsTotalPrimeiroTempoUmCincoNaoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvGols1T15CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) golsTotalPrimeiroTempoUmCincoNaoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvGols1T15CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) golsTotalPrimeiroTempoUmCincoNaoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvGols1T15CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvGols1T15CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+
+
                     binding.tvGols2T05McdPct.setText(String.valueOf(Math.round(((double)golsTotalSegundoTempoZeroCincoMarcados * 100 ) / partidas.size()) + "%"));
                     binding.tvGols2T05CtPct.setText(String.valueOf(Math.round(((double)golsTotalSegundoTempoZeroCincoNaoMarcados * 100 ) / partidas.size()) + "%"));
+
+                    if(Math.round(((double) golsTotalSegundoTempoZeroCincoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvGols2T05McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) golsTotalSegundoTempoZeroCincoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvGols2T05McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) golsTotalSegundoTempoZeroCincoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvGols2T05McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvGols2T05McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+                    if(Math.round(((double) golsTotalSegundoTempoZeroCincoNaoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvGols2T05CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) golsTotalSegundoTempoZeroCincoNaoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvGols2T05CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) golsTotalSegundoTempoZeroCincoNaoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvGols2T05CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvGols2T05CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
 
                     binding.tvGols2T15McdPct.setText(String.valueOf(Math.round(((double)golsTotalSegundoTempoUmCincoMarcados * 100 ) / partidas.size()) + "%"));
                     binding.tvGols2T15CtPct.setText(String.valueOf(Math.round(((double)golsTotalSegundoTempoUmCincoNaoMarcados * 100 ) / partidas.size()) + "%"));
 
+                    if(Math.round(((double) golsTotalSegundoTempoUmCincoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvGols2T15McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) golsTotalSegundoTempoUmCincoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvGols2T15McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) golsTotalSegundoTempoUmCincoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvGols2T15McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvGols2T15McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+                    if(Math.round(((double) golsTotalSegundoTempoUmCincoNaoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvGols2T15CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) golsTotalSegundoTempoUmCincoNaoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvGols2T15CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) golsTotalSegundoTempoUmCincoNaoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvGols2T15CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvGols2T15CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
                     binding.tvGolsAcima05McdPct.setText(String.valueOf(Math.round(((double)golsTotalZeroCincoMarcados * 100 ) / partidas.size()) + "%"));
                     binding.tvGolsAcima05CtPct.setText(String.valueOf(Math.round(((double)golsTotalZeroCincoNaoMarcados * 100 ) / partidas.size()) + "%"));
 
+                    if(Math.round(((double) golsTotalZeroCincoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvGolsAcima05McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) golsTotalZeroCincoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvGolsAcima05McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) golsTotalZeroCincoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvGolsAcima05McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvGolsAcima05McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+                    if(Math.round(((double) golsTotalZeroCincoNaoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvGolsAcima05CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) golsTotalZeroCincoNaoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvGolsAcima05CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) golsTotalZeroCincoNaoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvGolsAcima05CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvGolsAcima05CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+
                     binding.tvGolsAcima15McdPct.setText(String.valueOf(Math.round(((double)golsTotalUmCincoMarcados * 100 ) / partidas.size()) + "%"));
                     binding.tvGolsAcima15CtPct.setText(String.valueOf(Math.round(((double)golsTotalUmCincoNaoMarcados * 100 ) / partidas.size()) + "%"));
+
+                    if(Math.round(((double) golsTotalUmCincoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvGolsAcima15McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) golsTotalUmCincoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvGolsAcima15McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) golsTotalUmCincoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvGolsAcima15McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvGolsAcima15McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+                    if(Math.round(((double) golsTotalUmCincoNaoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvGolsAcima15CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) golsTotalUmCincoNaoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvGolsAcima15CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) golsTotalUmCincoNaoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvGolsAcima15CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvGolsAcima15CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
 
                     binding.tvGolsAcima25McdPct.setText(String.valueOf(Math.round(((double)golsTotalDoisCincoMarcados * 100 ) / partidas.size()) + "%"));
                     binding.tvGolsAcima25CtPct.setText(String.valueOf(Math.round(((double)golsTotalDoisCincoNaoMarcados * 100 ) / partidas.size()) + "%"));
 
+                    if(Math.round(((double) golsTotalDoisCincoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvGolsAcima25McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) golsTotalDoisCincoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvGolsAcima25McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) golsTotalDoisCincoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvGolsAcima25McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvGolsAcima25McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+                    if(Math.round(((double) golsTotalDoisCincoNaoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvGolsAcima25CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) golsTotalDoisCincoNaoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvGolsAcima25CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) golsTotalDoisCincoNaoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvGolsAcima25CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvGolsAcima25CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
                     binding.tvAmbasMarcamMcdPct.setText(String.valueOf(Math.round(((double)totalAmbasMarcados * 100 ) / partidas.size()) + "%"));
                     binding.tvAmbasMarcamCtPct.setText(String.valueOf(Math.round(((double)totalAmbasNaoMarcados * 100 ) / partidas.size()) + "%"));
+
+                    if(Math.round(((double) totalAmbasMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvAmbasMarcamMcdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) totalAmbasMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvAmbasMarcamMcdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) totalAmbasMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvAmbasMarcamMcdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvAmbasMarcamMcdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+                    if(Math.round(((double) totalAmbasNaoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvAmbasMarcamCtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) totalAmbasNaoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvAmbasMarcamCtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) totalAmbasNaoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvAmbasMarcamCtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvAmbasMarcamCtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
                     binding.tvEscanteios1TMaiorIgual5McdPct.setText(String.valueOf(Math.round(((double)escanteiosTotalPrimeiroTempoMaiorIgualCincoMarcados * 100 ) / partidas.size()) + "%"));
                     binding.tvEscanteios1TMaiorIgual5CtPct.setText(String.valueOf(Math.round(((double)escanteiosTotalPrimeiroTempoMaiorIgualCincoNaoMarcados * 100 ) / partidas.size()) + "%"));
 
+                    if(Math.round(((double) escanteiosTotalPrimeiroTempoMaiorIgualCincoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvEscanteios1TMaiorIgual5McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) escanteiosTotalPrimeiroTempoMaiorIgualCincoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvEscanteios1TMaiorIgual5McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) escanteiosTotalPrimeiroTempoMaiorIgualCincoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvEscanteios1TMaiorIgual5McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvEscanteios1TMaiorIgual5McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+                    if(Math.round(((double) escanteiosTotalPrimeiroTempoMaiorIgualCincoNaoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvEscanteios1TMaiorIgual5CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) escanteiosTotalPrimeiroTempoMaiorIgualCincoNaoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvEscanteios1TMaiorIgual5CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) escanteiosTotalPrimeiroTempoMaiorIgualCincoNaoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvEscanteios1TMaiorIgual5CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvEscanteios1TMaiorIgual5CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
                     binding.tvEscanteios2TMaiorIgual5McdPct.setText(String.valueOf(Math.round(((double)escanteiosTotalSegundoTempoMaiorIgualCincoMarcados * 100 ) / partidas.size()) + "%"));
                     binding.tvEscanteios2TMaiorIgual5CtPct.setText(String.valueOf(Math.round(((double)escanteiosTotalSegundoTempoMaiorIgualCincoNaoMarcados * 100 ) / partidas.size()) + "%"));
+
+                    if(Math.round(((double) escanteiosTotalSegundoTempoMaiorIgualCincoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvEscanteios2TMaiorIgual5McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) escanteiosTotalSegundoTempoMaiorIgualCincoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvEscanteios2TMaiorIgual5McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) escanteiosTotalSegundoTempoMaiorIgualCincoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvEscanteios2TMaiorIgual5McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvEscanteios2TMaiorIgual5McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+                    if(Math.round(((double) escanteiosTotalSegundoTempoMaiorIgualCincoNaoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvEscanteios2TMaiorIgual5CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) escanteiosTotalSegundoTempoMaiorIgualCincoNaoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvEscanteios2TMaiorIgual5CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) escanteiosTotalSegundoTempoMaiorIgualCincoNaoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvEscanteios2TMaiorIgual5CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvEscanteios2TMaiorIgual5CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
 
                     binding.tvEscanteiosTotalMaiorIgual8McdPct.setText(String.valueOf(Math.round(((double)escanteiosTotalMaiorIgualOitoMarcados * 100 ) / partidas.size()) + "%"));
                     binding.tvEscanteiosTotalMaiorIgual8CtPct.setText(String.valueOf(Math.round(((double)escanteiosTotalMaiorIgualOitoNaoMarcados * 100 ) / partidas.size()) + "%"));
 
+                    if(Math.round(((double) escanteiosTotalMaiorIgualOitoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvEscanteiosTotalMaiorIgual8McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) escanteiosTotalMaiorIgualOitoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvEscanteiosTotalMaiorIgual8McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) escanteiosTotalMaiorIgualOitoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvEscanteiosTotalMaiorIgual8McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvEscanteiosTotalMaiorIgual8McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+                    if(Math.round(((double) escanteiosTotalMaiorIgualOitoNaoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvEscanteiosTotalMaiorIgual8CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) escanteiosTotalMaiorIgualOitoNaoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvEscanteiosTotalMaiorIgual8CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) escanteiosTotalMaiorIgualOitoNaoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvEscanteiosTotalMaiorIgual8CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvEscanteiosTotalMaiorIgual8CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
                     binding.tvEscanteiosTotalMaiorIgual9McdPct.setText(String.valueOf(Math.round(((double)escanteiosTotalMaiorIgualNoveMarcados * 100 ) / partidas.size()) + "%"));
                     binding.tvEscanteiosTotalMaiorIgual9CtPct.setText(String.valueOf(Math.round(((double)escanteiosTotalMaiorIgualNoveNaoMarcados * 100 ) / partidas.size()) + "%"));
+
+                    if(Math.round(((double) escanteiosTotalMaiorIgualNoveMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvEscanteiosTotalMaiorIgual9McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) escanteiosTotalMaiorIgualNoveMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvEscanteiosTotalMaiorIgual9McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) escanteiosTotalMaiorIgualNoveMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvEscanteiosTotalMaiorIgual9McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvEscanteiosTotalMaiorIgual9McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+                    if(Math.round(((double) escanteiosTotalMaiorIgualNoveNaoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvEscanteiosTotalMaiorIgual9CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) escanteiosTotalMaiorIgualNoveNaoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvEscanteiosTotalMaiorIgual9CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) escanteiosTotalMaiorIgualNoveNaoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvEscanteiosTotalMaiorIgual9CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvEscanteiosTotalMaiorIgual9CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
 
                     binding.tvEscanteiosTotalMaiorIgual10McdPct.setText(String.valueOf(Math.round(((double)escanteiosTotalMaiorIgualDezMarcados * 100 ) / partidas.size()) + "%"));
                     binding.tvEscanteiosTotalMaiorIgual10CtPct.setText(String.valueOf(Math.round(((double)escanteiosTotalMaiorIgualDezNaoMarcados * 100 ) / partidas.size()) + "%"));
+
+                    if(Math.round(((double) escanteiosTotalMaiorIgualDezMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvEscanteiosTotalMaiorIgual10McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) escanteiosTotalMaiorIgualDezMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvEscanteiosTotalMaiorIgual10McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) escanteiosTotalMaiorIgualDezMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvEscanteiosTotalMaiorIgual10McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvEscanteiosTotalMaiorIgual10McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+
+                    if(Math.round(((double) escanteiosTotalMaiorIgualDezNaoMarcados * 100) / partidas.size() ) >= 85)
+                        binding.tvEscanteiosTotalMaiorIgual10CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+                    else if(Math.round(((double) escanteiosTotalMaiorIgualDezNaoMarcados * 100) / partidas.size() ) >= 70)
+                        binding.tvEscanteiosTotalMaiorIgual10CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+                    else if(Math.round(((double) escanteiosTotalMaiorIgualDezNaoMarcados * 100) / partidas.size() ) >= 60)
+                        binding.tvEscanteiosTotalMaiorIgual10CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+                    else
+                        binding.tvEscanteiosTotalMaiorIgual10CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
 
                     //Fim Porcentagem

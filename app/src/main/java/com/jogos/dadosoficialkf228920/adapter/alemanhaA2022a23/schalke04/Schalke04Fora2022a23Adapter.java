@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.databinding.DadosPartidasAdapterBinding;
+import com.jogos.dadosoficialkf228920.databinding.ListaJogosEstatisticaCartoesAdapterBinding;
 import com.jogos.dadosoficialkf228920.model.Partida;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class Schalke04Fora2022a23Adapter extends RecyclerView.Adapter<Schalke04F
     public ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        DadosPartidasAdapterBinding binding = DadosPartidasAdapterBinding.inflate(layoutInflater, parent, false);
+        ListaJogosEstatisticaCartoesAdapterBinding binding = ListaJogosEstatisticaCartoesAdapterBinding.inflate(layoutInflater, parent, false);
 
         return new ViewHolder(binding);
     }
@@ -142,9 +143,9 @@ public class Schalke04Fora2022a23Adapter extends RecyclerView.Adapter<Schalke04F
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
-        private DadosPartidasAdapterBinding binding;
+        private ListaJogosEstatisticaCartoesAdapterBinding binding;
 
-        public ViewHolder(DadosPartidasAdapterBinding binding) {
+        public ViewHolder(ListaJogosEstatisticaCartoesAdapterBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }

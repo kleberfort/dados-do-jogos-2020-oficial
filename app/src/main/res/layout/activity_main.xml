@@ -52,10 +52,7 @@
         android:id="@+id/layout_campos_estatistico"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/viewPagerTab"
-
-
-        >
+        android:layout_below="@id/viewPagerTab">
         <TextView
             android:id="@+id/tvBranco"
             android:layout_width="0dp"
@@ -144,22 +141,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_above="@id/adViewBsA22Principal"
+
         android:layout_below="@id/layout_campos_estatistico"
 
         android:layout_marginBottom="2dp" />
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adViewBsA22Principal"
+    <LinearLayout
+        android:id="@+id/banner_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/admob_tela_principal">
-    </com.google.android.gms.ads.AdView>
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_below="@id/viewPager"
+        android:layout_marginTop="2dp"
+        />
+
+
+
+<!--    android:layout_above="@id/adViewBsA22Principal"-->
+
+<!--    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"-->
+<!--        android:id="@+id/adViewBsA22Principal"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="2dp"-->
+<!--        ads:adSize="BANNER"-->
+<!--        ads:adUnitId="@string/admob_tela_principal"></com.google.android.gms.ads.AdView>-->
+
+
 
 
 

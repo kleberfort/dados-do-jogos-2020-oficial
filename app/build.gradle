@@ -13,8 +13,8 @@ android {
         applicationId "com.jogos.dadosoficialkf228920"
         minSdk 27
         targetSdk 33
-        versionCode 7 //sétima atualização
-        versionName "1.6" // Correção dos dados Estatístico
+        versionCode 10 //decima atualização
+        versionName "1.8" // correção de bugs
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -47,6 +47,8 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.6.0'
+
+    implementation 'com.facebook.android:audience-network-sdk:6.+'
 
 
 

@@ -71,6 +71,13 @@
     <string name="west_ham">West Ham</string>
     <string name="wolverhampton">Wolverhampton</string>
 
+
+    <string name="burnley">Burnley</string>
+    <string name="luton">Luton</string>
+    <string name="sheffield">Sheffield</string>
+
+
+
     <string name="la_liga_espanhol_serie_a_2020_2023">La Liga A 2022/2023 </string>
     <string name="almeria">Almería</string>
     <string name="athletic_bilbao">Athletico Bilbao</string>
@@ -92,6 +99,15 @@
     <string name="sevilla">Sevilla</string>
     <string name="valencia">Valencia</string>
     <string name="villarreal">Villarreal</string>
+
+    <string name="granada">Granada</string>
+    <string name="laspalmas">Las Palmas</string>
+
+
+    <string name="la_liga_espanhol_serie_a_2023_2024">La Liga A 2023/2024 </string>
+    <string name="alaves">Alaves</string>
+
+
 
     <string name="ligue_1_frances_A_2022_2023">Ligue 1 2022/2023</string>
     <string name="ajaccio">Ajaccio</string>
@@ -115,6 +131,12 @@
     <string name="toulouse">Toulouse</string>
     <string name="troyes">Troyes</string>
 
+
+    <string name="lehavre">Le-Havre</string>
+    <string name="metz">Metz</string>
+
+
+
     <string name="serie_a_italiano_2022_2023">Série A 2022/2023</string>
     <string name="atalanta">Atalanta</string>
     <string name="bologna">Bologna</string>
@@ -137,6 +159,12 @@
     <string name="torino">Torino</string>
     <string name="udinese">Udinese</string>
 
+
+    <string name="cagliari">Cagliari</string>
+    <string name="frosinone">Frosinone</string>
+    <string name="genoa">Genoa</string>
+
+
     <string name="bundesliga_a_alemao_2022_2023">Bundesliga A 2022/2023</string>
     <string name="augsburg">Augsburg</string>
     <string name="bayer_leverkusen">Bayer Leverkusen</string>
@@ -157,6 +185,12 @@
     <string name="werder_bremen">Werder Bremen</string>
     <string name="wolfsburg">Wolfsburg</string>
 
+
+    <string name="heidenheim">Heidenheim</string>
+    <string name="darmstadt">Darmstadt</string>
+
+
+
     <string-array name="array_brasileiro_rodada_ate_19">
         <item>1</item>
         <item>2</item>
@@ -172,11 +206,13 @@
         <item>12</item>
 
     </string-array>
-    
+
 
     <string name="admob_tela_principal">ca-app-pub-1250849070449366/4138425405</string>
     <string name="admob_brasil_a_2023">ca-app-pub-1250849070449366/1919510079</string>
     <string name="admob_brasil_b_2023">ca-app-pub-1250849070449366/6377629835</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

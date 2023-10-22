@@ -103,7 +103,7 @@ public class ListaAlemaoA2022a23Fragment extends Fragment {
     private void setupHttpClient() {
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/alemanha-a-2022-23/")
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/alemanha-a-2022-23/alemanha/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         timesAlemaoA2022a23Api = retrofit.create(TimesAlemaoA2022a23Api.class);

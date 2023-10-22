@@ -1,5 +1,7 @@
 package com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.coritiba;
 
+import android.content.ClipData;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -68,6 +70,22 @@ public class CoritibaCasa2023Fragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentCoritibaCasaA2023Binding.inflate(inflater, container, false);
         View view = binding.getRoot();
+
+
+        binding.btnCopiar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String texto = binding.tvChavePix.getText().toString();
+
+                android.content.ClipboardManager cm = (android.content.ClipboardManager) getActivity()
+                        .getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clipData = ClipData.newPlainText("texto copiado", texto);
+                cm.setPrimaryClip(clipData);
+                Toast.makeText(getActivity(), "Chave copiada!", Toast.LENGTH_LONG).show();
+
+
+            }
+        });
 
 
         setupHttpClient();

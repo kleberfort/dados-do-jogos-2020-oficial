@@ -1,11 +1,14 @@
 package com.jogos.dadosoficialkf228920.fragments.brasileiroB2023.criciuma;
 
+import android.content.ClipData;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -65,6 +68,22 @@ public class CriciumaCasa2023Fragment extends Fragment {
                              Bundle savedInstanceState) {
 
         binding = FragmentCriciumaCasaB2023Binding.inflate(inflater, container, false);
+
+
+        binding.btnCopiar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String texto = binding.tvChavePix.getText().toString();
+
+                android.content.ClipboardManager cm = (android.content.ClipboardManager) getActivity()
+                        .getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clipData = ClipData.newPlainText("texto copiado", texto);
+                cm.setPrimaryClip(clipData);
+                Toast.makeText(getActivity(), "Chave copiada!", Toast.LENGTH_LONG).show();
+
+
+            }
+        });
 
         setupHttpClient();
         setupDadosJogos();
