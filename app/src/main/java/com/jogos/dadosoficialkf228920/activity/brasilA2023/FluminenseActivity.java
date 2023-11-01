@@ -11,6 +11,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.jogos.dadosoficialkf228920.databinding.ActivityFluminenseA2023Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.fluminense.FluminenseCasa2023Fragment;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.fluminense.FluminenseFora2023Fragment;
+import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.fluminense.resultado.Fluminense2023ResultadoFragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
@@ -42,6 +43,7 @@ public class FluminenseActivity extends AppCompatActivity {
                 FragmentPagerItems.with(getApplicationContext())
                         .add("Casa 2023", FluminenseCasa2023Fragment.class)
                         .add("Fora 2023", FluminenseFora2023Fragment.class)
+
                         .create()
         );
 

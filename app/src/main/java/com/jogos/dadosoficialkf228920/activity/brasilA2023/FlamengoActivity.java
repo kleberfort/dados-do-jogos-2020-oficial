@@ -11,6 +11,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.jogos.dadosoficialkf228920.databinding.ActivityFlamengoA2023Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.flamengo.FlamengoCasa2023Fragment;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.flamengo.FlamengoFora2023Fragment;
+import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.flamengo.resultado.Flamengo2023ResultadoFragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 

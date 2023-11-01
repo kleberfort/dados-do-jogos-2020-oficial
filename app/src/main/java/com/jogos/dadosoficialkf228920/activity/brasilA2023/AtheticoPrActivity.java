@@ -10,8 +10,10 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.jogos.dadosoficialkf228920.databinding.ActivityAtheticoPrA2023Binding;
+import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.americaMG.resultado.AmericaMg2023RstdFragment;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.atleticoPR.AtleticoPrCasa2023Fragment;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.atleticoPR.AtleticoPrFora2023Fragment;
+import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.atleticoPR.resultado.AtleticoPr2023ResultadoFragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 

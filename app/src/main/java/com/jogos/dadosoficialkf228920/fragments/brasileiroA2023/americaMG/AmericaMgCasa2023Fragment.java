@@ -60,9 +60,6 @@ public class AmericaMgCasa2023Fragment extends Fragment {
     private AmericaMgCasaA2023PartidaApi americaMGCasaA2023PartidaApi;
 
 
-
-
-
     public AmericaMgCasa2023Fragment() {
         // Required empty public constructor
     }

@@ -35,6 +35,7 @@ import com.jogos.dadosoficialkf228920.activity.europaA2023a24.espanhol.Valencia2
 import com.jogos.dadosoficialkf228920.activity.europaA2023a24.espanhol.Villarreal2023_24Activity;
 import com.jogos.dadosoficialkf228920.adapter.europa2023a24.espanhol.villarreal.VillarrealForaAdapter;
 import com.jogos.dadosoficialkf228920.data.europaA2023a24.espanhol.villarreal.VillarrealForaPartidaApi;
+
 import com.jogos.dadosoficialkf228920.databinding.FragmentVillarrealFora2023a24Binding;
 import com.jogos.dadosoficialkf228920.model.Partida;
 import com.jogos.dadosoficialkf228920.model.RecyclerItemClickListener;

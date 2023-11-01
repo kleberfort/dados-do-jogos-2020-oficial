@@ -9,8 +9,10 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.jogos.dadosoficialkf228920.databinding.ActivityCoritibaA2023Binding;
+import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.corinthians.resultado.Corinthians2023ResultadoFragment;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.coritiba.CoritibaCasa2023Fragment;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.coritiba.CoritibaFora2023Fragment;
+import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.coritiba.resultado.Coritiba2023ResultadoFragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
@@ -41,6 +43,7 @@ public class CoritibaActivity extends AppCompatActivity {
                 FragmentPagerItems.with(getApplicationContext())
                         .add("Casa 2023", CoritibaCasa2023Fragment.class)
                         .add("Fora 2023", CoritibaFora2023Fragment.class)
+
                         .create()
         );
 

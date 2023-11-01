@@ -13,8 +13,8 @@ android {
         applicationId "com.jogos.dadosoficialkf228920"
         minSdk 27
         targetSdk 33
-        versionCode 10 //decima atualização
-        versionName "1.8" // correção de bugs
+        versionCode 11 //decima primeira atualização
+        versionName "1.9" // Implementado a estatística de gols do time jogando em casa e fora.
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

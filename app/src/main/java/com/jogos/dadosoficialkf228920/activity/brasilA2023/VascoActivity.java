@@ -12,6 +12,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.jogos.dadosoficialkf228920.databinding.ActivityVascoA2023Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.vasco.VascoCasa2023Fragment;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.vasco.VascoFora2023Fragment;
+import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.vasco.resultado.Vasco2023ResultadoFragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 

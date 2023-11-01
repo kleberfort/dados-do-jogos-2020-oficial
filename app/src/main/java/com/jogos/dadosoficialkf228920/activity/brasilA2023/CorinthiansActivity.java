@@ -11,6 +11,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.jogos.dadosoficialkf228920.databinding.ActivityCorinthiansA2023Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.corinthians.CorinthiansCasa2023Fragment;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.corinthians.CorinthiansFora2023Fragment;
+import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.corinthians.resultado.Corinthians2023ResultadoFragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 

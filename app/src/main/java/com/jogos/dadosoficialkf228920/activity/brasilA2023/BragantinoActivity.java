@@ -11,6 +11,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.jogos.dadosoficialkf228920.databinding.ActivityBragantinoA2023Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.bragantino.BragantinoCasa2023Fragment;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.bragantino.BragantinoFora2023Fragment;
+import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.bragantino.resultado.Bragantino2023ResultadoFragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 

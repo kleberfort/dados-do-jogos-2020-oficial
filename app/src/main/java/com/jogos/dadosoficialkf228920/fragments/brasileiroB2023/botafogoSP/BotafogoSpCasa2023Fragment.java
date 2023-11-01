@@ -37,6 +37,7 @@ import com.jogos.dadosoficialkf228920.activity.brasilB2023.VilaNovaActivity;
 import com.jogos.dadosoficialkf228920.activity.brasilB2023.VitoriaActivity;
 import com.jogos.dadosoficialkf228920.adapter.brasileriroB2023.botafogoSp.BotafogoSpCasaB2023Adapter;
 import com.jogos.dadosoficialkf228920.data.brasileiroB2023.botafogoSP.BotafogoSpCasaB2023PartidaApi;
+
 import com.jogos.dadosoficialkf228920.databinding.FragmentBotafogoSpCasaB2023Binding;
 import com.jogos.dadosoficialkf228920.model.Partida;
 import com.jogos.dadosoficialkf228920.model.RecyclerItemClickListener;

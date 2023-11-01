@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:text="ESTATÍSTICA DOS GOLS "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvJogosUltimos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="JOGOS ÚLTIMOS:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/tvTotalJogos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvJogosUltimos"
+        app:layout_constraintStart_toEndOf="@+id/tvJogosUltimos"
+        app:layout_constraintTop_toTopOf="@+id/tvJogosUltimos" />
+
+
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="42dp"
+        android:padding="2dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="M"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="42dp"
+        android:padding="2dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="C"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_marginStart="16dp"
+        android:padding="2dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="P"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="42dp"
+        android:padding="2dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="P"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+
+    <TextView
+        android:id="@+id/tvGols1TempoZeroCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/ic_ball"
+        android:text="GOLS 1°T 0.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvGols1T0.5Mcd"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/tvGols1T0.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="2dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/tvGols1T0.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/tvGols1T0.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="2dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+
+    <TextView
+        android:id="@+id/tvGols1T0.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+
+    <TextView
+        android:id="@+id/tvGols1TempoUmCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:drawableStart="@drawable/ic_ball"
+        android:text="GOLS 1°T 1.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvGols1T1.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols1TempoZeroCinco" />
+
+
+    <TextView
+        android:id="@+id/tvGols1T1.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols1T0.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvGols1T0.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols1T0.5Mcd" />
+
+
+    <TextView
+        android:id="@+id/tvGols1T1.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols1T0.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvGols1T0.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols1T0.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvGols1T1.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols1T0.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvGols1T0.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols1T0.5Ct" />
+
+
+    <TextView
+        android:id="@+id/tvGols1T1.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols1T0.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvGols1T0.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols1T0.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvGols1TempoDoisCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_ball"
+        android:text="GOLS 1°T 2.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvGols1T2.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols1TempoUmCinco" />
+
+    <TextView
+        android:id="@+id/tvGols1T2.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="@+id/tvGols1T1.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvGols1T1.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols1T1.5Mcd" />
+
+
+    <TextView
+        android:id="@+id/tvGols1T2.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols1T1.5McdPct"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvGols1T1.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols1T1.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvGols1T2.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols1T1.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvGols1T1.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols1T1.5Ct" />
+
+    <TextView
+        android:id="@+id/tvGols1T2.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols1T1.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvGols1T1.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols1T1.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvGols2TempoZeroCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:drawableStart="@drawable/ic_ball"
+        android:text="GOLS 2°T 0.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/tvGols2T0.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols1TempoDoisCinco" />
+
+    <TextView
+        android:id="@+id/tvGols2T0.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols1T2.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvGols1T2.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols1T2.5Mcd" />
+
+
+    <TextView
+        android:id="@+id/tvGols2T0.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols1T2.5McdPct"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvGols1T2.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols1T2.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvGols2T0.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols1T2.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvGols1T2.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols1T2.5Ct" />
+
+    <TextView
+        android:id="@+id/tvGols2T0.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols1T2.5CtPct"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvGols1T2.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols1T2.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvGols2TempoUmCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:drawableStart="@drawable/ic_ball"
+        android:text="GOLS 2°T 1.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/tvGols2T1.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols2TempoZeroCinco" />
+
+    <TextView
+        android:id="@+id/tvGols2T1.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols2T0.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvGols2T0.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols2T0.5Mcd" />
+
+
+    <TextView
+        android:id="@+id/tvGols2T1.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols2T0.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvGols2T0.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols2T0.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvGols2T1.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols2T0.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvGols2T0.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols2T0.5Ct" />
+
+    <TextView
+        android:id="@+id/tvGols2T1.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols2T0.5CtPct"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tvGols2T0.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols2T0.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvGols2TempoDoisCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:drawableStart="@drawable/ic_ball"
+        android:text="GOLS 2°T 2.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/tvGols2T2.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols2TempoUmCinco" />
+
+
+    <TextView
+        android:id="@+id/tvGols2T2.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols2T1.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvGols2T1.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols2T1.5Mcd" />
+
+
+    <TextView
+        android:id="@+id/tvGols2T2.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols2T1.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvGols2T1.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols2T1.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvGols2T2.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols2T1.5Ct"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvGols2T1.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols2T1.5Ct" />
+
+
+    <TextView
+        android:id="@+id/tvGols2T2.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols2T1.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvGols2T1.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols2T1.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvGolsAcimaZeroCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_ball"
+        android:text="GOLS ACIMA 0.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvGolsAcima0.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols2TempoDoisCinco" />
+
+    <TextView
+        android:id="@+id/tvGolsAcima0.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols2T2.5Mcd"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tvGols2T2.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols2T2.5Mcd" />
+
+    <TextView
+        android:id="@+id/tvGolsAcima0.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols2T2.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvGols2T2.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols2T2.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvGolsAcima0.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols2T2.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvGols2T2.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols2T2.5Ct" />
+
+    <TextView
+        android:id="@+id/tvGolsAcima0.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGols2T2.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvGols2T2.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGols2T2.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvGolsAcimaUmCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_ball"
+        android:text="GOLS ACIMA 1.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvGolsAcima1.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcimaZeroCinco" />
+
+
+    <TextView
+        android:id="@+id/tvGolsAcima1.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="@+id/tvGolsAcima0.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvGolsAcima0.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcima0.5Mcd" />
+
+    <TextView
+        android:id="@+id/tvGolsAcima1.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGolsAcima0.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvGolsAcima0.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcima0.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvGolsAcima1.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGolsAcima0.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvGolsAcima0.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcima0.5Ct" />
+
+    <TextView
+        android:id="@+id/tvGolsAcima1.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGolsAcima0.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvGolsAcima0.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcima0.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvGolsAcimaDoisCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:drawableStart="@drawable/ic_ball"
+        android:text="GOLS ACIMA 2.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvGolsAcima2.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcimaUmCinco" />
+
+
+    <TextView
+        android:id="@+id/tvGolsAcima2.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGolsAcima1.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvGolsAcima1.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcima1.5Mcd" />
+
+    <TextView
+        android:id="@+id/tvGolsAcima2.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGolsAcima1.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvGolsAcima1.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcima1.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvGolsAcima2.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGolsAcima1.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvGolsAcima1.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcima1.5Ct" />
+
+    <TextView
+        android:id="@+id/tvGolsAcima2.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGolsAcima1.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvGolsAcima1.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcima1.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvGolsAcimaTresCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:drawableStart="@drawable/ic_ball"
+        android:text="GOLS ACIMA 3.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvGolsAcima3.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcimaDoisCinco" />
+
+
+    <TextView
+        android:id="@+id/tvGolsAcima3.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGolsAcima2.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvGolsAcima2.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcima2.5Mcd" />
+
+    <TextView
+        android:id="@+id/tvGolsAcima3.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGolsAcima2.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvGolsAcima2.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcima2.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvGolsAcima3.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGolsAcima2.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvGolsAcima2.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcima2.5Ct" />
+
+    <TextView
+        android:id="@+id/tvGolsAcima3.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvGolsAcima2.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvGolsAcima2.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcima2.5CtPct" />
+
+
+    <TextView
+        android:id="@+id/tvLegenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:layout_marginStart="16dp"
+        android:text="LEGENDA"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGolsAcimaTresCinco" />
+
+
+    <TextView
+        android:id="@+id/tvM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="M >"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLegenda" />
+
+
+    <TextView
+        android:id="@+id/tvMarcados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="MARCADOS"
+        app:layout_constraintBottom_toBottomOf="@+id/tvM"
+        app:layout_constraintStart_toEndOf="@+id/tvM"
+        app:layout_constraintTop_toTopOf="@+id/tvM" />
+
+    <TextView
+        android:id="@+id/tvC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+
+        android:text="C > "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvM" />
+
+    <TextView
+        android:id="@+id/tvContra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="CONTRA"
+        app:layout_constraintBottom_toBottomOf="@+id/tvC"
+        app:layout_constraintStart_toEndOf="@+id/tvC"
+        app:layout_constraintTop_toTopOf="@+id/tvC" />
+
+    <TextView
+        android:id="@+id/tvP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="P > "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvC"/>
+
+    <TextView
+        android:id="@+id/tvPorcentagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="PORCENTAGEM"
+        app:layout_constraintBottom_toBottomOf="@+id/tvP"
+        app:layout_constraintStart_toEndOf="@+id/tvP"
+        app:layout_constraintTop_toTopOf="@+id/tvP" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

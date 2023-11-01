@@ -11,6 +11,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.jogos.dadosoficialkf228920.databinding.ActivityGremioA2023Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.gremio.GremioCasa2023Fragment;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.gremio.GremioFora2023Fragment;
+import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.gremio.resultado.Gremio2023ResultadoFragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 

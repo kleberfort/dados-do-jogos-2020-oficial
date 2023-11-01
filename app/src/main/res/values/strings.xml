@@ -77,7 +77,6 @@
     <string name="sheffield">Sheffield</string>
 
 
-
     <string name="la_liga_espanhol_serie_a_2020_2023">La Liga A 2022/2023 </string>
     <string name="almeria">Almería</string>
     <string name="athletic_bilbao">Athletico Bilbao</string>
@@ -108,7 +107,6 @@
     <string name="alaves">Alaves</string>
 
 
-
     <string name="ligue_1_frances_A_2022_2023">Ligue 1 2022/2023</string>
     <string name="ajaccio">Ajaccio</string>
     <string name="angers">Angers</string>
@@ -134,7 +132,6 @@
 
     <string name="lehavre">Le-Havre</string>
     <string name="metz">Metz</string>
-
 
 
     <string name="serie_a_italiano_2022_2023">Série A 2022/2023</string>
@@ -188,7 +185,6 @@
 
     <string name="heidenheim">Heidenheim</string>
     <string name="darmstadt">Darmstadt</string>
-
 
 
     <string-array name="array_brasileiro_rodada_ate_19">

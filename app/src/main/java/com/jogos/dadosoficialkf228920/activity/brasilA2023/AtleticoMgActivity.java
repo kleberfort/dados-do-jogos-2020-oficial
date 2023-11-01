@@ -11,6 +11,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.jogos.dadosoficialkf228920.databinding.ActivityAtleticoMgA2023Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.atleticoMG.AtleticoMgCasa2023Fragment;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.atleticoMG.AtleticoMgFora2023Fragment;
+import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.atleticoMG.resultado.AtleticoMg2023ResultadoFragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 

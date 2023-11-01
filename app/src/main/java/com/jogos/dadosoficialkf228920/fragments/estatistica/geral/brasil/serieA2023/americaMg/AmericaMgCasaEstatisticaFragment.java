@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 
 import androidx.fragment.app.Fragment;
@@ -12,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.data.brasileiroA2023.americaMG.AmericaMgCasaA2023PartidaApi;
-import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaOficialBinding;
+
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaOficialPorcentagemBinding;
 import com.jogos.dadosoficialkf228920.model.Partida;
 
@@ -100,6 +99,8 @@ public class AmericaMgCasaEstatisticaFragment extends Fragment {
         return binding.getRoot();
 
 
+
+
     }
 
     private void setupHttpClient() {
@@ -110,6 +111,8 @@ public class AmericaMgCasaEstatisticaFragment extends Fragment {
 
         almeriaCasaA2022a23PartidaApi = retrofit.create(AmericaMgCasaA2023PartidaApi.class);
     }
+
+
 
     private void setupDadosJogos(){
 
@@ -131,8 +134,6 @@ public class AmericaMgCasaEstatisticaFragment extends Fragment {
                                 (partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo()) > 0)
                             golsTotalPrimeiroTempoZeroCincoMarcados += 1;
                         golsTotalPrimeiroTempoZeroCincoNaoMarcados = partidas.size() - golsTotalPrimeiroTempoZeroCincoMarcados;
-
-
 
                         //GOLS 1.5 1°TEMPO
                         if((partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() ) +

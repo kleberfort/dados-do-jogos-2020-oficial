@@ -11,6 +11,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.jogos.dadosoficialkf228920.databinding.ActivityPalmeirasA2023Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.palmeiras.PalmeirasCasa2023Fragment;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.palmeiras.PalmeirasFora2023Fragment;
+import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.palmeiras.resultado.Palmeiras2023ResultadoFragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 

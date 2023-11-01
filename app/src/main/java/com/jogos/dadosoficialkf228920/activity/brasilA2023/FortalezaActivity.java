@@ -11,6 +11,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.jogos.dadosoficialkf228920.databinding.ActivityFortalezaA2023Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.fortaleza.FortalezaCasa2023Fragment;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.fortaleza.FortalezaFora2023Fragment;
+import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.fortaleza.resultado.Fortaleza2023ResultadoFragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 

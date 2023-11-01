@@ -11,6 +11,7 @@ import com.google.android.gms.ads.initialization.OnInitializationCompleteListene
 import com.jogos.dadosoficialkf228920.databinding.ActivityInternacionalA2023Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.internacional.InternacionalCasa2023Fragment;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.internacional.InternacionalFora2023Fragment;
+import com.jogos.dadosoficialkf228920.fragments.brasileiroA2023.internacional.resultado.Internacional2023ResultadoFragment;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 

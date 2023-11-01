@@ -8,33 +8,54 @@
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/drawable/background_fundo_verde.xml" value="0.1495" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_alaves_202324.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_almeria_202324.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_america_mg_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_milan_202324.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_ponte_preta_b_2023.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/activity_real_sociedad_202324.xml" value="0.24456521739130435" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/dados_partidas_adapter.xml" value="0.14492753623188406" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_abc_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_abc_fora_b_2023.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_alaves_casa2023a24.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_alaves_fora2023a24.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_almeria_casa2023a24.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_almeria_fora2023a24.xml" value="0.21557971014492755" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_america_mg_casa_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_america_mg2023_rstd.xml" value="0.10948905109489052" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_america_mg_casa_a_2023.xml" value="0.22" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_america_mg_cs2023_rstd.xml" value="0.10948905109489052" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_america_mg_fora_a_2023.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_america_mg_fr2023_rstd.xml" value="0.1" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_arsenal_casa2023a24.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_arsenal_fora2023a24.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_aston_villa_casa2023a24.xml" value="0.1279128672745694" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_aston_villa_fora2023a24.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atalanta_casa2023a24.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atalanta_fora2023a24.xml" value="0.17617753623188406" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_athetico_pr_casa_a_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_athetico_pr_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_athetico_pr_fora_a_2023.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_athletic_bilbao_casa2023a24.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_athletic_bilbao_fora2023a24.xml" value="0.17617753623188406" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atletico_go_casa_b_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atletico_go_casa_b_2023.xml" value="0.21724137931034482" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atletico_go_fora_b_2023.xml" value="0.1" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atletico_madrid_casa2023a24.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atletico_madrid_fora2023a24.xml" value="0.17617753623188406" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atletico_mg_casa_a_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atletico_mg2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atletico_mg_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atletico_mg_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atletico_mg_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atletico_mg_fr2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atletico_pr2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atletico_pr_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_atletico_pr_fr2023_rstd.xml" value="0.13672922252010725" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_augsburg_casa2023a24.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_augsburg_fora2023a24.xml" value="0.17617753623188406" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_avai_casa_b_2023.xml" value="0.26875" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bahia_casa_a_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_avai_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_avai_fora_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bahia2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bahia_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bahia_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bahia_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bahia_fr2023_rstd.xml" value="0.13672922252010725" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_barcelona_casa2023a24.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_barcelona_fora2023a24.xml" value="0.17617753623188406" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bayer_leverkusen_casa2023a24.xml" value="0.17617753623188406" />
@@ -46,14 +67,24 @@
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bologna_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bologna_fora2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_borussia_dortmund_casa2023a24.xml" value="0.27239583333333334" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_borussia_dortmund_fora2022a23.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_borussia_dortmund_fora2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_borussia_monchegladbach_casa2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_borussia_monchegladbach_fora2023a24.xml" value="0.21557971014492755" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_botafogo_casa_a_2023.xml" value="0.26875" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_botafogo_sp_casa_b_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_botafogo2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_botafogo_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_botafogo_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_botafogo_fora_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_botafogo_fr2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_botafogo_sp_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_botafogo_sp_fora_b_2023.xml" value="0.1" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bournemouth_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bournemouth_fora2023a24.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bragantino_casa_a_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bragantino2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bragantino_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bragantino_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bragantino_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_bragantino_fr2023_rstd.xml" value="0.13672922252010725" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_brentford_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_brentford_fora2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_brest_casa2023a24.xml" value="0.36666666666666664" />
@@ -66,22 +97,43 @@
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_cadiz_fora2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_cagliari_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_cagliari_fora2023a24.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_ceara_casa_b_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_ceara_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_ceara_fora_b_2023.xml" value="0.1" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_celta_vigo_casa2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_celta_vigo_fora2023a24.xml" value="0.27239583333333334" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_chapecoense_casa_b_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_chapecoense_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_chapecoense_fora_b_2023.xml" value="0.1" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_chelsea_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_chelsea_fora2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_clermont_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_clermont_fora2023a24.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_corinthians_casa_a_2023.xml" value="0.26875" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_coritiba_casa_a_2023.xml" value="0.26875" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_crb_casa_b_2023.xml" value="0.26875" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_criciuma_casa_b_2023.xml" value="0.26875" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_cruzeiro_casa_a_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_corinthians2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_corinthians_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_corinthians_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_corinthians_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_corinthians_fr2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_coritiba2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_coritiba_casa2022.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_coritiba_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_coritiba_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_coritiba_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_coritiba_fr2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_crb_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_crb_fora_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_criciuma_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_criciuma_fora_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_cruzeiro2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_cruzeiro_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_cruzeiro_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_cruzeiro_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_cruzeiro_fr2023_rstd.xml" value="0.13672922252010725" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_crystal_palace_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_crystal_palace_fora2023a24.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_cuiaba_casa_a_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_cuiaba2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_cuiaba_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_cuiaba_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_cuiaba_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_cuiaba_fr2023_rstd.xml" value="0.13672922252010725" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_darmstadt98_casa2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_darmstadt98_fora2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_eintracht_frankfurt_casa2023a24.xml" value="0.27239583333333334" />
@@ -92,9 +144,21 @@
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_everton_fora2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_fiorentina_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_fiorentina_fora2023a24.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_flamengo_casa_a_2023.xml" value="0.26875" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_fluminense_casa_a_2023.xml" value="0.26875" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_fortaleza_casa_a_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_flamengo2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_flamengo_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_flamengo_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_flamengo_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_flamengo_fr2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_fluminense2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_fluminense_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_fluminense_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_fluminense_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_fluminense_fr2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_fortaleza2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_fortaleza_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_fortaleza_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_fortaleza_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_fortaleza_fr2023_rstd.xml" value="0.13672922252010725" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_freiburg_casa2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_freiburg_fora2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_frosinone_casa2023a24.xml" value="0.35104166666666664" />
@@ -107,11 +171,20 @@
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_getafe_fora2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_girona_casa2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_girona_fora2023a24.xml" value="0.27239583333333334" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_goias_casa_a_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_goias2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_goias_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_goias_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_goias_fora_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_goias_fr2023_rstd.xml" value="0.13672922252010725" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_granada_casa2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_granada_fora2023a24.xml" value="0.27239583333333334" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_gremio_casa_a_2023.xml" value="0.26875" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_guarani_casa_b_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_gremio2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_gremio_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_gremio_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_gremio_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_gremio_fr2023_rstd.xml" value="0.34564102564102567" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_guarani_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_guarani_fora_b_2023.xml" value="0.1" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_heidenheim_casa2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_heidenheim_fora2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_hellas_verona_casa2023a24.xml" value="0.36666666666666664" />
@@ -120,9 +193,15 @@
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_hoffenheim_fora2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_inter_milao_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_inter_milao_fora2023a24.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_internacional_casa_a_2023.xml" value="0.26875" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_ituano_casa_b_2023.xml" value="0.26875" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_juventude_casa_b_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_internacional2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_internacional_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_internacional_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_internacional_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_internacional_fr2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_ituano_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_ituano_fora_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_juventude_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_juventude_fora_b_2023.xml" value="0.1" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_juventus_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_juventus_fora2023a24.xml" value="0.21557971014492755" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_koln_casa2023a24.xml" value="0.27239583333333334" />
@@ -144,6 +223,7 @@
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_lista_alemao_a2022a23.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_lista_alemao_a2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_lista_br_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_lista_br_b_2023.xml" value="0.17222222222222222" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_lista_espanhol_a2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_lista_franca_a2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_lista_ingles_a2022a23.xml" value="0.36666666666666664" />
@@ -151,7 +231,8 @@
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_lista_italia_a2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_liverpool_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_liverpool_fora2023a24.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_londrina_casa_b_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_londrina_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_londrina_fora_b_2023.xml" value="0.1" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_lorient_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_lorient_fora2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_luton_casa2023a24.xml" value="0.36666666666666664" />
@@ -172,7 +253,8 @@
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_metz_fora2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_milan_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_milan_fora2023a24.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_mirassol_casa_b_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_mirassol_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_mirassol_fora_b_2023.xml" value="0.1" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_monaco_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_monaco_fora2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_montpellier_casa2023a24.xml" value="0.36666666666666664" />
@@ -189,14 +271,21 @@
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_nice_fora2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_nottingham_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_nottingham_fora2023a24.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_novorizontino_casa_b_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_novorizontino_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_novorizontino_fora_b_2023.xml" value="0.1" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_osasuna_casa2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_osasuna_fora2023a24.xml" value="0.27239583333333334" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_palmeiras_casa_a_2023.xml" value="0.26875" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_pontepreta_casa_b_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_palmeiras2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_palmeiras_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_palmeiras_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_palmeiras_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_palmeiras_fr2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_pontepreta_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_pontepreta_fora_b_2023.xml" value="0.1" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_psg_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_psg_fora2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_rayo_vallecano_casa2023a24.xml" value="0.27239583333333334" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_rayo_vallecano_fora2022a23.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_rayo_vallecano_fora2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_real_betis_casa2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_real_betis_fora2023a24.xml" value="0.27239583333333334" />
@@ -212,9 +301,18 @@
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_roma_fora2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_salernitana_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_salernitana_fora2023a24.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_sampaiocorrea_casa_b_2023.xml" value="0.26875" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_santos_casa_a_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_sampaiocorrea_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_sampaiocorrea_fora_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_santos2023_resultado.xml" value="0.13076923076923078" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_santos_casa_a_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_santos_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_santos_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_santos_fr2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_sao_paulo2023_resultado.xml" value="0.13076923076923078" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_saopaulo_casa_a_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_saopaulo_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_saopaulo_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_saopaulo_fr2023_rstd.xml" value="0.13672922252010725" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_sassuolo_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_sassuolo_fora2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_sevilla_casa2023a24.xml" value="0.27239583333333334" />
@@ -222,12 +320,14 @@
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_sevilla_fora2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_sheffield_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_sheffield_fora2023a24.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_sport_casa_b_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_sport_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_sport_fora_b_2023.xml" value="0.1" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_strasbourg_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_strasbourg_fora2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_stuttgart_casa2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_stuttgart_fora2023a24.xml" value="0.27239583333333334" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_tombense_casa_b_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_tombense_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_tombense_fora_b_2023.xml" value="0.1" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_torino_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_torino_fora2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_tottenham_casa2022a23.xml" value="0.36666666666666664" />
@@ -241,11 +341,17 @@
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_union_berlin_fora2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_valencia_casa2023a24.xml" value="0.21557971014492755" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_valencia_fora2023a24.xml" value="0.27239583333333334" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_vasco2023_resultado.xml" value="0.13076923076923078" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_vasco_casa_a_2023.xml" value="0.26875" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_vilanova_casa_b_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_vasco_cs2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_vasco_fora_a_2023.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_vasco_fr2023_rstd.xml" value="0.13672922252010725" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_vilanova_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_vilanova_fora_b_2023.xml" value="0.1" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_villarreal_casa2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_villarreal_fora2023a24.xml" value="0.27239583333333334" />
-        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_vitoria_casa_b_2023.xml" value="0.26875" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_vitoria_casa_b_2023.xml" value="0.1" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_vitoria_fora_b_2023.xml" value="0.1" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_werder_bremen_casa2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_werder_bremen_fora2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_west_ham_casa2023a24.xml" value="0.36666666666666664" />
@@ -254,10 +360,15 @@
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_wolfsburg_fora2023a24.xml" value="0.27239583333333334" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_wolves_casa2023a24.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/fragment_wolves_fora2023a24.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/layout_gols.xml" value="0.32916666666666666" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/layout_partidas.xml" value="0.5" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/layout_resultado_partidas.xml" value="0.5" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/list_times_campeonato_principal_adapter.xml" value="0.14492753623188406" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/lista_jogos_estatistica_cartoes_adapter.xml" value="0.14492753623188406" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/tela_classificacao_oficial.xml" value="0.17" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/tela_estatistica_gols.xml" value="0.5" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/tela_estatistica_oficial.xml" value="0.23324275362318841" />
+        <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/tela_estatistica_oficial_casa_fora.xml" value="0.34375" />
         <entry key="..\:/Users/klebe/AndroidStudioProjects/dados-do-jogos-2020-oficial/app/src/main/res/layout/tela_estatistica_oficial_porcentagem.xml" value="0.23324275362318841" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/Dadosdosjogos2020oficial/app/src/main/res/layout/activity_main.xml" value="0.22256410256410256" />
         <entry key="..\:/Users/kleber_Programador/AndroidStudioProjects/Usando fragmento para recuperar dados da api/app/src/main/res/layout/activity_ceara.xml" value="0.2703125" />
