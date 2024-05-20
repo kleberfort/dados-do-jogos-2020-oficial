@@ -1,6 +1,7 @@
 package com.jogos.dadosoficialkf228920.fragments.estatistica.geral.europaA2023a24.franca.nantes;
 
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.jogos.dadosoficialkf228920.data.brasileiroA2023.americaMG.AmericaMgFo
 import com.jogos.dadosoficialkf228920.data.europaA2023a24.franca.nantes.NantesForaPartidaApi;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaOficialPorcentagemBinding;
 import com.jogos.dadosoficialkf228920.model.Partida;
+import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoFora;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -574,9 +576,18 @@ public class NantesForaEstatisticaFragment extends Fragment {
 
 
 
-
-
                     binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
+
+                    String nome = partidas.get(0).getAwayTime().getNome();
+                    String totalJogos = String.valueOf(partidas.size());
+                    String totalGolsMcd = String.valueOf(golsTotalZeroCincoMarcados );
+                    String totalGolsMcdPct = String.valueOf(Math.round(((double)golsTotalZeroCincoMarcados * 100 ) / partidas.size()));
+
+                    // Formate o texto usando a classe TextUtils
+                    SpannableStringBuilder builder = FormatarCoresTextoFora.formatText(nome, totalJogos, totalGolsMcd, totalGolsMcdPct);
+
+                    // Defina o texto no TextView
+                    binding.tvRespostaEstatistica.setText(builder);
 
 
                 }

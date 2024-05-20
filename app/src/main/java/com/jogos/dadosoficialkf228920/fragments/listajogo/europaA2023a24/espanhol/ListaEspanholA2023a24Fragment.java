@@ -1,5 +1,6 @@
 package com.jogos.dadosoficialkf228920.fragments.listajogo.europaA2023a24.espanhol;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -37,6 +39,7 @@ import com.jogos.dadosoficialkf228920.activity.europaA2023a24.espanhol.Villarrea
 import com.jogos.dadosoficialkf228920.adapter.europa2023a24.espanhol.TimesEspanholA2023a24Adapter;
 import com.jogos.dadosoficialkf228920.data.europaA2023a24.espanhol.TimesEspanholA2023a24Api;
 import com.jogos.dadosoficialkf228920.databinding.FragmentListaEspanholA2023a24Binding;
+import com.jogos.dadosoficialkf228920.fragments.listajogo.europaA2023a24.ingles.ListaInglesA2023a24Fragment;
 import com.jogos.dadosoficialkf228920.model.ClassificacaoOficial;
 import com.jogos.dadosoficialkf228920.model.ComparatorPontosSaldoGolsGolsPro;
 import com.jogos.dadosoficialkf228920.model.RecyclerItemClickListener;
@@ -87,6 +90,31 @@ public class ListaEspanholA2023a24Fragment extends Fragment {
     }
 
 
+
+    //1 etapa criamos a internface
+    public interface ListaEspanholaInterface{//esse é o codigo de criar a interface // entede essa primeira parte ? ele basicamente
+        void listaEspanholaMetodo(String nome);//viu que é uma string ?sim
+    }
+
+
+    ListaEspanholaInterface listaEspanhola = null;//queremos usar o metodo listaInglesa(String nome) mas estamos iniciando ela com o valor null
+
+
+
+    //3 etapa iniciamos a variavel
+    @Override
+    public void onAttach(@NonNull Context context) {//
+        super.onAttach(context);
+
+        if(context instanceof ListaEspanholaInterface){
+            listaEspanhola = (ListaEspanholaInterface) context;//aqui iniciamos a nossa variavel... Esse código voce nao precisa entender, só tem que
+            //compreendeu as 3 etapadas ?sim ok
+        }
+    }
+
+
+    //entendeu o que fizemos ?sim, o que faz esse méto onAttach? ele vai herdar da MainActivvty... mas melhor explicar uma outra hora
+    //se nao vai baguncar seu raciocinio
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -230,110 +258,117 @@ public class ListaEspanholA2023a24Fragment extends Fragment {
 
                             switch (lista.getNome()){
                                 case "Alaves":
-                                    Intent elche = new Intent(getContext(), Alaves2023_24Activity.class);
-                                    startActivity(elche);
-                                    Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
+
+                                    listaEspanhola.listaEspanholaMetodo("Alaves");
                                     break;
 
                                 case "Almería":
-                                    Intent almeria = new Intent(getContext(), Almeria2023_24Activity.class);
-                                    startActivity(almeria);
-                                    Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
+
+                                    listaEspanhola.listaEspanholaMetodo("Almería");
+
                                     break;
                                 case "Athletic Bilbao":
-                                    Intent athleticBilbao = new Intent(getContext(), AthleticBilbao2023_24Activity.class);
-                                    startActivity(athleticBilbao);
+                                    listaEspanhola.listaEspanholaMetodo("Athletic Bilbao");
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Atlético de Madrid":
-                                    Intent atleticoMadrid = new Intent(getContext(), AtleticoMadrid2023_24Activity.class);
-                                    startActivity(atleticoMadrid);
-                                    Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
+                                    listaEspanhola.listaEspanholaMetodo("Atlético de Madrid");
+                                    //Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Barcelona":
-                                    Intent barcelona = new Intent(getContext(), Barcelona2023_24Activity.class);
-                                    startActivity(barcelona);
-                                    Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
+                                    listaEspanhola.listaEspanholaMetodo("Barcelona");
+                                    //Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Cádiz":
-                                    Intent cadiz = new Intent(getContext(), Cadiz2023_24Activity.class);
-                                    startActivity(cadiz);
+                                    listaEspanhola.listaEspanholaMetodo("Cádiz");
+//                                    Intent cadiz = new Intent(getContext(), Cadiz2023_24Activity.class);
+//                                    startActivity(cadiz);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Celta de Vigo":
-                                    Intent celtaVigo = new Intent(getContext(), CeltaVigo2023_24Activity.class);
-                                    startActivity(celtaVigo);
+                                    listaEspanhola.listaEspanholaMetodo("Celta de Vigo");
+//                                    Intent celtaVigo = new Intent(getContext(), CeltaVigo2023_24Activity.class);
+//                                    startActivity(celtaVigo);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
 
                                 case "Getafe":
-                                    Intent getafe = new Intent(getContext(), Getafe2023_24Activity.class);
-                                    startActivity(getafe);
+                                    listaEspanhola.listaEspanholaMetodo("Getafe");
+//                                    Intent getafe = new Intent(getContext(), Getafe2023_24Activity.class);
+//                                    startActivity(getafe);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
 
                                 case "Girona":
-                                    Intent girona = new Intent(getContext(), Girona2023_24Activity.class);
-                                    startActivity(girona);
-                                    Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
+                                    listaEspanhola.listaEspanholaMetodo("Girona");
+                                    //Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
 
                                 case "Granada":
-                                    Intent espanyol = new Intent(getContext(), Granada2023_24Activity.class);
-                                    startActivity(espanyol);
+                                    listaEspanhola.listaEspanholaMetodo("Granada");
+//                                    Intent espanyol = new Intent(getContext(), Granada2023_24Activity.class);
+//                                    startActivity(espanyol);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
 
                                 case "Las Palmas":
-                                    Intent realValladolid = new Intent(getContext(), LasPalmas2023_24Activity.class);
-                                    startActivity(realValladolid);
+                                    listaEspanhola.listaEspanholaMetodo("Las Palmas");
+//                                    Intent realValladolid = new Intent(getContext(), LasPalmas2023_24Activity.class);
+//                                    startActivity(realValladolid);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
 
                                 case "Mallorca":
-                                    Intent mallorca = new Intent(getContext(), Mallorca2023_24Activity.class);
-                                    startActivity(mallorca);
+                                    listaEspanhola.listaEspanholaMetodo("Mallorca");
+//                                    Intent mallorca = new Intent(getContext(), Mallorca2023_24Activity.class);
+//                                    startActivity(mallorca);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Osasuna":
-                                    Intent osasuna = new Intent(getContext(), Osasuna2023_24Activity.class);
-                                    startActivity(osasuna);
+                                    listaEspanhola.listaEspanholaMetodo("Osasuna");
+//                                    Intent osasuna = new Intent(getContext(), Osasuna2023_24Activity.class);
+//                                    startActivity(osasuna);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Rayo Vallecano":
-                                    Intent rayoVallecano = new Intent(getContext(), RayoVallecano2023_24Activity.class);
-                                    startActivity(rayoVallecano);
+                                    listaEspanhola.listaEspanholaMetodo("Rayo Vallecano");
+//                                    Intent rayoVallecano = new Intent(getContext(), RayoVallecano2023_24Activity.class);
+//                                    startActivity(rayoVallecano);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Real Betis":
-                                    Intent realBetis = new Intent(getContext(), RealBetis2023_24Activity.class);
-                                    startActivity(realBetis);
+                                    listaEspanhola.listaEspanholaMetodo("Real Betis");
+//                                    Intent realBetis = new Intent(getContext(), RealBetis2023_24Activity.class);
+//                                    startActivity(realBetis);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Real Madrid":
-                                    Intent realMadrid = new Intent(getContext(), RealMadrid2023_24Activity.class);
-                                    startActivity(realMadrid);
-                                    Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
+                                    listaEspanhola.listaEspanholaMetodo("Real Madrid");
+                                    //Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Real Sociedad":
-                                    Intent realSociedad = new Intent(getContext(), RealSociedad2023_24Activity.class);
-                                    startActivity(realSociedad);
+                                    listaEspanhola.listaEspanholaMetodo("Real Sociedad");
+//                                    Intent realSociedad = new Intent(getContext(), RealSociedad2023_24Activity.class);
+//                                    startActivity(realSociedad);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
 
                                 case "Sevilla":
-                                    Intent sevilla = new Intent(getContext(), Sevilla2023_24Activity.class);
-                                    startActivity(sevilla);
+                                    listaEspanhola.listaEspanholaMetodo("Sevilla");
+//                                    Intent sevilla = new Intent(getContext(), Sevilla2023_24Activity.class);
+//                                    startActivity(sevilla);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Valencia":
-                                    Intent valencica = new Intent(getContext(), Valencia2023_24Activity.class);
-                                    startActivity(valencica);
+                                    listaEspanhola.listaEspanholaMetodo("Valencia");
+//                                    Intent valencica = new Intent(getContext(), Valencia2023_24Activity.class);
+//                                    startActivity(valencica);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Villarreal":
-                                    Intent villarreal = new Intent(getContext(), Villarreal2023_24Activity.class);
-                                    startActivity(villarreal);
+                                    listaEspanhola.listaEspanholaMetodo("Villarreal");
+//                                    Intent villarreal = new Intent(getContext(), Villarreal2023_24Activity.class);
+//                                    startActivity(villarreal);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
 

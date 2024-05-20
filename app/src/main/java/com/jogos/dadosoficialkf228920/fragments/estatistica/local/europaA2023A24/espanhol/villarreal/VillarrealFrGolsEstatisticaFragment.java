@@ -1,6 +1,7 @@
 package com.jogos.dadosoficialkf228920.fragments.estatistica.local.europaA2023A24.espanhol.villarreal;
 
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import com.jogos.dadosoficialkf228920.data.europaA2023a24.espanhol.villarreal.Vi
 import com.jogos.dadosoficialkf228920.data.europaA2023a24.espanhol.villarreal.VillarrealForaPartidaApi;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaGolsBinding;
 import com.jogos.dadosoficialkf228920.model.Partida;
+import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoGolsMcdFora;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -30,7 +32,7 @@ public class VillarrealFrGolsEstatisticaFragment extends Fragment {
 
 
     private TelaEstatisticaGolsBinding binding;
-    private VillarrealForaPartidaApi villarrealCasaPartidaApi;
+    private VillarrealForaPartidaApi villarrealForaPartidaApi;
 
 
 
@@ -96,7 +98,7 @@ public class VillarrealFrGolsEstatisticaFragment extends Fragment {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        villarrealCasaPartidaApi = retrofit.create(VillarrealForaPartidaApi.class);
+        villarrealForaPartidaApi = retrofit.create(VillarrealForaPartidaApi.class);
     }
 
 
@@ -106,7 +108,7 @@ public class VillarrealFrGolsEstatisticaFragment extends Fragment {
                 R.array.array_brasileiro_rodada_ate_19, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        villarrealCasaPartidaApi.getVillarrealFora().enqueue(new Callback<List<Partida>>() {
+        villarrealForaPartidaApi.getVillarrealFora().enqueue(new Callback<List<Partida>>() {
             @Override
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
                 if(response.isSuccessful()) {
@@ -433,7 +435,7 @@ public class VillarrealFrGolsEstatisticaFragment extends Fragment {
 
 
 
-                    binding.tvTitulo.setText("ESTATÍSTICA DE GOLS " + partidas.get(0).getAwayTime().getName().toUpperCase() + " FORA");
+                    binding.tvTitulo.setText("GOLS MARCADOS " + partidas.get(0).getAwayTime().getName().toUpperCase() + " FORA");
 
 
                     binding.tvGols1T05Mcd.setText(String.valueOf(golsTotalPrimeiroTempoZeroCincoMarcados));
@@ -477,6 +479,18 @@ public class VillarrealFrGolsEstatisticaFragment extends Fragment {
 
 
                     binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
+
+
+                    String nome = partidas.get(0).getAwayTime().getNome();
+                    String totalJogos = String.valueOf(partidas.size());
+                    String totalGolsMcd = String.valueOf(golsTotalZeroCincoMarcados );
+                    String totalGolsMcdPct = String.valueOf(Math.round(((double)golsTotalZeroCincoMarcados * 100 ) / partidas.size()));
+
+                    // Formate o texto usando a classe TextUtils
+                    SpannableStringBuilder builder = FormatarCoresTextoGolsMcdFora.formatText(nome, totalJogos, totalGolsMcd, totalGolsMcdPct);
+
+                    // Defina o texto no TextView
+                    binding.tvRespostaEstatistica.setText(builder);
 
 
                 }//fim do if

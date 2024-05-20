@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.listajogo.europaA2023a24.espanhol.resultado.estatistica.valencia.ValenciaFrResultadoFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListaJogos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.estatistica.geral.europaA2023a24.espanhol.valencia.ValenciaForaEstatisticaFragment"
+                android:id="@+id/fragmento_estatistica"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical">
+
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.estatistica.local.europaA2023A24.espanhol.valencia.ValenciaFrGolsEstatisticaFragment"
+                android:id="@+id/fragmento_estatistica_gols"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical">
+
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.estatistica.local.europaA2023A24.espanhol.valencia.ValenciaFrGolsSofridoEstatisticaFragment"
+                android:id="@+id/fragmento_estatistica_gols_Sofrido"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical">
+
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.estatistica.local.europaA2023A24.espanhol.valencia.ValenciaFrEscanteiosEstatisticaFragment"
+                android:id="@+id/fragmento_estatistica_cantos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

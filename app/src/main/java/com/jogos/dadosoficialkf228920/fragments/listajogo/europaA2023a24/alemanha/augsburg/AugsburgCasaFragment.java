@@ -31,6 +31,7 @@ import com.jogos.dadosoficialkf228920.activity.europaA2023a24.alemanha.UnionBerl
 import com.jogos.dadosoficialkf228920.activity.europaA2023a24.alemanha.WerderBremen2023_24Activity;
 import com.jogos.dadosoficialkf228920.activity.europaA2023a24.alemanha.Wolfsburg2023_24Activity;
 import com.jogos.dadosoficialkf228920.adapter.europa2023a24.alemanha.augsburg.AugsburgCasaAdapter;
+import com.jogos.dadosoficialkf228920.adapter.europa2023a24.alemanha.augsburg.AugsburgForaAdapter;
 import com.jogos.dadosoficialkf228920.data.europaA2023a24.alemanha.augsburg.AugsburgCasaPartidaApi;
 import com.jogos.dadosoficialkf228920.databinding.FragmentAugsburgCasa2023a24Binding;
 import com.jogos.dadosoficialkf228920.model.Partida;
@@ -74,8 +75,9 @@ public class AugsburgCasaFragment extends Fragment {
     }
 
     private void setupHttpClient() {
+        String nomeTime = "augsburg";
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/europa-a-2023-24/alemanha/augsburg/")
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/master/europa-a-2023-24/alemanha/"+nomeTime+"/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

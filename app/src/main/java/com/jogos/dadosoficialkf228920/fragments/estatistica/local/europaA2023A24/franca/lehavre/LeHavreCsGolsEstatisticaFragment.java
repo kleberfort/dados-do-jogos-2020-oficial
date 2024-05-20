@@ -1,6 +1,7 @@
 package com.jogos.dadosoficialkf228920.fragments.estatistica.local.europaA2023A24.franca.lehavre;
 
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import com.jogos.dadosoficialkf228920.data.brasileiroA2023.americaMG.AmericaMgCa
 import com.jogos.dadosoficialkf228920.data.europaA2023a24.franca.lehavre.LeHavreCasaPartidaApi;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaGolsBinding;
 import com.jogos.dadosoficialkf228920.model.Partida;
+import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoGolsMcdCasa;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -428,7 +430,7 @@ public class LeHavreCsGolsEstatisticaFragment extends Fragment {
 
 
 
-                    binding.tvTitulo.setText("ESTATÍSTICA DE GOLS " + partidas.get(0).getHomeTime().getName().toUpperCase() + " CASA");
+                    binding.tvTitulo.setText("GOLS MARCADOS " + partidas.get(0).getHomeTime().getName().toUpperCase() + " CASA");
 
 
 
@@ -473,6 +475,17 @@ public class LeHavreCsGolsEstatisticaFragment extends Fragment {
 
 
                     binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
+
+                    String nome = partidas.get(0).getHomeTime().getNome();
+                    String totalJogos = String.valueOf(partidas.size());
+                    String totalGolsMcd = String.valueOf(golsTotalZeroCincoMarcados );
+                    String totalGolsMcdPct = String.valueOf(Math.round(((double)golsTotalZeroCincoMarcados * 100 ) / partidas.size()));
+
+                    // Formate o texto usando a classe TextUtils
+                    SpannableStringBuilder builder = FormatarCoresTextoGolsMcdCasa.formatText(nome, totalJogos, totalGolsMcd, totalGolsMcdPct);
+
+                    // Defina o texto no TextView
+                    binding.tvRespostaEstatistica.setText(builder);
 
 
                 }//fim do if

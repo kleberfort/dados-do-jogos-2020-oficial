@@ -1,6 +1,7 @@
 package com.jogos.dadosoficialkf228920.fragments.estatistica.geral.europaA2023a24.franca.brest;
 
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +11,10 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.jogos.dadosoficialkf228920.R;
-import com.jogos.dadosoficialkf228920.data.brasileiroA2023.americaMG.AmericaMgCasaA2023PartidaApi;
-import com.jogos.dadosoficialkf228920.data.europaA2023a24.franca.brest.BrestCasaPartidaApi;
+import com.jogos.dadosoficialkf228920.data.europaA2023a24.franca.brest.BrestApi;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaOficialPorcentagemBinding;
 import com.jogos.dadosoficialkf228920.model.Partida;
+import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoCasa;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -28,7 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class BrestCasaEstatisticaFragment extends Fragment {
 
     private TelaEstatisticaOficialPorcentagemBinding binding;
-    private BrestCasaPartidaApi brestCasaPartidaApi;
+    private BrestApi brestApi;
 
 
 
@@ -107,7 +108,7 @@ public class BrestCasaEstatisticaFragment extends Fragment {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        brestCasaPartidaApi = retrofit.create(BrestCasaPartidaApi.class);
+        brestApi = retrofit.create(BrestApi.class);
     }
 
     private void setupDadosJogos(){
@@ -116,7 +117,7 @@ public class BrestCasaEstatisticaFragment extends Fragment {
                 R.array.array_brasileiro_rodada_ate_19, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        brestCasaPartidaApi.getBrestCasa().enqueue(new Callback<List<Partida>>() {
+        brestApi.getBrestCasa().enqueue(new Callback<List<Partida>>() {
             @Override
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
                 if(response.isSuccessful()) {
@@ -590,10 +591,18 @@ public class BrestCasaEstatisticaFragment extends Fragment {
                     binding.tvTotalDerrota.setText(String.valueOf(totalDerrota));
 
 
-
-
-
                     binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
+
+                    String nome = partidas.get(0).getHomeTime().getNome();
+                    String totalJogos = String.valueOf(partidas.size());
+                    String totalGolsMcd = String.valueOf(golsTotalZeroCincoMarcados );
+                    String totalGolsMcdPct = String.valueOf(Math.round(((double)golsTotalZeroCincoMarcados * 100 ) / partidas.size()));
+
+                    // Formate o texto usando a classe TextUtils
+                    SpannableStringBuilder builder = FormatarCoresTextoCasa.formatText(nome, totalJogos, totalGolsMcd, totalGolsMcdPct);
+
+                    // Defina o texto no TextView
+                    binding.tvRespostaEstatistica.setText(builder);
 
 
                 }

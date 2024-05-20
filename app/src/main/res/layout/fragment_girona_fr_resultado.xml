@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.listajogo.europaA2023a24.espanhol.resultado.estatistica.girona.GironaFrResultadoFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListaJogos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.estatistica.geral.europaA2023a24.espanhol.girona.GironaForaEstatisticaFragment"
+                android:id="@+id/fragmento_estatistica"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical">
+
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.estatistica.local.europaA2023A24.espanhol.girona.GironaFrGolsEstatisticaFragment"
+                android:id="@+id/fragmento_estatistica_gols"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical">
+
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.estatistica.local.europaA2023A24.espanhol.girona.GironaFrGolsSofridoEstatisticaFragment"
+                android:id="@+id/fragmento_estatistica_gols_Sofrido"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical">
+
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.estatistica.local.europaA2023A24.espanhol.girona.GironaFrEscanteiosEstatisticaFragment"
+                android:id="@+id/fragmento_estatistica_cantos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

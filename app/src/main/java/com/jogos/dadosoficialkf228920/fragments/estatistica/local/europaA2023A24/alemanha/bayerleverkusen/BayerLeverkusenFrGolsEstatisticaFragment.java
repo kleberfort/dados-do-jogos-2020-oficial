@@ -1,6 +1,7 @@
 package com.jogos.dadosoficialkf228920.fragments.estatistica.local.europaA2023A24.alemanha.bayerleverkusen;
 
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,7 @@ import com.jogos.dadosoficialkf228920.data.brasileiroA2023.americaMG.AmericaMgFo
 import com.jogos.dadosoficialkf228920.data.europaA2023a24.alemanha.bayerleverkusen.BayerLeverkusenForaPartidaApi;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaGolsBinding;
 import com.jogos.dadosoficialkf228920.model.Partida;
+import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoGolsMcdFora;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -431,7 +433,7 @@ public class BayerLeverkusenFrGolsEstatisticaFragment extends Fragment {
 
 
 
-                    binding.tvTitulo.setText("ESTATÍSTICA DE GOLS " + partidas.get(0).getAwayTime().getName().toUpperCase() + " FORA");
+                    binding.tvTitulo.setText("GOLS MARCADOS " + partidas.get(0).getAwayTime().getName().toUpperCase() + " FORA");
 
 
                     binding.tvGols1T05Mcd.setText(String.valueOf(golsTotalPrimeiroTempoZeroCincoMarcados));
@@ -475,6 +477,17 @@ public class BayerLeverkusenFrGolsEstatisticaFragment extends Fragment {
 
 
                     binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
+
+                    String nome = partidas.get(0).getAwayTime().getNome();
+                    String totalJogos = String.valueOf(partidas.size());
+                    String totalGolsMcd = String.valueOf(golsTotalZeroCincoMarcados );
+                    String totalGolsMcdPct = String.valueOf(Math.round(((double)golsTotalZeroCincoMarcados * 100 ) / partidas.size()));
+
+                    // Formate o texto usando a classe TextUtils
+                    SpannableStringBuilder builder = FormatarCoresTextoGolsMcdFora.formatText(nome, totalJogos, totalGolsMcd, totalGolsMcdPct);
+
+                    // Defina o texto no TextView
+                    binding.tvRespostaEstatistica.setText(builder);
 
 
                 }//fim do if

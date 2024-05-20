@@ -4,17 +4,20 @@ plugins {
 
 }
 
-
-
 android {
-    compileSdk 33
+    compileSdk 34
 
+    namespace "com.jogos.dadosoficialkf228920"
+
+    buildFeatures {
+        viewBinding true
+    }
     defaultConfig {
         applicationId "com.jogos.dadosoficialkf228920"
         minSdk 27
-        targetSdk 33
-        versionCode 11 //decima primeira atualização
-        versionName "1.9" // Implementado a estatística de gols do time jogando em casa e fora.
+        targetSdk 34
+        versionCode 26 //vigésima sexta atualização
+        versionName "3.0.3" // Adicionado um ouvinte na tela de Dados estatisticos: Jogos casa e fora do campeonato serie A e B.
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -45,11 +48,8 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.6.0'
-
-    implementation 'com.facebook.android:audience-network-sdk:6.+'
-
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
 
 
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -59,12 +59,13 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    implementation "androidx.annotation:annotation-experimental:1.4.0-dev01"
-
+    implementation "androidx.annotation:annotation-experimental:1.4.0"
 
 
     implementation platform('com.google.firebase:firebase-bom:32.1.0')
     implementation 'com.google.firebase:firebase-analytics'
+
+    implementation 'com.google.android.material:material:1.12.0'
 
 
 
@@ -83,7 +84,36 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     //dependencia de anuncios
-    implementation 'com.google.android.gms:play-services-ads:22.1.0'
+    implementation 'com.google.android.gms:play-services-ads:23.0.0'//sempre deixar esse o mais atualizado
+
+   // implementation 'com.appodeal.ads:sdk:3.2.1'
+
+    implementation 'com.appodeal.ads:sdk:3.2.0.0'
+
+    implementation 'com.unity3d.ads:unity-ads:4.9.2'
+
+
+    //navegação
+
+    def nav_version = "2.7.7"
+
+    // Java language implementation
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+
+    // Kotlin
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Feature module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    // Testing Navigation
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+
+    // Jetpack Compose Integration
+    implementation "androidx.navigation:navigation-compose:$nav_version"
+
 
 
 }

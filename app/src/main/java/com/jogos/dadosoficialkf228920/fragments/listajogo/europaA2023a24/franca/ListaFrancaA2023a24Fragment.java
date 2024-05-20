@@ -1,5 +1,6 @@
 package com.jogos.dadosoficialkf228920.fragments.listajogo.europaA2023a24.franca;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -35,6 +37,7 @@ import com.jogos.dadosoficialkf228920.activity.europaA2023a24.franca.Toulouse202
 import com.jogos.dadosoficialkf228920.adapter.europa2023a24.franca.TimesFrancesA2023a24Adpater;
 import com.jogos.dadosoficialkf228920.data.europaA2023a24.franca.TimesFrancesA2023a24Api;
 import com.jogos.dadosoficialkf228920.databinding.FragmentListaFrancaA2023a24Binding;
+import com.jogos.dadosoficialkf228920.fragments.listajogo.europaA2023a24.ingles.ListaInglesA2023a24Fragment;
 import com.jogos.dadosoficialkf228920.model.ClassificacaoOficial;
 import com.jogos.dadosoficialkf228920.model.ComparatorPontosSaldoGolsGolsPro;
 import com.jogos.dadosoficialkf228920.model.RecyclerItemClickListener;
@@ -81,6 +84,33 @@ public class ListaFrancaA2023a24Fragment extends Fragment {
 
     public ListaFrancaA2023a24Fragment() {
         // Required empty public constructor
+    }
+
+
+    //1 etapa criamos a interface
+    public interface ListaFrancesInterface{//esse é o codigo de criar a interface // entede essa primeira parte ? ele basicamente
+        void listaFrancesMetodo(String nome);//viu que é uma string ?sim
+    }
+
+
+
+
+    //2 etapa criamos uma variavel da interface
+    ListaFrancesInterface listaFrances = null;//queremos usar o metodo listaInglesa(String nome) mas estamos iniciando ela com o valor null
+    //ou seuja null é igual a nulo ou nada
+    //entende isso ?sim
+
+
+
+    //3 etapa iniciamos a variavel
+    @Override
+    public void onAttach(@NonNull Context context) {//
+        super.onAttach(context);
+
+        if(context instanceof ListaFrancesInterface){
+            listaFrances = (ListaFrancesInterface) context;//aqui iniciamos a nossa variavel... Esse código voce nao precisa entender, só tem que
+            //compreendeu as 3 etapadas ?sim ok
+        }
     }
 
 
@@ -200,6 +230,9 @@ public class ListaFrancaA2023a24Fragment extends Fragment {
 
                         if(minhaLista.size() <= i) {
                             ClassificacaoOficial classificacaoOficial = new ClassificacaoOficial(nome, imagem, totalJogos, golsProTotal, golsContraTotal, saldoGols, totalPontos, totalVitoria, totalEmpate, totalDerrota);
+                           if(i == 10){
+                            classificacaoOficial = new ClassificacaoOficial(nome, imagem, totalJogos, golsProTotal, golsContraTotal, saldoGols, (totalPontos-1), totalVitoria, totalEmpate, totalDerrota);
+                           }
                             minhaLista.add(classificacaoOficial);
                         }
 
@@ -227,93 +260,111 @@ public class ListaFrancaA2023a24Fragment extends Fragment {
 
                             switch (lista.getNome()){
                                 case "Brest":
-                                    Intent brest = new Intent(getContext(), Brest2023_24Activity.class);
-                                    startActivity(brest);
+                                    listaFrances.listaFrancesMetodo("Brest");
+//                                    Intent brest = new Intent(getContext(), Brest2023_24Activity.class);
+//                                    startActivity(brest);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Clermont":
-                                    Intent clermont = new Intent(getContext(), Clermont2023_24Activity.class);
-                                    startActivity(clermont);
+                                    listaFrances.listaFrancesMetodo("Clermont");
+//                                    Intent clermont = new Intent(getContext(), Clermont2023_24Activity.class);
+//                                    startActivity(clermont);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Le Havre":
-                                    Intent leHavre = new Intent(getContext(), LeHavre2023_24Activity.class);
-                                    startActivity(leHavre);
+                                    listaFrances.listaFrancesMetodo("Le Havre");
+//                                    Intent leHavre = new Intent(getContext(), LeHavre2023_24Activity.class);
+//                                    startActivity(leHavre);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Lens":
-                                    Intent lens = new Intent(getContext(), Lens2023_24Activity.class);
-                                    startActivity(lens);
+                                    listaFrances.listaFrancesMetodo("Lens");
+//                                    Intent lens = new Intent(getContext(), Lens2023_24Activity.class);
+//                                    startActivity(lens);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Lille":
-                                    Intent lille = new Intent(getContext(), Lille2023_24Activity.class);
-                                    startActivity(lille);
+                                    listaFrances.listaFrancesMetodo("Lille");
+//                                    Intent lille = new Intent(getContext(), Lille2023_24Activity.class);
+//                                    startActivity(lille);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Lorient":
-                                    Intent lorient = new Intent(getContext(), Lorient2023_24Activity.class);
-                                    startActivity(lorient);
+                                    listaFrances.listaFrancesMetodo("Lorient");
+//                                    Intent lorient = new Intent(getContext(), Lorient2023_24Activity.class);
+//                                    startActivity(lorient);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Lyon":
-                                    Intent lyon = new Intent(getContext(), Lyon2023_24Activity.class);
-                                    startActivity(lyon);
+                                    listaFrances.listaFrancesMetodo("Lyon");
+//                                    Intent lyon = new Intent(getContext(), Lyon2023_24Activity.class);
+//                                    startActivity(lyon);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Marseille":
-                                    Intent marseille = new Intent(getContext(), Marseille2023_24Activity.class);
-                                    startActivity(marseille);
+                                    listaFrances.listaFrancesMetodo("Marseille");
+//                                    Intent marseille = new Intent(getContext(), Marseille2023_24Activity.class);
+//                                    startActivity(marseille);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Metz":
-                                    Intent metz = new Intent(getContext(), Metz2023_24Activity.class);
-                                    startActivity(metz);
+                                    listaFrances.listaFrancesMetodo("Metz");
+//                                    Intent metz = new Intent(getContext(), Metz2023_24Activity.class);
+//                                    startActivity(metz);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Monaco":
-                                    Intent monaco = new Intent(getContext(), Monaco2023_24Activity.class);
-                                    startActivity(monaco);
+                                    listaFrances.listaFrancesMetodo("Monaco");
+//                                    Intent monaco = new Intent(getContext(), Monaco2023_24Activity.class);
+//                                    startActivity(monaco);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Montpellier":
-                                    Intent montpellier = new Intent(getContext(), Montpellier2023_24Activity.class);
-                                    startActivity(montpellier);
+                                    listaFrances.listaFrancesMetodo("Montpellier");
+//                                    Intent montpellier = new Intent(getContext(), Montpellier2023_24Activity.class);
+//                                    startActivity(montpellier);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Nantes":
-                                    Intent nantes = new Intent(getContext(), Nantes2023_24Activity.class);
-                                    startActivity(nantes);
+                                    listaFrances.listaFrancesMetodo("Nantes");
+//                                    Intent nantes = new Intent(getContext(), Nantes2023_24Activity.class);
+//                                    startActivity(nantes);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Nice":
-                                    Intent nice = new Intent(getContext(), OgcNice2023_24Activity.class);
-                                    startActivity(nice);
+                                    listaFrances.listaFrancesMetodo("Nice");
+//                                    Intent nice = new Intent(getContext(), OgcNice2023_24Activity.class);
+//                                    startActivity(nice);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "PSG":
-                                    Intent psg = new Intent(getContext(), Psg2023_24Activity.class);
-                                    startActivity(psg);
+                                    listaFrances.listaFrancesMetodo("PSG");
+//                                    Intent psg = new Intent(getContext(), Psg2023_24Activity.class);
+//                                    startActivity(psg);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Reims":
-                                    Intent reims = new Intent(getContext(), Reims2023_24Activity.class);
-                                    startActivity(reims);
+                                    listaFrances.listaFrancesMetodo("Reims");
+//                                    Intent reims = new Intent(getContext(), Reims2023_24Activity.class);
+//                                    startActivity(reims);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Rennes":
-                                    Intent rennes = new Intent(getContext(), Rennes2023_24Activity.class);
-                                    startActivity(rennes);
+                                    listaFrances.listaFrancesMetodo("Rennes");
+//                                    Intent rennes = new Intent(getContext(), Rennes2023_24Activity.class);
+//                                    startActivity(rennes);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Strasbourg":
-                                    Intent strasbourg = new Intent(getContext(), Strasbourg2023_24Activity.class);
-                                    startActivity(strasbourg);
+                                    listaFrances.listaFrancesMetodo("Strasbourg");
+//                                    Intent strasbourg = new Intent(getContext(), Strasbourg2023_24Activity.class);
+//                                    startActivity(strasbourg);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Toulouse":
-                                    Intent toulouse = new Intent(getContext(), Toulouse2023_24Activity.class);
-                                    startActivity(toulouse);
+                                    listaFrances.listaFrancesMetodo("Toulouse");
+//                                    Intent toulouse = new Intent(getContext(), Toulouse2023_24Activity.class);
+//                                    startActivity(toulouse);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
 

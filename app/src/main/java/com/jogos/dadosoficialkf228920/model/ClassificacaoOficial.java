@@ -129,7 +129,5 @@ public class ClassificacaoOficial implements Comparable<ClassificacaoOficial> {
     @Override
     public int compareTo(ClassificacaoOficial classificacaoOficial) {
         return this.getPontos().compareTo(classificacaoOficial.pontos);
-
-
     }
 }

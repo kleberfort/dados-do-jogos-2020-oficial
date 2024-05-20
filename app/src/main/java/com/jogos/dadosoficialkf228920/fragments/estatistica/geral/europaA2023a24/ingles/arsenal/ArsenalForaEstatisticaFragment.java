@@ -1,6 +1,7 @@
 package com.jogos.dadosoficialkf228920.fragments.estatistica.geral.europaA2023a24.ingles.arsenal;
 
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,10 +10,11 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.jogos.dadosoficialkf228920.R;
-import com.jogos.dadosoficialkf228920.data.brasileiroA2023.americaMG.AmericaMgForaA2023PartidaApi;
 import com.jogos.dadosoficialkf228920.data.europaA2023a24.ingles.arsenal.ArsenalForaPartidaApi;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaOficialPorcentagemBinding;
 import com.jogos.dadosoficialkf228920.model.Partida;
+import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoCasa;
+import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoFora;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -572,11 +574,18 @@ public class ArsenalForaEstatisticaFragment extends Fragment {
                     binding.tvTotalEmpate.setText(String.valueOf(totalEmpate));
                     binding.tvTotalDerrota.setText(String.valueOf(totalDerrota));
 
-
-
-
-
                     binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
+
+                    String nome = partidas.get(0).getAwayTime().getNome();
+                    String totalJogos = String.valueOf(partidas.size());
+                    String totalGolsMcd = String.valueOf(golsTotalZeroCincoMarcados );
+                    String totalGolsMcdPct = String.valueOf(Math.round(((double)golsTotalZeroCincoMarcados * 100 ) / partidas.size()));
+
+                    // Formate o texto usando a classe TextUtils
+                    SpannableStringBuilder builder = FormatarCoresTextoFora.formatText(nome, totalJogos, totalGolsMcd, totalGolsMcdPct);
+
+                    // Defina o texto no TextView
+                    binding.tvRespostaEstatistica.setText(builder);
 
 
                 }

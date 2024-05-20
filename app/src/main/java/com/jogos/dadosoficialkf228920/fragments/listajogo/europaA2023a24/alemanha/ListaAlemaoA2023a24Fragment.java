@@ -1,5 +1,6 @@
 package com.jogos.dadosoficialkf228920.fragments.listajogo.europaA2023a24.alemanha;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -35,6 +37,7 @@ import com.jogos.dadosoficialkf228920.activity.europaA2023a24.alemanha.Wolfsburg
 import com.jogos.dadosoficialkf228920.adapter.europa2023a24.alemanha.TimesAlemaoA2023a24Adapter;
 import com.jogos.dadosoficialkf228920.data.europaA2023a24.alemanha.TimesAlemaoA2023a24Api;
 import com.jogos.dadosoficialkf228920.databinding.FragmentListaAlemaoA2023a24Binding;
+import com.jogos.dadosoficialkf228920.fragments.listajogo.europaA2023a24.ingles.ListaInglesA2023a24Fragment;
 import com.jogos.dadosoficialkf228920.model.ClassificacaoOficial;
 import com.jogos.dadosoficialkf228920.model.ComparatorPontosSaldoGolsGolsPro;
 import com.jogos.dadosoficialkf228920.model.RecyclerItemClickListener;
@@ -82,6 +85,29 @@ public class ListaAlemaoA2023a24Fragment extends Fragment {
 
     public ListaAlemaoA2023a24Fragment() {
         // Required empty public constructor
+    }
+
+    public interface ListaAlemanhaInterface{//esse é o codigo de criar a interface // entede essa primeira parte ? ele basicamente
+        void listaAlemanhaMetodo(String nome);//viu que é uma string ?sim
+    }
+
+
+    //2 etapa criamos uma variavel da interface
+    ListaAlemanhaInterface listaAlemanha = null;//queremos usar o metodo listaInglesa(String nome) mas estamos iniciando ela com o valor null
+    //ou seuja null é igual a nulo ou nada
+    //entende isso ?sim
+
+
+
+    //3 etapa iniciamos a variavel
+    @Override
+    public void onAttach(@NonNull Context context) {//
+        super.onAttach(context);
+
+        if(context instanceof ListaAlemanhaInterface){
+            listaAlemanha = (ListaAlemanhaInterface) context;//aqui iniciamos a nossa variavel... Esse código voce nao precisa entender, só tem que
+            //compreendeu as 3 etapadas ?sim ok
+        }
     }
 
 
@@ -228,95 +254,99 @@ public class ListaAlemaoA2023a24Fragment extends Fragment {
 
                             switch (lista.getNome()){
                                 case "Augsburg":
-                                    Intent augsburg = new Intent(getContext(), Augsburg2023_24Activity.class);
-                                    startActivity(augsburg);
+                                    listaAlemanha.listaAlemanhaMetodo("Augsburg");
+//                                    Intent augsburg = new Intent(getContext(), Augsburg2023_24Activity.class);
+//                                    startActivity(augsburg);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
 
                                     break;
                                 case "Bayer Leverkusen":
-                                    Intent bayerLeverkusen = new Intent(getContext(), BayerLeverkusen2023_24Activity.class);
-                                    startActivity(bayerLeverkusen);
+                                    listaAlemanha.listaAlemanhaMetodo("Bayer Leverkusen");
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Bayern de Munique":
-                                    Intent bayernMunique = new Intent(getContext(), BayernMunique2023_24Activity.class);
-                                    startActivity(bayernMunique);
+                                    listaAlemanha.listaAlemanhaMetodo("Bayern de Munique");
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Bochum":
-                                    Intent bochum = new Intent(getContext(), Bochum2023_24Activity.class);
-                                    startActivity(bochum);
+                                    listaAlemanha.listaAlemanhaMetodo("Bochum");
+//                                    Intent bochum = new Intent(getContext(), Bochum2023_24Activity.class);
+//                                    startActivity(bochum);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Borussia Dortmund":
-                                    Intent borussiaDortmund = new Intent(getContext(), BorussiaDortmund2023_24Activity.class);
-                                    startActivity(borussiaDortmund);
+                                    listaAlemanha.listaAlemanhaMetodo("Borussia Dortmund");
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Borussia Mönchengladbach":
-                                    Intent borussiaMonchengladbach = new Intent(getContext(), BorussiaMonche2023_24Activity.class);
-                                    startActivity(borussiaMonchengladbach);
+                                    listaAlemanha.listaAlemanhaMetodo("Borussia Mönchengladbach");
+//                                    Intent borussiaMonchengladbach = new Intent(getContext(), BorussiaMonche2023_24Activity.class);
+//                                    startActivity(borussiaMonchengladbach);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Köln(Colônia)":
-                                    Intent koln = new Intent(getContext(), Koln2023_24Activity.class);
-                                    startActivity(koln);
+                                    listaAlemanha.listaAlemanhaMetodo("Köln(Colônia)");
+//                                    Intent koln = new Intent(getContext(), Koln2023_24Activity.class);
+//                                    startActivity(koln);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Darmstadt98":
-                                    Intent darmstadt98 = new Intent(getContext(), Darmstadt2023_24Activity.class);
-                                    startActivity(darmstadt98);
+                                    listaAlemanha.listaAlemanhaMetodo("Darmstadt98");
+//                                    Intent darmstadt98 = new Intent(getContext(), Darmstadt2023_24Activity.class);
+//                                    startActivity(darmstadt98);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
 
                                 case "Eintracht Frankfurt":
-                                    Intent frankfurt = new Intent(getContext(), EintrachtFrankfurt2023_24Activity.class);
-                                    startActivity(frankfurt);
+                                    listaAlemanha.listaAlemanhaMetodo("Eintracht Frankfurt");
+//                                    Intent frankfurt = new Intent(getContext(), EintrachtFrankfurt2023_24Activity.class);
+//                                    startActivity(frankfurt);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                     case "Freiburg":
-                                    Intent freiburg = new Intent(getContext(), Freiburg2023_24Activity.class);
-                                    startActivity(freiburg);
+                                        listaAlemanha.listaAlemanhaMetodo("Freiburg");
+//                                    Intent freiburg = new Intent(getContext(), Freiburg2023_24Activity.class);
+//                                    startActivity(freiburg);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Heidenheim":
-                                    Intent heidenheim = new Intent(getContext(), Heidenheim2023_24Activity.class);
-                                    startActivity(heidenheim);
+                                    listaAlemanha.listaAlemanhaMetodo("Heidenheim");
+//                                    Intent heidenheim = new Intent(getContext(), Heidenheim2023_24Activity.class);
+//                                    startActivity(heidenheim);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Hoffenheim":
-                                    Intent hoffenheim = new Intent(getContext(), Hoffenheim2023_24Activity.class);
-                                    startActivity(hoffenheim);
+                                    listaAlemanha.listaAlemanhaMetodo("Hoffenheim");
+//                                    Intent hoffenheim = new Intent(getContext(), Hoffenheim2023_24Activity.class);
+//                                    startActivity(hoffenheim);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Mainz 05":
-                                    Intent mainz05 = new Intent(getContext(), Mainz2023_24Activity.class);
-                                    startActivity(mainz05);
+                                    listaAlemanha.listaAlemanhaMetodo("Mainz 05");
+//                                    Intent mainz05 = new Intent(getContext(), Mainz2023_24Activity.class);
+//                                    startActivity(mainz05);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "RB Leipzig":
-                                    Intent leipzig = new Intent(getContext(), Leipzig2023_24Activity.class);
-                                    startActivity(leipzig);
+                                    listaAlemanha.listaAlemanhaMetodo("RB Leipzig");
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Stuttgart":
-                                    Intent stuttgart = new Intent(getContext(), Stuttgart2023_24Activity.class);
-                                    startActivity(stuttgart);
+                                    listaAlemanha.listaAlemanhaMetodo("Stuttgart");
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Union Berlin":
-                                    Intent unionBerlin = new Intent(getContext(), UnionBerlin2023_24Activity.class);
-                                    startActivity(unionBerlin);
+                                    listaAlemanha.listaAlemanhaMetodo("Union Berlin");
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Werder Bremen":
-                                    Intent werderBremen = new Intent(getContext(), WerderBremen2023_24Activity.class);
-                                    startActivity(werderBremen);
+                                    listaAlemanha.listaAlemanhaMetodo("Werder Bremen");
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
                                 case "Wolfsburg":
-                                    Intent wolfburg = new Intent(getContext(), Wolfsburg2023_24Activity.class);
-                                    startActivity(wolfburg);
+                                    listaAlemanha.listaAlemanhaMetodo("Wolfsburg");
+//                                    Intent wolfburg = new Intent(getContext(), Wolfsburg2023_24Activity.class);
+//                                    startActivity(wolfburg);
                                     Toast.makeText(getContext(), " " + lista.getNome(), Toast.LENGTH_LONG).show();
                                     break;
 

@@ -18,7 +18,6 @@ import com.google.android.material.snackbar.Snackbar;
 import com.jogos.dadosoficialkf228920.activity.brasilB2023.AbcActivity;
 import com.jogos.dadosoficialkf228920.activity.brasilB2023.AtleticoGoActivity;
 import com.jogos.dadosoficialkf228920.activity.brasilB2023.AvaiActivity;
-import com.jogos.dadosoficialkf228920.activity.brasilB2023.BotafogoSpActivity;
 import com.jogos.dadosoficialkf228920.activity.brasilB2023.CearaActivity;
 import com.jogos.dadosoficialkf228920.activity.brasilB2023.ChapecoenseActivity;
 import com.jogos.dadosoficialkf228920.activity.brasilB2023.CrbActivity;
@@ -133,10 +132,7 @@ public class JuventudeCasa2023Fragment extends Fragment {
                                     Intent abc = new Intent(getContext(), AbcActivity.class);
                                     startActivity(abc);
                                     break;
-                                case "Botafogo-SP":
-                                    Intent botafogoSp = new Intent(getContext(), BotafogoSpActivity.class);
-                                    startActivity(botafogoSp);
-                                    break;
+
                                 case "CRB":
                                     Intent crb = new Intent(getContext(), CrbActivity.class);
                                     startActivity(crb);

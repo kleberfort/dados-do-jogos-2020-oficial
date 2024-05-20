@@ -1,0 +1,1250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp"
+    android:layout_margin="4dp"
+    android:orientation="vertical"
+    android:background="@color/primary_200"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal4.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal3.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal3.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal3.5Ct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal2.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal1.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal1.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal1.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvTituloCanto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginTop="156dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:text="ESTATÍSTICA DOS CANTOS "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvJogosUltimos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:text="JOGOS ÚLTIMOS:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloCanto" />
+
+    <TextView
+        android:id="@+id/tvTotalJogos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:layout_marginLeft="4dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvJogosUltimos"
+        app:layout_constraintStart_toEndOf="@+id/tvJogosUltimos"
+        app:layout_constraintTop_toTopOf="@+id/tvJogosUltimos" />
+
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="42dp"
+        android:padding="2dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="M"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloCanto" />
+
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="42dp"
+        android:padding="2dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="C"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloCanto" />
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_marginStart="16dp"
+        android:padding="2dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="P"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloCanto" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="42dp"
+        android:padding="2dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="P"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/tvTituloCanto" />
+
+
+    <TextView
+        android:id="@+id/tvEscanteios1TempoZeroCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableStart="@drawable/ic_corner"
+        android:text="ESCANTEIOS 1°T 0.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvEscanteios1T0.5Mcd"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/tvEscanteios1T0.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="2dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/tvEscanteios1T0.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/tvEscanteios1T0.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:padding="2dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/textView5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+
+    <TextView
+        android:id="@+id/tvEscanteios1T0.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView7"
+        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+
+    <TextView
+        android:id="@+id/tvEscanteios1TempoUmCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:drawableStart="@drawable/ic_corner"
+        android:text="ESCANTEIOS 1°T 1.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvEscanteios1T1.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1TempoZeroCinco" />
+
+
+    <TextView
+        android:id="@+id/tvEscanteios1T1.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T0.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T0.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T0.5Mcd" />
+
+
+    <TextView
+        android:id="@+id/tvEscanteios1T1.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T0.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T0.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T0.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios1T1.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T0.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T0.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T0.5Ct" />
+
+
+    <TextView
+        android:id="@+id/tvEscanteios1T1.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T0.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T0.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T0.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios1TempoDoisCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_corner"
+        android:text="ESCANTEIOS 1°T 2.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvEscanteios1T2.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1TempoUmCinco" />
+
+    <TextView
+        android:id="@+id/tvEscanteios1T2.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T1.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T1.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T1.5Mcd" />
+
+
+    <TextView
+        android:id="@+id/tvEscanteios1T2.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T1.5McdPct"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T1.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T1.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios1T2.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T1.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T1.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T1.5Ct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios1T2.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T1.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T1.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T1.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios1TempoTresCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:drawableStart="@drawable/ic_corner"
+        android:text="ESCANTEIOS 1°T 3.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/tvEscanteios1T3.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1TempoDoisCinco" />
+
+    <TextView
+        android:id="@+id/tvEscanteios1T3.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T2.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T2.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T2.5Mcd" />
+
+
+    <TextView
+        android:id="@+id/tvEscanteios1T3.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T2.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T2.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T2.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios1T3.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T2.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T2.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T2.5Ct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios1T3.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T2.5CtPct"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T2.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T2.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios2TempoZeroCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:drawableStart="@drawable/ic_corner"
+        android:text="ESCANTEIOS 2°T 0.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/tvEscanteios2T0.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1TempoTresCinco" />
+
+    <TextView
+        android:id="@+id/tvEscanteios2T0.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T3.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T3.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T3.5Mcd" />
+
+
+    <TextView
+        android:id="@+id/tvEscanteios2T0.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T3.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T3.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T3.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios2T0.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T3.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T3.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T3.5Ct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios2T0.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios1T3.5CtPct"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios1T3.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios1T3.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios2TempoUmCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:drawableStart="@drawable/ic_corner"
+        android:text="ESCANTEIOS 2°T 1.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/tvEscanteios2T1.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2TempoZeroCinco" />
+
+
+    <TextView
+        android:id="@+id/tvEscanteios2T1.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T0.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T0.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T0.5Mcd" />
+
+
+    <TextView
+        android:id="@+id/tvEscanteios2T1.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T0.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T0.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T0.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios2T1.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T0.5Ct"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T0.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T0.5Ct" />
+
+
+    <TextView
+        android:id="@+id/tvEscanteios2T1.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T0.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T0.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T0.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios2TempoDoisCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_corner"
+        android:text="ESCANTEIOS 2°T 2.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvEscanteios2T2.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2TempoUmCinco" />
+
+    <TextView
+        android:id="@+id/tvEscanteios2T2.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T1.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T1.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T1.5Mcd" />
+
+    <TextView
+        android:id="@+id/tvEscanteios2T2.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T1.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T1.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T1.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios2T2.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T1.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T1.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T1.5Ct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios2T2.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T1.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T1.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T1.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios2TempoTresCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_corner"
+        android:text="ESCANTEIOS 2°T 3.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvEscanteios2T3.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2TempoDoisCinco" />
+
+
+    <TextView
+        android:id="@+id/tvEscanteios2T3.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T2.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T2.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T2.5Mcd" />
+
+    <TextView
+        android:id="@+id/tvEscanteios2T3.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T2.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T2.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T2.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios2T3.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T2.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T2.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T2.5Ct" />
+
+    <TextView
+        android:id="@+id/tvEscanteios2T3.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T2.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T2.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T2.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotalZeroCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_corner"
+        android:text="ESCANTEIOS TOTAL 0.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvEscanteiosTotal0.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2TempoTresCinco" />
+
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal0.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T3.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T3.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T3.5Mcd" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal0.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T3.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T3.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T3.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal0.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T3.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T3.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T3.5Ct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal0.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteios2T3.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteios2T3.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteios2T3.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotalUmCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_corner"
+        android:text="ESCANTEIOS TOTAL 1.5:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/tvEscanteiosTotal1.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotalZeroCinco" />
+
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal1.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal0.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal0.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal0.5Mcd" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal1.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal0.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal0.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal0.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal1.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal0.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal0.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal0.5Ct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal1.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:text="99"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal0.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal0.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal0.5CtPct" />
+
+
+    <TextView
+        android:id="@+id/tvLegenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:text="LEGENDA"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotalCincoCinco" />
+
+    <TextView
+        android:id="@+id/tvM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="M >"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvLegenda" />
+
+
+    <TextView
+        android:id="@+id/tvMarcados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="MARCADOS"
+        app:layout_constraintBottom_toBottomOf="@+id/tvM"
+        app:layout_constraintStart_toEndOf="@+id/tvM"
+        app:layout_constraintTop_toTopOf="@+id/tvM" />
+
+    <TextView
+        android:id="@+id/tvC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+
+        android:text="C > "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvM" />
+
+    <TextView
+        android:id="@+id/tvContra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="CONTRA"
+        app:layout_constraintBottom_toBottomOf="@+id/tvC"
+        app:layout_constraintStart_toEndOf="@+id/tvC"
+        app:layout_constraintTop_toTopOf="@+id/tvC" />
+
+    <TextView
+        android:id="@+id/tvP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="P > "
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvC"/>
+
+    <TextView
+        android:id="@+id/tvPorcentagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="PORCENTAGEM"
+        app:layout_constraintBottom_toBottomOf="@+id/tvP"
+        app:layout_constraintStart_toEndOf="@+id/tvP"
+        app:layout_constraintTop_toTopOf="@+id/tvP" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotalDoisCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_corner"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="ESCANTEIOS TOTAL 2.5:"
+        app:layout_constraintEnd_toStartOf="@+id/tvEscanteiosTotal2.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotalUmCinco" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal2.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal1.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal1.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal1.5Mcd" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal2.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal1.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal1.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal1.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal2.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal1.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal1.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal1.5Ct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotalTresCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_corner"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="ESCANTEIOS TOTAL 3.5:"
+        app:layout_constraintEnd_toStartOf="@+id/tvEscanteiosTotal3.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotalDoisCinco" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal3.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal2.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal2.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal2.5Mcd" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal3.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal2.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal2.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal2.5Ct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal3.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal2.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal2.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal2.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal3.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal2.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal2.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal2.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal4.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal3.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal3.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal3.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal4.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal3.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal3.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal3.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal5.5Ct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal4.5Ct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal4.5Ct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal4.5Ct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal4.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal3.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal3.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal3.5Mcd" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal5.5McdPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal4.5McdPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal4.5McdPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal4.5McdPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal5.5CtPct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal4.5CtPct"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal4.5CtPct"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal4.5CtPct" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotal5.5Mcd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
+        android:padding="2dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="99"
+        app:layout_constraintEnd_toEndOf="@+id/tvEscanteiosTotal4.5Mcd"
+        app:layout_constraintStart_toStartOf="@+id/tvEscanteiosTotal4.5Mcd"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotal4.5Mcd" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotalQuatroCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_corner"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="ESCANTEIOS TOTAL 4.5:"
+        app:layout_constraintEnd_toStartOf="@+id/tvEscanteiosTotal4.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotalTresCinco" />
+
+    <TextView
+        android:id="@+id/tvEscanteiosTotalCincoCinco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_corner"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textStyle="bold"
+        android:text="ESCANTEIOS TOTAL 5.5:"
+        app:layout_constraintEnd_toStartOf="@+id/tvEscanteiosTotal5.5Mcd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEscanteiosTotalQuatroCinco" />
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

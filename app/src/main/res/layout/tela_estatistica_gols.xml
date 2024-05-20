@@ -2,6 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="4dp"
+    android:layout_margin="4dp"
+    android:orientation="vertical"
     android:background="@color/primary_200"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -10,7 +13,6 @@
         android:id="@+id/tvTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_margin="4dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/background_borda_titulo_coluna"
@@ -27,6 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
         android:text="JOGOS ÚLTIMOS:"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textStyle="bold"
@@ -37,7 +40,10 @@
         android:id="@+id/tvTotalJogos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="2dp"
         android:layout_marginLeft="4dp"
+        android:background="@drawable/background_borda_titulo_coluna"
+        android:gravity="center"
         android:text="99"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textStyle="bold"
@@ -115,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:drawableStart="@drawable/ic_ball"
-        android:text="GOLS 1°T 0.5:"
+        android:text="GOL 1°T 0.5:"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/tvGols1T0.5Mcd"
@@ -344,7 +350,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
         android:drawableStart="@drawable/ic_ball"
-        android:text="GOLS 2°T 0.5:"
+        android:text="GOL 2°T 0.5:"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/tvGols2T0.5Mcd"
@@ -572,7 +578,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:drawableStart="@drawable/ic_ball"
-        android:text="GOLS ACIMA 0.5:"
+        android:text="GOL ACIMA 0.5:"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/tvGolsAcima0.5Mcd"
@@ -865,85 +871,24 @@
 
 
     <TextView
-        android:id="@+id/tvLegenda"
+        android:id="@+id/tvRespostaEstatistica"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        android:layout_marginStart="16dp"
-        android:text="LEGENDA"
+        android:padding="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center_vertical"
+        android:text="Arsenal jogando em casa, [GOL ACIMA 0.5] do total de 14 jogos realizados, 13 saíram gol,  que equivale 93% do total. .\n\n OBSERVAÇÃO: Dados compreende times de fora.   "
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textStyle="bold"
+        android:background="@drawable/border_resultado_estatistica"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGolsAcimaTresCinco" />
 
 
-    <TextView
-        android:id="@+id/tvM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="M >"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvLegenda" />
 
 
-    <TextView
-        android:id="@+id/tvMarcados"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="MARCADOS"
-        app:layout_constraintBottom_toBottomOf="@+id/tvM"
-        app:layout_constraintStart_toEndOf="@+id/tvM"
-        app:layout_constraintTop_toTopOf="@+id/tvM" />
-
-    <TextView
-        android:id="@+id/tvC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-
-        android:text="C > "
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvM" />
-
-    <TextView
-        android:id="@+id/tvContra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="CONTRA"
-        app:layout_constraintBottom_toBottomOf="@+id/tvC"
-        app:layout_constraintStart_toEndOf="@+id/tvC"
-        app:layout_constraintTop_toTopOf="@+id/tvC" />
-
-    <TextView
-        android:id="@+id/tvP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="P > "
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvC"/>
-
-    <TextView
-        android:id="@+id/tvPorcentagem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="PORCENTAGEM"
-        app:layout_constraintBottom_toBottomOf="@+id/tvP"
-        app:layout_constraintStart_toEndOf="@+id/tvP"
-        app:layout_constraintTop_toTopOf="@+id/tvP" />
 
 
 

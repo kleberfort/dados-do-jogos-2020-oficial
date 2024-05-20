@@ -32,7 +32,7 @@ import com.jogos.dadosoficialkf228920.activity.europaA2023a24.franca.Rennes2023_
 import com.jogos.dadosoficialkf228920.activity.europaA2023a24.franca.Strasbourg2023_24Activity;
 import com.jogos.dadosoficialkf228920.activity.europaA2023a24.franca.Toulouse2023_24Activity;
 import com.jogos.dadosoficialkf228920.adapter.europa2023a24.franca.brest.BrestCasaAdapter;
-import com.jogos.dadosoficialkf228920.data.europaA2023a24.franca.brest.BrestCasaPartidaApi;
+import com.jogos.dadosoficialkf228920.data.europaA2023a24.franca.brest.BrestApi;
 import com.jogos.dadosoficialkf228920.databinding.FragmentBrestCasa2023a24Binding;
 import com.jogos.dadosoficialkf228920.model.Partida;
 import com.jogos.dadosoficialkf228920.model.RecyclerItemClickListener;
@@ -48,7 +48,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class BrestCasaFragment extends Fragment {
 
     private FragmentBrestCasa2023a24Binding binding;
-    private BrestCasaPartidaApi brestCasaPartidaApi;
+    private BrestApi brestApi;
     private BrestCasaAdapter brestCasaAdapter;
 
 
@@ -80,7 +80,7 @@ public class BrestCasaFragment extends Fragment {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        brestCasaPartidaApi = retrofit.create(BrestCasaPartidaApi.class);
+        brestApi = retrofit.create(BrestApi.class);
 
     }
 
@@ -89,7 +89,7 @@ public class BrestCasaFragment extends Fragment {
         binding.rvListaJogos.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.rvListaJogos.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
 
-        brestCasaPartidaApi.getBrestCasa().enqueue(new Callback<List<Partida>>() {
+        brestApi.getBrestCasa().enqueue(new Callback<List<Partida>>() {
             @Override
             public void onResponse(Call<List<Partida>> call, Response<List<Partida>> response) {
 

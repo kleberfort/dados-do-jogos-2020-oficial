@@ -8,7 +8,6 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.jogos.dadosoficialkf228920.databinding.ActivityBotafogoBinding;
 import com.jogos.dadosoficialkf228920.databinding.ActivityCriciumaB2023Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroB2023.criciuma.CriciumaCasa2023Fragment;
 import com.jogos.dadosoficialkf228920.fragments.brasileiroB2023.criciuma.CriciumaFora2023Fragment;

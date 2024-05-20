@@ -2,6 +2,9 @@ package com.jogos.dadosoficialkf228920.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class Partida {
     @SerializedName("descricao")
     private String description;
@@ -9,6 +12,8 @@ public class Partida {
     private int round;
     @SerializedName("data")
     private String date;
+
+    private LocalDate dataFormatada;
     @SerializedName("mandante")
     private Time homeTime;
     @SerializedName("visitante")
@@ -25,6 +30,16 @@ public class Partida {
     private EstatisticaJogo homeEstatisticaJogo;
     @SerializedName("estatisticaJogoVisitante")
     private EstatisticaJogo awayEstatisticaJogo;
+
+    public LocalDate getDataFormatada() {
+        return dataFormatada;
+    }
+
+
+    public void setDataFormatada(String dataFormatada) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        this.dataFormatada = LocalDate.parse(date, formatter);
+    }
 
     public Cartoes getHomeCartoes() {
         return homeCartoes;

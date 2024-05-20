@@ -6,30 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.BayerLeverkusenActivity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.BayernMuniqueActivity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.BochumActivity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.BorussiaDortmundActivity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.BorussiaMonchengladbachActivity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.EintrachtFrankfurtActivity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.FreiburgActivity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.HerthaBerlinActivity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.HoffenheimActivity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.KolnActivity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.Mainz05Activity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.RBLeipzigActivity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.Schalke04Activity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.StuttgartActivity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.UnionBerlinActivity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.WerderBremenActivity;
-import com.jogos.dadosoficialkf228920.activity.alemanhaA2022a23.WolfsburgActivity;
 import com.jogos.dadosoficialkf228920.activity.europaA2023a24.alemanha.Augsburg2023_24Activity;
 import com.jogos.dadosoficialkf228920.activity.europaA2023a24.alemanha.BayerLeverkusen2023_24Activity;
 import com.jogos.dadosoficialkf228920.activity.europaA2023a24.alemanha.BayernMunique2023_24Activity;
@@ -48,21 +30,11 @@ import com.jogos.dadosoficialkf228920.activity.europaA2023a24.alemanha.Stuttgart
 import com.jogos.dadosoficialkf228920.activity.europaA2023a24.alemanha.UnionBerlin2023_24Activity;
 import com.jogos.dadosoficialkf228920.activity.europaA2023a24.alemanha.WerderBremen2023_24Activity;
 import com.jogos.dadosoficialkf228920.activity.europaA2023a24.alemanha.Wolfsburg2023_24Activity;
-import com.jogos.dadosoficialkf228920.adapter.alemanhaA2022a23.augsburg.AugsburgFora2022a23Adapter;
 import com.jogos.dadosoficialkf228920.adapter.europa2023a24.alemanha.borussiadortmund.BorussiaDortmundForaAdapter;
-import com.jogos.dadosoficialkf228920.data.alemanhaA2022a23.augsburg.AugsburgForaA2022a23PartidaApi;
-import com.jogos.dadosoficialkf228920.data.brasileiroA2023.americaMG.AmericaMgForaA2023PartidaApi;
-import com.jogos.dadosoficialkf228920.data.europaA2023a24.alemanha.augsburg.AugsburgForaPartidaApi;
-import com.jogos.dadosoficialkf228920.data.europaA2023a24.alemanha.borussiadortmund.BorussiaDortmundCasaPartidaApi;
 import com.jogos.dadosoficialkf228920.data.europaA2023a24.alemanha.borussiadortmund.BorussiaDortmundForaPartidaApi;
-import com.jogos.dadosoficialkf228920.databinding.FragmentAugsburgFora2022a23Binding;
-import com.jogos.dadosoficialkf228920.databinding.FragmentAugsburgFora2023a24Binding;
 import com.jogos.dadosoficialkf228920.databinding.FragmentBorussiaDortmundFora2023a24Binding;
-import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaOficialPorcentagemBinding;
 import com.jogos.dadosoficialkf228920.model.Partida;
 import com.jogos.dadosoficialkf228920.model.RecyclerItemClickListener;
-
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
