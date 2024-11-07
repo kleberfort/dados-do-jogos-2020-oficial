@@ -1,14 +1,21 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.fluminense_ui.estatistica.gols;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.fortaleza_ui.estatistica.gols;
 
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadoPartidaSegundoTempoAdapter;
+import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
+import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaGolsBinding;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieA2024;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieAListener;
@@ -24,6 +31,10 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieA
 
     private TelaEstatisticaGolsBinding binding;
     private JogosSerieA2024 jogosSerieA2024;
+
+    private ResultadosPartidasAdapter resultadosPartidasAdapter;
+    private ResultadosPartidasPrimeiroTempoAdapter resultadosPartidasPrimeiroTempoAdapter;
+    private ResultadoPartidaSegundoTempoAdapter resultadoPartidaSegundoTempoAdapter;
 
 
 
@@ -76,6 +87,189 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieA
         jogosSerieA2024.setupHttpClient();
         jogosSerieA2024.setupDadosJogos();
         jogosSerieA2024.setListener(this);// Registra o fragmento como listener
+        
+        
+        binding.tvGols1T05Mcd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ MARCOU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(1);
+            }
+        });
+
+        binding.tvGols1T05Ct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ NÃO MARCOU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(2);
+            }
+        });
+
+        binding.tvGols1T15Mcd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ MARCOU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(3);
+
+            }
+        });
+
+        binding.tvGols1T15Ct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ NÃO MARCOU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(4);
+
+            }
+        });
+
+        binding.tvGols1T25Mcd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ MARCOU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(5);
+
+            }
+        });
+
+        binding.tvGols1T25Ct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ NÃO MARCOU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(6);
+
+            }
+        });
+
+        binding.tvGols2T05Mcd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ MARCOU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(7);
+
+            }
+        });
+
+        binding.tvGols2T05Ct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ NÃO MARCOU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(8);
+
+
+            }
+        });
+
+        binding.tvGols2T15Mcd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ MARCOU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(9);
+
+            }
+        });
+
+        binding.tvGols2T15Ct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ NÃO MARCOU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(10);
+
+            }
+        });
+
+        binding.tvGols2T25Mcd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ MARCOU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(11);
+
+            }
+        });
+
+        binding.tvGols2T25Ct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ NÃO MARCOU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(12);
+
+            }
+        });
+
+        binding.tvGolsAcima05Mcd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ MARCOU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(13);
+
+            }
+        });
+
+        binding.tvGolsAcima05Ct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ NÃO MARCOU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(14);
+
+            }
+        });
+
+        binding.tvGolsAcima15Mcd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ MARCOU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(15);
+
+            }
+        });
+
+        binding.tvGolsAcima15Ct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ NÃO MARCOU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(16);
+
+            }
+        });
+
+        binding.tvGolsAcima25Mcd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ MARCOU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(17);
+
+            }
+        });
+
+        binding.tvGolsAcima25Ct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ NÃO MARCOU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(18);
+
+            }
+        });
+        binding.tvGolsAcima35Mcd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ MARCOU ] GOL 3.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(19);
+
+            }
+        });
+        binding.tvGolsAcima35Ct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ NÃO MARCOU ] GOL 3.5 ", Toast.LENGTH_LONG).show();
+                handleTextViewClick(20);
+
+            }
+        });
 
 
         return binding.getRoot();
@@ -83,7 +277,258 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieA
 
     }
 
+    private void handleTextViewClick(int textViewId) {
+        List<PartidaNovoModelo> jogos = new ArrayList<>();
 
+        switch (textViewId) {
+            case 1:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS 0.5 1°TEMPO
+                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() > 0)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasPrimeiroTempo(jogos);
+                } else {
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 2:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS MENOR 0.5 1°TEMPO
+                    if((partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() == 0 ))
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasPrimeiroTempo(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+
+            case 3:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS  1.5 1°TEMPO
+                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() > 1)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasPrimeiroTempo(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 4:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS MENOR 1.5 1°TEMPO
+                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() < 2)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasPrimeiroTempo(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 5:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS  2.5 1°TEMPO
+                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() > 2)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasPrimeiroTempo(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 6:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS MENOR 1.5 1°TEMPO
+                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() < 3)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasPrimeiroTempo(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 7:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS  0.5 2°TEMPO
+                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() > 0)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasSegundoTempo(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 8:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS MENOR 0.5 2°TEMPO
+                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() == 0)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasSegundoTempo(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 9:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS  1.5 2°TEMPO
+                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() > 1)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasSegundoTempo(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 10:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS MENOR 1.5 2°TEMPO
+                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() < 2)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasSegundoTempo(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 11:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS  2.5 2°TEMPO
+                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() > 2)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasSegundoTempo(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 12:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS MENOR 2.5 2°TEMPO
+                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() < 3)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasSegundoTempo(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 13:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS ACIMA 0.5 TEMPO
+                    if(partidas.get(i).getHomeTime().getPlacar() > 0)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasDialog(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 14:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS MENOR 0.5 TEMPO
+                    if(partidas.get(i).getHomeTime().getPlacar() == 0)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasDialog(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+
+            case 15:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS ACIMA 1.5 TEMPO
+                    if(partidas.get(i).getHomeTime().getPlacar() > 1)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasDialog(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 16:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS MENOR 1.5 TEMPO
+                    if(partidas.get(i).getHomeTime().getPlacar() < 2)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasDialog(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+
+            case 17:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS ACIMA 2.5 TEMPO
+                    if(partidas.get(i).getHomeTime().getPlacar() > 2)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasDialog(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 18:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS MENOR 2.5 TEMPO
+                    if(partidas.get(i).getHomeTime().getPlacar() < 3)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasDialog(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 19:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS ACIMA 3.5 TEMPO
+                    if(partidas.get(i).getHomeTime().getPlacar() > 3)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasDialog(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+
+            case 20:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //GOLS MENOR 3.5 TEMPO
+                    if(partidas.get(i).getHomeTime().getPlacar() < 4)
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasDialog(jogos);
+                }else{
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+
+        }
+
+    }//fim do metodo que busca os dados
 
 
     @Override
@@ -393,7 +838,6 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieA
 
         //GOLS ACIMA 3.5 PORCENTAGEM
 
-
         binding.tvGolsAcima35McdPct.setText(String.valueOf(Math.round(((double)golsTotalTresCincoMarcados * 100 ) / partidas.size()) + "%"));
         binding.tvGolsAcima35CtPct.setText(String.valueOf(Math.round((double)golsTotalTresCincoNaoMarcados * 100 / partidas.size()) + "%"));
 
@@ -414,15 +858,10 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieA
             binding.tvGolsAcima35CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
             binding.tvGolsAcima35CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
-
-
         //Fim Porcentagem
 
 
-
         binding.tvTitulo.setText("GOLS MARCADOS " + partidas.get(0).getHomeTime().getName().toUpperCase() + " CASA");
-
-
 
         binding.tvGols1T05Mcd.setText(String.valueOf(golsTotalPrimeiroTempoZeroCincoMarcados));
         binding.tvGols1T05Ct.setText(String.valueOf(golsTotalPrimeiroTempoZeroCincoNaoMarcados));
@@ -445,11 +884,6 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieA
         binding.tvGols2T25Mcd.setText(String.valueOf(golsTotalSegundoTempoDoisCincoMarcados));
         binding.tvGols2T25Ct.setText(String.valueOf(golsTotalSegundoTempoDoisCincoNaoMarcados));
 
-
-
-
-
-
         binding.tvGolsAcima05Mcd.setText(String.valueOf(golsTotalZeroCincoMarcados));
         binding.tvGolsAcima05Ct.setText(String.valueOf(golsTotalZeroCincoNaoMarcados));
 
@@ -461,8 +895,6 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieA
 
         binding.tvGolsAcima35Mcd.setText(String.valueOf(golsTotalTresCincoMarcados));
         binding.tvGolsAcima35Ct.setText(String.valueOf(golsTotalTresCincoNaoMarcados));
-
-
 
         binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
 
@@ -477,5 +909,48 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieA
         // Defina o texto no TextView
         binding.tvRespostaEstatistica.setText(builder);
 
+    }
+    private void showPartidasDialog(List<PartidaNovoModelo> partidas) {
+
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
+
+        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
+        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        resultadosPartidasAdapter = new ResultadosPartidasAdapter(partidas);
+        recyclerViewPartidas.setAdapter(resultadosPartidasAdapter);
+        //resultadosPartidasAdapter.notifyDataSetChanged();
+
+        bottomSheetDialog.show();
+    }
+    private void showPartidasPrimeiroTempo(List<PartidaNovoModelo> partidas) {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
+
+        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
+        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        resultadosPartidasPrimeiroTempoAdapter = new ResultadosPartidasPrimeiroTempoAdapter(partidas);
+        recyclerViewPartidas.setAdapter(resultadosPartidasPrimeiroTempoAdapter);
+        //resultadosPartidasAdapter.notifyDataSetChanged();
+
+        bottomSheetDialog.show();
+    }
+    private void showPartidasSegundoTempo(List<PartidaNovoModelo> partidas) {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
+
+        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
+        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        resultadoPartidaSegundoTempoAdapter = new ResultadoPartidaSegundoTempoAdapter(partidas);
+        recyclerViewPartidas.setAdapter(resultadoPartidaSegundoTempoAdapter);
+        //resultadosPartidasAdapter.notifyDataSetChanged();
+
+        bottomSheetDialog.show();
     }
 }

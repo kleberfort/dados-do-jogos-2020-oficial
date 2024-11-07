@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.amazonas_ui.estatistica.geral_dois_times;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.americaMG_ui.estatistica.geral_dois_times;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -34,7 +34,6 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
     private JogosSerieB2024 jogosSerieB2024;
 
     private ResultadosPartidasAdapter resultadosPartidasAdapter;
-
     private int golsTotalPrimeiroTempoZeroCincoMarcados;
     private int golsTotalPrimeiroTempoZeroCincoNaoMarcados;
 
@@ -83,6 +82,8 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
 
     private List<PartidaNovoModelo> partidas = new ArrayList<>();
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
@@ -92,6 +93,7 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
         jogosSerieB2024.setupHttpClient();
         jogosSerieB2024.setupDadosJogos();
         jogosSerieB2024.setListener(this);// Registra o fragmento como listener
+
 
         binding.tvGols1T05Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -318,13 +320,12 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
             }
         });
 
-
-
         return binding.getRoot();
 
 
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private void handleTextViewClick(int textViewId) {
         List<PartidaNovoModelo> jogos = new ArrayList<>();
 
@@ -704,11 +705,10 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
                 break;
-
             case 27:
                 for (int i = 0; i < partidas.size(); i++) {
-                    //TOTAL VIÓRIA FORA
-                    if(partidas.get(i).getHomeTime().getPlacar() < partidas.get(i).getAwayTime().getPlacar())
+                    //TOTAL VIÓRIA CASA
+                    if(partidas.get(i).getHomeTime().getPlacar() > partidas.get(i).getAwayTime().getPlacar())
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -720,8 +720,8 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
 
             case 28:
                 for (int i = 0; i < partidas.size(); i++) {
-                    //TOTAL EMPATE
-                    if(partidas.get(i).getAwayTime().getPlacar() == partidas.get(i).getHomeTime().getPlacar())
+                    //TOTAL EMPATE CASA
+                    if(partidas.get(i).getHomeTime().getPlacar() == partidas.get(i).getAwayTime().getPlacar())
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -733,8 +733,8 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
 
             case 29:
                 for (int i = 0; i < partidas.size(); i++) {
-                    //TOTAL DERROTA FORA
-                    if(partidas.get(i).getHomeTime().getPlacar() > partidas.get(i).getAwayTime().getPlacar())
+                    //TOTAL DERROTA CASA
+                    if(partidas.get(i).getHomeTime().getPlacar() < partidas.get(i).getAwayTime().getPlacar())
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -752,12 +752,15 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
 
 
 
+
+
+
+
     private void errorBuscarDados() {
         Snackbar.make(binding.getRoot(), "erro ao Retornar Dados Estatístico. ", Snackbar.LENGTH_LONG).show();
     }
 
 
-    @SuppressLint("SuspiciousIndentation")
     @Override
     public void onJogosSerieBReady(List<PartidaNovoModelo> amazonasCompleto, List<PartidaNovoModelo> americaMGCompleto, List<PartidaNovoModelo> avaiCompleto, List<PartidaNovoModelo> botafogoSPCompleto, List<PartidaNovoModelo> brusqueCompleto, List<PartidaNovoModelo> crbCompleto, List<PartidaNovoModelo> cearaCompleto, List<PartidaNovoModelo> chapecoenseCompleto, List<PartidaNovoModelo> coritibaCompleto, List<PartidaNovoModelo> goiasCompleto, List<PartidaNovoModelo> guaraniCompleto, List<PartidaNovoModelo> ituanoCompleto, List<PartidaNovoModelo> mirassolCompleto, List<PartidaNovoModelo> novorizontinoCompleto, List<PartidaNovoModelo> operarioCompleto, List<PartidaNovoModelo> paysanduCompleto, List<PartidaNovoModelo> pontepretaCompleto, List<PartidaNovoModelo> santosCompleto, List<PartidaNovoModelo> sportCompleto, List<PartidaNovoModelo> vilanovaCompleto) {
 
@@ -765,15 +768,16 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
 
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : amazonasCompleto) {
+        for (PartidaNovoModelo partida : americaMGCompleto) {
 
-            if (partida.getHomeTime().getName().equals("Amazonas")) {
+            if (partida.getHomeTime().getName().equals("América-MG")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);
             }
 
         }//fim do for
+
 
         for (int i = 0; i < partidas.size(); i++) {
 
@@ -782,6 +786,8 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
                     (partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo()) > 0)
                 golsTotalPrimeiroTempoZeroCincoMarcados += 1;
             golsTotalPrimeiroTempoZeroCincoNaoMarcados = partidas.size() - golsTotalPrimeiroTempoZeroCincoMarcados;
+
+
 
             //GOLS 1.5 1°TEMPO
             if((partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() ) +
@@ -885,7 +891,7 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
             escanteiosTotalMaiorIgualDezNaoMarcados = partidas.size() - escanteiosTotalMaiorIgualDezMarcados;
 
             //TOTAL VIÓRIA
-            if(partidas.get(i).getHomeTime().getPlacar() < partidas.get(i).getAwayTime().getPlacar()){
+            if(partidas.get(i).getHomeTime().getPlacar() > partidas.get(i).getAwayTime().getPlacar()){
                 totalVitoria += 1;
             }
 
@@ -895,13 +901,14 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
             }
 
             //TOTAL DERROTA
-            if(partidas.get(i).getHomeTime().getPlacar() > partidas.get(i).getAwayTime().getPlacar()){
+            if(partidas.get(i).getHomeTime().getPlacar() < partidas.get(i).getAwayTime().getPlacar()){
                 totalDerrota += 1;
             }
 
 
 
         }//fim do for
+
 
         //Inicio Porcentagem
 
@@ -1191,6 +1198,7 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
 
         //Fim Porcentagem
 
+
         binding.tvGols1T05Mcd.setText(String.valueOf(golsTotalPrimeiroTempoZeroCincoMarcados));
         binding.tvGols1T05Ct.setText(String.valueOf(golsTotalPrimeiroTempoZeroCincoNaoMarcados));
 
@@ -1237,16 +1245,15 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
         binding.tvTotalEmpate.setText(String.valueOf(totalEmpate));
         binding.tvTotalDerrota.setText(String.valueOf(totalDerrota));
 
-
         binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
 
-        String nome = partidas.get(0).getAwayTime().getNome();
+        String nome = partidas.get(0).getHomeTime().getNome();
         String totalJogos = String.valueOf(partidas.size());
         String totalGolsMcd = String.valueOf(golsTotalZeroCincoMarcados );
         String totalGolsMcdPct = String.valueOf(Math.round(((double)golsTotalZeroCincoMarcados * 100 ) / partidas.size()));
 
         // Formate o texto usando a classe TextUtils
-        SpannableStringBuilder builder = FormatarCoresTextoFora.formatText(nome, totalJogos, totalGolsMcd, totalGolsMcdPct);
+        SpannableStringBuilder builder = FormatarCoresTextoCasa.formatText(nome, totalJogos, totalGolsMcd, totalGolsMcdPct);
 
         // Defina o texto no TextView
         binding.tvRespostaEstatistica.setText(builder);

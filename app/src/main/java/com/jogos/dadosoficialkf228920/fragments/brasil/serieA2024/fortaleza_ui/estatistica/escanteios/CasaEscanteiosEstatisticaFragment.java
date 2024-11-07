@@ -1,12 +1,20 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.fortaleza_ui.estatistica.escanteios;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.atleticoMG_ui.estatistica.escanteios;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaEscanteiosBinding;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieA2024;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieAListener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
+
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,7 +71,31 @@ public class CasaEscanteiosEstatisticaFragment extends Fragment implements Jogos
     private int escanteiosTotalCincoCincoNaoMarcados;
 
 
+
+
     private List<PartidaNovoModelo> partidas = new ArrayList<>();
+
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        binding = TelaEstatisticaEscanteiosBinding.inflate(inflater, container, false);
+
+
+        jogosSerieA2024 = new JogosSerieA2024();
+        jogosSerieA2024.setupHttpClient();
+        jogosSerieA2024.setupDadosJogos();
+        jogosSerieA2024.setListener(this);// Registra o fragmento como listener
+
+        return binding.getRoot();
+
+
+    }
+
+    private void errorBuscarDados() {
+        Snackbar.make(binding.getRoot(), "erro ao Retornar Dados local do Time. ", Snackbar.LENGTH_LONG).show();
+    }
 
 
     @Override
@@ -71,9 +103,9 @@ public class CasaEscanteiosEstatisticaFragment extends Fragment implements Jogos
 
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : fortalezaCompleto) {
+        for (PartidaNovoModelo partida : atleticoMGCompleto) {
 
-            if (partida.getHomeTime().getName().equals("Fortaleza")) {
+            if (partida.getHomeTime().getName().equals("Atlético-MG")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);

@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.amazonas_ui.estatistica.geral_dois_times;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.americaMG_ui.estatistica.geral_dois_times;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -764,9 +764,9 @@ public class ForaEstatisticaGeralFragment extends Fragment implements JogosSerie
 
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : amazonasCompleto) {
+        for (PartidaNovoModelo partida : americaMGCompleto) {
 
-            if (partida.getAwayTime().getName().equals("Amazonas")) {
+            if (partida.getAwayTime().getName().equals("América-MG")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);
