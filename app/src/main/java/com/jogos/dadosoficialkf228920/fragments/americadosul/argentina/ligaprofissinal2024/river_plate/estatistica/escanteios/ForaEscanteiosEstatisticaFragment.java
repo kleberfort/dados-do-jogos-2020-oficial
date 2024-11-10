@@ -1,15 +1,18 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.bahia_ui.estatistica.escanteios;
+package com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.ligaprofissinal2024.river_plate.estatistica.escanteios;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaEscanteiosBinding;
+import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A2024;
+import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A_2024_Listener;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieA2024;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieAListener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
@@ -19,11 +22,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForaEscanteiosEstatisticaFragment extends Fragment implements JogosSerieAListener {
+public class ForaEscanteiosEstatisticaFragment extends Fragment implements JogosLigaProfissional_A_2024_Listener {
 
 
     private TelaEstatisticaEscanteiosBinding binding;
-    private JogosSerieA2024 jogosSerieA2024;
+    private JogosLigaProfissional_A2024 jogosLigaProfissionalA2024;
 
 
 
@@ -82,10 +85,10 @@ public class ForaEscanteiosEstatisticaFragment extends Fragment implements Jogos
 
 
 
-        jogosSerieA2024 = new JogosSerieA2024();
-        jogosSerieA2024.setupHttpClient();
-        jogosSerieA2024.setupDadosJogos();
-        jogosSerieA2024.setListener(this);// Registra o fragmento como listener
+        jogosLigaProfissionalA2024 = new JogosLigaProfissional_A2024();
+        jogosLigaProfissionalA2024.setupHttpClient();
+        jogosLigaProfissionalA2024.setupDadosJogos();
+        jogosLigaProfissionalA2024.setListener(this);// Registra o fragmento como listener
 
 
         return binding.getRoot();
@@ -99,20 +102,24 @@ public class ForaEscanteiosEstatisticaFragment extends Fragment implements Jogos
     }
 
 
-    @Override
-    public void onJogosSerieAReady(List<PartidaNovoModelo> atleticoPRCompleto, List<PartidaNovoModelo> atleticoGOCompleto, List<PartidaNovoModelo> atleticoMGCompleto, List<PartidaNovoModelo> bahiaCompleto, List<PartidaNovoModelo> botafogoCompleto, List<PartidaNovoModelo> bragantinoCompleto, List<PartidaNovoModelo> corinthiansCompleto, List<PartidaNovoModelo> criciumaCompleto, List<PartidaNovoModelo> cruzeiroCompleto, List<PartidaNovoModelo> cuiabaCompleto, List<PartidaNovoModelo> flamengoCompleto, List<PartidaNovoModelo> fluminenseCompleto, List<PartidaNovoModelo> fortalezaCompleto, List<PartidaNovoModelo> gremioCompleto, List<PartidaNovoModelo> internacionalCompleto, List<PartidaNovoModelo> juventudeCompleto, List<PartidaNovoModelo> palmeirasCompleto, List<PartidaNovoModelo> saoPauloCompleto, List<PartidaNovoModelo> vascoCompleto, List<PartidaNovoModelo> vitoriaCompleto) {
+        @Override
+        public void onJogosSerieAReady(List<PartidaNovoModelo> argentinoJuniorsCompleto, List<PartidaNovoModelo> atleticoTucumanCompleto, List<PartidaNovoModelo> banfieldCompleto, List<PartidaNovoModelo> barracasCentralCompleto, List<PartidaNovoModelo> belgranoCompleto, List<PartidaNovoModelo> bocaJuniorsCompleto, List<PartidaNovoModelo> centralCordobaCompleto, List<PartidaNovoModelo> defensaJusticiaCompleto, List<PartidaNovoModelo> deportivoRiestraCompleto, List<PartidaNovoModelo> estudiantesLaPrataCompleto, List<PartidaNovoModelo> gimnasiaCompleto, List<PartidaNovoModelo> godoyCruzCompleto, List<PartidaNovoModelo> huracanCompleto, List<PartidaNovoModelo> independienteCompleto, List<PartidaNovoModelo> independienteRivadaviaCompleto, List<PartidaNovoModelo> institutoCompleto, List<PartidaNovoModelo> lanusCompleto, List<PartidaNovoModelo> newellOldBoysCompleto, List<PartidaNovoModelo> platenseCompleto, List<PartidaNovoModelo> racingCompleto, List<PartidaNovoModelo> riverPlateCompleto, List<PartidaNovoModelo> rosarioCentralCompleto, List<PartidaNovoModelo> sanLorenzoCompleto, List<PartidaNovoModelo> sarmientoCompleto, List<PartidaNovoModelo> talleresCompleto, List<PartidaNovoModelo> tigreCompleto, List<PartidaNovoModelo> unionSantaFeCompleto, List<PartidaNovoModelo> velezSarsfieldCompleto) {
+            PartidaNovoModelo partidaNovoModelo;
 
-        PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
+                for (PartidaNovoModelo partida : riverPlateCompleto) {
 
-        for (PartidaNovoModelo partida : bahiaCompleto) {
+                    if (partida.getAwayTime().getName().equals("River Plate")) {
+                        partidaNovoModelo = partida;
+                        partida.setDataFormatada(partida.getDate());
+                        this.partidas.add(partidaNovoModelo);
+                    }
 
-            if (partida.getAwayTime().getName().equals("Bahia")) {
-                partidaNovoModelo = partida;
-                partida.setDataFormatada(partida.getDate());
-                this.partidas.add(partidaNovoModelo);
-            }
+                }//fim do for
 
-        }//fim do for
+
+
+
+
 
 
         for (int i = 0; i < partidas.size(); i++) {
@@ -618,5 +625,7 @@ public class ForaEscanteiosEstatisticaFragment extends Fragment implements Jogos
         binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
 
     }
+
+
 }
 

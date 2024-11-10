@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ceara_ui.estatistica.gols;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.amazonas_ui.estatistica.gols;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -539,15 +539,16 @@ public class ForaGolsEstatisticaFragment extends Fragment implements JogosSerieB
     public void onJogosSerieBReady(List<PartidaNovoModelo> amazonasCompleto, List<PartidaNovoModelo> americaMGCompleto, List<PartidaNovoModelo> avaiCompleto, List<PartidaNovoModelo> botafogoSPCompleto, List<PartidaNovoModelo> brusqueCompleto, List<PartidaNovoModelo> crbCompleto, List<PartidaNovoModelo> cearaCompleto, List<PartidaNovoModelo> chapecoenseCompleto, List<PartidaNovoModelo> coritibaCompleto, List<PartidaNovoModelo> goiasCompleto, List<PartidaNovoModelo> guaraniCompleto, List<PartidaNovoModelo> ituanoCompleto, List<PartidaNovoModelo> mirassolCompleto, List<PartidaNovoModelo> novorizontinoCompleto, List<PartidaNovoModelo> operarioCompleto, List<PartidaNovoModelo> paysanduCompleto, List<PartidaNovoModelo> pontepretaCompleto, List<PartidaNovoModelo> santosCompleto, List<PartidaNovoModelo> sportCompleto, List<PartidaNovoModelo> vilanovaCompleto) {
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : cearaCompleto) {
+        for (PartidaNovoModelo partida : amazonasCompleto) {
 
-            if (partida.getAwayTime().getName().equals("Ceará")) {
+            if (partida.getAwayTime().getName().equals("Amazonas")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);
             }
 
         }//fim do for
+
 
         for (int i = 0; i < partidas.size(); i++) {
         //GOLS 0.5 1°TEMPO

@@ -26,11 +26,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CearaEstatisticaCasa2024Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class CearaEstatisticaCasa2024Fragment extends Fragment implements JogosSerieB2024Listener  {
 
     private FragmentCearaEstatisticaCasa2024Binding binding;

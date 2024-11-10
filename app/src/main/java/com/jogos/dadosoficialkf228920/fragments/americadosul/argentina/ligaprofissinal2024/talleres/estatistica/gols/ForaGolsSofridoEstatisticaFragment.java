@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.ligaprofissinal2024.river_plate.estatistica.gols;
+package com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.ligaprofissinal2024.talleres.estatistica.gols;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.android.material.snackbar.Snackbar;
 import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadoPartidaSegundoTempoAdapter;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
@@ -21,8 +20,6 @@ import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrime
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaGolsBinding;
 import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A2024;
 import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A_2024_Listener;
-import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieA2024;
-import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieAListener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoGolsSfdFora;
 
@@ -543,15 +540,15 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         PartidaNovoModelo partidaNovoModelo;
 
 
-            for (PartidaNovoModelo partida : riverPlateCompleto) {
+        for (PartidaNovoModelo partida : talleresCompleto) {
 
-                if (partida.getAwayTime().getName().equals("River Plate")) {
-                    partidaNovoModelo = partida;
-                    partida.setDataFormatada(partida.getDate());
-                    this.partidas.add(partidaNovoModelo);
-                }
+            if (partida.getAwayTime().getName().equals("Talleres")) {
+                partidaNovoModelo = partida;
+                partida.setDataFormatada(partida.getDate());
+                this.partidas.add(partidaNovoModelo);
+            }
 
-            }//fim do for
+        }//fim do for
 
 
 

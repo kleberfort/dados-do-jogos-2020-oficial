@@ -4,10 +4,12 @@ import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import java.util.List;
 
-public interface JogosSerieAListener {
+public interface JogosLigaProfissional_A_2024_Listener {
 
-    public void onJogosSerieAReady(List<PartidaNovoModelo> atleticoPRCompleto, List<PartidaNovoModelo> atleticoGOCompleto, List<PartidaNovoModelo> atleticoMGCompleto , List<PartidaNovoModelo> bahiaCompleto , List<PartidaNovoModelo> botafogoCompleto , List<PartidaNovoModelo>  bragantinoCompleto, List<PartidaNovoModelo> corinthiansCompleto , List<PartidaNovoModelo> criciumaCompleto , List<PartidaNovoModelo>  cruzeiroCompleto, List<PartidaNovoModelo>cuiabaCompleto
-            , List<PartidaNovoModelo> flamengoCompleto, List<PartidaNovoModelo> fluminenseCompleto , List<PartidaNovoModelo> fortalezaCompleto , List<PartidaNovoModelo> gremioCompleto , List<PartidaNovoModelo> internacionalCompleto , List<PartidaNovoModelo> juventudeCompleto , List<PartidaNovoModelo> palmeirasCompleto, List<PartidaNovoModelo> saoPauloCompleto , List<PartidaNovoModelo> vascoCompleto , List<PartidaNovoModelo> vitoriaCompleto);
+    public void onJogosSerieAReady(List<PartidaNovoModelo> argentinoJuniorsCompleto, List<PartidaNovoModelo> atleticoTucumanCompleto, List<PartidaNovoModelo> banfieldCompleto , List<PartidaNovoModelo> barracasCentralCompleto , List<PartidaNovoModelo> belgranoCompleto , List<PartidaNovoModelo>  bocaJuniorsCompleto, List<PartidaNovoModelo> centralCordobaCompleto , List<PartidaNovoModelo> defensaJusticiaCompleto , List<PartidaNovoModelo>  deportivoRiestraCompleto, List<PartidaNovoModelo> estudiantesLaPrataCompleto
+            , List<PartidaNovoModelo> gimnasiaCompleto, List<PartidaNovoModelo> godoyCruzCompleto , List<PartidaNovoModelo> huracanCompleto , List<PartidaNovoModelo> independienteCompleto , List<PartidaNovoModelo> independienteRivadaviaCompleto , List<PartidaNovoModelo> institutoCompleto , List<PartidaNovoModelo> lanusCompleto, List<PartidaNovoModelo> newellOldBoysCompleto , List<PartidaNovoModelo> platenseCompleto , List<PartidaNovoModelo> racingCompleto,
+             List<PartidaNovoModelo> riverPlateCompleto, List<PartidaNovoModelo> rosarioCentralCompleto, List<PartidaNovoModelo> sanLorenzoCompleto, List<PartidaNovoModelo> sarmientoCompleto
+            , List<PartidaNovoModelo> talleresCompleto, List<PartidaNovoModelo> tigreCompleto, List<PartidaNovoModelo> unionSantaFeCompleto, List<PartidaNovoModelo> velezSarsfieldCompleto);
 
     
 }

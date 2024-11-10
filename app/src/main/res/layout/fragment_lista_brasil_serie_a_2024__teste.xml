@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".fragments.brasil.serieA2024.ListaBrasilSerieA_2024_TesteFragment">
 
+    <!-- RecyclerView para a lista -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvLista"
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.amazonas_ui.estatistica.gols;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ceara_ui.estatistica.gols;
 
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
@@ -13,10 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadoPartidaSegundoTempoAdapter;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
+import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaGolsBinding;
-import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieA2024;
-import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieAListener;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024Listener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
@@ -33,6 +33,8 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
     private JogosSerieB2024 jogosSerieB2024;
 
     private ResultadosPartidasAdapter resultadosPartidasAdapter;
+    private ResultadosPartidasPrimeiroTempoAdapter resultadosPartidasPrimeiroTempoAdapter;
+    private ResultadoPartidaSegundoTempoAdapter resultadoPartidaSegundoTempoAdapter;
 
 
 
@@ -85,12 +87,12 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         jogosSerieB2024.setupHttpClient();
         jogosSerieB2024.setupDadosJogos();
         jogosSerieB2024.setListener(this);// Registra o fragmento como listener
-        
-        
+
+
         binding.tvGols1T05Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ MARCOU ] GOL 1T 0.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ MARCOU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(1);
             }
         });
@@ -98,7 +100,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         binding.tvGols1T05Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO MARCOU ] GOL 1T 0.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ NÃO MARCOU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(2);
             }
         });
@@ -107,7 +109,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ MARCOU ] GOL 1T 1.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ MARCOU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(3);
 
             }
@@ -117,7 +119,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO MARCOU ] GOL 1T 1.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ NÃO MARCOU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(4);
 
             }
@@ -127,7 +129,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ MARCOU ] GOL 1T 2.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ MARCOU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(5);
 
             }
@@ -137,7 +139,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO MARCOU ] GOL 1T 2.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ NÃO MARCOU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(6);
 
             }
@@ -147,7 +149,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ MARCOU ] GOL 2T 0.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ MARCOU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(7);
 
             }
@@ -156,7 +158,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         binding.tvGols2T05Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO MARCOU ] GOL 2T 0.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ NÃO MARCOU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(8);
 
 
@@ -166,7 +168,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         binding.tvGols2T15Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ MARCOU ] GOL 2T 1.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ MARCOU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(9);
 
             }
@@ -175,7 +177,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         binding.tvGols2T15Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO MARCOU ] GOL 2T 1.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ NÃO MARCOU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(10);
 
             }
@@ -184,7 +186,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         binding.tvGols2T25Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ MARCOU ] GOL 2T 2.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ MARCOU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(11);
 
             }
@@ -193,7 +195,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         binding.tvGols2T25Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO MARCOU ] GOL 2T 2.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ NÃO MARCOU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(12);
 
             }
@@ -202,7 +204,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         binding.tvGolsAcima05Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ MARCOU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ MARCOU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(13);
 
             }
@@ -211,7 +213,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         binding.tvGolsAcima05Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO MARCOU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ NÃO MARCOU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(14);
 
             }
@@ -220,7 +222,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         binding.tvGolsAcima15Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ MARCOU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ MARCOU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(15);
 
             }
@@ -229,7 +231,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         binding.tvGolsAcima15Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO MARCOU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ NÃO MARCOU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(16);
 
             }
@@ -238,7 +240,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         binding.tvGolsAcima25Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ MARCOU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ MARCOU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(17);
 
             }
@@ -247,7 +249,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         binding.tvGolsAcima25Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO MARCOU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ NÃO MARCOU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(18);
 
             }
@@ -255,7 +257,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         binding.tvGolsAcima35Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ MARCOU ] GOL 3.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ MARCOU ] GOL 3.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(19);
 
             }
@@ -263,7 +265,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         binding.tvGolsAcima35Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO MARCOU ] GOL 3.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ NÃO MARCOU ] GOL 3.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(20);
 
             }
@@ -286,7 +288,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasPrimeiroTempo(jogos);
                 } else {
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -298,7 +300,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasPrimeiroTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -311,7 +313,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasPrimeiroTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -323,7 +325,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasPrimeiroTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -335,7 +337,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasPrimeiroTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -347,7 +349,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasPrimeiroTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -359,7 +361,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasSegundoTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -371,7 +373,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasSegundoTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -383,7 +385,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasSegundoTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -395,7 +397,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasSegundoTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -407,7 +409,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasSegundoTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -419,7 +421,7 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasSegundoTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -534,9 +536,9 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
 
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : amazonasCompleto) {
+        for (PartidaNovoModelo partida : cearaCompleto) {
 
-            if (partida.getHomeTime().getName().equals("Amazonas")) {
+            if (partida.getHomeTime().getName().equals("Ceará")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);
@@ -925,7 +927,6 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
 
     private void showPartidasDialog(List<PartidaNovoModelo> partidas) {
 
-
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
         bottomSheetDialog.setContentView(bottomSheetView);
@@ -933,14 +934,39 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
         RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
         recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
 
-
-
         resultadosPartidasAdapter = new ResultadosPartidasAdapter(partidas);
         recyclerViewPartidas.setAdapter(resultadosPartidasAdapter);
         //resultadosPartidasAdapter.notifyDataSetChanged();
 
         bottomSheetDialog.show();
+    }
+    private void showPartidasPrimeiroTempo(List<PartidaNovoModelo> partidas) {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
 
+        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
+        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        resultadosPartidasPrimeiroTempoAdapter = new ResultadosPartidasPrimeiroTempoAdapter(partidas);
+        recyclerViewPartidas.setAdapter(resultadosPartidasPrimeiroTempoAdapter);
+        //resultadosPartidasAdapter.notifyDataSetChanged();
+
+        bottomSheetDialog.show();
+    }
+    private void showPartidasSegundoTempo(List<PartidaNovoModelo> partidas) {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
+
+        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
+        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        resultadoPartidaSegundoTempoAdapter = new ResultadoPartidaSegundoTempoAdapter(partidas);
+        recyclerViewPartidas.setAdapter(resultadoPartidaSegundoTempoAdapter);
+        //resultadosPartidasAdapter.notifyDataSetChanged();
+
+        bottomSheetDialog.show();
     }
 
 

@@ -1,6 +1,125 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:backgroundTint="@color/primary_500"
+    android:padding="8dp"
+    android:background="@color/white">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Título Principal -->
+    <TextView
+        android:id="@+id/titulo_principal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Melhores Estatísticas"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:paddingBottom="8dp" />
+
+    <!-- Seções Casa e Fora lado a lado -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <!-- Seção Casa -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+           android:background="@color/blueClaro"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <!-- Título Casa -->
+            <TextView
+                android:id="@+id/titulo_casa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Casa"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:paddingBottom="4dp" />
+
+            <!-- Botões Casa -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_mais_70_casa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+70%" />
+
+                <Button
+                    android:id="@+id/btn_mais_88_casa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+88%"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Seção Fora -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <!-- Título Fora -->
+            <TextView
+                android:id="@+id/titulo_fora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fora"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:paddingBottom="4dp" />
+
+            <!-- Botões Fora -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn_mais_70_fora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+70%" />
+
+                <Button
+                    android:id="@+id/btn_mais_88_fora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+88%"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- RecyclerView para exibir os itens de Casa -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@color/primary_200"
+        android:visibility="gone" />
+</LinearLayout>
+
+
+
+
+

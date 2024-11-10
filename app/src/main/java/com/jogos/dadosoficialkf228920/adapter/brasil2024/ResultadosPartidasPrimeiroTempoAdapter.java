@@ -13,25 +13,25 @@ import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import java.util.List;
 
-public class ResultadosPartidasPrimeiroSegundoTempoAdapter extends RecyclerView.Adapter<ResultadosPartidasPrimeiroSegundoTempoAdapter.ViewHolder> {
+public class ResultadosPartidasPrimeiroTempoAdapter extends RecyclerView.Adapter<ResultadosPartidasPrimeiroTempoAdapter.ViewHolder> {
 
     private List<PartidaNovoModelo> lista;
 
-    public ResultadosPartidasPrimeiroSegundoTempoAdapter(List<PartidaNovoModelo> resultados) {
+    public ResultadosPartidasPrimeiroTempoAdapter(List<PartidaNovoModelo> resultados) {
         this.lista = resultados;
     }
     @NonNull
     @Override
-    public ResultadosPartidasPrimeiroSegundoTempoAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ResultadosPartidasPrimeiroTempoAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         LayoutResultadoPartidasBinding binding = LayoutResultadoPartidasBinding.inflate(layoutInflater, parent, false);
 
-        return new ResultadosPartidasPrimeiroSegundoTempoAdapter.ViewHolder(binding);
+        return new ResultadosPartidasPrimeiroTempoAdapter.ViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ResultadosPartidasPrimeiroSegundoTempoAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ResultadosPartidasPrimeiroTempoAdapter.ViewHolder holder, int position) {
 
 
 

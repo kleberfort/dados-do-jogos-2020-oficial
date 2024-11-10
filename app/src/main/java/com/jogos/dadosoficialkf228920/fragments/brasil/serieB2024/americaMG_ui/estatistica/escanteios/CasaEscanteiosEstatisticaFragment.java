@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.americaMG_ui.escanteios;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.americaMG_ui.estatistica.escanteios;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -709,9 +709,9 @@ public class CasaEscanteiosEstatisticaFragment extends Fragment implements Jogos
 
         PartidaNovoModelo partidaNovoModelo;
 
-        for (PartidaNovoModelo partida : cearaCompleto) {
+        for (PartidaNovoModelo partida : americaMGCompleto) {
 
-            if (partida.getHomeTime().getName().equals("Ceará")) {
+            if (partida.getHomeTime().getName().equals("América-MG")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);

@@ -1,21 +1,35 @@
 package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024;
 
+import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasCasa;
+import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasFora;
+
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.TimesClasificacaoBrasilA2024Adapter;
+import com.jogos.dadosoficialkf228920.adapter.mais70ou90.CarregarEstatistica70_90Adapter;
 import com.jogos.dadosoficialkf228920.databinding.FragmentListaBrasilSerieA2024TesteBinding;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieA2024;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieAListener;
@@ -25,6 +39,7 @@ import com.jogos.dadosoficialkf228920.model.RecyclerItemClickListener;
 import com.jogos.dadosoficialkf228920.model.comparator.ComparatorPontosVitoriaSaldoGolsProSerieA_B;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -102,30 +117,31 @@ public class ListaBrasilSerieA_2024_TesteFragment extends Fragment implements Jo
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Inflate o layout para este fragmento
         binding = FragmentListaBrasilSerieA2024TesteBinding.inflate(inflater, container, false);
-        View view = binding.getRoot();
-        jogosSerieA2024 = new JogosSerieA2024();
-        jogosSerieA2024.setupHttpClient();
-        jogosSerieA2024.setupDadosJogos();
-        jogosSerieA2024.setListener(this);// Registra o fragmento como listener
 
+
+
+        // Configurações adicionais de RecyclerView e Adapter para "rvLista"
         binding.rvLista.setHasFixedSize(true);
         binding.rvLista.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.rvLista.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
 
-        //aqui esta certo, estamos iniciando o adaptador. Sempre temos que fazer isso
-        timesClasificacaoBrasilA2024Adapter = new TimesClasificacaoBrasilA2024Adapter(listaOficial);//o adapter vai receber a variazel listaOficial, mas ela esta vazia ainda
-        //entendeu essa parte ?sim
-        //
+        // Inicialize o adapter para "rvLista"
+        timesClasificacaoBrasilA2024Adapter = new TimesClasificacaoBrasilA2024Adapter(listaOficial); // Certifique-se de que listaOficial tenha dados
         binding.rvLista.setAdapter(timesClasificacaoBrasilA2024Adapter);
 
+        // Inicialize o objeto "jogosSerieA2024" e configure o listener
+        jogosSerieA2024 = new JogosSerieA2024();
+        jogosSerieA2024.setupHttpClient();
+        jogosSerieA2024.setupDadosJogos();
+        jogosSerieA2024.setListener(this); // Registra o fragmento como listener
 
-        //o adaptador faz a parte bruta de pegar os dados e exibir na tela
-        //pra ele funcionar temos que passar quais informacoes ele deve exibir
-        //essa é a primeira perte que voce deve enteder
-        // esse é o primeiro conceito ok?sim en
-        //podemos passar a informacao para o adapter de várias formas vou mostrar uma pra voce
+
+      //  melhoresStatisticasCasa(bragantinoCompleto, "Bragantino", 70);
+
+
+
 
 
         binding.rvLista.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), binding.rvLista, new RecyclerItemClickListener.OnItemClickListener() {
@@ -265,16 +281,139 @@ public class ListaBrasilSerieA_2024_TesteFragment extends Fragment implements Jo
 
             @Override
             public void onLongItemClick(View view, int position) {
+                // Criação do PopupWindow
+                LayoutInflater inflater = LayoutInflater.from(view.getContext());
+                LinearLayout layoutPopup = (LinearLayout) inflater.inflate(R.layout.layout_porcentagem_estatistica, null);
+                PopupWindow popupWindow = new PopupWindow(layoutPopup,
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        true);
 
+                popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                popupWindow.setOutsideTouchable(true);
+
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+                TextView textTitulo = layoutPopup.findViewById(R.id.titulo_principal);
+                RecyclerView recyclerView = layoutPopup.findViewById(R.id.recycler_view);
+                Button btnMais70Casa = layoutPopup.findViewById(R.id.btn_mais_70_casa);
+                Button btnMais88Casa = layoutPopup.findViewById(R.id.btn_mais_88_casa);
+                Button btnMais70Fora = layoutPopup.findViewById(R.id.btn_mais_70_fora);
+                Button btnMais88Fora = layoutPopup.findViewById(R.id.btn_mais_88_fora);
+
+                String teamName = listaOficial.get(position).getName();
+                textTitulo.setText("Melhores Estatísticas - " + teamName);
+
+                recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+                CarregarEstatistica70_90Adapter adapter = new CarregarEstatistica70_90Adapter(new ArrayList<>());
+                recyclerView.setAdapter(adapter);
+
+                // Seleciona a lista correta com base no time
+                List<PartidaNovoModelo> listaSelecionada;
+                switch (teamName) {
+                    case "Atlético-PR":
+                        listaSelecionada = atleticoPRCompleto;
+                        break;
+                    case "Atlético-GO":
+                        listaSelecionada = atleticoGOCompleto;
+                        break;
+                    case "Atlético-MG":
+                        listaSelecionada = atleticoMGCompleto;
+                        break;
+                    case "Bahia":
+                        listaSelecionada = bahiaCompleto;
+                        break;
+                    case "Botafogo":
+                        listaSelecionada = botafogoCompleto;
+                        break;
+                    case "Bragantino":
+                        listaSelecionada = bragantinoCompleto;
+                        break;
+                    case "Corinthians":
+                        listaSelecionada = corinthiansCompleto;
+                        break;
+                    case "Criciúma":
+                        listaSelecionada = criciumaCompleto;
+                        break;
+                    case "Cruzeiro":
+                        listaSelecionada = cruzeiroCompleto;
+                        break;
+                    case "Cuiabá":
+                        listaSelecionada = cuiabaCompleto;
+                        break;
+                    case "Flamengo":
+                        listaSelecionada = flamengoCompleto;
+                        break;
+                    case "Fluminense":
+                        listaSelecionada = fluminenseCompleto;
+                        break;
+                    case "Fortaleza":
+                        listaSelecionada = fortalezaCompleto;
+                        break;
+                    case "Grêmio":
+                        listaSelecionada = gremioCompleto;
+                        break;
+                    case "Internacional":
+                        listaSelecionada = internacionalCompleto;
+                        break;
+                    case "Juventude":
+                        listaSelecionada = juventudeCompleto;
+                        break;
+                    case "Palmeiras":
+                        listaSelecionada = palmeirasCompleto;
+                        break;
+                    case "São-Paulo":
+                        listaSelecionada = saoPauloCompleto;
+                        break;
+                    case "Vasco":
+                        listaSelecionada = vascoCompleto;
+                        break;
+                    case "Vitória":
+                        listaSelecionada = vitoriaCompleto;
+                        break;
+                    // Adicione outros times aqui
+                    default:
+                        listaSelecionada = new ArrayList<>(); // Caso o time não seja encontrado
+                        break;
+                }
+
+                // Configuração dos botões para exibir os dados correspondentes
+                btnMais70Casa.setOnClickListener(v -> {
+                    List<String> estatisticas = melhoresStatisticasCasa(listaSelecionada, teamName, 70);
+                    adapter.setEstatisticas(estatisticas);
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
+
+                btnMais88Casa.setOnClickListener(v -> {
+                    List<String> estatisticas = melhoresStatisticasCasa(listaSelecionada, teamName, 88);
+                    adapter.setEstatisticas(estatisticas);
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
+
+                btnMais70Fora.setOnClickListener(v -> {
+                    List<String> estatisticas = melhoresStatisticasFora(listaSelecionada, teamName, 70);
+                    adapter.setEstatisticas(estatisticas);
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
+
+                btnMais88Fora.setOnClickListener(v -> {
+                    List<String> estatisticas = melhoresStatisticasFora(listaSelecionada, teamName, 88);
+                    adapter.setEstatisticas(estatisticas);
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
             }
+
+
+
         }));
 
-
-
-        return view;
-
-
+        return binding.getRoot();
     }
+
+
+
+
+
 
     //onde o metodo onJogosSerieAReady é chamado ?
     //Os dados dentro do meotod onJogosSerieAReady vao ser usados nesse Fragment ?Sim, porque aqui que nest frament que irei exibir a classificação, passando a lista
@@ -325,6 +464,8 @@ public class ListaBrasilSerieA_2024_TesteFragment extends Fragment implements Jo
         this.saoPauloCompleto = saoPauloCompleto;
         this.vascoCompleto = vascoCompleto;
         this.vitoriaCompleto = vitoriaCompleto;
+
+
 
         //ClassificaTeste classificaTeste = new ClassificaTeste();
 
@@ -1448,14 +1589,8 @@ public class ListaBrasilSerieA_2024_TesteFragment extends Fragment implements Jo
         //Collections.sort(minhaLista);
         Collections.reverse(listaOficial);
 
-
         //Mas entenda que o código abaixo sempre vai atualizar a lista inteira
         timesClasificacaoBrasilA2024Adapter.notifyDataSetChanged();
-
-
-
-
-
 
 
     }//fim do método da Interface

@@ -3,12 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.europa_A_2024_24_Fragments.premierLeague.ListaPremierLeague_A_2024_25Fragment">
+    tools:context=".fragments.europa_A_2024_25_Fragments.premierLeague.ListaPremierLeague_A_2024_25Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLista"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

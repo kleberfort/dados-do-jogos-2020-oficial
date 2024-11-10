@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.fortaleza_ui.estatistica.resultado_intervalo;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.criciuma_ui.estatistica.resultado_intervalo;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -21,8 +21,6 @@ import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrime
 import com.jogos.dadosoficialkf228920.databinding.TelaResultadoPrimeiroSegundoTempoBinding;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieA2024;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieAListener;
-import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024;
-import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024Listener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import java.util.ArrayList;
@@ -198,9 +196,9 @@ public class CasaResultadoPrimeiro_SegundoTempoFragment extends Fragment impleme
 
         PartidaNovoModelo partidaNovoModelo;
 
-        for (PartidaNovoModelo partida : fortalezaCompleto) {
+        for (PartidaNovoModelo partida : criciumaCompleto) {
 
-            if (partida.getHomeTime().getName().equals("Fortaleza")) {
+            if (partida.getHomeTime().getName().equals("Criciúma")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);

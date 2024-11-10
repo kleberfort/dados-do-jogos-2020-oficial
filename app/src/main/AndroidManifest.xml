@@ -14,6 +14,153 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DadosDosJogos2020Oficial">
         <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.Southampton2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.Ipswich2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.LeicesterCity2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.ManchesterUnited2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.Wolves2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.WestHam2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.Tottenham2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.Nottingham2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.Newcastle2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.ManchesterCity2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.Liverpool2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.Fulham2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.Evernton2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.CrystalPalace2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.Chelsea2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.Brighton2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.Brentford2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.Bournemouth2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.AstonVilla2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.Arsenal2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.Gimnasia2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.VelezSarsfield2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.UnionSanteFe2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.Tigre2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.Talleres2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.Sarmiento2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.SanLorenzo2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.RosarioCentral2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.RiverPlate2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.Racing2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.Platense2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.NewellOldBoys2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.Lanus2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.Instituto2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.IndependienteRivadavia2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.Independiente2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.Huracan2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.GodoyCruz2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.EstudiantesLaPrata2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.DeportivoRiestra2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.DefensaJusticia2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.CentralCordoba2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.BocaJuniors2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.Belgrano2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.BarracasCentral2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.Banfield2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.ArgentinoJuniors2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.AtleticoTucuman2024Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.americadosul.argentina.argentino_juniors.ArgentinoJunioresActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.brasil.serieB2024.Amazonas2024Activity"
             android:exported="false" />
         <activity

@@ -122,6 +122,21 @@ public class PartidaNovoModelo {
     }
 
 
+    @Override
+    public String toString() {
+        return "PARTIDAS{" +
+                "description='" + description + '\'' +
+                ", round=" + round +
+                ", date='" + date + '\'' +
+                ", dataFormatada=" + dataFormatada +
+                ", homeTime=" + homeTime +
+                ", awayTime=" + awayTime +
+                ", homeCartoes=" + homeCartoes +
+                ", awayCartoes=" + awayCartoes +
+                ", homeEstatisticaJogo=" + homeEstatisticaJogo +
+                ", awayEstatisticaJogo=" + awayEstatisticaJogo +
+                '}';
+    }
 }
 
 

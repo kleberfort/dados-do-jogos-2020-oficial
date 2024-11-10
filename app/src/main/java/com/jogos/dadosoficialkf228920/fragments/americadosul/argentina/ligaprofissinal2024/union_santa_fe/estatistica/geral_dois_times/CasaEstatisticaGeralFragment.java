@@ -458,11 +458,11 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosLigaP
 
             case 10:
                 for (int i = 0; i < partidas.size(); i++) {
-                    //GOLS MENOR 0.5 2°TEMPO
-                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() < 1 ||
-                            partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo() < 1 ||
-                            partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() < 1 ||
-                            partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo() < 1)
+                    //GOLS MENOR 0.5 TOTAL
+                    if((partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo()) +
+                            (partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo()) +
+                            (partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo()) +
+                            (partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo()) < 1)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -760,9 +760,9 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosLigaP
         public void onJogosSerieAReady(List<PartidaNovoModelo> argentinoJuniorsCompleto, List<PartidaNovoModelo> atleticoTucumanCompleto, List<PartidaNovoModelo> banfieldCompleto, List<PartidaNovoModelo> barracasCentralCompleto, List<PartidaNovoModelo> belgranoCompleto, List<PartidaNovoModelo> bocaJuniorsCompleto, List<PartidaNovoModelo> centralCordobaCompleto, List<PartidaNovoModelo> defensaJusticiaCompleto, List<PartidaNovoModelo> deportivoRiestraCompleto, List<PartidaNovoModelo> estudiantesLaPrataCompleto, List<PartidaNovoModelo> gimnasiaCompleto, List<PartidaNovoModelo> godoyCruzCompleto, List<PartidaNovoModelo> huracanCompleto, List<PartidaNovoModelo> independienteCompleto, List<PartidaNovoModelo> independienteRivadaviaCompleto, List<PartidaNovoModelo> institutoCompleto, List<PartidaNovoModelo> lanusCompleto, List<PartidaNovoModelo> newellOldBoysCompleto, List<PartidaNovoModelo> platenseCompleto, List<PartidaNovoModelo> racingCompleto, List<PartidaNovoModelo> riverPlateCompleto, List<PartidaNovoModelo> rosarioCentralCompleto, List<PartidaNovoModelo> sanLorenzoCompleto, List<PartidaNovoModelo> sarmientoCompleto, List<PartidaNovoModelo> talleresCompleto, List<PartidaNovoModelo> tigreCompleto, List<PartidaNovoModelo> unionSantaFeCompleto, List<PartidaNovoModelo> velezSarsfieldCompleto) {
             PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-            for (PartidaNovoModelo partida : riverPlateCompleto) {
+            for (PartidaNovoModelo partida : unionSantaFeCompleto) {
 
-                if (partida.getHomeTime().getName().equals("River Plate")) {
+                if (partida.getHomeTime().getName().equals("Union Santa Fe")) {
                     partidaNovoModelo = partida;
                     partida.setDataFormatada(partida.getDate());
                     this.partidas.add(partidaNovoModelo);

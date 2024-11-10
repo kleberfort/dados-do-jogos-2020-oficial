@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.fortaleza_ui.estatistica.gols;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.fluminense_ui.estatistica.gols;
 
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;

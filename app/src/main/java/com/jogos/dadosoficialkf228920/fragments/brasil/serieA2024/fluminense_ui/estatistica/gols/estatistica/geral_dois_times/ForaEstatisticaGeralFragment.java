@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.fluminense_ui.estatistica.geral_dois_times;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.fluminense_ui.estatistica.gols.estatistica.geral_dois_times;
 
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
@@ -12,14 +12,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.android.material.snackbar.Snackbar;
 import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaOficialPorcentagemBinding;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieA2024;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieAListener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
-import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoCasa;
 import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoFora;
 
 import org.jetbrains.annotations.Nullable;

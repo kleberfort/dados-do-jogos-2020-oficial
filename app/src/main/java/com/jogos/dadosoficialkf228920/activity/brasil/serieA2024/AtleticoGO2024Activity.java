@@ -28,6 +28,8 @@ public class AtleticoGO2024Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityAtletigoGo2024Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+
         configTablayout();
 
         relativeLayoutBannerUnity = binding.adViewContainerActivityArsenalUnity;

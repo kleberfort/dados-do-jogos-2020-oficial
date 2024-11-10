@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.amazonas_ui.estatistica.gols;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ceara_ui.estatistica.gols;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -14,10 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadoPartidaSegundoTempoAdapter;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
+import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaGolsBinding;
-import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieA2024;
-import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieAListener;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024Listener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
@@ -35,6 +35,8 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
     private JogosSerieB2024 jogosSerieB2024;
 
     private ResultadosPartidasAdapter resultadosPartidasAdapter;
+    private ResultadosPartidasPrimeiroTempoAdapter resultadosPartidasPrimeiroTempoAdapter;
+    private ResultadoPartidaSegundoTempoAdapter resultadoPartidaSegundoTempoAdapter;
 
 
 
@@ -93,7 +95,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGols1T05Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ SOFREU ] GOL 1T 0.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ SOFREU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(1);
             }
         });
@@ -101,7 +103,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGols1T05Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO SOFREU ] GOL 1T 0.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ NÃO SOFREU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(2);
             }
         });
@@ -110,7 +112,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ SOFREU ] GOL 1T 1.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ SOFREU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(3);
 
             }
@@ -120,7 +122,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO SOFREU ] GOL 1T 1.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ NÃO SOFREU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(4);
 
             }
@@ -130,7 +132,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ SOFREU ] GOL 1T 2.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ SOFREU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(5);
 
             }
@@ -140,7 +142,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO SOFREU ] GOL 1T 2.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 1T QUE [ NÃO SOFREU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(6);
 
             }
@@ -150,7 +152,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ SOFREU ] GOL 2T 0.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ SOFREU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(7);
 
             }
@@ -159,7 +161,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGols2T05Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO SOFREU ] GOL 2T 0.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ NÃO SOFREU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(8);
 
 
@@ -169,7 +171,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGols2T15Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ SOFREU ] GOL 2T 1.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ SOFREU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(9);
 
             }
@@ -178,7 +180,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGols2T15Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO SOFREU ] GOL 2T 1.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ NÃO SOFREU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(10);
 
             }
@@ -187,7 +189,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGols2T25Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ SOFREU ] GOL 2T 2.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ SOFREU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(11);
 
             }
@@ -196,7 +198,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGols2T25Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO SOFREU ] GOL 2T 2.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO FINAL ] DO 2T QUE [ NÃO SOFREU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(12);
 
             }
@@ -205,7 +207,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGolsAcima05Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ SOFREU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ SOFREU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(13);
 
             }
@@ -214,7 +216,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGolsAcima05Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO SOFREU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ NÃO SOFREU ] GOL 0.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(14);
 
             }
@@ -223,7 +225,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGolsAcima15Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ SOFREU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ SOFREU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(15);
 
             }
@@ -232,7 +234,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGolsAcima15Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO SOFREU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ NÃO SOFREU ] GOL 1.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(16);
 
             }
@@ -241,7 +243,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGolsAcima25Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ SOFREU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ SOFREU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(17);
 
             }
@@ -250,7 +252,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGolsAcima25Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO SOFREU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ NÃO SOFREU ] GOL 2.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(18);
 
             }
@@ -258,7 +260,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGolsAcima35Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ SOFREU ] GOL 3.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ SOFREU ] GOL 3.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(19);
 
             }
@@ -266,11 +268,12 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGolsAcima35Ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ NÃO SOFREU ] GOL 3.5 ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "[ RESULTADO PARTIDA ] QUE [ NÃO SOFREU ] GOL 3.5 ", Toast.LENGTH_LONG).show();
                 handleTextViewClick(20);
 
             }
         });
+
 
         return binding.getRoot();
 
@@ -288,7 +291,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasPrimeiroTempo(jogos);
                 } else {
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -300,7 +303,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasPrimeiroTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -313,7 +316,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasPrimeiroTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -325,7 +328,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasPrimeiroTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -337,19 +340,19 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasPrimeiroTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
                 break;
             case 6:
                 for (int i = 0; i < partidas.size(); i++) {
-                    //GOLS MENOR 1.5 1°TEMPO
+                    //GOLS MENOR 2.5 1°TEMPO
                     if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() < 3)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasPrimeiroTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -361,7 +364,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasSegundoTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -373,7 +376,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasSegundoTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -385,7 +388,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasSegundoTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -397,7 +400,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasSegundoTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -409,7 +412,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasSegundoTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -421,7 +424,7 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasSegundoTempo(jogos);
                 }else{
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -536,9 +539,9 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
     public void onJogosSerieBReady(List<PartidaNovoModelo> amazonasCompleto, List<PartidaNovoModelo> americaMGCompleto, List<PartidaNovoModelo> avaiCompleto, List<PartidaNovoModelo> botafogoSPCompleto, List<PartidaNovoModelo> brusqueCompleto, List<PartidaNovoModelo> crbCompleto, List<PartidaNovoModelo> cearaCompleto, List<PartidaNovoModelo> chapecoenseCompleto, List<PartidaNovoModelo> coritibaCompleto, List<PartidaNovoModelo> goiasCompleto, List<PartidaNovoModelo> guaraniCompleto, List<PartidaNovoModelo> ituanoCompleto, List<PartidaNovoModelo> mirassolCompleto, List<PartidaNovoModelo> novorizontinoCompleto, List<PartidaNovoModelo> operarioCompleto, List<PartidaNovoModelo> paysanduCompleto, List<PartidaNovoModelo> pontepretaCompleto, List<PartidaNovoModelo> santosCompleto, List<PartidaNovoModelo> sportCompleto, List<PartidaNovoModelo> vilanovaCompleto) {
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : amazonasCompleto) {
+        for (PartidaNovoModelo partida : cearaCompleto) {
 
-            if (partida.getAwayTime().getName().equals("Amazonas")) {
+            if (partida.getAwayTime().getName().equals("Ceará")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);
@@ -925,7 +928,6 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
 
     private void showPartidasDialog(List<PartidaNovoModelo> partidas) {
 
-
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
         bottomSheetDialog.setContentView(bottomSheetView);
@@ -933,14 +935,39 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
         recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
 
-
-
         resultadosPartidasAdapter = new ResultadosPartidasAdapter(partidas);
         recyclerViewPartidas.setAdapter(resultadosPartidasAdapter);
         //resultadosPartidasAdapter.notifyDataSetChanged();
 
         bottomSheetDialog.show();
+    }
+    private void showPartidasPrimeiroTempo(List<PartidaNovoModelo> partidas) {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
 
+        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
+        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        resultadosPartidasPrimeiroTempoAdapter = new ResultadosPartidasPrimeiroTempoAdapter(partidas);
+        recyclerViewPartidas.setAdapter(resultadosPartidasPrimeiroTempoAdapter);
+        //resultadosPartidasAdapter.notifyDataSetChanged();
+
+        bottomSheetDialog.show();
+    }
+    private void showPartidasSegundoTempo(List<PartidaNovoModelo> partidas) {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
+
+        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
+        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        resultadoPartidaSegundoTempoAdapter = new ResultadoPartidaSegundoTempoAdapter(partidas);
+        recyclerViewPartidas.setAdapter(resultadoPartidaSegundoTempoAdapter);
+        //resultadosPartidasAdapter.notifyDataSetChanged();
+
+        bottomSheetDialog.show();
     }
 
 

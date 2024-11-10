@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ceara_ui.estatistica.cartoes;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.botafogoSP_ui.estatistica.cartoes;
 
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
@@ -20,7 +20,6 @@ import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaCartoesBinding;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024Listener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
-import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoCartoesMcdCasa;
 import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoCartoesMcdFora;
 
 import org.jetbrains.annotations.Nullable;
@@ -550,15 +549,16 @@ public class ForaCartoesEstatisticaFragment extends Fragment implements JogosSer
 
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : cearaCompleto) {
+        for (PartidaNovoModelo partida : botafogoSPCompleto) {
 
-            if (partida.getAwayTime().getName().equals("Ceará")) {
+            if (partida.getAwayTime().getName().equals("Botafogo-SP")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);
             }
 
         }//fim do for
+
 
         for (int i = 0; i < partidas.size(); i++) {
 

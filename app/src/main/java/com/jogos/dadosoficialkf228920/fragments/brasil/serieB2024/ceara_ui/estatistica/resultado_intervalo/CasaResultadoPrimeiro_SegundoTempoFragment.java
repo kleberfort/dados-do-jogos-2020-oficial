@@ -1,6 +1,8 @@
 package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ceara_ui.estatistica.resultado_intervalo;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadoPartidaSegundoTempoAdapter;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaResultadoPrimeiroSegundoTempoBinding;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024;
@@ -23,12 +26,14 @@ import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CasaResultadoPrimeiroTempoFragment extends Fragment implements JogosSerieB2024Listener{
+public class CasaResultadoPrimeiro_SegundoTempoFragment extends Fragment implements JogosSerieB2024Listener{
 
     private TelaResultadoPrimeiroSegundoTempoBinding binding;
     private JogosSerieB2024 jogosSerieB2024;
 
     private ResultadosPartidasPrimeiroTempoAdapter resultadosPartidasPrimeiroTempoAdapter;
+
+    private ResultadoPartidaSegundoTempoAdapter resultadoPartidaSegundoTempoAdapter;
 
     private int vitoriaPrimeiroTempo;
     private int empatePrimeiroTempo;
@@ -54,22 +59,44 @@ public class CasaResultadoPrimeiroTempoFragment extends Fragment implements Jogo
         binding.tv1TempoVitoriaResultado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ VENCEU ] NO 1T", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "RESULTADOS QUE [ VENCEU ] NO 1T", Toast.LENGTH_LONG).show();
                 handleTextViewClick(1);
             }
         });
         binding.tv1TempoEmpateResultado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ EMPATOU ] NO 1T", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "RESULTADOS QUE [ EMPATOU ] NO 1T", Toast.LENGTH_LONG).show();
                 handleTextViewClick(2);
             }
         });
         binding.tv1TempoDerrotaResultado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "PARTIDAS QUE [ SAIU DERROTADO ] NO 1T", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "RESULTADOS QUE [ SAIU DERROTADO ] NO 1T", Toast.LENGTH_LONG).show();
                 handleTextViewClick(3);
+            }
+        });
+
+        binding.tv2TempoVitoriaResultado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "RESULTADOS QUE [ VENCEU ] NO 2T", Toast.LENGTH_LONG).show();
+                handleTextViewClick(4);
+            }
+        });
+        binding.tv2TempoEmpateResultado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "RESULTADOS QUE [ EMPATOU ] NO 2T", Toast.LENGTH_LONG).show();
+                handleTextViewClick(5);
+            }
+        });
+        binding.tv2TempoDerrotaResultado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(), "RESULTADOS QUE [ SAIU DERROTADO ] NO 2T", Toast.LENGTH_LONG).show();
+                handleTextViewClick(6);
             }
         });
 
@@ -87,9 +114,12 @@ public class CasaResultadoPrimeiroTempoFragment extends Fragment implements Jogo
                     //PARTIDAS QUE VENCEU NO 1°TEMPO
                     if (partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() > partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo())
                         jogos.add(partidas.get(i));
+
+                    Log.d("PARTIDAS", jogos.toString());
+
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasPrimeiroTempo(jogos);
                 } else {
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -101,7 +131,7 @@ public class CasaResultadoPrimeiroTempoFragment extends Fragment implements Jogo
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasPrimeiroTempo(jogos);
                 } else {
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -113,7 +143,44 @@ public class CasaResultadoPrimeiroTempoFragment extends Fragment implements Jogo
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
-                    showPartidasDialog(jogos);
+                    showPartidasPrimeiroTempo(jogos);
+                } else {
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+
+            case 4:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //PARTIDAS QUE VENCEU NO 2°TEMPO
+                    if (partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() > partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo())
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasSegundoTempo(jogos);
+                } else {
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 5:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //PARTIDAS QUE EMPATOU NO 2°TEMPO
+                    if (partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() == partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo())
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasSegundoTempo(jogos);
+                } else {
+                    Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 6:
+                for (int i = 0; i < partidas.size(); i++) {
+                    //PARTIDAS QUE SAIU DERROTADO NO 2°TEMPO
+                    if (partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() < partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo())
+                        jogos.add(partidas.get(i));
+                }
+                if (!jogos.isEmpty()) {
+                    showPartidasSegundoTempo(jogos);
                 } else {
                     Toast.makeText(getActivity(), "Nenhum Evento Registrado", Toast.LENGTH_LONG).show();
                 }
@@ -168,6 +235,8 @@ public class CasaResultadoPrimeiroTempoFragment extends Fragment implements Jogo
             }
 
 
+
+
         }//fim do for que faz a comparação dos resultados dos tempos
 
 
@@ -187,7 +256,8 @@ public class CasaResultadoPrimeiroTempoFragment extends Fragment implements Jogo
 
     }//fim da interface
 
-    private void showPartidasDialog(List<PartidaNovoModelo> partidas) {
+    @SuppressLint("NotifyDataSetChanged")
+    private void showPartidasPrimeiroTempo(List<PartidaNovoModelo> partidas) {
 
 
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
@@ -201,9 +271,31 @@ public class CasaResultadoPrimeiroTempoFragment extends Fragment implements Jogo
 
         resultadosPartidasPrimeiroTempoAdapter = new ResultadosPartidasPrimeiroTempoAdapter(partidas);
         recyclerViewPartidas.setAdapter(resultadosPartidasPrimeiroTempoAdapter);
-        //resultadosPartidasAdapter.notifyDataSetChanged();
+        //resultadosPartidasPrimeiroTempoAdapter.notifyDataSetChanged();
 
         bottomSheetDialog.show();
+
+
+    }
+
+    private void showPartidasSegundoTempo(List<PartidaNovoModelo> partidas) {
+
+
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
+
+        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
+        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+
+
+        resultadoPartidaSegundoTempoAdapter = new ResultadoPartidaSegundoTempoAdapter(partidas);
+        recyclerViewPartidas.setAdapter(resultadoPartidaSegundoTempoAdapter);
+        //resultadosPartidasPrimeiroTempoAdapter.notifyDataSetChanged();
+
+        bottomSheetDialog.show();
+
 
     }
 

@@ -709,9 +709,9 @@ public class CasaEscanteiosEstatisticaFragment extends Fragment implements Jogos
 
         PartidaNovoModelo partidaNovoModelo;
 
-        for (PartidaNovoModelo partida : cearaCompleto) {
+        for (PartidaNovoModelo partida : botafogoSPCompleto) {
 
-            if (partida.getHomeTime().getName().equals("Ceará")) {
+            if (partida.getHomeTime().getName().equals("Botafogo-SP")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);

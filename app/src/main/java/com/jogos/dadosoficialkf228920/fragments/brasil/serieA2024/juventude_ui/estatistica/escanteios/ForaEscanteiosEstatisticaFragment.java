@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.flamengo_ui.estatistica.escanteios;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.juventude_ui.estatistica.escanteios;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -702,9 +702,9 @@ public class ForaEscanteiosEstatisticaFragment extends Fragment implements Jogos
 
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : fortalezaCompleto) {
+        for (PartidaNovoModelo partida : juventudeCompleto) {
 
-            if (partida.getAwayTime().getName().equals("Fortaleza")) {
+            if (partida.getAwayTime().getName().equals("Juventude")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);

@@ -707,9 +707,9 @@ public class ForaEscanteiosEstatisticaFragment extends Fragment implements Jogos
 
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : cearaCompleto) {
+        for (PartidaNovoModelo partida : botafogoSPCompleto) {
 
-            if (partida.getAwayTime().getName().equals("Ceará")) {
+            if (partida.getAwayTime().getName().equals("Botafogo-SP")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);

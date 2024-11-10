@@ -5,7 +5,7 @@ import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 
-public class FormatarCoresTextoCartoesMcdCasa {
+public class FormatarCoresTextoCartoesMcdFora {
 
     public static SpannableStringBuilder formatText(String nomeTime, String totalJogos, String totalGolsMcd, String totalGolsMcdPct) {
         SpannableStringBuilder builder = new SpannableStringBuilder();
@@ -18,7 +18,7 @@ public class FormatarCoresTextoCartoesMcdCasa {
         builder.append(nomeTimeSpannable);
         builder.append(" jogando em ");
 
-        String casa = "CASA";
+        String casa = "FORA";
         // Adiciona cor à variável nomeCasa
         SpannableString casaSpannable = new SpannableString(casa);
         casaSpannable.setSpan(new ForegroundColorSpan(Color.BLUE), 0, casa.length(), 0);
@@ -39,12 +39,12 @@ public class FormatarCoresTextoCartoesMcdCasa {
         totalGolsMcdSpannable.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, totalGolsMcdTexto.length(), 0);
         builder.append(totalGolsMcdSpannable);
 
-        String marcou = " PARTIDAS MARCOU";
+        String marcou = " LEVOU CARTÃO";
         SpannableString marcouSpannable = new SpannableString(marcou);
         marcouSpannable.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, marcou.length(), 0);
         builder.append(marcouSpannable);
 
-        builder.append(" [GOL ACIMA 0.5], que equivale ");
+        builder.append(" [AMARELO E/OU VERMLHO ACIMA 0.5], que equivale ");
 
         // Adiciona cor à variável totalGolsMcdPct
         String totalGolsMcdPctTexto = String.valueOf(totalGolsMcdPct + "%");
@@ -52,7 +52,7 @@ public class FormatarCoresTextoCartoesMcdCasa {
         totalGolsMcdPctSpannable.setSpan(new ForegroundColorSpan(Color.BLUE), 0, totalGolsMcdPctTexto.length(), 0);
         builder.append(totalGolsMcdPctSpannable);
 
-        builder.append(" do TOTAL.\n\n OBSERVAÇÃO: Dados compreende apenas o [TIME DA CASA].");
+        builder.append(" do TOTAL.\n\n OBSERVAÇÃO: Dados compreende apenas o [TIME DE FORA].");
 
         return builder;
 

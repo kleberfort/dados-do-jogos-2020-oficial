@@ -1,19 +1,30 @@
 package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024;
 
+import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasCasa;
+import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasFora;
+
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.activity.brasil.serieB2024.Amazonas2024Activity;
 import com.jogos.dadosoficialkf228920.activity.brasil.serieB2024.AmericaMG2024Activity;
 import com.jogos.dadosoficialkf228920.activity.brasil.serieB2024.Avai2024Activity;
@@ -35,6 +46,7 @@ import com.jogos.dadosoficialkf228920.activity.brasil.serieB2024.Santos2024Activ
 import com.jogos.dadosoficialkf228920.activity.brasil.serieB2024.Sport2024Activity;
 import com.jogos.dadosoficialkf228920.activity.brasil.serieB2024.VilaNova2024Activity;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.TimesClasificacaoBrasilA2024Adapter;
+import com.jogos.dadosoficialkf228920.adapter.mais70ou90.CarregarEstatistica70_90Adapter;
 import com.jogos.dadosoficialkf228920.databinding.FragmentListaBrasilSerieB2024Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.ListaBrasilSerieA_2024_TesteFragment;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024;
@@ -151,8 +163,8 @@ public class ListaBrasilSerie_B_2024Fragment extends Fragment implements JogosSe
                 switch (lista.getName()) {
                     case "Amazonas":
                         listaBrasilB2024.listaBrasilBMetodo("Amazonas");
-                        Intent intent = new Intent(getContext(), Amazonas2024Activity.class);
-                        startActivity(intent);
+//                        Intent intent = new Intent(getContext(), Amazonas2024Activity.class);
+//                        startActivity(intent);
                         Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
                         break;
                     case "América-MG":
@@ -273,10 +285,6 @@ public class ListaBrasilSerie_B_2024Fragment extends Fragment implements JogosSe
 
 
 
-
-
-
-
                 }//fim do switch
 
 
@@ -286,7 +294,126 @@ public class ListaBrasilSerie_B_2024Fragment extends Fragment implements JogosSe
 
             @Override
             public void onLongItemClick(View view, int position) {
+                // Criação do PopupWindow
+                LayoutInflater inflater = LayoutInflater.from(view.getContext());
+                LinearLayout layoutPopup = (LinearLayout) inflater.inflate(R.layout.layout_porcentagem_estatistica, null);
+                PopupWindow popupWindow = new PopupWindow(layoutPopup,
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        true);
 
+                popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                popupWindow.setOutsideTouchable(true);
+
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+                TextView textTitulo = layoutPopup.findViewById(R.id.titulo_principal);
+                RecyclerView recyclerView = layoutPopup.findViewById(R.id.recycler_view);
+                Button btnMais70Casa = layoutPopup.findViewById(R.id.btn_mais_70_casa);
+                Button btnMais88Casa = layoutPopup.findViewById(R.id.btn_mais_88_casa);
+                Button btnMais70Fora = layoutPopup.findViewById(R.id.btn_mais_70_fora);
+                Button btnMais88Fora = layoutPopup.findViewById(R.id.btn_mais_88_fora);
+
+                String teamName = listaOficial.get(position).getName();
+                textTitulo.setText("Melhores Estatísticas - " + teamName);
+
+                recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+                CarregarEstatistica70_90Adapter adapter = new CarregarEstatistica70_90Adapter(new ArrayList<>());
+                recyclerView.setAdapter(adapter);
+
+                // Seleciona a lista correta com base no time
+                List<PartidaNovoModelo> listaSelecionada;
+                switch (teamName) {
+                    case "Amazonas":
+                        listaSelecionada = amazonasCompleto;
+                        break;
+                    case "América-MG":
+                        listaSelecionada = americaMGCompleto;
+                        break;
+                    case "Avaí":
+                        listaSelecionada = avaiCompleto;
+                        break;
+                    case "Botafogo-SP":
+                        listaSelecionada = botafogoSPCompleto;
+                        break;
+                    case "Brusque":
+                        listaSelecionada = brusqueCompleto;
+                        break;
+                    case "CRB":
+                        listaSelecionada = crbCompleto;
+                        break;
+                    case "Ceará":
+                        listaSelecionada = cearaCompleto;
+                        break;
+                    case "Chapecoense":
+                        listaSelecionada = chapecoenseCompleto;
+                        break;
+                    case "Coritiba":
+                        listaSelecionada = coritibaCompleto;
+                        break;
+                    case "Goiás":
+                        listaSelecionada = goiasCompleto;
+                        break;
+                    case "Guarani":
+                        listaSelecionada = guaraniCompleto;
+                        break;
+                    case "Ituano":
+                        listaSelecionada = ituanoCompleto;
+                        break;
+                    case "Mirassol":
+                        listaSelecionada = mirassolCompleto;
+                        break;
+                    case "Novorizontino":
+                        listaSelecionada = novorizontinoCompleto;
+                        break;
+                    case "Operário":
+                        listaSelecionada = operarioCompleto;
+                        break;
+                    case "Paysandu":
+                        listaSelecionada = paysanduCompleto;
+                        break;
+                    case "Ponte Preta":
+                        listaSelecionada = pontepretaCompleto;
+                        break;
+                    case "Santos":
+                        listaSelecionada = santosCompleto;
+                        break;
+                    case "Sport":
+                        listaSelecionada = sportCompleto;
+                        break;
+                    case "Vila Nova":
+                        listaSelecionada = vilanovaCompleto;
+                        break;
+                    // Adicione outros times aqui
+                    default:
+                        listaSelecionada = new ArrayList<>(); // Caso o time não seja encontrado
+                        break;
+                }
+
+                // Configuração dos botões para exibir os dados correspondentes
+                btnMais70Casa.setOnClickListener(v -> {
+                    List<String> estatisticas = melhoresStatisticasCasa(listaSelecionada, teamName, 70);
+                    adapter.setEstatisticas(estatisticas);
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
+
+                btnMais88Casa.setOnClickListener(v -> {
+                    List<String> estatisticas = melhoresStatisticasCasa(listaSelecionada, teamName, 88);
+                    adapter.setEstatisticas(estatisticas);
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
+
+                btnMais70Fora.setOnClickListener(v -> {
+                    List<String> estatisticas = melhoresStatisticasFora(listaSelecionada, teamName, 70);
+                    adapter.setEstatisticas(estatisticas);
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
+
+                btnMais88Fora.setOnClickListener(v -> {
+                    List<String> estatisticas = melhoresStatisticasFora(listaSelecionada, teamName, 88);
+                    adapter.setEstatisticas(estatisticas);
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
             }
         }));
 

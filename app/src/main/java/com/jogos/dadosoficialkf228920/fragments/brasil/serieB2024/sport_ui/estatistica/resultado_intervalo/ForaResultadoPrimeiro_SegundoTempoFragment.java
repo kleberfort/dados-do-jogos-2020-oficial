@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ceara_ui.estatistica.resultado_intervalo;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.sport_ui.estatistica.resultado_intervalo;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -191,9 +191,9 @@ public class ForaResultadoPrimeiro_SegundoTempoFragment extends Fragment impleme
 
         PartidaNovoModelo partidaNovoModelo;
 
-        for (PartidaNovoModelo partida : cearaCompleto) {
+        for (PartidaNovoModelo partida : sportCompleto) {
 
-            if (partida.getAwayTime().getName().equals("Ceará")) {
+            if (partida.getAwayTime().getName().equals("Sport")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);

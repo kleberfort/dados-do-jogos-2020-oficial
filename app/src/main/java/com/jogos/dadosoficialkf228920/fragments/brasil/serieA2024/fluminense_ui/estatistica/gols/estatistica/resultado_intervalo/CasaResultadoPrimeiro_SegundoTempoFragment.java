@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.fluminense_ui.estatistica.resultado_intervalo;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.fluminense_ui.estatistica.gols.estatistica.resultado_intervalo;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;

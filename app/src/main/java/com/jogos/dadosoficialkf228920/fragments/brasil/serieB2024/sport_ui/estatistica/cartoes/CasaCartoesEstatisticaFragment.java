@@ -1,8 +1,7 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ceara_ui.estatistica.cartoes;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.sport_ui.estatistica.cartoes;
 
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.jogos.dadosoficialkf228920.R;
-
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadoPartidaSegundoTempoAdapter;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
@@ -23,11 +21,9 @@ import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSeri
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024Listener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoCartoesMcdCasa;
-import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoGolsMcdCasa;
 
 import org.jetbrains.annotations.Nullable;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -553,15 +549,16 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
 
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : cearaCompleto) {
+        for (PartidaNovoModelo partida : sportCompleto) {
 
-            if (partida.getHomeTime().getName().equals("Ceará")) {
+            if (partida.getHomeTime().getName().equals("Sport")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);
             }
 
         }//fim do for
+
 
         for (int i = 0; i < partidas.size(); i++) {
 

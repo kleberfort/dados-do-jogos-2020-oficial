@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.brusque_ui.estatistica.escanteios;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.chapecoense_ui.estatistica.escanteios;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -707,9 +707,9 @@ public class ForaEscanteiosEstatisticaFragment extends Fragment implements Jogos
 
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : brusqueCompleto) {
+        for (PartidaNovoModelo partida : chapecoenseCompleto) {
 
-            if (partida.getAwayTime().getName().equals("Brusque")) {
+            if (partida.getAwayTime().getName().equals("Chapecoense")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);

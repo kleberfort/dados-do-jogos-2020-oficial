@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ceara_ui.estatistica.cartoes;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.fortaleza_ui.estatistica.cartoes;
 
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
@@ -17,10 +17,9 @@ import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadoPartidaSegundo
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaCartoesBinding;
-import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024;
-import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024Listener;
+import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieA2024;
+import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieAListener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
-import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoCartoesMcdCasa;
 import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoCartoesMcdFora;
 
 import org.jetbrains.annotations.Nullable;
@@ -28,10 +27,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForaCartoesEstatisticaFragment extends Fragment implements JogosSerieB2024Listener {
+public class ForaCartoesEstatisticaFragment extends Fragment implements JogosSerieAListener {
 
     private TelaEstatisticaCartoesBinding binding;
-    private JogosSerieB2024 jogosSerieB2024;
+    private JogosSerieA2024 jogosSerieA2024;
 
     private ResultadosPartidasAdapter resultadosPartidasAdapter;
     private ResultadosPartidasPrimeiroTempoAdapter resultadosPartidasPrimeiroTempoAdapter;
@@ -86,10 +85,10 @@ public class ForaCartoesEstatisticaFragment extends Fragment implements JogosSer
         binding = TelaEstatisticaCartoesBinding.inflate(inflater, container, false);
 
 
-        jogosSerieB2024 = new JogosSerieB2024();
-        jogosSerieB2024.setupHttpClient();
-        jogosSerieB2024.setupDadosJogos();
-        jogosSerieB2024.setListener(this);// Registra o fragmento como listener
+        jogosSerieA2024 = new JogosSerieA2024();
+        jogosSerieA2024.setupHttpClient();
+        jogosSerieA2024.setupDadosJogos();
+        jogosSerieA2024.setListener(this);// Registra o fragmento como listener
 
 
 
@@ -544,15 +543,13 @@ public class ForaCartoesEstatisticaFragment extends Fragment implements JogosSer
     }//fim do metodo que busca os dados
 
     @Override
-    public void onJogosSerieBReady(List<PartidaNovoModelo> amazonasCompleto, List<PartidaNovoModelo> americaMGCompleto, List<PartidaNovoModelo> avaiCompleto, List<PartidaNovoModelo> botafogoSPCompleto, List<PartidaNovoModelo> brusqueCompleto, List<PartidaNovoModelo> crbCompleto, List<PartidaNovoModelo> cearaCompleto, List<PartidaNovoModelo> chapecoenseCompleto, List<PartidaNovoModelo> coritibaCompleto, List<PartidaNovoModelo> goiasCompleto, List<PartidaNovoModelo> guaraniCompleto, List<PartidaNovoModelo> ituanoCompleto, List<PartidaNovoModelo> mirassolCompleto, List<PartidaNovoModelo> novorizontinoCompleto, List<PartidaNovoModelo> operarioCompleto, List<PartidaNovoModelo> paysanduCompleto, List<PartidaNovoModelo> pontepretaCompleto, List<PartidaNovoModelo> santosCompleto, List<PartidaNovoModelo> sportCompleto, List<PartidaNovoModelo> vilanovaCompleto) {
-
-
+    public void onJogosSerieAReady(List<PartidaNovoModelo> atleticoPRCompleto, List<PartidaNovoModelo> atleticoGOCompleto, List<PartidaNovoModelo> atleticoMGCompleto, List<PartidaNovoModelo> bahiaCompleto, List<PartidaNovoModelo> botafogoCompleto, List<PartidaNovoModelo> bragantinoCompleto, List<PartidaNovoModelo> corinthiansCompleto, List<PartidaNovoModelo> criciumaCompleto, List<PartidaNovoModelo> cruzeiroCompleto, List<PartidaNovoModelo> cuiabaCompleto, List<PartidaNovoModelo> flamengoCompleto, List<PartidaNovoModelo> fluminenseCompleto, List<PartidaNovoModelo> fortalezaCompleto, List<PartidaNovoModelo> gremioCompleto, List<PartidaNovoModelo> internacionalCompleto, List<PartidaNovoModelo> juventudeCompleto, List<PartidaNovoModelo> palmeirasCompleto, List<PartidaNovoModelo> saoPauloCompleto, List<PartidaNovoModelo> vascoCompleto, List<PartidaNovoModelo> vitoriaCompleto) {
 
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : cearaCompleto) {
+        for (PartidaNovoModelo partida : fortalezaCompleto) {
 
-            if (partida.getAwayTime().getName().equals("Ceará")) {
+            if (partida.getAwayTime().getName().equals("Fortaleza")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);

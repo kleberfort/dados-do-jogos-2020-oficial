@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.fortaleza_ui.estatistica.cartoes;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.cruzeiro_ui.estatistica.cartoes;
 
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
@@ -547,15 +547,16 @@ public class ForaCartoesEstatisticaFragment extends Fragment implements JogosSer
 
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : fortalezaCompleto) {
+        for (PartidaNovoModelo partida : cruzeiroCompleto) {
 
-            if (partida.getAwayTime().getName().equals("Fortaleza")) {
+            if (partida.getAwayTime().getName().equals("Cruzeiro")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);
             }
 
         }//fim do for
+
 
         for (int i = 0; i < partidas.size(); i++) {
 

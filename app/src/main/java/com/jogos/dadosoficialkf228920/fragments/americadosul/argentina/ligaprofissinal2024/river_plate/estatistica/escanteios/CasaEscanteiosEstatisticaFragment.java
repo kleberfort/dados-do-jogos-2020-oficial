@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.bahia_ui.estatistica.escanteios;
+package com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.ligaprofissinal2024.river_plate.estatistica.escanteios;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaEscanteiosBinding;
+import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A2024;
+import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A_2024_Listener;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieA2024;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieAListener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
@@ -19,10 +21,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CasaEscanteiosEstatisticaFragment extends Fragment implements JogosSerieAListener {
+public class CasaEscanteiosEstatisticaFragment extends Fragment implements JogosLigaProfissional_A_2024_Listener {
 
     private TelaEstatisticaEscanteiosBinding binding;
-    private JogosSerieA2024 jogosSerieA2024;
+    private JogosLigaProfissional_A2024 jogosLigaProfissionalA2024;
 
     private int escanteiosPrimeiroTempoZeroCincoMarcados;
     private int escanteiosPrimeiroTempoZeroCincoNaoMarcados;
@@ -83,10 +85,10 @@ public class CasaEscanteiosEstatisticaFragment extends Fragment implements Jogos
         binding = TelaEstatisticaEscanteiosBinding.inflate(inflater, container, false);
 
 
-        jogosSerieA2024 = new JogosSerieA2024();
-        jogosSerieA2024.setupHttpClient();
-        jogosSerieA2024.setupDadosJogos();
-        jogosSerieA2024.setListener(this);// Registra o fragmento como listener
+        jogosLigaProfissionalA2024 = new JogosLigaProfissional_A2024();
+        jogosLigaProfissionalA2024.setupHttpClient();
+        jogosLigaProfissionalA2024.setupDadosJogos();
+        jogosLigaProfissionalA2024.setListener(this);// Registra o fragmento como listener
 
         return binding.getRoot();
 
@@ -98,20 +100,23 @@ public class CasaEscanteiosEstatisticaFragment extends Fragment implements Jogos
     }
 
 
-    @Override
-    public void onJogosSerieAReady(List<PartidaNovoModelo> atleticoPRCompleto, List<PartidaNovoModelo> atleticoGOCompleto, List<PartidaNovoModelo> atleticoMGCompleto, List<PartidaNovoModelo> bahiaCompleto, List<PartidaNovoModelo> botafogoCompleto, List<PartidaNovoModelo> bragantinoCompleto, List<PartidaNovoModelo> corinthiansCompleto, List<PartidaNovoModelo> criciumaCompleto, List<PartidaNovoModelo> cruzeiroCompleto, List<PartidaNovoModelo> cuiabaCompleto, List<PartidaNovoModelo> flamengoCompleto, List<PartidaNovoModelo> fluminenseCompleto, List<PartidaNovoModelo> fortalezaCompleto, List<PartidaNovoModelo> gremioCompleto, List<PartidaNovoModelo> internacionalCompleto, List<PartidaNovoModelo> juventudeCompleto, List<PartidaNovoModelo> palmeirasCompleto, List<PartidaNovoModelo> saoPauloCompleto, List<PartidaNovoModelo> vascoCompleto, List<PartidaNovoModelo> vitoriaCompleto) {
 
-        PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : bahiaCompleto) {
 
-            if (partida.getHomeTime().getName().equals("Bahia")) {
-                partidaNovoModelo = partida;
-                partida.setDataFormatada(partida.getDate());
-                this.partidas.add(partidaNovoModelo);
-            }
+        @Override
+        public void onJogosSerieAReady(List<PartidaNovoModelo> argentinoJuniorsCompleto, List<PartidaNovoModelo> atleticoTucumanCompleto, List<PartidaNovoModelo> banfieldCompleto, List<PartidaNovoModelo> barracasCentralCompleto, List<PartidaNovoModelo> belgranoCompleto, List<PartidaNovoModelo> bocaJuniorsCompleto, List<PartidaNovoModelo> centralCordobaCompleto, List<PartidaNovoModelo> defensaJusticiaCompleto, List<PartidaNovoModelo> deportivoRiestraCompleto, List<PartidaNovoModelo> estudiantesLaPrataCompleto, List<PartidaNovoModelo> gimnasiaCompleto, List<PartidaNovoModelo> godoyCruzCompleto, List<PartidaNovoModelo> huracanCompleto, List<PartidaNovoModelo> independienteCompleto, List<PartidaNovoModelo> independienteRivadaviaCompleto, List<PartidaNovoModelo> institutoCompleto, List<PartidaNovoModelo> lanusCompleto, List<PartidaNovoModelo> newellOldBoysCompleto, List<PartidaNovoModelo> platenseCompleto, List<PartidaNovoModelo> racingCompleto, List<PartidaNovoModelo> riverPlateCompleto, List<PartidaNovoModelo> rosarioCentralCompleto, List<PartidaNovoModelo> sanLorenzoCompleto, List<PartidaNovoModelo> sarmientoCompleto, List<PartidaNovoModelo> talleresCompleto, List<PartidaNovoModelo> tigreCompleto, List<PartidaNovoModelo> unionSantaFeCompleto, List<PartidaNovoModelo> velezSarsfieldCompleto) {
+            PartidaNovoModelo partidaNovoModelo;
 
-        }//fim do for
+            for (PartidaNovoModelo partida : riverPlateCompleto) {
+
+                if (partida.getHomeTime().getName().equals("River Plate")) {
+                    partidaNovoModelo = partida;
+                    partida.setDataFormatada(partida.getDate());
+                    this.partidas.add(partidaNovoModelo);
+                }
+
+            }//fim do for
+
 
         for (int i = 0; i < partidas.size(); i++) {
             //ESCANTEIOS 0.5 1°TEMPO
@@ -561,60 +566,58 @@ public class CasaEscanteiosEstatisticaFragment extends Fragment implements Jogos
 
         binding.tvTituloCanto.setText("ESTATÍSTICA DE CANTOS " + partidas.get(0).getHomeTime().getName().toUpperCase() + " CASA");
 
+            binding.tvEscanteios1T05Mcd.setText(String.valueOf(escanteiosPrimeiroTempoZeroCincoMarcados));
+            binding.tvEscanteios1T05Ct.setText(String.valueOf(escanteiosPrimeiroTempoZeroCincoNaoMarcados));
+
+            binding.tvEscanteios1T15Mcd.setText(String.valueOf(escanteiosPrimeiroTempoUmCincoMarcados));
+            binding.tvEscanteios1T15Ct.setText(String.valueOf(escanteiosPrimeiroTempoUmCincoNaoMarcados));
 
 
-        binding.tvEscanteios1T05Mcd.setText(String.valueOf(escanteiosPrimeiroTempoZeroCincoMarcados));
-        binding.tvEscanteios1T05Ct.setText(String.valueOf(escanteiosPrimeiroTempoZeroCincoNaoMarcados));
-
-        binding.tvEscanteios1T15Mcd.setText(String.valueOf(escanteiosPrimeiroTempoUmCincoMarcados));
-        binding.tvEscanteios1T15Ct.setText(String.valueOf(escanteiosPrimeiroTempoUmCincoNaoMarcados));
+            binding.tvEscanteios1T25Mcd.setText(String.valueOf(escanteiosPrimeiroTempoDoisCincoMarcados));
+            binding.tvEscanteios1T25Ct.setText(String.valueOf(escanteiosPrimeiroTempoDoisCincoNaoMarcados));
 
 
-        binding.tvEscanteios1T25Mcd.setText(String.valueOf(escanteiosPrimeiroTempoDoisCincoMarcados));
-        binding.tvEscanteios1T25Ct.setText(String.valueOf(escanteiosPrimeiroTempoDoisCincoNaoMarcados));
+            binding.tvEscanteios1T35Mcd.setText(String.valueOf(escanteiosPrimeiroTempoTresCincoMarcados));
+            binding.tvEscanteios1T35Ct.setText(String.valueOf(escanteiosPrimeiroTempoTresCincoNaoMarcados));
 
 
-        binding.tvEscanteios1T35Mcd.setText(String.valueOf(escanteiosPrimeiroTempoTresCincoMarcados));
-        binding.tvEscanteios1T35Ct.setText(String.valueOf(escanteiosPrimeiroTempoTresCincoNaoMarcados));
+            binding.tvEscanteios2T05Mcd.setText(String.valueOf(escanteiosSegundoTempoZeroCincoMarcados));
+            binding.tvEscanteios2T05Ct.setText(String.valueOf(escanteiosSegundoTempoZeroCincoNaoMarcados));
+
+            binding.tvEscanteios2T15Mcd.setText(String.valueOf(escanteiosSegundoTempoUmCincoMarcados));
+            binding.tvEscanteios2T15Ct.setText(String.valueOf(escanteiosSegundoTempoUmCincoNaoMarcados));
 
 
-        binding.tvEscanteios2T05Mcd.setText(String.valueOf(escanteiosPrimeiroTempoZeroCincoMarcados));
-        binding.tvEscanteios2T05Ct.setText(String.valueOf(escanteiosPrimeiroTempoZeroCincoNaoMarcados));
-
-        binding.tvEscanteios2T15Mcd.setText(String.valueOf(escanteiosPrimeiroTempoUmCincoMarcados));
-        binding.tvEscanteios2T15Ct.setText(String.valueOf(escanteiosPrimeiroTempoUmCincoNaoMarcados));
+            binding.tvEscanteios2T25Mcd.setText(String.valueOf(escanteiosSegundoTempoDoisCincoMarcados));
+            binding.tvEscanteios2T25Ct.setText(String.valueOf(escanteiosSegundoTempoDoisCincoNaoMarcados));
 
 
-        binding.tvEscanteios2T25Mcd.setText(String.valueOf(escanteiosPrimeiroTempoDoisCincoMarcados));
-        binding.tvEscanteios2T25Ct.setText(String.valueOf(escanteiosPrimeiroTempoDoisCincoNaoMarcados));
+            binding.tvEscanteios2T35Mcd.setText(String.valueOf(escanteiosSegundoTempoTresCincoMarcados));
+            binding.tvEscanteios2T35Ct.setText(String.valueOf(escanteiosSegundoTempoTresCincoNaoMarcados));
 
 
-        binding.tvEscanteios2T35Mcd.setText(String.valueOf(escanteiosPrimeiroTempoTresCincoMarcados));
-        binding.tvEscanteios2T35Ct.setText(String.valueOf(escanteiosPrimeiroTempoTresCincoNaoMarcados));
+            binding.tvEscanteiosTotal05Mcd.setText(String.valueOf(escanteiosTotalZeroCincoMarcados));
+            binding.tvEscanteiosTotal05Ct.setText(String.valueOf(escanteiosTotalZeroCincoNaoMarcados));
 
+            binding.tvEscanteiosTotal15Mcd.setText(String.valueOf(escanteiosTotalUmCincoMarcados));
+            binding.tvEscanteiosTotal15Ct.setText(String.valueOf(escanteiosTotalUmCincoNaoMarcados));
 
-        binding.tvEscanteiosTotal05Mcd.setText(String.valueOf(escanteiosTotalZeroCincoMarcados));
-        binding.tvEscanteiosTotal05Ct.setText(String.valueOf(escanteiosTotalZeroCincoNaoMarcados));
+            binding.tvEscanteiosTotal25Mcd.setText(String.valueOf(escanteiosTotalDoisCincoMarcados));
+            binding.tvEscanteiosTotal25Ct.setText(String.valueOf(escanteiosTotalDoisCincoNaoMarcados));
 
-        binding.tvEscanteiosTotal15Mcd.setText(String.valueOf(escanteiosTotalUmCincoMarcados));
-        binding.tvEscanteiosTotal15Ct.setText(String.valueOf(escanteiosTotalUmCincoNaoMarcados));
+            binding.tvEscanteiosTotal35Mcd.setText(String.valueOf(escanteiosTotalTresCincoMarcados));
+            binding.tvEscanteiosTotal35Ct.setText(String.valueOf(escanteiosTotalTresCincoNaoMarcados));
 
-        binding.tvEscanteiosTotal25Mcd.setText(String.valueOf(escanteiosTotalDoisCincoMarcados));
-        binding.tvEscanteiosTotal25Ct.setText(String.valueOf(escanteiosTotalDoisCincoNaoMarcados));
+            binding.tvEscanteiosTotal45Mcd.setText(String.valueOf(escanteiosTotalQuatroCincoMarcados));
+            binding.tvEscanteiosTotal45Ct.setText(String.valueOf(escanteiosTotalQuatroCincoNaoMarcados));
 
-        binding.tvEscanteiosTotal35Mcd.setText(String.valueOf(escanteiosTotalTresCincoMarcados));
-        binding.tvEscanteiosTotal35Ct.setText(String.valueOf(escanteiosTotalTresCincoNaoMarcados));
+            binding.tvEscanteiosTotal55Mcd.setText(String.valueOf(escanteiosTotalCincoCincoMarcados));
+            binding.tvEscanteiosTotal55Ct.setText(String.valueOf(escanteiosTotalCincoCincoNaoMarcados));
 
-        binding.tvEscanteiosTotal45Mcd.setText(String.valueOf(escanteiosTotalQuatroCincoMarcados));
-        binding.tvEscanteiosTotal45Ct.setText(String.valueOf(escanteiosTotalQuatroCincoNaoMarcados));
-
-        binding.tvEscanteiosTotal55Mcd.setText(String.valueOf(escanteiosTotalCincoCincoMarcados));
-        binding.tvEscanteiosTotal55Ct.setText(String.valueOf(escanteiosTotalCincoCincoNaoMarcados));
-
-
-
-        binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
+            binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
 
 
     }
+
+
 }

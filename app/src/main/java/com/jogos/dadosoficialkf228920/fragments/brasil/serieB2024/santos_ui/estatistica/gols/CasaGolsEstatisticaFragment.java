@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ceara_ui.estatistica.gols;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.santos_ui.estatistica.gols;
 
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
@@ -536,15 +536,17 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieB
 
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : cearaCompleto) {
 
-            if (partida.getHomeTime().getName().equals("Ceará")) {
+        for (PartidaNovoModelo partida : santosCompleto) {
+
+            if (partida.getHomeTime().getName().equals("Santos")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);
             }
 
         }//fim do for
+
 
         for (int i = 0; i < partidas.size(); i++) {
             //GOLS 0.5 1°TEMPO

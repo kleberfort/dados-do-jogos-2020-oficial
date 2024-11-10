@@ -1,21 +1,17 @@
 package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ceara_ui.estatistica_ui;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.jogos.dadosoficialkf228920.R;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
-import com.jogos.dadosoficialkf228920.adapter.brasil2024.Serie_A_B_2024Adapter;
 import com.jogos.dadosoficialkf228920.databinding.FragmentCearaEstatisticaFora2024Binding;
-import com.jogos.dadosoficialkf228920.databinding.FragmentCearaForaPartidas2024Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024Listener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
@@ -25,11 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CearaEstatisticaFora2024Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class CearaEstatisticaFora2024Fragment extends Fragment implements JogosSerieB2024Listener {
 
     private FragmentCearaEstatisticaFora2024Binding binding;

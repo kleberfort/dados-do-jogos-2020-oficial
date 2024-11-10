@@ -83,4 +83,14 @@ public class Time {
     public void setPlacar(int placar) {
         this.score = placar;
     }
+
+    @Override
+    public String toString() {
+        return "Time{" +
+                "name='" + name + '\'' +
+                ", image='" + image + '\'' +
+                ", classification=" + classification +
+                ", score=" + score +
+                '}';
+    }
 }

@@ -1,17 +1,16 @@
 package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.brusque_ui.estatistica_ui;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.jogos.dadosoficialkf228920.R;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
 import com.jogos.dadosoficialkf228920.databinding.FragmentBrusqueEstatisticaCasa2024Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024;
@@ -23,11 +22,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BrusqueEstatisticaCasa2024Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class BrusqueEstatisticaCasa2024Fragment extends Fragment implements JogosSerieB2024Listener {
 
     private FragmentBrusqueEstatisticaCasa2024Binding binding;
@@ -65,9 +60,10 @@ public class BrusqueEstatisticaCasa2024Fragment extends Fragment implements Jogo
     }
 
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onJogosSerieBReady(List<PartidaNovoModelo> amazonasCompleto, List<PartidaNovoModelo> americaMGCompleto, List<PartidaNovoModelo> avaiCompleto, List<PartidaNovoModelo> botafogoSPCompleto, List<PartidaNovoModelo> brusqueCompleto, List<PartidaNovoModelo> crbCompleto, List<PartidaNovoModelo> cearaCompleto, List<PartidaNovoModelo> chapecoenseCompleto, List<PartidaNovoModelo> coritibaCompleto, List<PartidaNovoModelo> goiasCompleto, List<PartidaNovoModelo> guaraniCompleto, List<PartidaNovoModelo> ituanoCompleto, List<PartidaNovoModelo> mirassolCompleto, List<PartidaNovoModelo> novorizontinoCompleto, List<PartidaNovoModelo> operarioCompleto, List<PartidaNovoModelo> paysanduCompleto, List<PartidaNovoModelo> pontepretaCompleto, List<PartidaNovoModelo> santosCompleto, List<PartidaNovoModelo> sportCompleto, List<PartidaNovoModelo> vilanovaCompleto) {
-        PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
+        PartidaNovoModelo partidaNovoModelo;
 
         for (PartidaNovoModelo partida : brusqueCompleto) {
 

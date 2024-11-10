@@ -24,11 +24,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BotafogoSPEstatisticaFora2024Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class BotafogoSPEstatisticaFora2024Fragment extends Fragment implements JogosSerieB2024Listener {
 
     private FragmentBotafogoSPEstatisticaFora2024Binding binding;

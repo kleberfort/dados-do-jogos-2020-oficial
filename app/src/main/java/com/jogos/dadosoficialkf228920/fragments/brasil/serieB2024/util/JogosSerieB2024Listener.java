@@ -1,10 +1,19 @@
 package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util;
 
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
+
+import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 public interface JogosSerieB2024Listener {
+
+
 
     public void onJogosSerieBReady(List<PartidaNovoModelo> amazonasCompleto, List<PartidaNovoModelo> americaMGCompleto, List<PartidaNovoModelo> avaiCompleto ,
                                    List<PartidaNovoModelo> botafogoSPCompleto , List<PartidaNovoModelo> brusqueCompleto , List<PartidaNovoModelo>  crbCompleto,

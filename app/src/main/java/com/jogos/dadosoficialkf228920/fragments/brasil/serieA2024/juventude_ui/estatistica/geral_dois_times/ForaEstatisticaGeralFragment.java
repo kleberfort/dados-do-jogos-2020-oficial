@@ -457,11 +457,11 @@ public class ForaEstatisticaGeralFragment extends Fragment implements JogosSerie
 
             case 10:
                 for (int i = 0; i < partidas.size(); i++) {
-                    //GOLS MENOR 0.5 2°TEMPO
-                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() < 1 ||
-                            partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo() < 1 ||
-                            partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() < 1 ||
-                            partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo() < 1)
+                    //GOLS MENOR 0.5 TOTAL
+                    if((partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo()) +
+                            (partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo()) +
+                            (partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo()) +
+                            (partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo()) < 1)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -775,8 +775,6 @@ public class ForaEstatisticaGeralFragment extends Fragment implements JogosSerie
                 golsTotalPrimeiroTempoZeroCincoMarcados += 1;
             golsTotalPrimeiroTempoZeroCincoNaoMarcados = partidas.size() - golsTotalPrimeiroTempoZeroCincoMarcados;
 
-
-
             //GOLS 1.5 1°TEMPO
             if((partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() ) +
                     (partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo()) > 1)
@@ -892,6 +890,8 @@ public class ForaEstatisticaGeralFragment extends Fragment implements JogosSerie
             if(partidas.get(i).getHomeTime().getPlacar() > partidas.get(i).getAwayTime().getPlacar()){
                 totalDerrota += 1;
             }
+
+
 
         }//fim do for
 
@@ -1181,8 +1181,7 @@ public class ForaEstatisticaGeralFragment extends Fragment implements JogosSerie
             binding.tvEscanteiosTotalMaiorIgual10CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
 
-//Fim Porcentagem
-
+        //Fim Porcentagem
 
         binding.tvGols1T05Mcd.setText(String.valueOf(golsTotalPrimeiroTempoZeroCincoMarcados));
         binding.tvGols1T05Ct.setText(String.valueOf(golsTotalPrimeiroTempoZeroCincoNaoMarcados));
@@ -1230,25 +1229,20 @@ public class ForaEstatisticaGeralFragment extends Fragment implements JogosSerie
         binding.tvTotalEmpate.setText(String.valueOf(totalEmpate));
         binding.tvTotalDerrota.setText(String.valueOf(totalDerrota));
 
+
         binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
 
-        String nome = partidas.get(0).getHomeTime().getNome();
+        String nome = partidas.get(0).getAwayTime().getNome();
         String totalJogos = String.valueOf(partidas.size());
         String totalGolsMcd = String.valueOf(golsTotalZeroCincoMarcados );
         String totalGolsMcdPct = String.valueOf(Math.round(((double)golsTotalZeroCincoMarcados * 100 ) / partidas.size()));
 
         // Formate o texto usando a classe TextUtils
-        SpannableStringBuilder builder = FormatarCoresTextoCasa.formatText(nome, totalJogos, totalGolsMcd, totalGolsMcdPct);
+        SpannableStringBuilder builder = FormatarCoresTextoFora.formatText(nome, totalJogos, totalGolsMcd, totalGolsMcdPct);
 
         // Defina o texto no TextView
         binding.tvRespostaEstatistica.setText(builder);
-
-
-
-
-
-
-    }//fim da Interface
+    }//fim da interface
 
     private void showPartidasDialog(List<PartidaNovoModelo> partidas) {
 

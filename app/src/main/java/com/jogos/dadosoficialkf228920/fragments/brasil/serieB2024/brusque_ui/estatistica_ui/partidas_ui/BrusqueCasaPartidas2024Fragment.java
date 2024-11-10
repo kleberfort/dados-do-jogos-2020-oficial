@@ -1,20 +1,17 @@
 package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.brusque_ui.estatistica_ui.partidas_ui;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.jogos.dadosoficialkf228920.R;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.Serie_A_B_2024Adapter;
 import com.jogos.dadosoficialkf228920.databinding.FragmentBrusqueCasaPartidas2024Binding;
-import com.jogos.dadosoficialkf228920.databinding.FragmentCearaCasaPartidas2024Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024Listener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
@@ -24,11 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BrusqueCasaPartidas2024Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class BrusqueCasaPartidas2024Fragment extends Fragment implements JogosSerieB2024Listener {
 
     private FragmentBrusqueCasaPartidas2024Binding binding;

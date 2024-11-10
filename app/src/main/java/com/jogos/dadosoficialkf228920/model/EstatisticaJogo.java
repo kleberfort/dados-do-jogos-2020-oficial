@@ -80,4 +80,18 @@ public class EstatisticaJogo {
     public void setGolsTotalSegundoTempo(int golsTotalSegundoTempo) {
         this.golsTotalSegundoTempo = golsTotalSegundoTempo;
     }
+
+    @Override
+    public String toString() {
+        return "EstatisticaJogo{" +
+                "escanteiosPrimeiroTempo=" + escanteiosPrimeiroTempo +
+                ", escanteioSegundoTempo=" + escanteioSegundoTempo +
+                ", golsPrimeiroTempo=" + golsPrimeiroTempo +
+                ", golsSegundoTempo=" + golsSegundoTempo +
+                ", escanteiosTotalPrimeiroTempo=" + escanteiosTotalPrimeiroTempo +
+                ", escanteiosTotalSegundoTempo=" + escanteiosTotalSegundoTempo +
+                ", golsTotalPrimeiroTempo=" + golsTotalPrimeiroTempo +
+                ", golsTotalSegundoTempo=" + golsTotalSegundoTempo +
+                '}';
+    }
 }

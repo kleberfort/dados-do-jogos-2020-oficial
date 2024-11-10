@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.bahia_ui.estatistica.geral_dois_times;
+package com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.ligaprofissinal2024.river_plate.estatistica.geral_dois_times;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -13,10 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.android.material.snackbar.Snackbar;
 import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaOficialPorcentagemBinding;
+import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A2024;
+import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A_2024_Listener;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieA2024;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieAListener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
@@ -27,10 +28,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerieAListener {
+public class CasaEstatisticaGeralFragment extends Fragment implements JogosLigaProfissional_A_2024_Listener {
 
     private TelaEstatisticaOficialPorcentagemBinding binding;
-    private JogosSerieA2024 jogosSerieA2024;
+    private JogosLigaProfissional_A2024 jogosLigaProfissionalA2024;
 
 
     private ResultadosPartidasAdapter resultadosPartidasAdapter;
@@ -93,10 +94,10 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
 
 
 
-        jogosSerieA2024 = new JogosSerieA2024();
-        jogosSerieA2024.setupHttpClient();
-        jogosSerieA2024.setupDadosJogos();
-        jogosSerieA2024.setListener(this);// Registra o fragmento como listener
+        jogosLigaProfissionalA2024 = new JogosLigaProfissional_A2024();
+        jogosLigaProfissionalA2024.setupHttpClient();
+        jogosLigaProfissionalA2024.setupDadosJogos();
+        jogosLigaProfissionalA2024.setListener(this);// Registra o fragmento como listener
 
 
         binding.tvGols1T05Mcd.setOnClickListener(new View.OnClickListener() {
@@ -459,11 +460,11 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
 
             case 10:
                 for (int i = 0; i < partidas.size(); i++) {
-                    //GOLS MENOR 0.5 2°TEMPO
-                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() < 1 ||
-                            partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo() < 1 ||
-                            partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() < 1 ||
-                            partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo() < 1)
+                    //GOLS MENOR 0.5 TOTAL
+                    if((partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo()) +
+                            (partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo()) +
+                            (partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo()) +
+                            (partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo()) < 1)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -753,20 +754,24 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
         }//fim do switch
     }
 
-    @Override
-    public void onJogosSerieAReady(List<PartidaNovoModelo> atleticoPRCompleto, List<PartidaNovoModelo> atleticoGOCompleto, List<PartidaNovoModelo> atleticoMGCompleto, List<PartidaNovoModelo> bahiaCompleto, List<PartidaNovoModelo> botafogoCompleto, List<PartidaNovoModelo> bragantinoCompleto, List<PartidaNovoModelo> corinthiansCompleto, List<PartidaNovoModelo> criciumaCompleto, List<PartidaNovoModelo> cruzeiroCompleto, List<PartidaNovoModelo> cuiabaCompleto, List<PartidaNovoModelo> flamengoCompleto, List<PartidaNovoModelo> fluminenseCompleto, List<PartidaNovoModelo> fortalezaCompleto, List<PartidaNovoModelo> gremioCompleto, List<PartidaNovoModelo> internacionalCompleto, List<PartidaNovoModelo> juventudeCompleto, List<PartidaNovoModelo> palmeirasCompleto, List<PartidaNovoModelo> saoPauloCompleto, List<PartidaNovoModelo> vascoCompleto, List<PartidaNovoModelo> vitoriaCompleto) {
 
-        PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : bahiaCompleto) {
 
-            if (partida.getHomeTime().getName().equals("Bahia")) {
-                partidaNovoModelo = partida;
-                partida.setDataFormatada(partida.getDate());
-                this.partidas.add(partidaNovoModelo);
-            }
 
-        }//fim do for
+        @Override
+        public void onJogosSerieAReady(List<PartidaNovoModelo> argentinoJuniorsCompleto, List<PartidaNovoModelo> atleticoTucumanCompleto, List<PartidaNovoModelo> banfieldCompleto, List<PartidaNovoModelo> barracasCentralCompleto, List<PartidaNovoModelo> belgranoCompleto, List<PartidaNovoModelo> bocaJuniorsCompleto, List<PartidaNovoModelo> centralCordobaCompleto, List<PartidaNovoModelo> defensaJusticiaCompleto, List<PartidaNovoModelo> deportivoRiestraCompleto, List<PartidaNovoModelo> estudiantesLaPrataCompleto, List<PartidaNovoModelo> gimnasiaCompleto, List<PartidaNovoModelo> godoyCruzCompleto, List<PartidaNovoModelo> huracanCompleto, List<PartidaNovoModelo> independienteCompleto, List<PartidaNovoModelo> independienteRivadaviaCompleto, List<PartidaNovoModelo> institutoCompleto, List<PartidaNovoModelo> lanusCompleto, List<PartidaNovoModelo> newellOldBoysCompleto, List<PartidaNovoModelo> platenseCompleto, List<PartidaNovoModelo> racingCompleto, List<PartidaNovoModelo> riverPlateCompleto, List<PartidaNovoModelo> rosarioCentralCompleto, List<PartidaNovoModelo> sanLorenzoCompleto, List<PartidaNovoModelo> sarmientoCompleto, List<PartidaNovoModelo> talleresCompleto, List<PartidaNovoModelo> tigreCompleto, List<PartidaNovoModelo> unionSantaFeCompleto, List<PartidaNovoModelo> velezSarsfieldCompleto) {
+            PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
+
+            for (PartidaNovoModelo partida : riverPlateCompleto) {
+
+                if (partida.getHomeTime().getName().equals("River Plate")) {
+                    partidaNovoModelo = partida;
+                    partida.setDataFormatada(partida.getDate());
+                    this.partidas.add(partidaNovoModelo);
+                }
+
+            }//fim do for
+
 
         for (int i = 0; i < partidas.size(); i++) {
 
@@ -1270,4 +1275,6 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
         bottomSheetDialog.show();
 
     }
+
+
 }

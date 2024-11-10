@@ -3,64 +3,81 @@ package com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.ligaprof
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.adapter.brasil2024.Serie_A_B_2024Adapter;
+import com.jogos.dadosoficialkf228920.databinding.FragmentRacingCasaPartidas2024Binding;
+import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A2024;
+import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A_2024_Listener;
+import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
+import com.jogos.dadosoficialkf228920.model.comparator.ComparatorDatasPartidas;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link RacingCasaPartidas2024Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RacingCasaPartidas2024Fragment extends Fragment {
+public class RacingCasaPartidas2024Fragment extends Fragment implements JogosLigaProfissional_A_2024_Listener {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private FragmentRacingCasaPartidas2024Binding binding;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private Serie_A_B_2024Adapter serieAB2024CasaAdapter;
+    private JogosLigaProfissional_A2024 jogosLigaProfissionalA2024;
 
-    public RacingCasaPartidas2024Fragment() {
-        // Required empty public constructor
-    }
+    private List<PartidaNovoModelo> partidas = new ArrayList<>();
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RacingCasaPartidas2024Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static RacingCasaPartidas2024Fragment newInstance(String param1, String param2) {
-        RacingCasaPartidas2024Fragment fragment = new RacingCasaPartidas2024Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_racing_casa_partidas2024, container, false);
+        binding = FragmentRacingCasaPartidas2024Binding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+
+        jogosLigaProfissionalA2024 = new JogosLigaProfissional_A2024();
+        jogosLigaProfissionalA2024.setupHttpClient();
+        jogosLigaProfissionalA2024.setupDadosJogos();
+        jogosLigaProfissionalA2024.setListener(this);// Registra o fragmento como listener
+
+        binding.rvListaJogos.setHasFixedSize(true);
+        binding.rvListaJogos.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.rvListaJogos.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
+        serieAB2024CasaAdapter = new Serie_A_B_2024Adapter(partidas);
+        binding.rvListaJogos.setAdapter(serieAB2024CasaAdapter);
+
+        return view;
+    }
+
+
+
+    @Override
+    public void onJogosSerieAReady(List<PartidaNovoModelo> argentinoJuniorsCompleto, List<PartidaNovoModelo> atleticoTucumanCompleto, List<PartidaNovoModelo> banfieldCompleto, List<PartidaNovoModelo> barracasCentralCompleto, List<PartidaNovoModelo> belgranoCompleto, List<PartidaNovoModelo> bocaJuniorsCompleto, List<PartidaNovoModelo> centralCordobaCompleto, List<PartidaNovoModelo> defensaJusticiaCompleto, List<PartidaNovoModelo> deportivoRiestraCompleto, List<PartidaNovoModelo> estudiantesLaPrataCompleto, List<PartidaNovoModelo> gimnasiaCompleto, List<PartidaNovoModelo> godoyCruzCompleto, List<PartidaNovoModelo> huracanCompleto, List<PartidaNovoModelo> independienteCompleto, List<PartidaNovoModelo> independienteRivadaviaCompleto, List<PartidaNovoModelo> institutoCompleto, List<PartidaNovoModelo> lanusCompleto, List<PartidaNovoModelo> newellOldBoysCompleto, List<PartidaNovoModelo> platenseCompleto, List<PartidaNovoModelo> racingCompleto, List<PartidaNovoModelo> riverPlateCompleto, List<PartidaNovoModelo> rosarioCentralCompleto, List<PartidaNovoModelo> sanLorenzoCompleto, List<PartidaNovoModelo> sarmientoCompleto, List<PartidaNovoModelo> talleresCompleto, List<PartidaNovoModelo> tigreCompleto, List<PartidaNovoModelo> unionSantaFeCompleto, List<PartidaNovoModelo> velezSarsfieldCompleto) {
+        PartidaNovoModelo partidaNovoModelo;
+
+        for (PartidaNovoModelo partida : racingCompleto) {
+
+            if (partida.getHomeTime().getName().equals("Racing")) {
+                partidaNovoModelo = partida;
+                partida.setDataFormatada(partida.getDate());
+                this.partidas.add(partidaNovoModelo);
+            }
+
+        }//fim do for
+
+        Collections.sort(partidas, new ComparatorDatasPartidas());
+
+
+        serieAB2024CasaAdapter.notifyDataSetChanged();
     }
 }

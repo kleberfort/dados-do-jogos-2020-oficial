@@ -540,15 +540,15 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         PartidaNovoModelo partidaNovoModelo;
 
 
-            for (PartidaNovoModelo partida : riverPlateCompleto) {
+        for (PartidaNovoModelo partida : velezSarsfieldCompleto) {
 
-                if (partida.getAwayTime().getName().equals("River Plate")) {
-                    partidaNovoModelo = partida;
-                    partida.setDataFormatada(partida.getDate());
-                    this.partidas.add(partidaNovoModelo);
-                }
+            if (partida.getAwayTime().getName().equals("Vélez Sársfield")) {
+                partidaNovoModelo = partida;
+                partida.setDataFormatada(partida.getDate());
+                this.partidas.add(partidaNovoModelo);
+            }
 
-            }//fim do for
+        }//fim do for
 
 
 

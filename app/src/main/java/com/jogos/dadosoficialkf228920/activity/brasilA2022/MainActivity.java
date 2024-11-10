@@ -12,6 +12,34 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.ArgentinoJuniors2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.AtleticoTucuman2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.Banfield2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.BarracasCentral2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.Belgrano2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.BocaJuniors2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.CentralCordoba2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.DefensaJusticia2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.DeportivoRiestra2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.EstudiantesLaPrata2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.Gimnasia2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.GodoyCruz2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.Huracan2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.Independiente2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.IndependienteRivadavia2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.Instituto2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.Lanus2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.NewellOldBoys2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.Platense2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.Racing2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.RiverPlate2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.RosarioCentral2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.SanLorenzo2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.Sarmiento2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.Talleres2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.Tigre2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.UnionSanteFe2024Activity;
+import com.jogos.dadosoficialkf228920.activity.americadosul.argentina.VelezSarsfield2024Activity;
 import com.jogos.dadosoficialkf228920.activity.brasil.serieA2024.AtleticoGO2024Activity;
 import com.jogos.dadosoficialkf228920.activity.brasil.serieA2024.AtleticoMG2024Activity;
 import com.jogos.dadosoficialkf228920.activity.brasil.serieA2024.AtleticoPR2024Activity;
@@ -149,8 +177,10 @@ import com.jogos.dadosoficialkf228920.activity.europaA2023a24.italia.Sassuolo202
 import com.jogos.dadosoficialkf228920.activity.europaA2023a24.italia.Torino2023_24Activity;
 import com.jogos.dadosoficialkf228920.activity.europaA2023a24.italia.Udinese2023_24Activity;
 import com.jogos.dadosoficialkf228920.databinding.ActivityMainBinding;
+import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.ListaLigaProfissional_A_2024Fragment;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.ListaBrasilSerieA_2024_TesteFragment;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ListaBrasilSerie_B_2024Fragment;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.ListaPremierLeague_A_2024_25Fragment;
 import com.jogos.dadosoficialkf228920.fragments.listajogo.europaA2023a24.alemanha.ListaAlemaoA2023a24Fragment;
 import com.jogos.dadosoficialkf228920.fragments.listajogo.europaA2023a24.espanhol.ListaEspanholA2023a24Fragment;
 import com.jogos.dadosoficialkf228920.fragments.listajogo.europaA2023a24.franca.ListaFrancaA2023a24Fragment;
@@ -166,7 +196,7 @@ import com.unity3d.services.banners.BannerErrorInfo;
 import com.unity3d.services.banners.BannerView;
 import com.unity3d.services.banners.UnityBannerSize;
 
-public class MainActivity extends AppCompatActivity implements ListaInglesA2023a24Fragment.ListaInglesaInterface, ListaEspanholA2023a24Fragment.ListaEspanholaInterface, ListaAlemaoA2023a24Fragment.ListaAlemanhaInterface, ListaItaliaA2023a24Fragment.ListaItalianoInterface, ListaFrancaA2023a24Fragment.ListaFrancesInterface, ListaBrasilSerieA_2024_TesteFragment.ListaBrasilA2024Interface, ListaBrasilSerie_B_2024Fragment.ListaBrasilB2024Interface {
+public class MainActivity extends AppCompatActivity implements ListaInglesA2023a24Fragment.ListaInglesaInterface, ListaEspanholA2023a24Fragment.ListaEspanholaInterface, ListaAlemaoA2023a24Fragment.ListaAlemanhaInterface, ListaItaliaA2023a24Fragment.ListaItalianoInterface, ListaFrancaA2023a24Fragment.ListaFrancesInterface, ListaBrasilSerieA_2024_TesteFragment.ListaBrasilA2024Interface, ListaBrasilSerie_B_2024Fragment.ListaBrasilB2024Interface, ListaLigaProfissional_A_2024Fragment.ListaArgentinaA2024Interface {
 
     //o que tenho que fazer agora aqui ?posso chamar varias Interfaces?, sim.// ele ja mostrou meio que direto pra mim
     //mas perceba: Tem o nome do fragment e o nome da interface que criamos na lista espanhola,
@@ -299,11 +329,14 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
 
         adapter.addFragment(new ListaBrasilSerieA_2024_TesteFragment(), "Série A 2024");
         adapter.addFragment(new ListaBrasilSerie_B_2024Fragment(), "Série B 2024");
+        adapter.addFragment(new ListaLigaProfissional_A_2024Fragment(), "Liga Profissional 2024");
+        adapter.addFragment(new ListaPremierLeague_A_2024_25Fragment(), "Premier League A ");
         adapter.addFragment(new ListaInglesA2023a24Fragment(), "Inglês A 2023-24");
         adapter.addFragment(new ListaEspanholA2023a24Fragment(), "Espanhol A 2023-24");
         adapter.addFragment(new ListaAlemaoA2023a24Fragment(), "Alemão A 2023-24");
         adapter.addFragment(new ListaItaliaA2023a24Fragment(), "Italiano A 2023-24");
         adapter.addFragment(new ListaFrancaA2023a24Fragment(), "Françês A 2023-24");
+
         binding.viewPager.setOffscreenPageLimit(adapter.getItemCount());
 
         TabLayoutMediator mediator = new TabLayoutMediator(binding.tabs, binding.viewPager, (tab, position) -> {
@@ -427,379 +460,484 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
                 intersticialUnityCarregado = false;
                 iniciarIntersticialUnity();
 
+                Intent intent = null;
+
+
                 if (opcao.equals("Atlético-PR")) {
-                    Intent intent = new Intent(getBaseContext(), AtleticoPR2024Activity.class);
+                     intent = new Intent(getBaseContext(), AtleticoPR2024Activity.class);
                     startActivity(intent);
                 }
                 //entendeu? aqui não entendi, qual vai aparecer?
                 //estamos usando a variavel opcao
                 else if (opcao.equals("Atlético-GO")) {
-                    Intent intent = new Intent(getBaseContext(), AtleticoGO2024Activity.class);
+                     intent = new Intent(getBaseContext(), AtleticoGO2024Activity.class);
                     startActivity(intent);
                 } else if (opcao.equals("Atlético-MG")) {
-                    Intent intent = new Intent(getBaseContext(), AtleticoMG2024Activity.class);
+                     intent = new Intent(getBaseContext(), AtleticoMG2024Activity.class);
                     startActivity(intent);
                 } else if (opcao.equals("Bahia")) {
-                    Intent intent = new Intent(getBaseContext(), Bahia2024Activity.class);
+                     intent = new Intent(getBaseContext(), Bahia2024Activity.class);
                     startActivity(intent);
                 } else if (opcao.equals("Botafogo")) {
-                    Intent intent = new Intent(getBaseContext(), Botafogo2024Activity.class);
+                     intent = new Intent(getBaseContext(), Botafogo2024Activity.class);
                     startActivity(intent);
                 } else if (opcao.equals("Bragantino")) {
-                    Intent intent = new Intent(getBaseContext(), Bragantino2024Activity.class);
+                     intent = new Intent(getBaseContext(), Bragantino2024Activity.class);
                     startActivity(intent);
                 } else if (opcao.equals("Corinthians")) {
-                    Intent intent = new Intent(getBaseContext(), Corinthians2024Activity.class);
+                     intent = new Intent(getBaseContext(), Corinthians2024Activity.class);
                     startActivity(intent);
                 } else if (opcao.equals("Criciúma")) {
-                    Intent intent = new Intent(getBaseContext(), Criciuma2024Activity.class);
+                     intent = new Intent(getBaseContext(), Criciuma2024Activity.class);
                     startActivity(intent);
                 } else if (opcao.equals("Cruzeiro")) {
-                    Intent intent = new Intent(getBaseContext(), Cruzeiro2024Activity.class);
+                     intent = new Intent(getBaseContext(), Cruzeiro2024Activity.class);
                     startActivity(intent);
                 }else if (opcao.equals("Cuiabá")) {
-                    Intent intent = new Intent(getBaseContext(), Cuiaba2024Activity.class);
+                     intent = new Intent(getBaseContext(), Cuiaba2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Flamengo")) {
-                    Intent intent = new Intent(getBaseContext(), Flamengo2024Activity.class);
+                     intent = new Intent(getBaseContext(), Flamengo2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Fluminense")) {
-                    Intent intent = new Intent(getBaseContext(), Fluminense2024Activity.class);
+                     intent = new Intent(getBaseContext(), Fluminense2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Fortaleza")) {
-                    Intent intent = new Intent(getBaseContext(), Fortaleza2024Activity.class);
+                     intent = new Intent(getBaseContext(), Fortaleza2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Grêmio")) {
-                    Intent intent = new Intent(getBaseContext(), Gremio2024Activity.class);
+                     intent = new Intent(getBaseContext(), Gremio2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Internacional")) {
-                    Intent intent = new Intent(getBaseContext(), Internacional2024Activity.class);
+                     intent = new Intent(getBaseContext(), Internacional2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Juventude")) {
-                    Intent intent = new Intent(getBaseContext(), Juventude2024Activity.class);
+                     intent = new Intent(getBaseContext(), Juventude2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Palmeiras")) {
-                    Intent intent = new Intent(getBaseContext(), Palmeiras2024Activity.class);
+                     intent = new Intent(getBaseContext(), Palmeiras2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("São-Paulo")) {
-                    Intent intent = new Intent(getBaseContext(), SaoPaulo2024Activity.class);
+                     intent = new Intent(getBaseContext(), SaoPaulo2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Vasco")) {
-                    Intent intent = new Intent(getBaseContext(), Vasco2024Activity.class);
+                     intent = new Intent(getBaseContext(), Vasco2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Vitória")) {
-                    Intent intent = new Intent(getBaseContext(), Vitoria2024Activity.class);
+                     intent = new Intent(getBaseContext(), Vitoria2024Activity.class);
                     startActivity(intent);
 
                 }
                 //FIM DA CHAMADA BRASILEIRO SERIE A 2024
 
                 else if (opcao.equals("Amazonas")) {
-                    Intent intent = new Intent(getBaseContext(), Amazonas2024Activity.class);
+                     intent = new Intent(getBaseContext(), Amazonas2024Activity.class);
                     startActivity(intent);
                 }else if (opcao.equals("América-MG")) {
-                    Intent intent = new Intent(getBaseContext(), AmericaMG2024Activity.class);
+                     intent = new Intent(getBaseContext(), AmericaMG2024Activity.class);
                     startActivity(intent);
                 } else if (opcao.equals("Avaí")) {
-                    Intent intent = new Intent(getBaseContext(), Avai2024Activity.class);
+                     intent = new Intent(getBaseContext(), Avai2024Activity.class);
                     startActivity(intent);
                 } else if (opcao.equals("Botafogo-SP")) {
-                    Intent intent = new Intent(getBaseContext(), BotafogoSP2024Activity.class);
+                     intent = new Intent(getBaseContext(), BotafogoSP2024Activity.class);
                     startActivity(intent);
                 } else if (opcao.equals("Brusque")) {
-                    Intent intent = new Intent(getBaseContext(), Brusque2024Activity.class);
+                     intent = new Intent(getBaseContext(), Brusque2024Activity.class);
                     startActivity(intent);
                 } else if (opcao.equals("CRB")) {
-                    Intent intent = new Intent(getBaseContext(), Crb2024Activity.class);
+                     intent = new Intent(getBaseContext(), Crb2024Activity.class);
                     startActivity(intent);
                 } else if (opcao.equals("Ceará")) {
-                    Intent intent = new Intent(getBaseContext(), Ceara2024Activity.class);
+                     intent = new Intent(getBaseContext(), Ceara2024Activity.class);
                     startActivity(intent);
                 } else if (opcao.equals("Chapecoense")) {
-                    Intent intent = new Intent(getBaseContext(), Chapecoense2024Activity.class);
+                     intent = new Intent(getBaseContext(), Chapecoense2024Activity.class);
                     startActivity(intent);
                 }else if (opcao.equals("Coritiba")) {
-                    Intent intent = new Intent(getBaseContext(), Coritiba2024Activity.class);
+                     intent = new Intent(getBaseContext(), Coritiba2024Activity.class);
                     startActivity(intent);
 
                 } else if (opcao.equals("Goiás")) {
-                    Intent intent = new Intent(getBaseContext(), Goias2024Activity.class);
+                     intent = new Intent(getBaseContext(), Goias2024Activity.class);
                     startActivity(intent);
                 }else if (opcao.equals("Guarani")) {
-                    Intent intent = new Intent(getBaseContext(), Guarani2024Activity.class);
+                     intent = new Intent(getBaseContext(), Guarani2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Ituano")) {
-                    Intent intent = new Intent(getBaseContext(), Ituano2024Activity.class);
+                     intent = new Intent(getBaseContext(), Ituano2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Mirassol")) {
-                    Intent intent = new Intent(getBaseContext(), Mirassol2024Activity.class);
+                     intent = new Intent(getBaseContext(), Mirassol2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Novorizontino")) {
-                    Intent intent = new Intent(getBaseContext(), Novorizontino2024Activity.class);
+                     intent = new Intent(getBaseContext(), Novorizontino2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Operário")) {
-                    Intent intent = new Intent(getBaseContext(), Operario2024Activity.class);
+                     intent = new Intent(getBaseContext(), Operario2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Paysandu")) {
-                    Intent intent = new Intent(getBaseContext(), Paysandu2024Activity.class);
+                     intent = new Intent(getBaseContext(), Paysandu2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Ponte Preta")) {
-                    Intent intent = new Intent(getBaseContext(), PontePreta2024Activity.class);
+                     intent = new Intent(getBaseContext(), PontePreta2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Santos")) {
-                    Intent intent = new Intent(getBaseContext(), Santos2024Activity.class);
+                     intent = new Intent(getBaseContext(), Santos2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Sport")) {
-                    Intent intent = new Intent(getBaseContext(), Sport2024Activity.class);
+                     intent = new Intent(getBaseContext(), Sport2024Activity.class);
                     startActivity(intent);
 
                 }else if (opcao.equals("Vila Nova")) {
-                    Intent intent = new Intent(getBaseContext(), VilaNova2024Activity.class);
+                     intent = new Intent(getBaseContext(), VilaNova2024Activity.class);
                     startActivity(intent);
 
                 }
                 //FIM DA CHAMADA BRASILEIRO SERIE B 2024
 
+                else if (opcao.equals("Argentinos Jrs")) {
+                     intent = new Intent(getBaseContext(), ArgentinoJuniors2024Activity.class);
+                    startActivity(intent);
+                }else if (opcao.equals("Atl. Tucuman")) {
+                     intent = new Intent(getBaseContext(), AtleticoTucuman2024Activity.class);
+                    startActivity(intent);
+                } else if (opcao.equals("Banfield")) {
+                     intent = new Intent(getBaseContext(), Banfield2024Activity.class);
+                    startActivity(intent);
+                } else if (opcao.equals("Barracas Central")) {
+                     intent = new Intent(getBaseContext(), BarracasCentral2024Activity.class);
+                    startActivity(intent);
+                } else if (opcao.equals("Belgrano")) {
+                     intent = new Intent(getBaseContext(), Belgrano2024Activity.class);
+                    startActivity(intent);
+                } else if (opcao.equals("Boca Juniors")) {
+                     intent = new Intent(getBaseContext(), BocaJuniors2024Activity.class);
+                    startActivity(intent);
+                } else if (opcao.equals("Central Córdoba")) {
+                     intent = new Intent(getBaseContext(), CentralCordoba2024Activity.class);
+                    startActivity(intent);
+                } else if (opcao.equals("Def. Justicia")) {
+                     intent = new Intent(getBaseContext(), DefensaJusticia2024Activity.class);
+                    startActivity(intent);
+                }else if (opcao.equals("Deportivo Riestra")) {
+                     intent = new Intent(getBaseContext(), DeportivoRiestra2024Activity.class);
+                    startActivity(intent);
+
+                } else if (opcao.equals("Estudiantes")) {
+                     intent = new Intent(getBaseContext(), EstudiantesLaPrata2024Activity.class);
+                    startActivity(intent);
+                }else if (opcao.equals("Gimnasia")) {
+                     intent = new Intent(getBaseContext(), Gimnasia2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("Godoy Cruz")) {
+                     intent = new Intent(getBaseContext(), GodoyCruz2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("Huracán")) {
+                     intent = new Intent(getBaseContext(), Huracan2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("Independiente")) {
+                     intent = new Intent(getBaseContext(), Independiente2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("Ind. Rivadavia")) {
+                     intent = new Intent(getBaseContext(), IndependienteRivadavia2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("Instituto")) {
+                     intent = new Intent(getBaseContext(), Instituto2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("Lanús")) {
+                     intent = new Intent(getBaseContext(), Lanus2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("Newell Old Boys")) {
+                     intent = new Intent(getBaseContext(), NewellOldBoys2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("Platense")) {
+                     intent = new Intent(getBaseContext(), Platense2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("Racing")) {
+                     intent = new Intent(getBaseContext(), Racing2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("River Plate")) {
+                     intent = new Intent(getBaseContext(), RiverPlate2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("Rosario")) {
+                     intent = new Intent(getBaseContext(), RosarioCentral2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("San Lorenzo")) {
+                     intent = new Intent(getBaseContext(), SanLorenzo2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("Sarmiento")) {
+                     intent = new Intent(getBaseContext(), Sarmiento2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("Talleres")) {
+                     intent = new Intent(getBaseContext(), Talleres2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("Tigre")) {
+                     intent = new Intent(getBaseContext(), Tigre2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("Union Santa Fe")) {
+                     intent = new Intent(getBaseContext(), UnionSanteFe2024Activity.class);
+                    startActivity(intent);
+
+                }else if (opcao.equals("Vélez Sársfield")) {
+                     intent = new Intent(getBaseContext(), VelezSarsfield2024Activity.class);
+                    startActivity(intent);
+
+                }
+                //FIM DA CHAMADA ARGENTINA SERIE A 2024
+
                 //esta vendo todo esse codigo aqui abaixo ?sim
-                if (opcao.equals("Arsenal")) {
-                    Intent arsenal = new Intent(getBaseContext(), Arsenal2023_24Activity.class);
-                    startActivity(arsenal);
+                else if (opcao.equals("Arsenal")) {
+                    intent = new Intent(getBaseContext(), Arsenal2023_24Activity.class);
+                    startActivity(intent);
                 }
                 //entendeu? aqui não entendi, qual vai aparecer?
                 //estamos usando a variavel opcao
                 else if (opcao.equals("Aston")) {
-                    Intent astonvilla = new Intent(getBaseContext(), AstonVilla2023_24Activity.class);
-                    startActivity(astonvilla);
+                    intent  = new Intent(getBaseContext(), AstonVilla2023_24Activity.class);
+                    startActivity(intent);
                 } else if (opcao.equals("Bournemouth")) {
-                    Intent bournemouth = new Intent(getBaseContext(), Bournemouth2023_24Activity.class);
-                    startActivity(bournemouth);
+                    intent  = new Intent(getBaseContext(), Bournemouth2023_24Activity.class);
+                    startActivity(intent);
                 } else if (opcao.equals("Brentford")) {
-                    Intent brentford = new Intent(getBaseContext(), Brentford2023_24Activity.class);
-                    startActivity(brentford);
+                    intent  = new Intent(getBaseContext(), Brentford2023_24Activity.class);
+                    startActivity(intent);
                 } else if (opcao.equals("Liverpool")) {
-                    Intent liverpool = new Intent(getBaseContext(), Liverpool2023_24Activity.class);
-                    startActivity(liverpool);
+                    intent  = new Intent(getBaseContext(), Liverpool2023_24Activity.class);
+                    startActivity(intent);
                 } else if (opcao.equals("Manchester City")) {
-                    Intent city = new Intent(getBaseContext(), ManchesterCity2023_24Activity.class);
-                    startActivity(city);
+                    intent  = new Intent(getBaseContext(), ManchesterCity2023_24Activity.class);
+                    startActivity(intent);
                 } else if (opcao.equals("Manchester United")) {
-                    Intent united = new Intent(getBaseContext(), ManchesterUnited2023_24Activity.class);
-                    startActivity(united);
+                    intent  = new Intent(getBaseContext(), ManchesterUnited2023_24Activity.class);
+                    startActivity(intent);
                 } else if (opcao.equals("Tottenham")) {
-                    Intent tottenham = new Intent(getBaseContext(), Tottenham2023_24Activity.class);
-                    startActivity(tottenham);
+                    intent  = new Intent(getBaseContext(), Tottenham2023_24Activity.class);
+                    startActivity(intent);
                 } else if (opcao.equals("Brighton")) {
-                    Intent brighton = new Intent(getBaseContext(), Brighton2023_24Activity.class);
-                    startActivity(brighton);
+                    intent  = new Intent(getBaseContext(), Brighton2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("Burnley")) {
-                    Intent burnley = new Intent(getBaseContext(), Burnley2023_24Activity.class);
-                    startActivity(burnley);
+                    intent  = new Intent(getBaseContext(), Burnley2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Chelsea")) {
-                    Intent chelsea = new Intent(getBaseContext(), Chelsea2023_24Activity.class);
-                    startActivity(chelsea);
+                    intent  = new Intent(getBaseContext(), Chelsea2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Crystal Palace")) {
-                    Intent crystalpalace = new Intent(getBaseContext(), CrystalPalace2023_24Activity.class);
-                    startActivity(crystalpalace);
+                    intent  = new Intent(getBaseContext(), CrystalPalace2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Everton")) {
-                    Intent everton = new Intent(getBaseContext(), Everton2023_24Activity.class);
-                    startActivity(everton);
+                    intent  = new Intent(getBaseContext(), Everton2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Fulham")) {
-                    Intent fulham = new Intent(getBaseContext(), Fulham2023_24Activity.class);
-                    startActivity(fulham);
+                    intent  = new Intent(getBaseContext(), Fulham2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Luton")) {
-                    Intent luton = new Intent(getBaseContext(), Luton2023_24Activity.class);
-                    startActivity(luton);
+                    intent  = new Intent(getBaseContext(), Luton2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Newcastle")) {
-                    Intent luton = new Intent(getBaseContext(), Newcastle2023_24Activity.class);
-                    startActivity(luton);
+                    intent  = new Intent(getBaseContext(), Newcastle2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Nottingham Forest")) {
-                    Intent forest = new Intent(getBaseContext(), Nottingham2023_24Activity.class);
-                    startActivity(forest);
+                    intent  = new Intent(getBaseContext(), Nottingham2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Sheffield")) {
-                    Intent sheffield = new Intent(getBaseContext(), Sheffield2023_24Activity.class);
-                    startActivity(sheffield);
+                    intent  = new Intent(getBaseContext(), Sheffield2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("West Ham")) {
-                    Intent westham = new Intent(getBaseContext(), WestHam2023_24Activity.class);
-                    startActivity(westham);
+                    intent  = new Intent(getBaseContext(), WestHam2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Wolverhampton")) {
-                    Intent wolves = new Intent(getBaseContext(), Wolves2023_24Activity.class);
-                    startActivity(wolves);
+                    intent  = new Intent(getBaseContext(), Wolves2023_24Activity.class);
+                    startActivity(intent);
 
                 }
-
-
 
                 //Times Espanhol
                 else if (opcao.equals("Alaves")) {
-                    Intent elche = new Intent(getBaseContext(), Alaves2023_24Activity.class);
-                    startActivity(elche);
+                    intent  = new Intent(getBaseContext(), Alaves2023_24Activity.class);
+                    startActivity(intent);
                 } else if (opcao.equals("Almería")) {
-                    Intent almeria = new Intent(getBaseContext(), Almeria2023_24Activity.class);
-                    startActivity(almeria);
+                    intent  = new Intent(getBaseContext(), Almeria2023_24Activity.class);
+                    startActivity(intent);
                 } else if (opcao.equals("Barcelona")) {
-                    Intent barcelona = new Intent(getBaseContext(), Barcelona2023_24Activity.class);
-                    startActivity(barcelona);
+                    intent  = new Intent(getBaseContext(), Barcelona2023_24Activity.class);
+                    startActivity(intent);
                 } else if (opcao.equals("Real Madrid")) {
-                    Intent realMadrid = new Intent(getBaseContext(), RealMadrid2023_24Activity.class);
-                    startActivity(realMadrid);
+                    intent  = new Intent(getBaseContext(), RealMadrid2023_24Activity.class);
+                    startActivity(intent);
                 } else if (opcao.equals("Atlético de Madrid")) {
-                    Intent atleticoMadrid = new Intent(getBaseContext(), AtleticoMadrid2023_24Activity.class);
-                    startActivity(atleticoMadrid);
+                    intent  = new Intent(getBaseContext(), AtleticoMadrid2023_24Activity.class);
+                    startActivity(intent);
                 } else if (opcao.equals("Girona")) {
-                    Intent girona = new Intent(getBaseContext(), Girona2023_24Activity.class);
-                    startActivity(girona);
+                    intent  = new Intent(getBaseContext(), Girona2023_24Activity.class);
+                    startActivity(intent);
                 } else if (opcao.equals("Athletic Bilbao")) {
-                    Intent athleticBilbao = new Intent(getBaseContext(), AthleticBilbao2023_24Activity.class);
-                    startActivity(athleticBilbao);
+                    intent  = new Intent(getBaseContext(), AthleticBilbao2023_24Activity.class);
+                    startActivity(intent);
                 } else if (opcao.equals("Cádiz")) {
-                    Intent cadiz = new Intent(getBaseContext(), Cadiz2023_24Activity.class);
-                    startActivity(cadiz);
+                    intent  = new Intent(getBaseContext(), Cadiz2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Celta de Vigo")) {
-                    Intent celtaVigo = new Intent(getBaseContext(), CeltaVigo2023_24Activity.class);
-                    startActivity(celtaVigo);
+                    intent  = new Intent(getBaseContext(), CeltaVigo2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Getafe")) {
-                    Intent getafe = new Intent(getBaseContext(), Getafe2023_24Activity.class);
-                    startActivity(getafe);
+                    intent  = new Intent(getBaseContext(), Getafe2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Granada")) {
-                    Intent espanyol = new Intent(getBaseContext(), Granada2023_24Activity.class);
-                    startActivity(espanyol);
+                    intent  = new Intent(getBaseContext(), Granada2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Las Palmas")) {
-                    Intent realValladolid = new Intent(getBaseContext(), LasPalmas2023_24Activity.class);
-                    startActivity(realValladolid);
+                    intent  = new Intent(getBaseContext(), LasPalmas2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Mallorca")) {
-                    Intent mallorca = new Intent(getBaseContext(), Mallorca2023_24Activity.class);
-                    startActivity(mallorca);
+                    intent  = new Intent(getBaseContext(), Mallorca2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Osasuna")) {
-                    Intent osasuna = new Intent(getBaseContext(), Osasuna2023_24Activity.class);
-                    startActivity(osasuna);
+                    intent  = new Intent(getBaseContext(), Osasuna2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Rayo Vallecano")) {
-                    Intent rayoVallecano = new Intent(getBaseContext(), RayoVallecano2023_24Activity.class);
-                    startActivity(rayoVallecano);
+                    intent  = new Intent(getBaseContext(), RayoVallecano2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Real Betis")) {
-                    Intent realBetis = new Intent(getBaseContext(), RealBetis2023_24Activity.class);
-                    startActivity(realBetis);
+                    intent  = new Intent(getBaseContext(), RealBetis2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Real Sociedad")) {
-                    Intent realSociedad = new Intent(getBaseContext(), RealSociedad2023_24Activity.class);
-                    startActivity(realSociedad);
+                    intent  = new Intent(getBaseContext(), RealSociedad2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Sevilla")) {
-                    Intent sevilla = new Intent(getBaseContext(), Sevilla2023_24Activity.class);
-                    startActivity(sevilla);
+                    intent  = new Intent(getBaseContext(), Sevilla2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Valencia")) {
-                    Intent valencica = new Intent(getBaseContext(), Valencia2023_24Activity.class);
-                    startActivity(valencica);
+                    intent  = new Intent(getBaseContext(), Valencia2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Villarreal")) {
-                    Intent villarreal = new Intent(getBaseContext(), Villarreal2023_24Activity.class);
-                    startActivity(villarreal);
+                    intent  = new Intent(getBaseContext(), Villarreal2023_24Activity.class);
+                    startActivity(intent);
 
                 }
 
-
-
                 //Times Alemanha
                 else if (opcao.equals("Bayer Leverkusen")) {
-                    Intent bayerLeverkusen = new Intent(getBaseContext(), BayerLeverkusen2023_24Activity.class);
-                    startActivity(bayerLeverkusen);
+                    intent  = new Intent(getBaseContext(), BayerLeverkusen2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("Bayern de Munique")) {
-                    Intent bayernMunique = new Intent(getBaseContext(), BayernMunique2023_24Activity.class);
-                    startActivity(bayernMunique);
+                    intent  = new Intent(getBaseContext(), BayernMunique2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("Borussia Dortmund")) {
-                    Intent borussiaDortmund = new Intent(getBaseContext(), BorussiaDortmund2023_24Activity.class);
-                    startActivity(borussiaDortmund);
+                    intent  = new Intent(getBaseContext(), BorussiaDortmund2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("RB Leipzig")) {
-                    Intent leipzig = new Intent(getBaseContext(), Leipzig2023_24Activity.class);
-                    startActivity(leipzig);
+                    intent  = new Intent(getBaseContext(), Leipzig2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("Union Berlin")) {
-                    Intent unionBerlin = new Intent(getBaseContext(), UnionBerlin2023_24Activity.class);
-                    startActivity(unionBerlin);
+                    intent  = new Intent(getBaseContext(), UnionBerlin2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("Stuttgart")) {
-                    Intent stuttgart = new Intent(getBaseContext(), Stuttgart2023_24Activity.class);
-                    startActivity(stuttgart);
+                    intent  = new Intent(getBaseContext(), Stuttgart2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("Werder Bremen")) {
-                    Intent werderBremen = new Intent(getBaseContext(), WerderBremen2023_24Activity.class);
-                    startActivity(werderBremen);
+                    intent  = new Intent(getBaseContext(), WerderBremen2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("Augsburg")) {
-                    Intent augsburg = new Intent(getBaseContext(), Augsburg2023_24Activity.class);
-                    startActivity(augsburg);
+                    intent  = new Intent(getBaseContext(), Augsburg2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Bochum")) {
-                    Intent bochum = new Intent(getBaseContext(), Bochum2023_24Activity.class);
-                    startActivity(bochum);
+                    intent  = new Intent(getBaseContext(), Bochum2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Borussia Mönchengladbach")) {
-                    Intent borussiaMonchengladbach = new Intent(getBaseContext(), BorussiaMonche2023_24Activity.class);
-                    startActivity(borussiaMonchengladbach);
+                    intent  = new Intent(getBaseContext(), BorussiaMonche2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Köln(Colônia)")) {
-                    Intent koln = new Intent(getBaseContext(), Koln2023_24Activity.class);
-                    startActivity(koln);
+                    intent  = new Intent(getBaseContext(), Koln2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Darmstadt98")) {
-                    Intent darmstadt98 = new Intent(getBaseContext(), Darmstadt2023_24Activity.class);
-                    startActivity(darmstadt98);
+                    intent  = new Intent(getBaseContext(), Darmstadt2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Eintracht Frankfurt")) {
-                    Intent frankfurt = new Intent(getBaseContext(), EintrachtFrankfurt2023_24Activity.class);
-                    startActivity(frankfurt);
+                    intent  = new Intent(getBaseContext(), EintrachtFrankfurt2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Freiburg")) {
-                    Intent freiburg = new Intent(getBaseContext(), Freiburg2023_24Activity.class);
-                    startActivity(freiburg);
+                    intent  = new Intent(getBaseContext(), Freiburg2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Heidenheim")) {
-                    Intent heidenheim = new Intent(getBaseContext(), Heidenheim2023_24Activity.class);
-                    startActivity(heidenheim);
+                    intent  = new Intent(getBaseContext(), Heidenheim2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Hoffenheim")) {
-                    Intent hoffenheim = new Intent(getBaseContext(), Hoffenheim2023_24Activity.class);
-                    startActivity(hoffenheim);
+                    intent  = new Intent(getBaseContext(), Hoffenheim2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Mainz 05")) {
-                    Intent mainz05 = new Intent(getBaseContext(), Mainz2023_24Activity.class);
-                    startActivity(mainz05);
+                    intent  = new Intent(getBaseContext(), Mainz2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Wolfsburg")) {
-                    Intent wolfburg = new Intent(getBaseContext(), Wolfsburg2023_24Activity.class);
-                    startActivity(wolfburg);
+                    intent  = new Intent(getBaseContext(), Wolfsburg2023_24Activity.class);
+                    startActivity(intent);
                 }
 
 
@@ -808,151 +946,156 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
 
                 //TIMES ITALIANO
                 else if (opcao.equals("Inter Milan")) {
-                    Intent inter = new Intent(getBaseContext(), InterMilao2023_24Activity.class);
-                    startActivity(inter);
+                    intent  = new Intent(getBaseContext(), InterMilao2023_24Activity.class);
+                    startActivity(intent);
                 } else if (opcao.equals("Milan")) {
-                    Intent milan = new Intent(getBaseContext(), AcMilan2023_24Activity.class);
-                    startActivity(milan);
+                    intent  = new Intent(getBaseContext(), AcMilan2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("Juventus")) {
-                    Intent juventus = new Intent(getBaseContext(), Juventus2023_24Activity.class);
-                    startActivity(juventus);
+                    intent  = new Intent(getBaseContext(), Juventus2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("Atalanta")) {
-                    Intent atalanta = new Intent(getBaseContext(), Atalanta2023_24Activity.class);
-                    startActivity(atalanta);
+                    intent  = new Intent(getBaseContext(), Atalanta2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("Napoli")) {
-                    Intent napoli = new Intent(getBaseContext(), Napoli2023_24Activity.class);
-                    startActivity(napoli);
+                    intent  = new Intent(getBaseContext(), Napoli2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("Roma")) {
-                    Intent roma = new Intent(getBaseContext(), Roma2023_24Activity.class);
-                    startActivity(roma);
+                    intent  = new Intent(getBaseContext(), Roma2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("Lazio")) {
-                    Intent lazio = new Intent(getBaseContext(), Lazio2023_24Activity.class);
-                    startActivity(lazio);
+                    intent  = new Intent(getBaseContext(), Lazio2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("Fiorentina")) {
-                    Intent fiorentina = new Intent(getBaseContext(), Fiorentina2023_24Activity.class);
-                    startActivity(fiorentina);
+                    intent  = new Intent(getBaseContext(), Fiorentina2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("Bologna")) {
-                    Intent bologna = new Intent(getBaseContext(), Bologna2023_24Activity.class);
-                    startActivity(bologna);
+                    intent  = new Intent(getBaseContext(), Bologna2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Cagliari")) {
-                    Intent cagliari = new Intent(getBaseContext(), Cagliari2023_24Activity.class);
-                    startActivity(cagliari);
+                    intent  = new Intent(getBaseContext(), Cagliari2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Empoli")) {
-                    Intent empoli = new Intent(getBaseContext(), Empoli2023_24Activity.class);
-                    startActivity(empoli);
+                    intent  = new Intent(getBaseContext(), Empoli2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Genoa")) {
-                    Intent genoa = new Intent(getBaseContext(), Genoa2023_24Activity.class);
-                    startActivity(genoa);
+                    intent  = new Intent(getBaseContext(), Genoa2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Frosinone")) {
-                    Intent frosinone = new Intent(getBaseContext(), Frosinone2023_24Activity.class);
-                    startActivity(frosinone);
+                    intent  = new Intent(getBaseContext(), Frosinone2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Hellas Verona")) {
-                    Intent verona = new Intent(getBaseContext(), HellasVerona2023_24Activity.class);
-                    startActivity(verona);
+                    intent  = new Intent(getBaseContext(), HellasVerona2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Lecce")) {
-                    Intent lecce = new Intent(getBaseContext(), Lecce2023_24Activity.class);
-                    startActivity(lecce);
+                    intent  = new Intent(getBaseContext(), Lecce2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Monza")) {
-                    Intent monza = new Intent(getBaseContext(), Monza2023_24Activity.class);
-                    startActivity(monza);
+                    intent  = new Intent(getBaseContext(), Monza2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Salernitana")) {
-                    Intent salernitana = new Intent(getBaseContext(), Salernitana2023_24Activity.class);
-                    startActivity(salernitana);
+                    intent  = new Intent(getBaseContext(), Salernitana2023_24Activity.class);
+                    startActivity(intent);
                 }else if (opcao.equals("Sassuolo")) {
-                    Intent sassuolo = new Intent(getBaseContext(), Sassuolo2023_24Activity.class);
-                    startActivity(sassuolo);
+                    intent  = new Intent(getBaseContext(), Sassuolo2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Torino")) {
-                    Intent torino = new Intent(getBaseContext(), Torino2023_24Activity.class);
-                    startActivity(torino);
+                    intent  = new Intent(getBaseContext(), Torino2023_24Activity.class);
+                    startActivity(intent);
 
                 }else if (opcao.equals("Udinese")) {
-                    Intent udinese = new Intent(getBaseContext(), Udinese2023_24Activity.class);
-                    startActivity(udinese);
+                    intent  = new Intent(getBaseContext(), Udinese2023_24Activity.class);
+                    startActivity(intent);
 
                 }
 
 
                 //TIMES FRACES
                 else if (opcao.equals("Brest")) {
-                  Intent brest = new Intent(getBaseContext(), Brest2023_24Activity.class);
-                  startActivity(brest);
+                    intent  = new Intent(getBaseContext(), Brest2023_24Activity.class);
+                  startActivity(intent);
                 }    else if (opcao.equals("Clermont")) {
-                    Intent clermont = new Intent(getBaseContext(), Clermont2023_24Activity.class);
-                    startActivity(clermont);
+                    intent  = new Intent(getBaseContext(), Clermont2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("Le Havre")) {
-                    Intent leHavre = new Intent(getBaseContext(), LeHavre2023_24Activity.class);
-                    startActivity(leHavre);
+                    intent  = new Intent(getBaseContext(), LeHavre2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("Lens")) {
-                    Intent lens = new Intent(getBaseContext(), Lens2023_24Activity.class);
-                    startActivity(lens);
+                    intent  = new Intent(getBaseContext(), Lens2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("Lille")) {
-                    Intent lille = new Intent(getBaseContext(), Lille2023_24Activity.class);
-                    startActivity(lille);
+                    intent  = new Intent(getBaseContext(), Lille2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("Lorient")) {
-                    Intent lorient = new Intent(getBaseContext(), Lorient2023_24Activity.class);
-                    startActivity(lorient);
+                    intent  = new Intent(getBaseContext(), Lorient2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("Lyon")) {
-                    Intent lyon = new Intent(getBaseContext(), Lyon2023_24Activity.class);
-                    startActivity(lyon);
+                    intent  = new Intent(getBaseContext(), Lyon2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("Marseille")) {
-                    Intent marseille = new Intent(getBaseContext(), Marseille2023_24Activity.class);
-                    startActivity(marseille);
+                    intent  = new Intent(getBaseContext(), Marseille2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("Metz")) {
-                    Intent metz = new Intent(getBaseContext(), Metz2023_24Activity.class);
-                    startActivity(metz);
+                    intent  = new Intent(getBaseContext(), Metz2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("Monaco")) {
-                    Intent monaco = new Intent(getBaseContext(), Monaco2023_24Activity.class);
-                    startActivity(monaco);
+                    intent  = new Intent(getBaseContext(), Monaco2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("Montpellier")) {
-                    Intent montpellier = new Intent(getBaseContext(), Montpellier2023_24Activity.class);
-                    startActivity(montpellier);
+                    intent  = new Intent(getBaseContext(), Montpellier2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("Nantes")) {
-                    Intent nantes = new Intent(getBaseContext(), Nantes2023_24Activity.class);
-                    startActivity(nantes);
+                    intent  = new Intent(getBaseContext(), Nantes2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("Nice")) {
-                    Intent nice = new Intent(getBaseContext(), OgcNice2023_24Activity.class);
-                    startActivity(nice);
+                    intent  = new Intent(getBaseContext(), OgcNice2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("PSG")) {
-                    Intent psg = new Intent(getBaseContext(), Psg2023_24Activity.class);
-                    startActivity(psg);
+                    intent  = new Intent(getBaseContext(), Psg2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("Reims")) {
-                    Intent reims = new Intent(getBaseContext(), Reims2023_24Activity.class);
-                    startActivity(reims);
+                    intent  = new Intent(getBaseContext(), Reims2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("Rennes")) {
-                    Intent rennes = new Intent(getBaseContext(), Rennes2023_24Activity.class);
-                    startActivity(rennes);
+                    intent  = new Intent(getBaseContext(), Rennes2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("Strasbourg")) {
-                    Intent strasbourg = new Intent(getBaseContext(), Strasbourg2023_24Activity.class);
-                    startActivity(strasbourg);
+                    intent  = new Intent(getBaseContext(), Strasbourg2023_24Activity.class);
+                    startActivity(intent);
 
                 }  else if (opcao.equals("Toulouse")) {
-                    Intent toulouse = new Intent(getBaseContext(), Toulouse2023_24Activity.class);
-                    startActivity(toulouse);
+                    intent  = new Intent(getBaseContext(), Toulouse2023_24Activity.class);
+                    startActivity(intent);
 
+                }
+
+                if (intent != null) {
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
                 }
 
                 // blz, a dúvida minha é, vc implementou no ingles e espanhol, para colocar nos outros, primeiro inicio onde, criando a interface dentro da minha Lista?
@@ -973,78 +1116,86 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
         if (intersticialUnityCarregado) {//se intersticialUnityCarregado == true cai dentro do if... intersticialUnityCarregado vai ser true se o intersticial ja foi recebido da Unity
             UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
         } else {
+
+            Intent intent = null;
+
             if (nome.equals("Arsenal")) {
-                Intent arsenal = new Intent(this, Arsenal2023_24Activity.class);
-                startActivity(arsenal);
+                intent = new Intent(this, Arsenal2023_24Activity.class);
+                startActivity(intent);
             } else if (nome.equals("Aston")) {
-                Intent astonvilla = new Intent(this, AstonVilla2023_24Activity.class);
-                startActivity(astonvilla);
+                intent = new Intent(this, AstonVilla2023_24Activity.class);
+                startActivity(intent);
             } else if (nome.equals("Bournemouth")) {
-                Intent bournemouth = new Intent(this, Bournemouth2023_24Activity.class);
-                startActivity(bournemouth);
+                intent = new Intent(this, Bournemouth2023_24Activity.class);
+                startActivity(intent);
             } else if (nome.equals("Brentford")) {
-                Intent brentford = new Intent(this, Brentford2023_24Activity.class);
-                startActivity(brentford);
+                intent = new Intent(this, Brentford2023_24Activity.class);
+                startActivity(intent);
             } else if (nome.equals("Liverpool")) {
-                Intent liverpool = new Intent(this, Liverpool2023_24Activity.class);
-                startActivity(liverpool);
+                intent = new Intent(this, Liverpool2023_24Activity.class);
+                startActivity(intent);
             } else if (nome.equals("Manchester City")) {
-                Intent city = new Intent(this, ManchesterCity2023_24Activity.class);
-                startActivity(city);
+                intent = new Intent(this, ManchesterCity2023_24Activity.class);
+                startActivity(intent);
             } else if (nome.equals("Manchester United")) {
-                Intent united = new Intent(this, ManchesterUnited2023_24Activity.class);
-                startActivity(united);
+                intent = new Intent(this, ManchesterUnited2023_24Activity.class);
+                startActivity(intent);
             } else if (nome.equals("Tottenham")) {
-                Intent tottenham = new Intent(this, Tottenham2023_24Activity.class);
-                startActivity(tottenham);
+                intent = new Intent(this, Tottenham2023_24Activity.class);
+                startActivity(intent);
             }else if (nome.equals("Brighton")) {
-                Intent brighton = new Intent(this, Brighton2023_24Activity.class);
-                startActivity(brighton);
+                intent = new Intent(this, Brighton2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Burnley")) {
-                Intent burnley = new Intent(this, Burnley2023_24Activity.class);
-                startActivity(burnley);
+                intent = new Intent(this, Burnley2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Chelsea")) {
-                Intent chelsea = new Intent(this, Chelsea2023_24Activity.class);
-                startActivity(chelsea);
+                intent = new Intent(this, Chelsea2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Crystal Palace")) {
-                Intent crystalpalace = new Intent(this, CrystalPalace2023_24Activity.class);
-                startActivity(crystalpalace);
+                intent = new Intent(this, CrystalPalace2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Everton")) {
-                Intent everton = new Intent(this, Everton2023_24Activity.class);
-                startActivity(everton);
+                intent = new Intent(this, Everton2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Fulham")) {
-                Intent fulham = new Intent(this, Fulham2023_24Activity.class);
-                startActivity(fulham);
+                intent = new Intent(this, Fulham2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Luton")) {
-                Intent luton = new Intent(this, Luton2023_24Activity.class);
-                startActivity(luton);
+                intent = new Intent(this, Luton2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Newcastle")) {
-                Intent luton = new Intent(this, Newcastle2023_24Activity.class);
-                startActivity(luton);
+                intent = new Intent(this, Newcastle2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Nottingham Forest")) {
-                Intent forest = new Intent(this, Nottingham2023_24Activity.class);
-                startActivity(forest);
+                intent = new Intent(this, Nottingham2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Sheffield")) {
-                Intent sheffield = new Intent(this, Sheffield2023_24Activity.class);
-                startActivity(sheffield);
+                intent = new Intent(this, Sheffield2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("West Ham")) {
-                Intent westham = new Intent(this, WestHam2023_24Activity.class);
-                startActivity(westham);
+                intent = new Intent(this, WestHam2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Wolverhampton")) {
-                Intent wolves = new Intent(this, Wolves2023_24Activity.class);
-                startActivity(wolves);
+                intent = new Intent(this, Wolves2023_24Activity.class);
+                startActivity(intent);
 
+            }
+
+            if (intent != null) {
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
             }
 
         }
@@ -1068,80 +1219,89 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
             UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
 
         } else {
+
+            Intent intent = null;
+
             if (nome.equals("Alaves")) {
-                Intent elche = new Intent(this, Alaves2023_24Activity.class);
-                startActivity(elche);
+                intent = new Intent(this, Alaves2023_24Activity.class);
+                startActivity(intent);
             } else if (nome.equals("Almería")) {
-                Intent almeria = new Intent(this, Almeria2023_24Activity.class);
-                startActivity(almeria);
+                intent = new Intent(this, Almeria2023_24Activity.class);
+                startActivity(intent);
             } else if (nome.equals("Barcelona")) {
-                Intent barcelona = new Intent(this, Barcelona2023_24Activity.class);
-                startActivity(barcelona);
+                intent = new Intent(this, Barcelona2023_24Activity.class);
+                startActivity(intent);
             } else if (nome.equals("Real Madrid")) {
-                Intent realMadrid = new Intent(this, RealMadrid2023_24Activity.class);
-                startActivity(realMadrid);
+                intent = new Intent(this, RealMadrid2023_24Activity.class);
+                startActivity(intent);
             } else if (nome.equals("Atlético de Madrid")) {
-                Intent atleticoMadrid = new Intent(this, AtleticoMadrid2023_24Activity.class);
-                startActivity(atleticoMadrid);
+                intent = new Intent(this, AtleticoMadrid2023_24Activity.class);
+                startActivity(intent);
             } else if (nome.equals("Girona")) {
-                Intent girona = new Intent(this, Girona2023_24Activity.class);
-                startActivity(girona);
+                intent = new Intent(this, Girona2023_24Activity.class);
+                startActivity(intent);
             } else if (nome.equals("Athletic Bilbao")) {
-                Intent athleticBilbao = new Intent(this, AthleticBilbao2023_24Activity.class);
-                startActivity(athleticBilbao);
+                intent = new Intent(this, AthleticBilbao2023_24Activity.class);
+                startActivity(intent);
             }else if (nome.equals("Cádiz")) {
-                Intent cadiz = new Intent(this, Cadiz2023_24Activity.class);
-                startActivity(cadiz);
+                intent = new Intent(this, Cadiz2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Celta de Vigo")) {
-                Intent celtaVigo = new Intent(this, CeltaVigo2023_24Activity.class);
-                startActivity(celtaVigo);
+                intent = new Intent(this, CeltaVigo2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Getafe")) {
-                Intent getafe = new Intent(this, Getafe2023_24Activity.class);
-                startActivity(getafe);
+                intent = new Intent(this, Getafe2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Granada")) {
-                Intent espanyol = new Intent(this, Granada2023_24Activity.class);
-                startActivity(espanyol);
+                intent = new Intent(this, Granada2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Las Palmas")) {
-                Intent realValladolid = new Intent(this, LasPalmas2023_24Activity.class);
-                startActivity(realValladolid);
+                intent = new Intent(this, LasPalmas2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Mallorca")) {
-                Intent mallorca = new Intent(this, Mallorca2023_24Activity.class);
-                startActivity(mallorca);
+                intent = new Intent(this, Mallorca2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Osasuna")) {
-                Intent osasuna = new Intent(this, Osasuna2023_24Activity.class);
-                startActivity(osasuna);
+                intent = new Intent(this, Osasuna2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Rayo Vallecano")) {
-                Intent rayoVallecano = new Intent(this, RayoVallecano2023_24Activity.class);
-                startActivity(rayoVallecano);
+                intent = new Intent(this, RayoVallecano2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Real Betis")) {
-                Intent realBetis = new Intent(this, RealBetis2023_24Activity.class);
-                startActivity(realBetis);
+                intent = new Intent(this, RealBetis2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Real Sociedad")) {
-                Intent realSociedad = new Intent(this, RealSociedad2023_24Activity.class);
-                startActivity(realSociedad);
+                intent = new Intent(this, RealSociedad2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Sevilla")) {
-                Intent sevilla = new Intent(this, Sevilla2023_24Activity.class);
-                startActivity(sevilla);
+                intent = new Intent(this, Sevilla2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Valencia")) {
-                Intent valencica = new Intent(this, Valencia2023_24Activity.class);
-                startActivity(valencica);
+                intent = new Intent(this, Valencia2023_24Activity.class);
+                startActivity(intent);
 
             }else if (nome.equals("Villarreal")) {
-                Intent villarreal = new Intent(this, Villarreal2023_24Activity.class);
-                startActivity(villarreal);
+                intent = new Intent(this, Villarreal2023_24Activity.class);
+                startActivity(intent);
 
             }
+
+            if (intent != null) {
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+
         }
 
 
@@ -1156,71 +1316,79 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
             UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
 
         } else {
+
+            Intent intent = null;
+
             if (nome.equals("Bayer Leverkusen")) {
-                Intent bayerLeverkusen = new Intent(this, BayerLeverkusen2023_24Activity.class);
-                startActivity(bayerLeverkusen);
+                intent = new Intent(this, BayerLeverkusen2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Bayern de Munique")){
-                Intent bayernMunique = new Intent(this, BayernMunique2023_24Activity.class);
-                startActivity(bayernMunique);
+                intent = new Intent(this, BayernMunique2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Borussia Dortmund")){
-                Intent borussiaDortmund = new Intent(this, BorussiaDortmund2023_24Activity.class);
-                startActivity(borussiaDortmund);
+                intent = new Intent(this, BorussiaDortmund2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("RB Leipzig")){
-                Intent leipzig = new Intent(this, Leipzig2023_24Activity.class);
-                startActivity(leipzig);
+                intent = new Intent(this, Leipzig2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Union Berlin")){
-                Intent unionBerlin = new Intent(this, UnionBerlin2023_24Activity.class);
-                startActivity(unionBerlin);
+                intent = new Intent(this, UnionBerlin2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Stuttgart")){
-                Intent stuttgart = new Intent(this, Stuttgart2023_24Activity.class);
-                startActivity(stuttgart);
+                intent = new Intent(this, Stuttgart2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Werder Bremen")){
-                Intent werderBremen = new Intent(this, WerderBremen2023_24Activity.class);
-                startActivity(werderBremen);
+                intent = new Intent(this, WerderBremen2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Augsburg")){
-                Intent augsburg = new Intent(this, Augsburg2023_24Activity.class);
-                startActivity(augsburg);
+                intent = new Intent(this, Augsburg2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Bochum")){
-                Intent bochum = new Intent(this, Bochum2023_24Activity.class);
-                startActivity(bochum);
+                intent = new Intent(this, Bochum2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Borussia Mönchengladbach")){
-                Intent borussiaMonchengladbach = new Intent(this, BorussiaMonche2023_24Activity.class);
-                startActivity(borussiaMonchengladbach);
+                intent = new Intent(this, BorussiaMonche2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Köln(Colônia)")){
-                Intent koln = new Intent(this, Koln2023_24Activity.class);
-                startActivity(koln);
+                intent = new Intent(this, Koln2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Darmstadt98")){
-                Intent darmstadt98 = new Intent(this, Darmstadt2023_24Activity.class);
-                startActivity(darmstadt98);
+                intent = new Intent(this, Darmstadt2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Eintracht Frankfurt")){
-                Intent frankfurt = new Intent(this, EintrachtFrankfurt2023_24Activity.class);
-                startActivity(frankfurt);
+                intent = new Intent(this, EintrachtFrankfurt2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Freiburg")){
-                Intent freiburg = new Intent(this, Freiburg2023_24Activity.class);
-                startActivity(freiburg);
+                intent = new Intent(this, Freiburg2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Heidenheim")){
-                Intent heidenheim = new Intent(this, Heidenheim2023_24Activity.class);
-                startActivity(heidenheim);
+                intent = new Intent(this, Heidenheim2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Hoffenheim")){
-                Intent hoffenheim = new Intent(this, Hoffenheim2023_24Activity.class);
-                startActivity(hoffenheim);
+                intent = new Intent(this, Hoffenheim2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Mainz 05")){
-                Intent mainz05 = new Intent(this, Mainz2023_24Activity.class);
-                startActivity(mainz05);
+                intent = new Intent(this, Mainz2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Wolfsburg")){
-                Intent wolfburg = new Intent(this, Wolfsburg2023_24Activity.class);
-                startActivity(wolfburg);
+                intent = new Intent(this, Wolfsburg2023_24Activity.class);
+                startActivity(intent);
 
+            }
+
+            if (intent != null) {
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
             }
         }
 
@@ -1237,80 +1405,87 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
             UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
 
         }else{
+
+            Intent intent = null;
+
             if (nome.equals("Inter Milan")) {
-                Intent inter = new Intent(this, InterMilao2023_24Activity.class);
-                startActivity(inter);
+                intent = new Intent(this, InterMilao2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Milan")){
-                Intent milan = new Intent(this, AcMilan2023_24Activity.class);
-                startActivity(milan);
+                intent = new Intent(this, AcMilan2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Juventus")){
-                Intent juventus = new Intent(this, Juventus2023_24Activity.class);
-                startActivity(juventus);
+                intent = new Intent(this, Juventus2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Atalanta")){
-                Intent atalanta = new Intent(this, Atalanta2023_24Activity.class);
-                startActivity(atalanta);
+                intent = new Intent(this, Atalanta2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Napoli")){
-                Intent napoli = new Intent(this, Napoli2023_24Activity.class);
-                startActivity(napoli);
+                intent = new Intent(this, Napoli2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Roma")){
-                Intent roma = new Intent(this, Roma2023_24Activity.class);
-                startActivity(roma);
+                intent = new Intent(this, Roma2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Lazio")){
-                Intent lazio = new Intent(this, Lazio2023_24Activity.class);
-                startActivity(lazio);
+                intent = new Intent(this, Lazio2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Fiorentina")){
-                Intent fiorentina = new Intent(this, Fiorentina2023_24Activity.class);
-                startActivity(fiorentina);
+                intent = new Intent(this, Fiorentina2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Bologna")){
-                Intent bologna = new Intent(this, Bologna2023_24Activity.class);
-                startActivity(bologna);
+                intent = new Intent(this, Bologna2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Cagliari")){
-                Intent cagliari = new Intent(this, Cagliari2023_24Activity.class);
-                startActivity(cagliari);
+                intent = new Intent(this, Cagliari2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Empoli")){
-                Intent empoli = new Intent(this, Empoli2023_24Activity.class);
-                startActivity(empoli);
+                intent = new Intent(this, Empoli2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Frosinone")){
-                Intent frosinone = new Intent(this, Frosinone2023_24Activity.class);
-                startActivity(frosinone);
+                intent = new Intent(this, Frosinone2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Genoa")){
-                Intent genoa = new Intent(this, Genoa2023_24Activity.class);
-                startActivity(genoa);
+                intent = new Intent(this, Genoa2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Hellas Verona")){
-                Intent verona = new Intent(this, HellasVerona2023_24Activity.class);
-                startActivity(verona);
+                intent = new Intent(this, HellasVerona2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Lecce")){
-                Intent lecce = new Intent(this, Lecce2023_24Activity.class);
-                startActivity(lecce);
+                intent = new Intent(this, Lecce2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Monza")){
-                Intent monza = new Intent(this, Monza2023_24Activity.class);
-                startActivity(monza);
+                intent = new Intent(this, Monza2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Salernitana")){
-                Intent salernitana = new Intent(this, Salernitana2023_24Activity.class);
-                startActivity(salernitana);
+                intent = new Intent(this, Salernitana2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Sassuolo")){
-                Intent sassuolo = new Intent(this, Sassuolo2023_24Activity.class);
-                startActivity(sassuolo);
+                intent = new Intent(this, Sassuolo2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Torino")){
-                Intent torino = new Intent(this, Torino2023_24Activity.class);
-                startActivity(torino);
+                intent = new Intent(this, Torino2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Udinese")){
-                Intent udinese = new Intent(this, Udinese2023_24Activity.class);
-                startActivity(udinese);
+                intent = new Intent(this, Udinese2023_24Activity.class);
+                startActivity(intent);
 
             }
 
+            if (intent != null) {
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
 
         }
 
@@ -1323,76 +1498,84 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
         if (intersticialUnityCarregado) {//se intersticialUnityCarregado == true cai dentro do if... intersticialUnityCarregado vai ser true se o intersticial ja foi recebido da Unity
             UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
         }else {
+
+            Intent intent = null;
+
             if (nome.equals("Brest")) {
-                Intent brest = new Intent(this, Brest2023_24Activity.class);
-                startActivity(brest);
+                intent = new Intent(this, Brest2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Clermont")){
-                Intent clermont = new Intent(this, Clermont2023_24Activity.class);
-                startActivity(clermont);
+                intent = new Intent(this, Clermont2023_24Activity.class);
+                startActivity(intent);
             }else if(nome.equals("Le Havre")){
-                Intent leHavre = new Intent(this, LeHavre2023_24Activity.class);
-                startActivity(leHavre);
+                intent = new Intent(this, LeHavre2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Lens")){
-                Intent lens = new Intent(this, Lens2023_24Activity.class);
-                startActivity(lens);
+                intent = new Intent(this, Lens2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Lille")){
-                Intent lille = new Intent(this, Lille2023_24Activity.class);
-                startActivity(lille);
+                intent = new Intent(this, Lille2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Lorient")){
-                Intent lorient = new Intent(this, Lorient2023_24Activity.class);
-                startActivity(lorient);
+                intent = new Intent(this, Lorient2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Lyon")){
-                Intent lyon = new Intent(this, Lyon2023_24Activity.class);
-                startActivity(lyon);
+                intent = new Intent(this, Lyon2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Marseille")){
-                Intent marseille = new Intent(this, Marseille2023_24Activity.class);
-                startActivity(marseille);
+                intent = new Intent(this, Marseille2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Metz")){
-                Intent metz = new Intent(this, Metz2023_24Activity.class);
-                startActivity(metz);
+                intent = new Intent(this, Metz2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Monaco")){
-                Intent monaco = new Intent(this, Monaco2023_24Activity.class);
-                startActivity(monaco);
+                intent = new Intent(this, Monaco2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Montpellier")){
-                Intent montpellier = new Intent(this, Montpellier2023_24Activity.class);
-                startActivity(montpellier);
+                intent = new Intent(this, Montpellier2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Nantes")){
-                Intent nantes = new Intent(this, Nantes2023_24Activity.class);
-                startActivity(nantes);
+                intent = new Intent(this, Nantes2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Nice")){
-                Intent nice = new Intent(this, OgcNice2023_24Activity.class);
-                startActivity(nice);
+                intent = new Intent(this, OgcNice2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("PSG")){
-                Intent psg = new Intent(this, Psg2023_24Activity.class);
-                startActivity(psg);
+                intent = new Intent(this, Psg2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Reims")){
-                Intent reims = new Intent(this, Reims2023_24Activity.class);
-                startActivity(reims);
+                intent = new Intent(this, Reims2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Rennes")){
-                Intent rennes = new Intent(this, Rennes2023_24Activity.class);
-                startActivity(rennes);
+                intent = new Intent(this, Rennes2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Strasbourg")){
-                Intent strasbourg = new Intent(this, Strasbourg2023_24Activity.class);
-                startActivity(strasbourg);
+                intent = new Intent(this, Strasbourg2023_24Activity.class);
+                startActivity(intent);
 
             }else if(nome.equals("Toulouse")){
-                Intent toulouse = new Intent(this, Toulouse2023_24Activity.class);
-                startActivity(toulouse);
+                intent = new Intent(this, Toulouse2023_24Activity.class);
+                startActivity(intent);
 
+            }
+
+            if (intent != null) {
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
             }
 
 
@@ -1407,68 +1590,75 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
         if (intersticialUnityCarregado) {//se intersticialUnityCarregado == true cai dentro do if... intersticialUnityCarregado vai ser true se o intersticial ja foi recebido da Unity
             UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
         } else {
+
+            Intent intent = null;
+
             if (nome.equals("Atlético-PR")) {
-                Intent intent = new Intent(this, AtleticoPR2024Activity.class);
+                 intent = new Intent(this, AtleticoPR2024Activity.class);
                 startActivity(intent);
             } else if (nome.equals("Atlético-GO")) {
-                Intent intent = new Intent(this, AtleticoGO2024Activity.class);
+                 intent = new Intent(this, AtleticoGO2024Activity.class);
                 startActivity(intent);
             } else if (nome.equals("Atlético-MG")) {
-                Intent intent = new Intent(this, AtleticoMG2024Activity.class);
+                 intent = new Intent(this, AtleticoMG2024Activity.class);
                 startActivity(intent);
             } else if (nome.equals("Bahia")) {
-                Intent intent = new Intent(this, Bahia2024Activity.class);
+                 intent = new Intent(this, Bahia2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Botafogo")) {
-                Intent intent = new Intent(this, Botafogo2024Activity.class);
+                 intent = new Intent(this, Botafogo2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Bragantino")) {
-                Intent intent = new Intent(this, Bragantino2024Activity.class);
+                 intent = new Intent(this, Bragantino2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Corinthians")) {
-                Intent intent = new Intent(this, Corinthians2024Activity.class);
+                 intent = new Intent(this, Corinthians2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Criciúma")) {
-                Intent intent = new Intent(this, Criciuma2024Activity.class);
+                 intent = new Intent(this, Criciuma2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Cruzeiro")) {
-                Intent intent = new Intent(this, Cruzeiro2024Activity.class);
+                 intent = new Intent(this, Cruzeiro2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Cuiabá")) {
-                Intent intent = new Intent(this, Cuiaba2024Activity.class);
+                 intent = new Intent(this, Cuiaba2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Flamengo")) {
-                Intent intent = new Intent(this, Flamengo2024Activity.class);
+                 intent = new Intent(this, Flamengo2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Fluminense")) {
-                Intent intent = new Intent(this, Fluminense2024Activity.class);
+                 intent = new Intent(this, Fluminense2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Fortaleza")) {
-                Intent intent = new Intent(this, Fortaleza2024Activity.class);
+                 intent = new Intent(this, Fortaleza2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Grêmio")) {
-                Intent intent = new Intent(this, Gremio2024Activity.class);
+                 intent = new Intent(this, Gremio2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Internacional")) {
-                Intent intent = new Intent(this, Internacional2024Activity.class);
+                 intent = new Intent(this, Internacional2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Juventude")) {
-                Intent intent = new Intent(this, Juventude2024Activity.class);
+                 intent = new Intent(this, Juventude2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Palmeiras")) {
-                Intent intent = new Intent(this, Palmeiras2024Activity.class);
+                 intent = new Intent(this, Palmeiras2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("São-Paulo")) {
-                Intent intent = new Intent(this, SaoPaulo2024Activity.class);
+                 intent = new Intent(this, SaoPaulo2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Vasco")) {
-                Intent intent = new Intent(this, Vasco2024Activity.class);
+                 intent = new Intent(this, Vasco2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Vitória")) {
-                Intent intent = new Intent(this, Vitoria2024Activity.class);
+                 intent = new Intent(this, Vitoria2024Activity.class);
                 startActivity(intent);
             }
 
+            if (intent != null) {
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
 
         }//fim do else
 
@@ -1481,68 +1671,178 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
         if (intersticialUnityCarregado) {//se intersticialUnityCarregado == true cai dentro do if... intersticialUnityCarregado vai ser true se o intersticial ja foi recebido da Unity
             UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
         } else {
+            Intent intent = null;
+
             if (nome.equals("Amazonas")) {
-                Intent intent = new Intent(this, Amazonas2024Activity.class);
+                 intent = new Intent(this, Amazonas2024Activity.class);
                 startActivity(intent);
             } else if (nome.equals("América-MG")) {
-                Intent intent = new Intent(this, AmericaMG2024Activity.class);
+                 intent = new Intent(this, AmericaMG2024Activity.class);
                 startActivity(intent);
             } else if (nome.equals("Avaí")) {
-                Intent intent = new Intent(this, Avai2024Activity.class);
+                 intent = new Intent(this, Avai2024Activity.class);
                 startActivity(intent);
             } else if (nome.equals("Botafogo-SP")) {
-                Intent intent = new Intent(this, BotafogoSP2024Activity.class);
+                 intent = new Intent(this, BotafogoSP2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Brusque")) {
-                Intent intent = new Intent(this, Brusque2024Activity.class);
+                 intent = new Intent(this, Brusque2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("CRB")) {
-                Intent intent = new Intent(this, Crb2024Activity.class);
+                 intent = new Intent(this, Crb2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Ceará")) {
-                Intent intent = new Intent(this, Ceara2024Activity.class);
+                 intent = new Intent(this, Ceara2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Chapecoense")) {
-                Intent intent = new Intent(this, Chapecoense2024Activity.class);
+                 intent = new Intent(this, Chapecoense2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Coritiba")) {
-                Intent intent = new Intent(this, Coritiba2024Activity.class);
+                 intent = new Intent(this, Coritiba2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Goiás")) {
-                Intent intent = new Intent(this, Goias2024Activity.class);
+                 intent = new Intent(this, Goias2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Guarani")) {
-                Intent intent = new Intent(this, Guarani2024Activity.class);
+                 intent = new Intent(this, Guarani2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Ituano")) {
-                Intent intent = new Intent(this, Ituano2024Activity.class);
+                 intent = new Intent(this, Ituano2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Mirassol")) {
-                Intent intent = new Intent(this, Mirassol2024Activity.class);
+                 intent = new Intent(this, Mirassol2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Novorizontino")) {
-                Intent intent = new Intent(this, Novorizontino2024Activity.class);
+                 intent = new Intent(this, Novorizontino2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Operário")) {
-                Intent intent = new Intent(this, Operario2024Activity.class);
+                 intent = new Intent(this, Operario2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Paysandu")) {
-                Intent intent = new Intent(this, Paysandu2024Activity.class);
+                 intent = new Intent(this, Paysandu2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Ponte Preta")) {
-                Intent intent = new Intent(this, PontePreta2024Activity.class);
+                 intent = new Intent(this, PontePreta2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Santos")) {
-                Intent intent = new Intent(this, Santos2024Activity.class);
+                 intent = new Intent(this, Santos2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Sport")) {
-                Intent intent = new Intent(this, Sport2024Activity.class);
+                 intent = new Intent(this, Sport2024Activity.class);
                 startActivity(intent);
             }else if (nome.equals("Vila Nova")) {
-                Intent intent = new Intent(this, VilaNova2024Activity.class);
+                 intent = new Intent(this, VilaNova2024Activity.class);
                 startActivity(intent);
             }
 
+            if (intent != null) {
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+
+        }//fim do else
+
+    }
+
+    @Override
+    public void listaArgentinaAMetodo(String nome) {
+
+        opcao = nome;
+        if (intersticialUnityCarregado) {//se intersticialUnityCarregado == true cai dentro do if... intersticialUnityCarregado vai ser true se o intersticial ja foi recebido da Unity
+            UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
+        } else {
+
+            Intent intent = null;
+            if (nome.equals("Argentinos Jrs")) {
+                 intent = new Intent(this, ArgentinoJuniors2024Activity.class);
+                startActivity(intent);
+            } else if (nome.equals("Atl. Tucuman")) {
+                 intent = new Intent(this, AtleticoTucuman2024Activity.class);
+                startActivity(intent);
+            } else if (nome.equals("Banfield")) {
+                 intent = new Intent(this, Banfield2024Activity.class);
+                startActivity(intent);
+            } else if (nome.equals("Barracas Central")) {
+                 intent = new Intent(this, BarracasCentral2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Belgrano")) {
+                 intent = new Intent(this, Belgrano2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Boca Juniors")) {
+                 intent = new Intent(this, BocaJuniors2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Central Córdoba")) {
+                 intent = new Intent(this, CentralCordoba2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Def. Justicia")) {
+                 intent = new Intent(this, DefensaJusticia2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Deportivo Riestra")) {
+                 intent = new Intent(this, DeportivoRiestra2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Estudiantes")) {
+                 intent = new Intent(this, EstudiantesLaPrata2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Gimnasia")) {
+                 intent = new Intent(this, Gimnasia2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Godoy Cruz")) {
+                 intent = new Intent(this, GodoyCruz2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Huracán")) {
+                 intent = new Intent(this, Huracan2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Independiente")) {
+                 intent = new Intent(this, Independiente2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Ind. Rivadavia")) {
+                 intent = new Intent(this, IndependienteRivadavia2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Instituto")) {
+                 intent = new Intent(this, Instituto2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Lanús")) {
+                 intent = new Intent(this, Lanus2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Newell Old Boys")) {
+                 intent = new Intent(this, NewellOldBoys2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Platense")) {
+                 intent = new Intent(this, Platense2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Racing")) {
+                 intent = new Intent(this, Racing2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("River Plate")) {
+                 intent = new Intent(this, RiverPlate2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Rosario")) {
+                 intent = new Intent(this, RosarioCentral2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("San Lorenzo")) {
+                 intent = new Intent(this, SanLorenzo2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Sarmiento")) {
+                 intent = new Intent(this, Sarmiento2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Talleres")) {
+                 intent = new Intent(this, Talleres2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Tigre")) {
+                 intent = new Intent(this, Tigre2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Union Santa Fe")) {
+                 intent = new Intent(this, UnionSanteFe2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Vélez Sársfield")) {
+                 intent = new Intent(this, VelezSarsfield2024Activity.class);
+                startActivity(intent);
+            }
+
+            if (intent != null) {
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
 
         }//fim do else
 

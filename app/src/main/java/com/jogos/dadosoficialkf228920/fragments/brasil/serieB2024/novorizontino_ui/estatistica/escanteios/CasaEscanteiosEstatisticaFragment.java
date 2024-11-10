@@ -575,19 +575,19 @@ public class CasaEscanteiosEstatisticaFragment extends Fragment implements Jogos
         binding.tvEscanteios1T35Ct.setText(String.valueOf(escanteiosPrimeiroTempoTresCincoNaoMarcados));
 
 
-        binding.tvEscanteios2T05Mcd.setText(String.valueOf(escanteiosPrimeiroTempoZeroCincoMarcados));
-        binding.tvEscanteios2T05Ct.setText(String.valueOf(escanteiosPrimeiroTempoZeroCincoNaoMarcados));
+        binding.tvEscanteios2T05Mcd.setText(String.valueOf(escanteiosSegundoTempoZeroCincoMarcados));
+        binding.tvEscanteios2T05Ct.setText(String.valueOf(escanteiosSegundoTempoZeroCincoNaoMarcados));
 
-        binding.tvEscanteios2T15Mcd.setText(String.valueOf(escanteiosPrimeiroTempoUmCincoMarcados));
-        binding.tvEscanteios2T15Ct.setText(String.valueOf(escanteiosPrimeiroTempoUmCincoNaoMarcados));
-
-
-        binding.tvEscanteios2T25Mcd.setText(String.valueOf(escanteiosPrimeiroTempoDoisCincoMarcados));
-        binding.tvEscanteios2T25Ct.setText(String.valueOf(escanteiosPrimeiroTempoDoisCincoNaoMarcados));
+        binding.tvEscanteios2T15Mcd.setText(String.valueOf(escanteiosSegundoTempoUmCincoMarcados));
+        binding.tvEscanteios2T15Ct.setText(String.valueOf(escanteiosSegundoTempoUmCincoNaoMarcados));
 
 
-        binding.tvEscanteios2T35Mcd.setText(String.valueOf(escanteiosPrimeiroTempoTresCincoMarcados));
-        binding.tvEscanteios2T35Ct.setText(String.valueOf(escanteiosPrimeiroTempoTresCincoNaoMarcados));
+        binding.tvEscanteios2T25Mcd.setText(String.valueOf(escanteiosSegundoTempoDoisCincoMarcados));
+        binding.tvEscanteios2T25Ct.setText(String.valueOf(escanteiosSegundoTempoDoisCincoNaoMarcados));
+
+
+        binding.tvEscanteios2T35Mcd.setText(String.valueOf(escanteiosSegundoTempoTresCincoMarcados));
+        binding.tvEscanteios2T35Ct.setText(String.valueOf(escanteiosSegundoTempoTresCincoNaoMarcados));
 
 
         binding.tvEscanteiosTotal05Mcd.setText(String.valueOf(escanteiosTotalZeroCincoMarcados));
@@ -607,8 +607,6 @@ public class CasaEscanteiosEstatisticaFragment extends Fragment implements Jogos
 
         binding.tvEscanteiosTotal55Mcd.setText(String.valueOf(escanteiosTotalCincoCincoMarcados));
         binding.tvEscanteiosTotal55Ct.setText(String.valueOf(escanteiosTotalCincoCincoNaoMarcados));
-
-
 
         binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
 

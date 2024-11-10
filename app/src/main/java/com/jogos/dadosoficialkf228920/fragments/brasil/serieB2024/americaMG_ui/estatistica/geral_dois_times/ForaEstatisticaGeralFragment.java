@@ -454,11 +454,11 @@ public class ForaEstatisticaGeralFragment extends Fragment implements JogosSerie
 
             case 10:
                 for (int i = 0; i < partidas.size(); i++) {
-                    //GOLS MENOR 0.5 2°TEMPO
-                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() < 1 ||
-                            partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo() < 1 ||
-                            partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() < 1 ||
-                            partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo() < 1)
+                    //GOLS MENOR 0.5 TOTAL
+                    if((partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo()) +
+                            (partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo()) +
+                            (partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo()) +
+                            (partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo()) < 1)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {

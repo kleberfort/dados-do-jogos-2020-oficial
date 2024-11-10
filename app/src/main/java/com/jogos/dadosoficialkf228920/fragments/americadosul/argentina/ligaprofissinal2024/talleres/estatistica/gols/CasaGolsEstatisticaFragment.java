@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.ligaprofissinal2024.river_plate.estatistica.gols;
+package com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.ligaprofissinal2024.talleres.estatistica.gols;
 
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
@@ -19,8 +19,6 @@ import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrime
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaGolsBinding;
 import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A2024;
 import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A_2024_Listener;
-import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieA2024;
-import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieAListener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoGolsMcdCasa;
 
@@ -542,9 +540,9 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosLigaPr
         public void onJogosSerieAReady(List<PartidaNovoModelo> argentinoJuniorsCompleto, List<PartidaNovoModelo> atleticoTucumanCompleto, List<PartidaNovoModelo> banfieldCompleto, List<PartidaNovoModelo> barracasCentralCompleto, List<PartidaNovoModelo> belgranoCompleto, List<PartidaNovoModelo> bocaJuniorsCompleto, List<PartidaNovoModelo> centralCordobaCompleto, List<PartidaNovoModelo> defensaJusticiaCompleto, List<PartidaNovoModelo> deportivoRiestraCompleto, List<PartidaNovoModelo> estudiantesLaPrataCompleto, List<PartidaNovoModelo> gimnasiaCompleto, List<PartidaNovoModelo> godoyCruzCompleto, List<PartidaNovoModelo> huracanCompleto, List<PartidaNovoModelo> independienteCompleto, List<PartidaNovoModelo> independienteRivadaviaCompleto, List<PartidaNovoModelo> institutoCompleto, List<PartidaNovoModelo> lanusCompleto, List<PartidaNovoModelo> newellOldBoysCompleto, List<PartidaNovoModelo> platenseCompleto, List<PartidaNovoModelo> racingCompleto, List<PartidaNovoModelo> riverPlateCompleto, List<PartidaNovoModelo> rosarioCentralCompleto, List<PartidaNovoModelo> sanLorenzoCompleto, List<PartidaNovoModelo> sarmientoCompleto, List<PartidaNovoModelo> talleresCompleto, List<PartidaNovoModelo> tigreCompleto, List<PartidaNovoModelo> unionSantaFeCompleto, List<PartidaNovoModelo> velezSarsfieldCompleto) {
             PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-            for (PartidaNovoModelo partida : riverPlateCompleto) {
+            for (PartidaNovoModelo partida : talleresCompleto) {
 
-                if (partida.getHomeTime().getName().equals("River Plate")) {
+                if (partida.getHomeTime().getName().equals("Talleres")) {
                     partidaNovoModelo = partida;
                     partida.setDataFormatada(partida.getDate());
                     this.partidas.add(partidaNovoModelo);

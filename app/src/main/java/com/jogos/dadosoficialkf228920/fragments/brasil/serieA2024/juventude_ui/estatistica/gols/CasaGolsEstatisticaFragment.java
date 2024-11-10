@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.fortaleza_ui.estatistica.gols;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.juventude_ui.estatistica.gols;
 
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
@@ -536,9 +536,9 @@ public class CasaGolsEstatisticaFragment extends Fragment implements JogosSerieA
 
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : fortalezaCompleto) {
+        for (PartidaNovoModelo partida : juventudeCompleto) {
 
-            if (partida.getHomeTime().getName().equals("Fortaleza")) {
+            if (partida.getHomeTime().getName().equals("Juventude")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);

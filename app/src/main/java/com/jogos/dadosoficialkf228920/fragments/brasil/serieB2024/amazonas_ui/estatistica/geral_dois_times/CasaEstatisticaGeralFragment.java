@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.americaMG_ui.estatistica.geral_dois_times;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.amazonas_ui.estatistica.geral_dois_times;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -21,7 +21,6 @@ import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSeri
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024Listener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoCasa;
-import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoFora;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -456,11 +455,11 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
 
             case 10:
                 for (int i = 0; i < partidas.size(); i++) {
-                    //GOLS MENOR 0.5 2°TEMPO
-                    if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() < 1 ||
-                            partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo() < 1 ||
-                            partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() < 1 ||
-                            partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo() < 1)
+                    //GOLS MENOR 0.5 TOTAL
+                    if((partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo()) +
+                            (partidas.get(i).getAwayEstatisticaJogo().getGolsPrimeiroTempo()) +
+                            (partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo()) +
+                            (partidas.get(i).getAwayEstatisticaJogo().getGolsSegundoTempo()) < 1)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -768,9 +767,9 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosSerie
 
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : americaMGCompleto) {
+        for (PartidaNovoModelo partida : amazonasCompleto) {
 
-            if (partida.getHomeTime().getName().equals("América-MG")) {
+            if (partida.getHomeTime().getName().equals("Amazonas")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);

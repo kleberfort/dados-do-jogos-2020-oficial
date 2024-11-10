@@ -1,7 +1,7 @@
 package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ceara_ui.estatistica.cartoes;
 
 import android.os.Bundle;
-import android.util.Log;
+import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.jogos.dadosoficialkf228920.R;
-
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadoPartidaSegundoTempoAdapter;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
@@ -21,14 +20,15 @@ import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaCartoesBinding;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024Listener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
+import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoCartoesMcdCasa;
+import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoCartoesMcdFora;
 
 import org.jetbrains.annotations.Nullable;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSerieB2024Listener {
+public class ForaCartoesEstatisticaFragment extends Fragment implements JogosSerieB2024Listener {
 
     private TelaEstatisticaCartoesBinding binding;
     private JogosSerieB2024 jogosSerieB2024;
@@ -266,7 +266,7 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 1:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTÃO 0.5 1°TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo() > 0)
+                    if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo() > 0)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -278,7 +278,7 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 2:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTÃO MENOR 0.5 1°TEMPO
-                    if((partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo() == 0 ))
+                    if((partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo() == 0 ))
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -291,7 +291,7 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 3:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTÃO  1.5 1°TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo() > 1)
+                    if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo() > 1)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -303,7 +303,7 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 4:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTÃO MENOR 1.5 1°TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo() < 2)
+                    if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo() < 2)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -316,7 +316,7 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 5:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTÃO  0.5 2°TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo() > 0)
+                    if(partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo() > 0)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -328,7 +328,7 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 6:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTÃO MENOR 0.5 2°TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo() == 0)
+                    if(partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo() == 0)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -340,7 +340,7 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 7:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTÃO  1.5 2°TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo() > 1)
+                    if(partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo() > 1)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -352,7 +352,7 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 8:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTÃO MENOR 1.5 2°TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo() < 2)
+                    if(partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo() < 2)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -365,7 +365,7 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 9:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTÃO VERMELHO 0.5 1°TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoVermelhoPrimeiroTempo() > 0)
+                    if(partidas.get(i).getAwayCartoes().getCartaoVermelhoPrimeiroTempo() > 0)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -378,7 +378,7 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 10:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTÃO VERMELHO MENOR 0.5 1°TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoVermelhoPrimeiroTempo() == 0)
+                    if(partidas.get(i).getAwayCartoes().getCartaoVermelhoPrimeiroTempo() == 0)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -391,7 +391,7 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 11:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTÃO VERMELHO 0.5 2°TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoVermelhoSegundoTempo() > 0)
+                    if(partidas.get(i).getAwayCartoes().getCartaoVermelhoSegundoTempo() > 0)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -404,7 +404,7 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 12:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTÃO VERMELHO MENOR 0.5 2°TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoVermelhoSegundoTempo() == 0)
+                    if(partidas.get(i).getAwayCartoes().getCartaoVermelhoSegundoTempo() == 0)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -418,10 +418,10 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 13:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTAO ACIMA 0.5
-                    if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo() +
-                            partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoPrimeiroTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoSegundoTempo() > 0)
+                    if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo() +
+                            partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoPrimeiroTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoSegundoTempo() > 0)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -433,10 +433,10 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 14:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTAO MENOR 0.5
-                    if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo() +
-                            partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoPrimeiroTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoSegundoTempo() == 0)
+                    if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo() +
+                            partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoPrimeiroTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoSegundoTempo() == 0)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -449,10 +449,10 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 15:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTAO ACIMA 1.5 TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoPrimeiroTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoSegundoTempo() > 1 )
+                    if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoPrimeiroTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoSegundoTempo() > 1 )
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -464,10 +464,10 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 16:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTAO MENOR 1.5 TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoPrimeiroTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoSegundoTempo() < 2 )
+                    if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoPrimeiroTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoSegundoTempo() < 2 )
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -480,10 +480,10 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 17:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTAO ACIMA 2.5 TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoPrimeiroTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoSegundoTempo() > 2)
+                    if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoPrimeiroTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoSegundoTempo() > 2)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -495,10 +495,10 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 18:
                 for (int i = 0; i < partidas.size(); i++) {
                     //CARTAO MENOR 2.5 TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoPrimeiroTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoSegundoTempo() < 3)
+                    if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoPrimeiroTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoSegundoTempo() < 3)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -511,10 +511,10 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 19:
                 for (int i = 0; i < partidas.size(); i++) {
                     //GOLS ACIMA 3.5 TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoPrimeiroTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoSegundoTempo() > 3)
+                    if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoPrimeiroTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoSegundoTempo() > 3)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -526,10 +526,10 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             case 20:
                 for (int i = 0; i < partidas.size(); i++) {
                     //GOLS MENOR 3.5 TEMPO
-                    if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoPrimeiroTempo()
-                            + partidas.get(i).getHomeCartoes().getCartaoVermelhoSegundoTempo() < 4)
+                    if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoPrimeiroTempo()
+                            + partidas.get(i).getAwayCartoes().getCartaoVermelhoSegundoTempo() < 4)
                         jogos.add(partidas.get(i));
                 }
                 if (!jogos.isEmpty()) {
@@ -552,7 +552,7 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
 
         for (PartidaNovoModelo partida : cearaCompleto) {
 
-            if (partida.getHomeTime().getName().equals("Ceará")) {
+            if (partida.getAwayTime().getName().equals("Ceará")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);
@@ -564,25 +564,25 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
 
 
             //CARTOES 0.5 1°TEMPO
-            if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo() > 0)
+            if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo() > 0)
                 cartoesAmareloPrimeiroTempoZeroCincoMarcados += 1;
             cartoesAmareloPrimeiroTempoZeroCincoNaoMarcados = partidas.size() - cartoesAmareloPrimeiroTempoZeroCincoMarcados;
 
 
             //CARTOES 1.5 1°TEMPO
-            if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo() > 1)
+            if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo() > 1)
                 cartoesAmareloPrimeiroTempoUmCincoMarcados += 1;
             cartoesAmareloPrimeiroTempoUmCincoNaoMarcados = partidas.size() - cartoesAmareloPrimeiroTempoUmCincoMarcados;
 
           // ------------------- SEGUNDO TEMPO -----------------------------------------------------------------------
 
             //CARTOES 0.5 2°TEMPO
-            if(partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo() > 0)
+            if(partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo() > 0)
                 cartoesAmareloSegundoTempoZeroCincoMarcados += 1;
             cartoesAmareloSegundoTempoZeroCincoNaoMarcados = partidas.size() - cartoesAmareloSegundoTempoZeroCincoMarcados;
 
             //CARTOES 1.5 2°TEMPO
-            if(partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo() > 1)
+            if(partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo() > 1)
                 cartoesAmareloSegundoTempoUmCincoMarcados += 1;
             cartoesAmareloSegundoTempoUmCincoNaoMarcados = partidas.size() - cartoesAmareloSegundoTempoUmCincoMarcados;
 
@@ -590,13 +590,13 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
             //   CARTOES VERMELHOS
 
             //CARTOES VERMELHO 0.5 1°TEMPO
-            if(partidas.get(i).getHomeCartoes().getCartaoVermelhoPrimeiroTempo() > 0)
+            if(partidas.get(i).getAwayCartoes().getCartaoVermelhoPrimeiroTempo() > 0)
                 cartoesVermelhoPrimeiroTempoZeroCincoMarcados += 1;
             cartoesVermelhoPrimeiroTempoZeroCincoNaoMarcados = partidas.size() - cartoesVermelhoPrimeiroTempoZeroCincoMarcados;
 
 
             //CARTOES VERMELHO 0.5 2°TEMPO
-            if(partidas.get(i).getHomeCartoes().getCartaoVermelhoSegundoTempo() > 0)
+            if(partidas.get(i).getAwayCartoes().getCartaoVermelhoSegundoTempo() > 0)
                 cartoesVermelhoSegundoTempoZeroCincoMarcados += 1;
             cartoesVermelhoSegundoTempoZeroCincoNaoMarcados = partidas.size() - cartoesVermelhoSegundoTempoZeroCincoMarcados;
 
@@ -605,24 +605,36 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
 
 
             //CARTOES ACIMA 0.5 TEMPO
-            if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo() + partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo()  + partidas.get(i).getHomeCartoes().getCartaoVermelhoPrimeiroTempo() + partidas.get(i).getHomeCartoes().getCartaoVermelhoSegundoTempo() > 0)
+            if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo()
+                    + partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo()
+                    + partidas.get(i).getAwayCartoes().getCartaoVermelhoPrimeiroTempo()
+                    + partidas.get(i).getAwayCartoes().getCartaoVermelhoSegundoTempo() > 0)
                 cartoesAmareloVermelhoTotalZeroCincoMarcados += 1;
             cartoesAmareloVermelhoTotalZeroCincoNaoMarcados = partidas.size() - cartoesAmareloVermelhoTotalZeroCincoMarcados;
 
             //CARTOES ACIMA 1.5 TEMPO
-            if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo() + partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo()  + partidas.get(i).getHomeCartoes().getCartaoVermelhoPrimeiroTempo() + partidas.get(i).getHomeCartoes().getCartaoVermelhoSegundoTempo() > 1 )
+            if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo()
+                    + partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo()
+                    + partidas.get(i).getAwayCartoes().getCartaoVermelhoPrimeiroTempo()
+                    + partidas.get(i).getAwayCartoes().getCartaoVermelhoSegundoTempo() > 1 )
                 cartoesAmareloVermelhoTotalUmCincoMarcados += 1;
             cartoesAmareloVermelhoTotalUmCincoNaoMarcados = partidas.size() - cartoesAmareloVermelhoTotalUmCincoMarcados;
 
 
             //CARTOES ACIMA 2.5 TEMPO
-            if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo() + partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo()  + partidas.get(i).getHomeCartoes().getCartaoVermelhoPrimeiroTempo() + partidas.get(i).getHomeCartoes().getCartaoVermelhoSegundoTempo() > 2)
+            if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo()
+                    + partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo()
+                    + partidas.get(i).getAwayCartoes().getCartaoVermelhoPrimeiroTempo()
+                    + partidas.get(i).getAwayCartoes().getCartaoVermelhoSegundoTempo() > 2)
                 cartoesAmareloVermelhoTotalDoisCincoMarcados += 1;
             cartoesAmareloVermelhoTotalDoisCincoNaoMarcados = partidas.size() - cartoesAmareloVermelhoTotalDoisCincoMarcados;
 
 
             //CARTOES ACIMA 3.5 TEMPO
-            if(partidas.get(i).getHomeCartoes().getCartaoAmareloPrimeiroTempo() + partidas.get(i).getHomeCartoes().getCartaoAmareloSegundoTempo()  + partidas.get(i).getHomeCartoes().getCartaoVermelhoPrimeiroTempo() + partidas.get(i).getHomeCartoes().getCartaoVermelhoSegundoTempo() > 3)
+            if(partidas.get(i).getAwayCartoes().getCartaoAmareloPrimeiroTempo()
+                    + partidas.get(i).getAwayCartoes().getCartaoAmareloSegundoTempo()
+                    + partidas.get(i).getAwayCartoes().getCartaoVermelhoPrimeiroTempo()
+                    + partidas.get(i).getAwayCartoes().getCartaoVermelhoSegundoTempo() > 3)
                 cartoesAmareloVermelhoTotalTresCincoMarcados += 1;
             cartoesAmareloVermelhoTotalTresCincoNaoMarcados = partidas.size() - cartoesAmareloVermelhoTotalTresCincoMarcados;
 
@@ -885,7 +897,7 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
 
 
 
-        binding.tvTituloCartoes.setText("ESTATÍSTICA DE CARTÕES " + partidas.get(0).getHomeTime().getName().toUpperCase() + " CASA");
+        binding.tvTituloCartoes.setText("ESTATÍSTICA DE CARTÕES " + partidas.get(0).getAwayTime().getName().toUpperCase() + " FORA");
 
 
 
@@ -927,6 +939,17 @@ public class CasaCartoesEstatisticaFragment extends Fragment implements JogosSer
 
 
         binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
+
+        String nome = partidas.get(0).getAwayTime().getNome();
+        String totalJogos = String.valueOf(partidas.size());
+        String totalAmrlVmlMcd = String.valueOf(cartoesAmareloVermelhoTotalZeroCincoMarcados );
+        String totalAmrlVmlMcdPct = String.valueOf(Math.round(((double)cartoesAmareloVermelhoTotalZeroCincoMarcados * 100 ) / partidas.size()));
+
+        // Formate o texto usando a classe TextUtils
+        SpannableStringBuilder builder = FormatarCoresTextoCartoesMcdFora.formatText(nome, totalJogos, totalAmrlVmlMcd, totalAmrlVmlMcdPct);
+
+        // Defina o texto no TextView
+        binding.tvRespostaEstatistica.setText(builder);
 
 
     }

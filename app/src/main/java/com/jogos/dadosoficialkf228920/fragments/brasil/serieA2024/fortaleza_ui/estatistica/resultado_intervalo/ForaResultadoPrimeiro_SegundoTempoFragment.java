@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ceara_ui.estatistica.resultado_intervalo;
+package com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.fortaleza_ui.estatistica.resultado_intervalo;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +17,8 @@ import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadoPartidaSegundoTempoAdapter;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaResultadoPrimeiroSegundoTempoBinding;
+import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieA2024;
+import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.util.JogosSerieAListener;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.util.JogosSerieB2024Listener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
@@ -24,10 +26,10 @@ import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForaResultadoPrimeiro_SegundoTempoFragment extends Fragment implements JogosSerieB2024Listener {
+public class ForaResultadoPrimeiro_SegundoTempoFragment extends Fragment implements JogosSerieAListener {
 
     private TelaResultadoPrimeiroSegundoTempoBinding binding;
-    private JogosSerieB2024 jogosSerieB2024;
+    private JogosSerieA2024 jogosSerieA2024;
 
     private ResultadosPartidasPrimeiroTempoAdapter resultadosPartidasPrimeiroTempoAdapter;
 
@@ -49,29 +51,29 @@ public class ForaResultadoPrimeiro_SegundoTempoFragment extends Fragment impleme
 
         binding = TelaResultadoPrimeiroSegundoTempoBinding.inflate(inflater, container, false);
 
-        jogosSerieB2024 = new JogosSerieB2024();
-        jogosSerieB2024.setupHttpClient();
-        jogosSerieB2024.setupDadosJogos();
-        jogosSerieB2024.setListener(this);// Registra o fragmento como listener
+        jogosSerieA2024 = new JogosSerieA2024();
+        jogosSerieA2024.setupHttpClient();
+        jogosSerieA2024.setupDadosJogos();
+        jogosSerieA2024.setListener(this);// Registra o fragmento como listener
 
         binding.tv1TempoVitoriaResultado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "RESULTADOS QUE [ VENCEU ] NO 1T", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "RESULTADO NO 1T QUE [ VENCEU ]", Toast.LENGTH_LONG).show();
                 handleTextViewClick(1);
             }
         });
         binding.tv1TempoEmpateResultado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "RESULTADOS QUE [ EMPATOU ] NO 1T", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "RESULTADO NO 1T QUE [ EMPATOU ]", Toast.LENGTH_LONG).show();
                 handleTextViewClick(2);
             }
         });
         binding.tv1TempoDerrotaResultado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "RESULTADOS QUE [ SAIU DERROTADO ] NO 1T", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "RESULTADO NO 1T QUE [ SAIU DERROTADO ]", Toast.LENGTH_LONG).show();
                 handleTextViewClick(3);
             }
         });
@@ -79,21 +81,21 @@ public class ForaResultadoPrimeiro_SegundoTempoFragment extends Fragment impleme
         binding.tv2TempoVitoriaResultado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "RESULTADOS QUE [ VENCEU ] NO 2T", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "RESULTADO NO 2T QUE [ VENCEU ]", Toast.LENGTH_LONG).show();
                 handleTextViewClick(4);
             }
         });
         binding.tv2TempoEmpateResultado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "RESULTADOS QUE [ EMPATOU ] NO 2T", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "RESULTADO NO 2T QUE [ EMPATOU ]", Toast.LENGTH_LONG).show();
                 handleTextViewClick(5);
             }
         });
         binding.tv2TempoDerrotaResultado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "RESULTADOS QUE [ SAIU DERROTADO ] NO 2T", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "RESULTADO NO 2T QUE [ SAIU DERROTADO ]", Toast.LENGTH_LONG).show();
                 handleTextViewClick(6);
             }
         });
@@ -187,13 +189,13 @@ public class ForaResultadoPrimeiro_SegundoTempoFragment extends Fragment impleme
 
 
     @Override
-    public void onJogosSerieBReady(List<PartidaNovoModelo> amazonasCompleto, List<PartidaNovoModelo> americaMGCompleto, List<PartidaNovoModelo> avaiCompleto, List<PartidaNovoModelo> botafogoSPCompleto, List<PartidaNovoModelo> brusqueCompleto, List<PartidaNovoModelo> crbCompleto, List<PartidaNovoModelo> cearaCompleto, List<PartidaNovoModelo> chapecoenseCompleto, List<PartidaNovoModelo> coritibaCompleto, List<PartidaNovoModelo> goiasCompleto, List<PartidaNovoModelo> guaraniCompleto, List<PartidaNovoModelo> ituanoCompleto, List<PartidaNovoModelo> mirassolCompleto, List<PartidaNovoModelo> novorizontinoCompleto, List<PartidaNovoModelo> operarioCompleto, List<PartidaNovoModelo> paysanduCompleto, List<PartidaNovoModelo> pontepretaCompleto, List<PartidaNovoModelo> santosCompleto, List<PartidaNovoModelo> sportCompleto, List<PartidaNovoModelo> vilanovaCompleto) {
+    public void onJogosSerieAReady(List<PartidaNovoModelo> atleticoPRCompleto, List<PartidaNovoModelo> atleticoGOCompleto, List<PartidaNovoModelo> atleticoMGCompleto, List<PartidaNovoModelo> bahiaCompleto, List<PartidaNovoModelo> botafogoCompleto, List<PartidaNovoModelo> bragantinoCompleto, List<PartidaNovoModelo> corinthiansCompleto, List<PartidaNovoModelo> criciumaCompleto, List<PartidaNovoModelo> cruzeiroCompleto, List<PartidaNovoModelo> cuiabaCompleto, List<PartidaNovoModelo> flamengoCompleto, List<PartidaNovoModelo> fluminenseCompleto, List<PartidaNovoModelo> fortalezaCompleto, List<PartidaNovoModelo> gremioCompleto, List<PartidaNovoModelo> internacionalCompleto, List<PartidaNovoModelo> juventudeCompleto, List<PartidaNovoModelo> palmeirasCompleto, List<PartidaNovoModelo> saoPauloCompleto, List<PartidaNovoModelo> vascoCompleto, List<PartidaNovoModelo> vitoriaCompleto) {
 
         PartidaNovoModelo partidaNovoModelo;
 
-        for (PartidaNovoModelo partida : cearaCompleto) {
+        for (PartidaNovoModelo partida : fortalezaCompleto) {
 
-            if (partida.getAwayTime().getName().equals("Ceará")) {
+            if (partida.getAwayTime().getName().equals("Fortaleza")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);
@@ -287,6 +289,7 @@ public class ForaResultadoPrimeiro_SegundoTempoFragment extends Fragment impleme
         bottomSheetDialog.show();
 
     }
+
 
 
 }

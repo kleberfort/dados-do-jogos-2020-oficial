@@ -5,9 +5,7 @@ import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
 
-import com.jogos.dadosoficialkf228920.R;
-
-public class FormatarCoresTextoGolsMcdCasa {
+public class FormatarCoresTextoCartoesMcdCasa {
 
     public static SpannableStringBuilder formatText(String nomeTime, String totalJogos, String totalGolsMcd, String totalGolsMcdPct) {
         SpannableStringBuilder builder = new SpannableStringBuilder();
@@ -41,12 +39,12 @@ public class FormatarCoresTextoGolsMcdCasa {
         totalGolsMcdSpannable.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, totalGolsMcdTexto.length(), 0);
         builder.append(totalGolsMcdSpannable);
 
-        String marcou = " PARTIDAS MARCOU";
+        String marcou = " LEVOU CARTÃO";
         SpannableString marcouSpannable = new SpannableString(marcou);
         marcouSpannable.setSpan(new ForegroundColorSpan(Color.YELLOW), 0, marcou.length(), 0);
         builder.append(marcouSpannable);
 
-        builder.append(" [GOL ACIMA 0.5], que equivale ");
+        builder.append(" [AMARELO E/OU VERMLHO ACIMA 0.5], que equivale ");
 
         // Adiciona cor à variável totalGolsMcdPct
         String totalGolsMcdPctTexto = String.valueOf(totalGolsMcdPct + "%");
