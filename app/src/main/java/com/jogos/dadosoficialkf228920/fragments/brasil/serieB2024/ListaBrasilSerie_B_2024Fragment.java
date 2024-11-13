@@ -112,12 +112,17 @@ public class ListaBrasilSerie_B_2024Fragment extends Fragment implements JogosSe
         void listaBrasilBMetodo(String nome);//viu que é uma string ?sim
     }
 
+    public interface ListaBrasilB2024ClickLongInterface{
+        void listaBrasilB2024ClickLong();
+    }
+
 
     //2 etapa criamos uma variavel da interface
     ListaBrasilB2024Interface listaBrasilB2024 = null;//queremos usar o metodo listaInglesa(String nome) mas estamos iniciando ela com o valor null
     //ou seuja null é igual a nulo ou nada
     //entende isso ?sim
 
+    ListaBrasilB2024ClickLongInterface listaBrasilBClickLong = null;
 
 
     //3 etapa iniciamos a variavel
@@ -129,6 +134,11 @@ public class ListaBrasilSerie_B_2024Fragment extends Fragment implements JogosSe
             listaBrasilB2024 = (ListaBrasilB2024Interface) context;//aqui iniciamos a nossa variavel... Esse código voce nao precisa entender, só tem que
             //compreendeu as 3 etapadas ?sim ok
         }
+
+        if(context instanceof  ListaBrasilB2024ClickLongInterface){
+            listaBrasilBClickLong = (ListaBrasilB2024ClickLongInterface) context;
+        }
+
     }
 
 
@@ -294,6 +304,9 @@ public class ListaBrasilSerie_B_2024Fragment extends Fragment implements JogosSe
 
             @Override
             public void onLongItemClick(View view, int position) {
+
+                listaBrasilBClickLong.listaBrasilB2024ClickLong();
+
                 // Criação do PopupWindow
                 LayoutInflater inflater = LayoutInflater.from(view.getContext());
                 LinearLayout layoutPopup = (LinearLayout) inflater.inflate(R.layout.layout_porcentagem_estatistica, null);

@@ -196,7 +196,7 @@ import com.unity3d.services.banners.BannerErrorInfo;
 import com.unity3d.services.banners.BannerView;
 import com.unity3d.services.banners.UnityBannerSize;
 
-public class MainActivity extends AppCompatActivity implements ListaInglesA2023a24Fragment.ListaInglesaInterface, ListaEspanholA2023a24Fragment.ListaEspanholaInterface, ListaAlemaoA2023a24Fragment.ListaAlemanhaInterface, ListaItaliaA2023a24Fragment.ListaItalianoInterface, ListaFrancaA2023a24Fragment.ListaFrancesInterface, ListaBrasilSerieA_2024_TesteFragment.ListaBrasilA2024Interface, ListaBrasilSerie_B_2024Fragment.ListaBrasilB2024Interface, ListaLigaProfissional_A_2024Fragment.ListaArgentinaA2024Interface {
+public class MainActivity extends AppCompatActivity implements ListaInglesA2023a24Fragment.ListaInglesaInterface, ListaEspanholA2023a24Fragment.ListaEspanholaInterface, ListaAlemaoA2023a24Fragment.ListaAlemanhaInterface, ListaItaliaA2023a24Fragment.ListaItalianoInterface, ListaFrancaA2023a24Fragment.ListaFrancesInterface, ListaBrasilSerieA_2024_TesteFragment.ListaBrasilA2024Interface, ListaBrasilSerie_B_2024Fragment.ListaBrasilB2024Interface, ListaLigaProfissional_A_2024Fragment.ListaArgentinaA2024Interface, ListaBrasilSerieA_2024_TesteFragment.ListaBrasilA2024ClickLongInterface, ListaBrasilSerie_B_2024Fragment.ListaBrasilB2024ClickLongInterface, ListaLigaProfissional_A_2024Fragment.ListaArgentinaA2024ClickLongInterface {
 
     //o que tenho que fazer agora aqui ?posso chamar varias Interfaces?, sim.// ele ja mostrou meio que direto pra mim
     //mas perceba: Tem o nome do fragment e o nome da interface que criamos na lista espanhola,
@@ -282,23 +282,23 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
         //mas antes de publicar tente colocar mais times  somente copiando o que fizemos
 
         //Quando irei publicar, tenho que tirar o parametro "textMode" e para teste coloco depois do parametro unityGameId.
-//        UnityAds.initialize(this, unityGameID, new IUnityAdsInitializationListener() {
-//            @Override
-//            public void onInitializationComplete() {
-//
-//                Log.d("testeunity", "completo");
-//                //quando a comunicao acontece com sucesso.. comunicao do Aplicativo com a Unity
-//            }
-//
-//            @Override
-//            public void onInitializationFailed(UnityAds.UnityAdsInitializationError error, String message) {
-//                //quando coloco o this la em cima esse metodo é chamado para falar qual foi o erro
-//                //Esse erro é referente a Unity
-//
-//                Log.d("testeunity-", message);
-//
-//            }
-//        });
+        UnityAds.initialize(this, unityGameID, new IUnityAdsInitializationListener() {
+            @Override
+            public void onInitializationComplete() {
+
+                Log.d("testeunity", "completo");
+                //quando a comunicao acontece com sucesso.. comunicao do Aplicativo com a Unity
+            }
+
+            @Override
+            public void onInitializationFailed(UnityAds.UnityAdsInitializationError error, String message) {
+                //quando coloco o this la em cima esse metodo é chamado para falar qual foi o erro
+                //Esse erro é referente a Unity
+
+                Log.d("testeunity-", message);
+
+            }
+        });
 
 
         relativeLayoutBannerUnity = binding.adViewContainerMainActivityUnity;
@@ -330,12 +330,12 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
         adapter.addFragment(new ListaBrasilSerieA_2024_TesteFragment(), "Série A 2024");
         adapter.addFragment(new ListaBrasilSerie_B_2024Fragment(), "Série B 2024");
         adapter.addFragment(new ListaLigaProfissional_A_2024Fragment(), "Liga Profissional 2024");
-        adapter.addFragment(new ListaPremierLeague_A_2024_25Fragment(), "Premier League A ");
-        adapter.addFragment(new ListaInglesA2023a24Fragment(), "Inglês A 2023-24");
-        adapter.addFragment(new ListaEspanholA2023a24Fragment(), "Espanhol A 2023-24");
-        adapter.addFragment(new ListaAlemaoA2023a24Fragment(), "Alemão A 2023-24");
-        adapter.addFragment(new ListaItaliaA2023a24Fragment(), "Italiano A 2023-24");
-        adapter.addFragment(new ListaFrancaA2023a24Fragment(), "Françês A 2023-24");
+        //adapter.addFragment(new ListaPremierLeague_A_2024_25Fragment(), "Premier League A ");
+       // adapter.addFragment(new ListaInglesA2023a24Fragment(), "Inglês A 2023-24");
+        //adapter.addFragment(new ListaEspanholA2023a24Fragment(), "Espanhol A 2023-24");
+       // adapter.addFragment(new ListaAlemaoA2023a24Fragment(), "Alemão A 2023-24");
+        //adapter.addFragment(new ListaItaliaA2023a24Fragment(), "Italiano A 2023-24");
+        //adapter.addFragment(new ListaFrancaA2023a24Fragment(), "Françês A 2023-24");
 
         binding.viewPager.setOffscreenPageLimit(adapter.getItemCount());
 
@@ -1107,6 +1107,108 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
 
     }
 
+    @Override
+    public void listaBrasilAMetodo(String nome) {
+
+        opcao = nome;
+        if (intersticialUnityCarregado) {//se intersticialUnityCarregado == true cai dentro do if... intersticialUnityCarregado vai ser true se o intersticial ja foi recebido da Unity
+            UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
+        } else {
+
+            Intent intent = null;
+
+            if (nome.equals("Atlético-PR")) {
+                intent = new Intent(this, AtleticoPR2024Activity.class);
+                startActivity(intent);
+            } else if (nome.equals("Atlético-GO")) {
+                intent = new Intent(this, AtleticoGO2024Activity.class);
+                startActivity(intent);
+            } else if (nome.equals("Atlético-MG")) {
+                intent = new Intent(this, AtleticoMG2024Activity.class);
+                startActivity(intent);
+            } else if (nome.equals("Bahia")) {
+                intent = new Intent(this, Bahia2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Botafogo")) {
+                intent = new Intent(this, Botafogo2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Bragantino")) {
+                intent = new Intent(this, Bragantino2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Corinthians")) {
+                intent = new Intent(this, Corinthians2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Criciúma")) {
+                intent = new Intent(this, Criciuma2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Cruzeiro")) {
+                intent = new Intent(this, Cruzeiro2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Cuiabá")) {
+                intent = new Intent(this, Cuiaba2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Flamengo")) {
+                intent = new Intent(this, Flamengo2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Fluminense")) {
+                intent = new Intent(this, Fluminense2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Fortaleza")) {
+                intent = new Intent(this, Fortaleza2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Grêmio")) {
+                intent = new Intent(this, Gremio2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Internacional")) {
+                intent = new Intent(this, Internacional2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Juventude")) {
+                intent = new Intent(this, Juventude2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Palmeiras")) {
+                intent = new Intent(this, Palmeiras2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("São-Paulo")) {
+                intent = new Intent(this, SaoPaulo2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Vasco")) {
+                intent = new Intent(this, Vasco2024Activity.class);
+                startActivity(intent);
+            }else if (nome.equals("Vitória")) {
+                intent = new Intent(this, Vitoria2024Activity.class);
+                startActivity(intent);
+            }
+
+            if (intent != null) {
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            }
+
+        }//fim do else
+
+    }
+
+    @Override
+    public void listaBrasilAClickLong() {
+        if (intersticialUnityCarregado) {//se intersticialUnityCarregado == true cai dentro do if... intersticialUnityCarregado vai ser true se o intersticial ja foi recebido da Unity
+            UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
+        }
+    }//metodo de ClickLong para Brasil Serie A
+
+    @Override
+    public void listaBrasilB2024ClickLong() {
+        if (intersticialUnityCarregado) {//se intersticialUnityCarregado == true cai dentro do if... intersticialUnityCarregado vai ser true se o intersticial ja foi recebido da Unity
+            UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
+        }
+    }
+
+    @Override
+    public void listaArgentinaAClickLong() {
+        if (intersticialUnityCarregado) {//se intersticialUnityCarregado == true cai dentro do if... intersticialUnityCarregado vai ser true se o intersticial ja foi recebido da Unity
+            UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
+        }
+    }
+
 
 
     @Override
@@ -1583,86 +1685,7 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
     }
 
 
-    @Override
-    public void listaBrasilAMetodo(String nome) {
 
-        opcao = nome;
-        if (intersticialUnityCarregado) {//se intersticialUnityCarregado == true cai dentro do if... intersticialUnityCarregado vai ser true se o intersticial ja foi recebido da Unity
-            UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
-        } else {
-
-            Intent intent = null;
-
-            if (nome.equals("Atlético-PR")) {
-                 intent = new Intent(this, AtleticoPR2024Activity.class);
-                startActivity(intent);
-            } else if (nome.equals("Atlético-GO")) {
-                 intent = new Intent(this, AtleticoGO2024Activity.class);
-                startActivity(intent);
-            } else if (nome.equals("Atlético-MG")) {
-                 intent = new Intent(this, AtleticoMG2024Activity.class);
-                startActivity(intent);
-            } else if (nome.equals("Bahia")) {
-                 intent = new Intent(this, Bahia2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("Botafogo")) {
-                 intent = new Intent(this, Botafogo2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("Bragantino")) {
-                 intent = new Intent(this, Bragantino2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("Corinthians")) {
-                 intent = new Intent(this, Corinthians2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("Criciúma")) {
-                 intent = new Intent(this, Criciuma2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("Cruzeiro")) {
-                 intent = new Intent(this, Cruzeiro2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("Cuiabá")) {
-                 intent = new Intent(this, Cuiaba2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("Flamengo")) {
-                 intent = new Intent(this, Flamengo2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("Fluminense")) {
-                 intent = new Intent(this, Fluminense2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("Fortaleza")) {
-                 intent = new Intent(this, Fortaleza2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("Grêmio")) {
-                 intent = new Intent(this, Gremio2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("Internacional")) {
-                 intent = new Intent(this, Internacional2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("Juventude")) {
-                 intent = new Intent(this, Juventude2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("Palmeiras")) {
-                 intent = new Intent(this, Palmeiras2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("São-Paulo")) {
-                 intent = new Intent(this, SaoPaulo2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("Vasco")) {
-                 intent = new Intent(this, Vasco2024Activity.class);
-                startActivity(intent);
-            }else if (nome.equals("Vitória")) {
-                 intent = new Intent(this, Vitoria2024Activity.class);
-                startActivity(intent);
-            }
-
-            if (intent != null) {
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-            }
-
-        }//fim do else
-
-    }
 
     @Override
     public void listaBrasilBMetodo(String nome) {
@@ -1847,6 +1870,9 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
         }//fim do else
 
     }
+
+
+
 }//Fim do MainActivity
 
 

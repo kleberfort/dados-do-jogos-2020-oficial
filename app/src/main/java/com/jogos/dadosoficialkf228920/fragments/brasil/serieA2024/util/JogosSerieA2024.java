@@ -16,11 +16,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class JogosSerieA2024  {
-
     private JogosSerieAListener listener;
     private jogos_campeonatos_chamada_api jogosSerieACasaEFora2024Api;
-
-
     private List<PartidaNovoModelo> atleticoPRCasa = new ArrayList<>();
     private List<PartidaNovoModelo> atleticoPRFora = new ArrayList<>();
 
@@ -78,8 +75,6 @@ public class JogosSerieA2024  {
 
     private List<PartidaNovoModelo> vitoriaCasa = new ArrayList<>();
     private List<PartidaNovoModelo> vitoriaFora = new ArrayList<>();
-
-
 
 
     public void setListener(JogosSerieAListener listener) {
@@ -402,9 +397,6 @@ public class JogosSerieA2024  {
              //Essa Classe dividi todos os jogos dos times, seja ele casa ou fora,
              //Passei aqui um Listener para acessar dentro do meu Frament
 
-//             melhoresStatisticasCasa(bragantinoCompleto, "Bragantino", 70);
-//             melhoresStatisticasFora(palmeirasCompleto,"Palmeiras", 70);
-
 
              if (listener != null) {
                  Log.d("teste jone" ,"2");
@@ -426,216 +418,11 @@ public class JogosSerieA2024  {
 
          }
      });
-
-
-
     }// fim do método setupDadosDosJogos
-
-
-
 
     private void errorBuscarDados() {
         //Snackbar.make(binding.getRoot(), "erro ao Retornar Dados Estatístico. ", Snackbar.LENGTH_LONG).show();
     }
-
-
-    @SuppressLint("SuspiciousIndentation")
-    public void allFixtures(List<PartidaNovoModelo> partidas){
-
-        List<PartidaNovoModelo> jogos = partidas;
-
-         int golsTotalPrimeiroTempoZeroCincoMarcados = 0;
-         int golsTotalPrimeiroTempoZeroCincoNaoMarcados = 0;
-
-         int golsTotalPrimeiroTempoUmCincoMarcados = 0;
-         int golsTotalPrimeiroTempoUmCincoNaoMarcados = 0;
-
-         int golsTotalPrimeiroTempoDoisCincoMarcados = 0;
-         int golsTotalPrimeiroTempoDoisCincoNaoMarcados = 0;
-
-
-         int golsTotalSegundoTempoZeroCincoMarcados = 0;
-         int golsTotalSegundoTempoZeroCincoNaoMarcados = 0;
-
-         int golsTotalSegundoTempoUmCincoMarcados = 0;
-         int golsTotalSegundoTempoUmCincoNaoMarcados = 0;
-
-
-         int golsTotalSegundoTempoDoisCincoMarcados = 0;
-         int golsTotalSegundoTempoDoisCincoNaoMarcados = 0;
-
-
-         int golsTotalZeroCincoMarcados = 0;
-         int golsTotalZeroCincoNaoMarcados = 0;
-
-         int golsTotalUmCincoMarcados = 0;
-         int golsTotalUmCincoNaoMarcados = 0;
-
-         int golsTotalDoisCincoMarcados = 0;
-         int golsTotalDoisCincoNaoMarcados = 0;
-
-
-         int golsTotalTresCincoMarcados = 0;
-         int golsTotalTresCincoNaoMarcados = 0;
-
-        int pctgGolPrimeiroTempo05 = 0;
-        int pctgGolPrimeiroTempo15 = 0;
-        int pctgGolPrimeiroTempo25 = 0;
-
-        int pctgNaoGolPrimeiroTempo05 = 0;
-        int pctgNaoGolPrimeiroTempo15 = 0;
-        int pctgNaoGolPrimeiroTempo25 = 0;
-
-        int pctgGolSegundoTempo05 = 0;
-        int pctgGolSegundoTempo15 = 0;
-        int pctgGolSegundoTempo25 = 0;
-
-        int pctgNaoGolSegundoTempo05 = 0;
-        int pctgNaoGolSegundoTempo15 = 0;
-        int pctgNaoGolSegundoTempo25 = 0;
-
-        int pctgGolTotal05 = 0;
-        int pctgGolTotal15 = 0;
-        int pctgGolTotal25 = 0;
-        int pctgGolTotal35 = 0;
-
-
-         int totalJogos = 0;
-
-
-        for (PartidaNovoModelo partida : jogos) {
-
-            if(partida.getHomeTime().getName().contains("Palmeiras")){
-                totalJogos += 1;
-                if(partida.getHomeEstatisticaJogo().getGolsPrimeiroTempo() > 0)
-                    golsTotalPrimeiroTempoZeroCincoMarcados += 1;
-                    golsTotalPrimeiroTempoZeroCincoNaoMarcados = totalJogos - golsTotalPrimeiroTempoZeroCincoMarcados;
-
-
-                if(partida.getHomeEstatisticaJogo().getGolsPrimeiroTempo() > 1.5)
-                    golsTotalPrimeiroTempoUmCincoMarcados += 1;
-                    golsTotalPrimeiroTempoUmCincoNaoMarcados = totalJogos - golsTotalPrimeiroTempoUmCincoMarcados;
-
-                //GOLS 2.5 1°TEMPO
-                if(partida.getHomeEstatisticaJogo().getGolsPrimeiroTempo() > 2)
-                    golsTotalPrimeiroTempoDoisCincoMarcados += 1;
-                golsTotalPrimeiroTempoDoisCincoNaoMarcados = totalJogos - golsTotalPrimeiroTempoDoisCincoMarcados;
-
-
-//                        SEGUNDO TEMPO -----------------------------------------------------------------------
-
-                //GOLS 0.5 2°TEMPO
-                if(partida.getHomeEstatisticaJogo().getGolsSegundoTempo() > 0)
-                    golsTotalSegundoTempoZeroCincoMarcados += 1;
-                golsTotalSegundoTempoZeroCincoNaoMarcados = totalJogos - golsTotalSegundoTempoZeroCincoMarcados;
-
-
-                //GOLS 1.5 2°TEMPO
-                if(partida.getHomeEstatisticaJogo().getGolsSegundoTempo() > 1)
-                    golsTotalSegundoTempoUmCincoMarcados += 1;
-                golsTotalSegundoTempoUmCincoNaoMarcados = totalJogos - golsTotalSegundoTempoUmCincoMarcados;
-
-
-                //GOLS 2.5 2°TEMPO
-                if(partida.getHomeEstatisticaJogo().getGolsSegundoTempo() > 2)
-                    golsTotalSegundoTempoDoisCincoMarcados += 1;
-                golsTotalSegundoTempoDoisCincoNaoMarcados = totalJogos - golsTotalSegundoTempoDoisCincoMarcados;
-
-//                        GOLS ACIMA -----------------------------------------------------------------------------
-
-                //GOLS ACIMA 0.5 TEMPO
-                if(partida.getHomeTime().getPlacar() > 0)
-                    golsTotalZeroCincoMarcados += 1;
-                golsTotalZeroCincoNaoMarcados = partidas.size() - golsTotalZeroCincoMarcados;
-
-                //GOLS ACIMA 1.5 TEMPO
-                if(partida.getHomeTime().getPlacar() > 1)
-                    golsTotalUmCincoMarcados += 1;
-                golsTotalUmCincoNaoMarcados = partidas.size() - golsTotalUmCincoMarcados;
-
-
-                //GOLS ACIMA 2.5 TEMPO
-                if(partida.getHomeTime().getPlacar() > 2)
-                    golsTotalDoisCincoMarcados += 1;
-                golsTotalDoisCincoNaoMarcados = partidas.size() - golsTotalDoisCincoMarcados;
-
-
-                //GOLS ACIMA 3.5 TEMPO
-                if(partida.getHomeTime().getPlacar() > 3)
-                    golsTotalTresCincoMarcados += 1;
-                golsTotalTresCincoNaoMarcados = partidas.size() - golsTotalTresCincoMarcados;
-
-
-
-
-
-                pctgGolPrimeiroTempo05 =   (golsTotalPrimeiroTempoZeroCincoMarcados * 100) / totalJogos;
-                pctgNaoGolPrimeiroTempo05 = (golsTotalPrimeiroTempoZeroCincoNaoMarcados * 100) / totalJogos;
-
-                pctgGolPrimeiroTempo15 = (golsTotalPrimeiroTempoUmCincoMarcados * 100) / totalJogos;
-                pctgNaoGolPrimeiroTempo15 = (golsTotalPrimeiroTempoUmCincoNaoMarcados * 100) / totalJogos;
-
-                pctgGolPrimeiroTempo25 = (golsTotalPrimeiroTempoDoisCincoMarcados * 100) / totalJogos;
-                pctgNaoGolPrimeiroTempo25 = (golsTotalPrimeiroTempoDoisCincoNaoMarcados * 100) / totalJogos;
-
-                pctgGolSegundoTempo05 =   (golsTotalSegundoTempoZeroCincoMarcados * 100) / totalJogos;
-                pctgNaoGolSegundoTempo05 = (golsTotalSegundoTempoZeroCincoNaoMarcados * 100) / totalJogos;
-
-                pctgGolSegundoTempo15 = (golsTotalSegundoTempoUmCincoMarcados * 100) / totalJogos;
-                pctgNaoGolSegundoTempo15 = (golsTotalSegundoTempoUmCincoNaoMarcados * 100) / totalJogos;
-
-                pctgGolSegundoTempo25 = (golsTotalSegundoTempoDoisCincoMarcados * 100) / totalJogos;
-                pctgNaoGolSegundoTempo25 = (golsTotalSegundoTempoDoisCincoNaoMarcados * 100) / totalJogos;
-
-
-
-
-                if(pctgGolPrimeiroTempo05 >= 90)
-                    Log.i("GolPrimeiroTempo05",  partida.getHomeTime().getName() + " CASA - Total jogos: " + totalJogos + " --- [NÃO MARCOU (GOL): 1T 0.5: " + golsTotalPrimeiroTempoZeroCincoNaoMarcados + " " + pctgNaoGolPrimeiroTempo05 +"%" + "]" + "---" +  " SIM MARCOU (GOL) 1°T 0.5  " + pctgGolPrimeiroTempo05 + " %" + " das partidas]" );
-                if(pctgNaoGolPrimeiroTempo05 >= 90)
-                    Log.i("GolPrimeiroTempo05",  partida.getHomeTime().getName() + " CASA - Total jogos: " + totalJogos + " --- [NÃO MARCOU (GOL): 1T 0.5: " + golsTotalPrimeiroTempoZeroCincoNaoMarcados + " " + pctgNaoGolPrimeiroTempo05 +"%" + "]" + "---" + " SIM MARCOU (GOL) 1°T 0.5  " + pctgGolPrimeiroTempo05 + " %" + " das partidas]" );
-
-                if(pctgGolPrimeiroTempo15 >= 90)
-                    Log.i("GolPrimeiroTempo15",  partida.getHomeTime().getName() + " CASA - Total jogos: " + totalJogos + " --- [NÃO MARCOU (GOL): 1T 1.5: " + golsTotalPrimeiroTempoUmCincoNaoMarcados + " " + pctgNaoGolPrimeiroTempo15 +"%" + "]" + "---" + " SIM MARCOU (GOL) 1°T 1.5  " + pctgGolPrimeiroTempo15 + " %" + " das partidas]" );
-                if(pctgNaoGolPrimeiroTempo15 >= 90)
-                    Log.i("GolPrimeiroTempo15",  partida.getHomeTime().getName() +  " CASA - Total jogos: " + totalJogos + " --- [NÃO MARCOU (GOL): 1T 1.5: " + golsTotalPrimeiroTempoUmCincoNaoMarcados + " " + pctgNaoGolPrimeiroTempo15 +"%" + "]" + "---" + " SIM MARCOU (GOL) 1°T 1.5  " + pctgGolPrimeiroTempo15 + " %" + " das partidas]" );
-
-                if(pctgGolPrimeiroTempo25 >= 90)
-                    Log.i("GolPrimeiroTempo25",  partida.getHomeTime().getName() + " CASA - Total jogos: " + totalJogos + " --- [NÃO MARCOU (GOL): 1T 2.5: " + golsTotalPrimeiroTempoDoisCincoNaoMarcados + " " + pctgNaoGolPrimeiroTempo25 +"%" + "]" + "---" + " SIM MARCOU (GOL) 1°T 1.5  " + pctgGolPrimeiroTempo25 + " %" + " das partidas]" );
-                if(pctgNaoGolPrimeiroTempo25 >= 90)
-                    Log.i("GolPrimeiroTempo25",  partida.getHomeTime().getName() +  " CASA - Total jogos: " + totalJogos + " --- [NÃO MARCOU (GOL): 1T 2.5: " + golsTotalPrimeiroTempoDoisCincoNaoMarcados + " " + pctgNaoGolPrimeiroTempo25 +"%" + "]" + "---" + " SIM MARCOU (GOL) 1°T 1.5  " + pctgGolPrimeiroTempo25 + " %" + " das partidas]" );
-
-
-                if(pctgGolSegundoTempo05 >= 90)
-                    Log.i("GolSegundoTempo05",  partida.getHomeTime().getName() + " CASA - Total jogos: " + totalJogos + " --- [NÃO MARCOU (GOL): 2T 0.5: " + golsTotalSegundoTempoZeroCincoNaoMarcados + " " + pctgNaoGolSegundoTempo05 +"%" + "]" + "---" +  " SIM MARCOU (GOL) 1°T 0.5  " + pctgGolSegundoTempo05 + " %" + " das partidas]" );
-                if(pctgNaoGolSegundoTempo05 >= 90)
-                    Log.i("GolSegundoTempo05",  partida.getHomeTime().getName() + " CASA - Total jogos: " + totalJogos + " --- [NÃO MARCOU (GOL): 2T 0.5: " + golsTotalSegundoTempoZeroCincoNaoMarcados + " " + pctgNaoGolSegundoTempo05 +"%" + "]" + "---" + " SIM MARCOU (GOL) 1°T 0.5  " + pctgGolSegundoTempo05 + " %" + " das partidas]" );
-
-                if(pctgGolSegundoTempo15 >= 90)
-                    Log.i("GolSegundoTempo15",  partida.getHomeTime().getName() + " CASA - Total jogos: " + totalJogos + " --- [NÃO MARCOU (GOL): 2T 1.5: " + golsTotalSegundoTempoUmCincoNaoMarcados + " " + pctgNaoGolSegundoTempo15 +"%" + "]" + "---" + " SIM MARCOU (GOL) 1°T 1.5  " + pctgGolSegundoTempo15 + " %" + " das partidas]" );
-                if(pctgNaoGolSegundoTempo15 >= 90)
-                    Log.i("GolSegundoTempo15",  partida.getHomeTime().getName() +  " CASA - Total jogos: " + totalJogos + " --- [NÃO MARCOU (GOL): 2T 1.5: " + golsTotalSegundoTempoUmCincoNaoMarcados + " " + pctgNaoGolSegundoTempo15 +"%" + "]" + "---" + " SIM MARCOU (GOL) 1°T 1.5  " + pctgGolSegundoTempo15 + " %" + " das partidas]" );
-
-                if(pctgGolSegundoTempo25 >= 90)
-                    Log.i("GolSegundoTempo25",  partida.getHomeTime().getName() + " CASA - Total jogos: " + totalJogos + " --- [NÃO MARCOU (GOL): 2T 2.5: " + golsTotalSegundoTempoDoisCincoNaoMarcados + " " + pctgNaoGolSegundoTempo25 +"%" + "]" + "---" + " SIM MARCOU (GOL) 1°T 1.5  " + pctgGolSegundoTempo25 + " %" + " das partidas]" );
-                if(pctgNaoGolSegundoTempo25 >= 90)
-                    Log.i("GolSegundoTempo25",  partida.getHomeTime().getName() +  " CASA - Total jogos: " + totalJogos + " --- [NÃO MARCOU (GOL): 2T 2.5: " + golsTotalSegundoTempoDoisCincoNaoMarcados + " " + pctgNaoGolSegundoTempo25 +"%" + "]" + "---" + " SIM MARCOU (GOL) 1°T 1.5  " + pctgGolSegundoTempo25 + " %" + " das partidas]" );
-
-            }//Fim do if palmeiras casa
-
-
-        }//fim do for principal
-
-        System.out.println("saiu do for e apenas executa uma vez");
-
-
-
-        Log.i("Teste", "Finalizado");
-    }
-
-
-
-
 
 
 }

@@ -15,9 +15,9 @@ android {
     defaultConfig {
         applicationId "com.jogos.dadosoficialkf228920"
         minSdk 27
-        targetSdk 33
-        versionCode 33 //trigéssima terceira atualização
-        versionName "3.1.1" // colocado um versão inferior no targetSdk para 33.
+        targetSdk 34
+        versionCode 36 //trigéssima quarta atualização
+        versionName "3.1.3" // implementado a Tela que mostra as melhores estatisticas de cada time no recyclerview.
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

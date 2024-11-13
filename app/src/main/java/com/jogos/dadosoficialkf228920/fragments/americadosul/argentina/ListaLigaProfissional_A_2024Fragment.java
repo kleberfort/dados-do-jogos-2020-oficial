@@ -128,13 +128,17 @@ public class ListaLigaProfissional_A_2024Fragment extends Fragment implements Jo
         void listaArgentinaAMetodo(String nome);//viu que é uma string ?sim
     }
 
+    public interface ListaArgentinaA2024ClickLongInterface{
+        void listaArgentinaAClickLong();
+    }
+
 
     //2 etapa criamos uma variavel da interface
     ListaArgentinaA2024Interface listaArgentinaA2024 = null;//queremos usar o metodo listaInglesa(String nome) mas estamos iniciando ela com o valor null
     //ou seuja null é igual a nulo ou nada
     //entende isso ?sim
 
-
+    ListaArgentinaA2024ClickLongInterface listaArgentinaA2024ClickLong = null;
 
     //3 etapa iniciamos a variavel
     @Override
@@ -145,6 +149,12 @@ public class ListaLigaProfissional_A_2024Fragment extends Fragment implements Jo
             listaArgentinaA2024 = (ListaArgentinaA2024Interface) context;//aqui iniciamos a nossa variavel... Esse código voce nao precisa entender, só tem que
             //compreendeu as 3 etapadas ?sim ok
         }
+
+        if(context instanceof  ListaArgentinaA2024ClickLongInterface){
+            listaArgentinaA2024ClickLong = (ListaArgentinaA2024ClickLongInterface) context;
+
+        }
+
     }
 
 
@@ -349,6 +359,8 @@ public class ListaLigaProfissional_A_2024Fragment extends Fragment implements Jo
 
             @Override
             public void onLongItemClick(View view, int position) {
+                listaArgentinaA2024ClickLong.listaArgentinaAClickLong();
+
                 // Criação do PopupWindow
                 LayoutInflater inflater = LayoutInflater.from(view.getContext());
                 LinearLayout layoutPopup = (LinearLayout) inflater.inflate(R.layout.layout_porcentagem_estatistica, null);

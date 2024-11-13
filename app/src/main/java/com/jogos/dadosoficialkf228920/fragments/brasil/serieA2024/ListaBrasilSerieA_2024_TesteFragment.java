@@ -95,12 +95,17 @@ public class ListaBrasilSerieA_2024_TesteFragment extends Fragment implements Jo
         void listaBrasilAMetodo(String nome);//viu que é uma string ?sim
     }
 
+    public interface ListaBrasilA2024ClickLongInterface{
+        void listaBrasilAClickLong();
+    }
+
 
     //2 etapa criamos uma variavel da interface
-    ListaBrasilA2024Interface listaBrasilA2024 = null;//queremos usar o metodo listaInglesa(String nome) mas estamos iniciando ela com o valor null
+    ListaBrasilA2024Interface listaBrasilA2024 = null;//queremos usar o metodo listaBrasilAMetodo(String nome) mas estamos iniciando ela com o valor null
     //ou seuja null é igual a nulo ou nada
     //entende isso ?sim
 
+    ListaBrasilA2024ClickLongInterface listaBrasilAClickLong = null;
 
 
     //3 etapa iniciamos a variavel
@@ -112,7 +117,14 @@ public class ListaBrasilSerieA_2024_TesteFragment extends Fragment implements Jo
             listaBrasilA2024 = (ListaBrasilA2024Interface) context;//aqui iniciamos a nossa variavel... Esse código voce nao precisa entender, só tem que
             //compreendeu as 3 etapadas ?sim ok
         }
+
+        if(context instanceof ListaBrasilA2024ClickLongInterface){
+            listaBrasilAClickLong = (ListaBrasilA2024ClickLongInterface) context;
+        }
+
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -138,149 +150,146 @@ public class ListaBrasilSerieA_2024_TesteFragment extends Fragment implements Jo
         jogosSerieA2024.setListener(this); // Registra o fragmento como listener
 
 
-      //  melhoresStatisticasCasa(bragantinoCompleto, "Bragantino", 70);
-
-
-
-
-
         binding.rvLista.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), binding.rvLista, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                ClassificacaoOficialNovoModelo lista = listaOficial.get(position);
 
-                switch (lista.getName()){
-                    case "Atlético-PR":
-                        listaBrasilA2024.listaBrasilAMetodo("Atlético-PR");
-                       // Intent intent = new Intent(getContext(), AtleticoPR2024Activity.class);
-                       // startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Atlético-GO":
-                        listaBrasilA2024.listaBrasilAMetodo("Atlético-GO");
+                    ClassificacaoOficialNovoModelo lista = listaOficial.get(position);
+
+                    switch (lista.getName()) {
+                        case "Atlético-PR":
+                            listaBrasilA2024.listaBrasilAMetodo("Atlético-PR");
+                            // Intent intent = new Intent(getContext(), AtleticoPR2024Activity.class);
+                            // startActivity(intent);
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Atlético-GO":
+                            listaBrasilA2024.listaBrasilAMetodo("Atlético-GO");
 //                       Intent intent = new Intent(getContext(), AtleticoGO2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Atlético-MG":
-                        listaBrasilA2024.listaBrasilAMetodo("Atlético-MG");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Atlético-MG":
+                            listaBrasilA2024.listaBrasilAMetodo("Atlético-MG");
 //                        intent = new Intent(getContext(), AtleticoMG2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Bahia":
-                        listaBrasilA2024.listaBrasilAMetodo("Bahia");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Bahia":
+                            listaBrasilA2024.listaBrasilAMetodo("Bahia");
 //                        intent = new Intent(getContext(), Bahia2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Botafogo":
-                        listaBrasilA2024.listaBrasilAMetodo("Botafogo");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Botafogo":
+                            listaBrasilA2024.listaBrasilAMetodo("Botafogo");
 //                        intent = new Intent(getContext(), Botafogo2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Bragantino":
-                        listaBrasilA2024.listaBrasilAMetodo("Bragantino");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Bragantino":
+                            listaBrasilA2024.listaBrasilAMetodo("Bragantino");
 //                        intent = new Intent(getContext(), Bragantino2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Corinthians":
-                        listaBrasilA2024.listaBrasilAMetodo("Corinthians");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Corinthians":
+                            listaBrasilA2024.listaBrasilAMetodo("Corinthians");
 //                        intent = new Intent(getContext(), Corinthians2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Criciúma":
-                        listaBrasilA2024.listaBrasilAMetodo("Criciúma");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Criciúma":
+                            listaBrasilA2024.listaBrasilAMetodo("Criciúma");
 //                        intent = new Intent(getContext(), Criciuma2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Cruzeiro":
-                        listaBrasilA2024.listaBrasilAMetodo("Cruzeiro");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Cruzeiro":
+                            listaBrasilA2024.listaBrasilAMetodo("Cruzeiro");
 //                        intent = new Intent(getContext(), Cruzeiro2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Cuiabá":
-                        listaBrasilA2024.listaBrasilAMetodo("Cuiabá");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Cuiabá":
+                            listaBrasilA2024.listaBrasilAMetodo("Cuiabá");
 //                        intent = new Intent(getContext(), Cuiaba2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Flamengo":
-                        listaBrasilA2024.listaBrasilAMetodo("Flamengo");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Flamengo":
+                            listaBrasilA2024.listaBrasilAMetodo("Flamengo");
 //                        intent = new Intent(getContext(), Flamengo2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Fluminense":
-                        listaBrasilA2024.listaBrasilAMetodo("Fluminense");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Fluminense":
+                            listaBrasilA2024.listaBrasilAMetodo("Fluminense");
 //                        intent = new Intent(getContext(), Fluminense2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Fortaleza":
-                        listaBrasilA2024.listaBrasilAMetodo("Fortaleza");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Fortaleza":
+                            listaBrasilA2024.listaBrasilAMetodo("Fortaleza");
 //                        intent = new Intent(getContext(), Fortaleza2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Grêmio":
-                        listaBrasilA2024.listaBrasilAMetodo("Grêmio");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Grêmio":
+                            listaBrasilA2024.listaBrasilAMetodo("Grêmio");
 //                        intent = new Intent(getContext(), Gremio2024Activity.class);
 //                        startActivity(intent);
-                        Log.d("Gremio", "executou");
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Internacional":
-                        listaBrasilA2024.listaBrasilAMetodo("Internacional");
+                            Log.d("Gremio", "executou");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Internacional":
+                            listaBrasilA2024.listaBrasilAMetodo("Internacional");
 //                        intent = new Intent(getContext(), Internacional2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Juventude":
-                        listaBrasilA2024.listaBrasilAMetodo("Juventude");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Juventude":
+                            listaBrasilA2024.listaBrasilAMetodo("Juventude");
 //                        intent = new Intent(getContext(), Juventude2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Palmeiras":
-                        listaBrasilA2024.listaBrasilAMetodo("Palmeiras");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Palmeiras":
+                            listaBrasilA2024.listaBrasilAMetodo("Palmeiras");
 //                        intent = new Intent(getContext(), Palmeiras2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "São-Paulo":
-                        listaBrasilA2024.listaBrasilAMetodo("São-Paulo");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "São-Paulo":
+                            listaBrasilA2024.listaBrasilAMetodo("São-Paulo");
 //                        intent = new Intent(getContext(), SaoPaulo2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Vasco":
-                        listaBrasilA2024.listaBrasilAMetodo("Vasco");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Vasco":
+                            listaBrasilA2024.listaBrasilAMetodo("Vasco");
 //                        intent = new Intent(getContext(), Vasco2024Activity.class);
 //                        startActivity(intent);
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
-                    case "Vitória":
-                        listaBrasilA2024.listaBrasilAMetodo("Vitória");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
+                        case "Vitória":
+                            listaBrasilA2024.listaBrasilAMetodo("Vitória");
 //                        intent = new Intent(getContext(), Vitoria2024Activity.class);
 //                        startActivity(intent);
 
-                        Log.d("Vítoria", "abriu activity");
-                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
-                        break;
+                            Log.d("Vítoria", "abriu activity");
+                            Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                            break;
 
 
-                }//fim do switch
+                    }//fim do switch
 
             }
-
             @Override
             public void onLongItemClick(View view, int position) {
+                // Chama o método da MainActivity
+                listaBrasilAClickLong.listaBrasilAClickLong();
+
                 // Criação do PopupWindow
                 LayoutInflater inflater = LayoutInflater.from(view.getContext());
                 LinearLayout layoutPopup = (LinearLayout) inflater.inflate(R.layout.layout_porcentagem_estatistica, null);
@@ -303,6 +312,7 @@ public class ListaBrasilSerieA_2024_TesteFragment extends Fragment implements Jo
 
                 String teamName = listaOficial.get(position).getName();
                 textTitulo.setText("Melhores Estatísticas - " + teamName);
+
 
                 recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
                 CarregarEstatistica70_90Adapter adapter = new CarregarEstatistica70_90Adapter(new ArrayList<>());
@@ -379,29 +389,33 @@ public class ListaBrasilSerieA_2024_TesteFragment extends Fragment implements Jo
 
                 // Configuração dos botões para exibir os dados correspondentes
                 btnMais70Casa.setOnClickListener(v -> {
+                   // listaBrasilAClickLong.listaBrasilAClickLong(teamName);
                     List<String> estatisticas = melhoresStatisticasCasa(listaSelecionada, teamName, 70);
                     adapter.setEstatisticas(estatisticas);
                     recyclerView.setVisibility(View.VISIBLE);
                 });
 
                 btnMais88Casa.setOnClickListener(v -> {
+                    //listaBrasilAClickLong.listaBrasilAClickLong(teamName);
                     List<String> estatisticas = melhoresStatisticasCasa(listaSelecionada, teamName, 88);
                     adapter.setEstatisticas(estatisticas);
                     recyclerView.setVisibility(View.VISIBLE);
                 });
 
                 btnMais70Fora.setOnClickListener(v -> {
+                    //listaBrasilAClickLong.listaBrasilAClickLong(teamName);
                     List<String> estatisticas = melhoresStatisticasFora(listaSelecionada, teamName, 70);
                     adapter.setEstatisticas(estatisticas);
                     recyclerView.setVisibility(View.VISIBLE);
                 });
 
                 btnMais88Fora.setOnClickListener(v -> {
+                   // listaBrasilAClickLong.listaBrasilAClickLong(teamName);
                     List<String> estatisticas = melhoresStatisticasFora(listaSelecionada, teamName, 88);
                     adapter.setEstatisticas(estatisticas);
                     recyclerView.setVisibility(View.VISIBLE);
                 });
-            }
+            }//fim do método onLongClick
 
 
 
@@ -409,10 +423,6 @@ public class ListaBrasilSerieA_2024_TesteFragment extends Fragment implements Jo
 
         return binding.getRoot();
     }
-
-
-
-
 
 
     //onde o metodo onJogosSerieAReady é chamado ?
