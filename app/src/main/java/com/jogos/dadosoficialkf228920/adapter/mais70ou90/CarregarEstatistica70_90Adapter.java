@@ -13,13 +13,13 @@ import com.jogos.dadosoficialkf228920.R;
 import java.util.List;
 
 public class CarregarEstatistica70_90Adapter extends RecyclerView.Adapter<CarregarEstatistica70_90Adapter.ViewHolder> {
-    private List<String> estatisticas;
+    private List<CharSequence> estatisticas;
 
-    public CarregarEstatistica70_90Adapter(List<String> estatisticas) {
+    public CarregarEstatistica70_90Adapter(List<CharSequence> estatisticas) {
         this.estatisticas = estatisticas;
     }
 
-    public void setEstatisticas(List<String> estatisticas) {
+    public void setEstatisticas(List<CharSequence> estatisticas) {
         this.estatisticas = estatisticas;
         notifyDataSetChanged();
     }

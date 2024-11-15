@@ -10,8 +10,6 @@ public class FormatarCoresTextoCasa {
     public static SpannableStringBuilder formatText(String nomeTime, String totalJogos, String totalGolsMcd, String totalGolsMcdPct) {
         SpannableStringBuilder builder = new SpannableStringBuilder();
 
-
-
         // Adiciona cor à variável nomeTime
         SpannableString nomeTimeSpannable = new SpannableString(nomeTime);
         nomeTimeSpannable.setSpan(new ForegroundColorSpan(Color.BLUE), 0, nomeTime.length(), 0);

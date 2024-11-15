@@ -1,15 +1,17 @@
 package com.jogos.dadosoficialkf228920.util.estatistica70and88;
 
+import android.text.SpannableStringBuilder;
 import android.util.Log;
 
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
+import com.jogos.dadosoficialkf228920.util.FormatarCoresParaExibicaoItensRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Estatistica70ou88 {
 
-    public static List<String> melhoresStatisticasCasa(List<PartidaNovoModelo> listTeamHomeCompleto, String team, Integer porcentagem) {
+    public static List<CharSequence> melhoresStatisticasCasa(List<PartidaNovoModelo> listTeamHomeCompleto, String team, Integer porcentagem) {
 
         String homeTeam = team;
 
@@ -158,7 +160,7 @@ public class Estatistica70ou88 {
         int jogosCasa = 0;
 
 
-        List<String> resultadosCasa = null;
+        List<CharSequence> resultadosCasa = null;
         for (int i = 0; i < listTeamHomeCompleto.size(); i++) {
 
             resultadosCasa = new ArrayList<>();
@@ -446,8 +448,36 @@ public class Estatistica70ou88 {
 
 
         //GOLS 1T CASA
-        if (Math.round(homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [ MARCOU] Gol 1T > 0.5 em " + Math.round((homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + homeGolsTotalPrimeiroTempoZeroCincoMarcados +")"+ " de " + jogosCasa );
+//        if (Math.round(homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100 / jogosCasa) >= porcentagem){
+//
+//            String nameHomeTeam = homeTeam.toUpperCase();
+//            int golsMarcadosPrimeiroTempo = homeGolsTotalPrimeiroTempoZeroCincoMarcados;
+//            int totalJogosCasa = jogosCasa;
+//
+//            SpannableStringBuilder builder = FormatarCoresParaExibicaoItensRecyclerView.formateTextMarcou(nameHomeTeam, golsMarcadosPrimeiroTempo, totalJogosCasa);
+//
+//            resultadosCasa.add(builder.toString());
+//
+//
+//            //resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [ MARCOU] Gol 1T > 0.5 em " + Math.round((homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + homeGolsTotalPrimeiroTempoZeroCincoMarcados +")"+ " de " + jogosCasa );
+//        }
+
+//        if (Math.round(homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100.0 / jogosCasa) >= porcentagem) {
+//            String nameHomeTeam = homeTeam.toUpperCase();
+//            int golsMarcadosPrimeiroTempo = homeGolsTotalPrimeiroTempoZeroCincoMarcados;
+//            int totalJogosCasa = jogosCasa;
+//
+//            // Cria o SpannableStringBuilder com as cores formatadas
+//            SpannableStringBuilder builder = FormatarCoresParaExibicaoItensRecyclerView.formateTextMarcou(
+//                    homeTeam, golsMarcadosPrimeiroTempo, totalJogosCasa
+//            );
+//
+//            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+//            resultadosCasa.add(String.valueOf(builder));
+//
+//            // Removido o uso de .toString(), pois isso removeria a formatação de cores
+//        }
+
         if (Math.round(homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100 / jogosCasa) >= porcentagem)
             resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" + " [NÃO MARCOU] Gol 1T > 0.5 em " + Math.round((homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados +")"+ " de " + jogosCasa );
 
@@ -480,14 +510,42 @@ public class Estatistica70ou88 {
 
 
 
-        //GOLS ACIMA MARCADOS
-        if (Math.round(homeGolsTotalZeroCincoMarcados * 100 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [MARCOU] Gol TOTAL > 0.5 em " + Math.round((homeGolsTotalZeroCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + homeGolsTotalZeroCincoMarcados +")"+ " de " + jogosCasa );
-        if (Math.round(homeGolsTotalZeroCincoNaoMarcados * 100 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [NÃO MARCOU] Gol TOTAL > 0.5 em " + Math.round((homeGolsTotalZeroCincoNaoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + homeGolsTotalZeroCincoNaoMarcados +")"+ " de " + jogosCasa );
+//        //GOLS ACIMA MARCADOS
 
-        if (Math.round(homeGolsTotalUmCincoMarcados * 100 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [ MARCOU] Gol TOTAL > 1.5 em " + Math.round((homeGolsTotalUmCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + homeGolsTotalUmCincoMarcados +")"+ " de " + jogosCasa );
+        if (Math.round(homeGolsTotalZeroCincoMarcados * 100 / jogosCasa) >= porcentagem) {
+            String mercado = "homeGolsTotalZeroCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = FormatarCoresParaExibicaoItensRecyclerView.formateTextMarcou(mercado,
+                    homeTeam.toUpperCase(), Math.round((homeGolsTotalZeroCincoMarcados * 100.0 / jogosCasa)), homeGolsTotalZeroCincoMarcados,
+                    jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
+        }
+
+//        if (Math.round(homeGolsTotalZeroCincoMarcados * 100 / jogosCasa) >= porcentagem)
+//            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [MARCOU] Gol TOTAL > 0.5 em " + Math.round((homeGolsTotalZeroCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + homeGolsTotalZeroCincoMarcados +")"+ " de " + jogosCasa );
+//        if (Math.round(homeGolsTotalZeroCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
+//            String mercado = "homeGolsTotalZeroCincoNaoMarcados";
+//            // Cria o SpannableStringBuilder com as cores formatadas
+//            SpannableStringBuilder builder = FormatarCoresParaExibicaoItensRecyclerView.formateTextMarcou(mercado,
+//                    homeTeam, Math.round((homeGolsTotalZeroCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalZeroCincoNaoMarcados,
+//                    jogosCasa);
+//            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+//            resultadosCasa.add(builder);
+//        }
+            //resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [NÃO MARCOU] Gol TOTAL > 0.5 em " + Math.round((homeGolsTotalZeroCincoNaoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + homeGolsTotalZeroCincoNaoMarcados +")"+ " de " + jogosCasa );
+
+        if (Math.round(homeGolsTotalUmCincoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "homeGolsTotalUmCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = FormatarCoresParaExibicaoItensRecyclerView.formateTextMarcou(mercado,
+                    homeTeam, Math.round((homeGolsTotalUmCincoMarcados * 100.0 / jogosCasa)), homeGolsTotalUmCincoMarcados,
+                    jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
+
+        }
+           // resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [ MARCOU] Gol TOTAL > 1.5 em " + Math.round((homeGolsTotalUmCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + homeGolsTotalUmCincoMarcados +")"+ " de " + jogosCasa );
         if (Math.round(homeGolsTotalUmCincoNaoMarcados * 100 / jogosCasa) >= porcentagem)
             resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [NÃO MARCOU] Gol TOTAL > 1.5 em " + Math.round((homeGolsTotalUmCincoNaoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + homeGolsTotalUmCincoNaoMarcados +")"+ " de " + jogosCasa );
 
@@ -705,7 +763,7 @@ public class Estatistica70ou88 {
     }//fim do método
 
 
-    public static List<String> melhoresStatisticasFora(List<PartidaNovoModelo> listTeamAwayCompleto, String team, Integer porcentagem) {
+    public static List<CharSequence> melhoresStatisticasFora(List<PartidaNovoModelo> listTeamAwayCompleto, String team, Integer porcentagem) {
 
         String awayTeam = team;
 
@@ -853,7 +911,7 @@ public class Estatistica70ou88 {
 
         int jogosFora = 0;
 
-        List<String> resultadosFora = null;
+        List<CharSequence> resultadosFora = null;
         for (int i = 0; i < listTeamAwayCompleto.size(); i++) {
             resultadosFora = new ArrayList<>();
             if (listTeamAwayCompleto.get(i).getAwayTime().getName().equals(awayTeam)) {

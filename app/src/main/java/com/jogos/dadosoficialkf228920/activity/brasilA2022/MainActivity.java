@@ -282,23 +282,23 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
         //mas antes de publicar tente colocar mais times  somente copiando o que fizemos
 
         //Quando irei publicar, tenho que tirar o parametro "textMode" e para teste coloco depois do parametro unityGameId.
-        UnityAds.initialize(this, unityGameID, new IUnityAdsInitializationListener() {
-            @Override
-            public void onInitializationComplete() {
-
-                Log.d("testeunity", "completo");
-                //quando a comunicao acontece com sucesso.. comunicao do Aplicativo com a Unity
-            }
-
-            @Override
-            public void onInitializationFailed(UnityAds.UnityAdsInitializationError error, String message) {
-                //quando coloco o this la em cima esse metodo é chamado para falar qual foi o erro
-                //Esse erro é referente a Unity
-
-                Log.d("testeunity-", message);
-
-            }
-        });
+//        UnityAds.initialize(this, unityGameID, new IUnityAdsInitializationListener() {
+//            @Override
+//            public void onInitializationComplete() {
+//
+//                Log.d("testeunity", "completo");
+//                //quando a comunicao acontece com sucesso.. comunicao do Aplicativo com a Unity
+//            }
+//
+//            @Override
+//            public void onInitializationFailed(UnityAds.UnityAdsInitializationError error, String message) {
+//                //quando coloco o this la em cima esse metodo é chamado para falar qual foi o erro
+//                //Esse erro é referente a Unity
+//
+//                Log.d("testeunity-", message);
+//
+//            }
+//        });
 
 
         relativeLayoutBannerUnity = binding.adViewContainerMainActivityUnity;

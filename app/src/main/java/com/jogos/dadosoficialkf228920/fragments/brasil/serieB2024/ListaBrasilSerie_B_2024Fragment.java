@@ -405,25 +405,25 @@ public class ListaBrasilSerie_B_2024Fragment extends Fragment implements JogosSe
 
                 // Configuração dos botões para exibir os dados correspondentes
                 btnMais70Casa.setOnClickListener(v -> {
-                    List<String> estatisticas = melhoresStatisticasCasa(listaSelecionada, teamName, 70);
+                    List<CharSequence> estatisticas = melhoresStatisticasCasa(listaSelecionada, teamName, 70);
                     adapter.setEstatisticas(estatisticas);
                     recyclerView.setVisibility(View.VISIBLE);
                 });
 
                 btnMais88Casa.setOnClickListener(v -> {
-                    List<String> estatisticas = melhoresStatisticasCasa(listaSelecionada, teamName, 88);
+                    List<CharSequence> estatisticas = melhoresStatisticasCasa(listaSelecionada, teamName, 88);
                     adapter.setEstatisticas(estatisticas);
                     recyclerView.setVisibility(View.VISIBLE);
                 });
 
                 btnMais70Fora.setOnClickListener(v -> {
-                    List<String> estatisticas = melhoresStatisticasFora(listaSelecionada, teamName, 70);
+                    List<CharSequence> estatisticas = melhoresStatisticasFora(listaSelecionada, teamName, 70);
                     adapter.setEstatisticas(estatisticas);
                     recyclerView.setVisibility(View.VISIBLE);
                 });
 
                 btnMais88Fora.setOnClickListener(v -> {
-                    List<String> estatisticas = melhoresStatisticasFora(listaSelecionada, teamName, 88);
+                    List<CharSequence> estatisticas = melhoresStatisticasFora(listaSelecionada, teamName, 88);
                     adapter.setEstatisticas(estatisticas);
                     recyclerView.setVisibility(View.VISIBLE);
                 });
