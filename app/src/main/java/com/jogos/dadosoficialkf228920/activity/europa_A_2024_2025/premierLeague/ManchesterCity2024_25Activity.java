@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.databinding.ActivityManchesterCity202425Binding;
 
 public class ManchesterCity2024_25Activity extends AppCompatActivity {
+    private ActivityManchesterCity202425Binding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

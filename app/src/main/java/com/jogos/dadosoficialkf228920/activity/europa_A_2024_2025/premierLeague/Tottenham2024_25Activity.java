@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.databinding.ActivityTottenham202425Binding;
 
 public class Tottenham2024_25Activity extends AppCompatActivity {
+    private ActivityTottenham202425Binding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

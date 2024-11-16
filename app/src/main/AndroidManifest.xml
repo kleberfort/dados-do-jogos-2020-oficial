@@ -14,6 +14,340 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DadosDosJogos2020Oficial">
         <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.Zwolle2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.WillemII2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.Waalwijk2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.Utrecht2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.Twente2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.Sparta2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.Psv2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.Nec2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.NacBreda2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.Heracles2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.Heerenveen2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.Groningen2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.GaEagles2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.Fortuna2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.Feyenoord2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.Az2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.AlmereCity2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.eredivisie.Ajax2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Verona2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Venezia2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Udinese2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Torino2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Roma2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Parma2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Napoli2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Monza2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Milan2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Lecce2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Lazio2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Juventus2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Inter2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Genoa2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Fiorentina2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Empoli2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Como2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Cagliari2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Bologna2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.serieA.Atalanta2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.Vitoria2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.Sporting2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.SantaClara2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.RioAve2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.Porto2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.Nacional2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.Moreirense2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.GilVicente2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.Farense2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.Famalicao2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.EstrelaAmadora2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.Estoril2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.CasaPia2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.Braga2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.Boavista2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.Benfica2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.Avs2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.primeiraLiga.Arouca2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.Toulouse2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.Strasbourg2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.SaintEtienne2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.Rennes2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.Reims2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.Psg2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.Nice2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.Nantes2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.Montpellier2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.Marseille2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.Lyon2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.Lille2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.Lens2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.LeHavre2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.Brest2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.Auxerre2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligue1.Angers2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Wolfsburg2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.UnionBerlin2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Stuttgart2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.StPauli2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Mainz05_2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Mgladbach2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Leipzig2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Leverkusen2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Kiel2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Hoffenheim2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Heidenheim2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Freiburg2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Frankfurt2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Dortmund2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Bremen2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Bochum2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Bayern2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Augsburg2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.Villarreal2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.Valencia2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.Sevilla2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.RealValladolid2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.RealSociedad2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.RealMadrid2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.RealBetis2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.RayoVallecano2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.Osasuna2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.Mallorca2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.Leganes2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.LasPalmas2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.Getafe2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.Espanyol2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.Celta2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.Barcelona2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.AtlMadrid2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.AthleticClub2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.Alaves2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.laLiga.AlavesActivity"
+            android:exported="false"
+            android:theme="@style/Theme.DadosDosJogos2020Oficial" />
+        <activity
             android:name=".activity.europa_A_2024_2025.premierLeague.Southampton2024_25Activity"
             android:exported="false" />
         <activity

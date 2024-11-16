@@ -448,36 +448,8 @@ public class Estatistica70ou88 {
 
 
         //GOLS 1T CASA
-//        if (Math.round(homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100 / jogosCasa) >= porcentagem){
-//
-//            String nameHomeTeam = homeTeam.toUpperCase();
-//            int golsMarcadosPrimeiroTempo = homeGolsTotalPrimeiroTempoZeroCincoMarcados;
-//            int totalJogosCasa = jogosCasa;
-//
-//            SpannableStringBuilder builder = FormatarCoresParaExibicaoItensRecyclerView.formateTextMarcou(nameHomeTeam, golsMarcadosPrimeiroTempo, totalJogosCasa);
-//
-//            resultadosCasa.add(builder.toString());
-//
-//
-//            //resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [ MARCOU] Gol 1T > 0.5 em " + Math.round((homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + homeGolsTotalPrimeiroTempoZeroCincoMarcados +")"+ " de " + jogosCasa );
-//        }
-
-//        if (Math.round(homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100.0 / jogosCasa) >= porcentagem) {
-//            String nameHomeTeam = homeTeam.toUpperCase();
-//            int golsMarcadosPrimeiroTempo = homeGolsTotalPrimeiroTempoZeroCincoMarcados;
-//            int totalJogosCasa = jogosCasa;
-//
-//            // Cria o SpannableStringBuilder com as cores formatadas
-//            SpannableStringBuilder builder = FormatarCoresParaExibicaoItensRecyclerView.formateTextMarcou(
-//                    homeTeam, golsMarcadosPrimeiroTempo, totalJogosCasa
-//            );
-//
-//            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
-//            resultadosCasa.add(String.valueOf(builder));
-//
-//            // Removido o uso de .toString(), pois isso removeria a formatação de cores
-//        }
-
+       if (Math.round(homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100 / jogosCasa) >= porcentagem)
+           resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [ MARCOU] Gol 1T > 0.5 em " + Math.round((homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + homeGolsTotalPrimeiroTempoZeroCincoMarcados +")"+ " de " + jogosCasa );
         if (Math.round(homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100 / jogosCasa) >= porcentagem)
             resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" + " [NÃO MARCOU] Gol 1T > 0.5 em " + Math.round((homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados +")"+ " de " + jogosCasa );
 

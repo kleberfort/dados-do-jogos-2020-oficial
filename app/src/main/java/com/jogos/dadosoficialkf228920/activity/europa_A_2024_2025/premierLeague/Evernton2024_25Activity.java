@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.databinding.ActivityEvernton202425Binding;
 
 public class Evernton2024_25Activity extends AppCompatActivity {
+    private ActivityEvernton202425Binding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

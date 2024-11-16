@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.databinding.ActivityWolves202425Binding;
 
 public class Wolves2024_25Activity extends AppCompatActivity {
+    private ActivityWolves202425Binding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
