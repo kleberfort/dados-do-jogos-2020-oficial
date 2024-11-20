@@ -450,29 +450,38 @@ public class Estatistica70ou88 {
        if (Math.round(homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100 / jogosCasa) >= porcentagem){
            String mercado = "homeGolsTotalPrimeiroTempoZeroCincoMarcados";
            // Cria o SpannableStringBuilder com as cores formatadas
-           SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeMarcou(mercado,
+           SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeMarcou(mercado,
                    homeTeam, Math.round((homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100.0 / jogosCasa)), homeGolsTotalPrimeiroTempoZeroCincoMarcados,
                    jogosCasa);
            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
            resultadosCasa.add(builder);
        }
-            //GOLS HOME NAO MARCADO 1T 0.5
-        if (Math.round(homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
-            String mercado = "homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados";
+        //GOLS HOME MARCADO 1T 1.5
+        if (Math.round(homeGolsTotalPrimeiroTempoUmCincoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "homeGolsTotalPrimeiroTempoUmCincoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeNaoMarcou(mercado,
-                    homeTeam, Math.round((homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados,
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeMarcou(mercado,
+                    homeTeam, Math.round((homeGolsTotalPrimeiroTempoUmCincoMarcados * 100.0 / jogosCasa)), homeGolsTotalPrimeiroTempoUmCincoMarcados,
                     jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
         }
-
-            //GOLS HOME MARCADO 1T 1.5
-        if (Math.round(homeGolsTotalPrimeiroTempoUmCincoMarcados * 100 / jogosCasa) >= porcentagem){
-            String mercado = "homeGolsTotalPrimeiroTempoUmCincoMarcados";
+        //GOLS HOME MARCADO 1T 2.5
+        if (Math.round(homeGolsTotalPrimeiroTempoDoisCincoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "homeGolsTotalPrimeiroTempoDoisCincoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeMarcou(mercado,
-                    homeTeam, Math.round((homeGolsTotalPrimeiroTempoUmCincoMarcados * 100.0 / jogosCasa)), homeGolsTotalPrimeiroTempoUmCincoMarcados,
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeMarcou(mercado,
+                    homeTeam, Math.round((homeGolsTotalPrimeiroTempoDoisCincoMarcados * 100.0 / jogosCasa)), homeGolsTotalPrimeiroTempoDoisCincoMarcados,
+                    jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
+        }
+            //GOLS HOME NAO MARCADO 1T 0.5
+        if (Math.round(homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeNaoMarcou(mercado,
+                    homeTeam, Math.round((homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados,
                     jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
@@ -481,19 +490,8 @@ public class Estatistica70ou88 {
         if (Math.round(homeGolsTotalPrimeiroTempoUmCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
             String mercado = "homeGolsTotalPrimeiroTempoUmCincoNaoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeNaoMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeNaoMarcou(mercado,
                     homeTeam, Math.round((homeGolsTotalPrimeiroTempoUmCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalPrimeiroTempoUmCincoNaoMarcados,
-                    jogosCasa);
-            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
-            resultadosCasa.add(builder);
-        }
-
-        //GOLS HOME MARCADO 1T 2.5
-        if (Math.round(homeGolsTotalPrimeiroTempoDoisCincoMarcados * 100 / jogosCasa) >= porcentagem){
-            String mercado = "homeGolsTotalPrimeiroTempoDoisCincoMarcados";
-            // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeMarcou(mercado,
-                    homeTeam, Math.round((homeGolsTotalPrimeiroTempoDoisCincoMarcados * 100.0 / jogosCasa)), homeGolsTotalPrimeiroTempoDoisCincoMarcados,
                     jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
@@ -502,7 +500,7 @@ public class Estatistica70ou88 {
         if (Math.round(homeGolsTotalPrimeiroTempoDoisCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
             String mercado = "homeGolsTotalPrimeiroTempoDoisCincoNaoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeNaoMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeNaoMarcou(mercado,
                     homeTeam, Math.round((homeGolsTotalPrimeiroTempoDoisCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalPrimeiroTempoDoisCincoNaoMarcados,
                     jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
@@ -511,145 +509,138 @@ public class Estatistica70ou88 {
 
     //------------------------------------------------------------------------------------------------------------------//
 
-        //GOLS 2T CASA
+        //GOLS HOME MARCADO 2T 0.5
         if (Math.round(homeGolsTotalSegundoTempoZeroCincoMarcados * 100 / jogosCasa) >= porcentagem){
             String mercado = "homeGolsTotalSegundoTempoZeroCincoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeMarcou(mercado,
                     homeTeam, Math.round((homeGolsTotalSegundoTempoZeroCincoMarcados * 100.0 / jogosCasa)), homeGolsTotalSegundoTempoZeroCincoMarcados,
                     jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
         }
-
-        if (Math.round(homeGolsTotalSegundoTempoZeroCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
-            String mercado = "homeGolsTotalSegundoTempoZeroCincoNaoMarcados";
-            // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeNaoMarcou(mercado,
-                    homeTeam, Math.round((homeGolsTotalSegundoTempoZeroCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalSegundoTempoZeroCincoNaoMarcados,
-                    jogosCasa);
-            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
-            resultadosCasa.add(builder);
-        }
-
-
+        //GOLS HOME MARCADO 2T 1.5
         if (Math.round(homeGolsTotalSegundoTempoUmCincoMarcados * 100.0 / jogosCasa) >= porcentagem){
             String mercado = "homeGolsTotalSegundoTempoUmCincoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeMarcou(mercado,
                     homeTeam, Math.round((homeGolsTotalSegundoTempoUmCincoMarcados * 100.0 / jogosCasa)), homeGolsTotalSegundoTempoUmCincoMarcados,
                     jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
         }
-
-        if (Math.round(homeGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosCasa) >= porcentagem){
-            String mercado = "homeGolsTotalSegundoTempoUmCincoNaoMarcados";
-            // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeNaoMarcou(mercado,
-                    homeTeam, Math.round((homeGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalSegundoTempoUmCincoNaoMarcados,
-                    jogosCasa);
-            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
-            resultadosCasa.add(builder);
-
-        }
-
-
+        //GOLS HOME MARCADO 2T 2.5
         if (Math.round(homeGolsTotalSegundoTempoDoisCincoMarcados * 100 / jogosCasa) >= porcentagem){
             String mercado = "homeGolsTotalSegundoTempoDoisCincoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeMarcou(mercado,
                     homeTeam, Math.round((homeGolsTotalSegundoTempoDoisCincoMarcados * 100.0 / jogosCasa)), homeGolsTotalSegundoTempoDoisCincoMarcados,
                     jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
         }
 
+        //GOLS HOME NAO MARCADO 2T 0.5
+        if (Math.round(homeGolsTotalSegundoTempoZeroCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "homeGolsTotalSegundoTempoZeroCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeNaoMarcou(mercado,
+                    homeTeam, Math.round((homeGolsTotalSegundoTempoZeroCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalSegundoTempoZeroCincoNaoMarcados,
+                    jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);}
+
+        //GOLS HOME NAO MARCADO 2T 1.5
+        if (Math.round(homeGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosCasa) >= porcentagem){
+            String mercado = "homeGolsTotalSegundoTempoUmCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeNaoMarcou(mercado,
+                    homeTeam, Math.round((homeGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalSegundoTempoUmCincoNaoMarcados,
+                    jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);}
+
+        //GOLS HOME NAO MARCADO 2T 2.5
         if (Math.round(homeGolsTotalSegundoTempoDoisCincoNaoMarcados * 100.0 / jogosCasa) >= porcentagem){
             String mercado = "homeGolsTotalSegundoTempoDoisCincoNaoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeNaoMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeNaoMarcou(mercado,
                     homeTeam, Math.round((homeGolsTotalSegundoTempoDoisCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalSegundoTempoDoisCincoNaoMarcados,
                     jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
-            resultadosCasa.add(builder);
-        }
+            resultadosCasa.add(builder);}
 
 
 
-
-//        //GOLS ACIMA MARCADOS
-
+        //GOLS HOME ACIMA MARCADOS 0.5
         if (Math.round(homeGolsTotalZeroCincoMarcados * 100 / jogosCasa) >= porcentagem) {
             String mercado = "homeGolsTotalZeroCincoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeMarcou(mercado,
                     homeTeam.toUpperCase(), Math.round((homeGolsTotalZeroCincoMarcados * 100.0 / jogosCasa)), homeGolsTotalZeroCincoMarcados,
                     jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
         }
-
-        if (Math.round(homeGolsTotalZeroCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
-            String mercado = "homeGolsTotalZeroCincoNaoMarcados";
-            // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeNaoMarcou(mercado,
-                    homeTeam, Math.round((homeGolsTotalZeroCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalZeroCincoNaoMarcados,
-                    jogosCasa);
-            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
-            resultadosCasa.add(builder);
-        }
-
-
+        //GOLS HOME ACIMA MARCADOS 1.5
         if (Math.round(homeGolsTotalUmCincoMarcados * 100 / jogosCasa) >= porcentagem){
             String mercado = "homeGolsTotalUmCincoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeMarcou(mercado,
                     homeTeam, Math.round((homeGolsTotalUmCincoMarcados * 100.0 / jogosCasa)), homeGolsTotalUmCincoMarcados,
                     jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
 
         }
+        //GOLS HOME ACIMA MARCADOS 2.5
+        if (Math.round(homeGolsTotalDoisCincoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "homeGolsTotalDoisCincoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeMarcou(mercado,
+                    homeTeam, Math.round((homeGolsTotalDoisCincoMarcados * 100.0 / jogosCasa)),homeGolsTotalDoisCincoMarcados, jogosCasa);
+            resultadosCasa.add(builder);
+        }
+        //GOLS HOME ACIMA MARCADOS 3.5
+        if (Math.round(homeGolsTotalTresCincoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "homeGolsTotalTresCincoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeMarcou(mercado,
+                    homeTeam, Math.round((homeGolsTotalTresCincoMarcados * 100.0 / jogosCasa)) ,homeGolsTotalTresCincoMarcados, jogosCasa);
+            resultadosCasa.add(builder);
+        }
 
-        if (Math.round(homeGolsTotalUmCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
-            String mercado = "homeGolsTotalUmCincoNaoMarcados";
+        //GOLS HOME ACIMA NAO MARCADOS 0.5
+        if (Math.round(homeGolsTotalZeroCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "homeGolsTotalZeroCincoNaoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeNaoMarcou(mercado,
-                    homeTeam, Math.round((homeGolsTotalUmCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalUmCincoNaoMarcados,
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeNaoMarcou(mercado,
+                    homeTeam, Math.round((homeGolsTotalZeroCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalZeroCincoNaoMarcados,
                     jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
         }
-
-
-        if (Math.round(homeGolsTotalDoisCincoMarcados * 100 / jogosCasa) >= porcentagem){
-            String mercado = "homeGolsTotalDoisCincoMarcados";
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeMarcou(mercado,
-                    homeTeam, Math.round((homeGolsTotalDoisCincoMarcados * 100.0 / jogosCasa)),homeGolsTotalDoisCincoMarcados, jogosCasa);
+        //GOLS HOME ACIMA NAO MARCADOS 1.5
+        if (Math.round(homeGolsTotalUmCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "homeGolsTotalUmCincoNaoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeNaoMarcou(mercado,
+                    homeTeam, Math.round((homeGolsTotalUmCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalUmCincoNaoMarcados,
+                    jogosCasa);
+            resultadosCasa.add(builder);
         }
-
+        //GOLS HOME ACIMA NAO MARCADOS 2.5
         if (Math.round(homeGolsTotalDoisCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
             String mercado = "homeGolsTotalDoisCincoNaoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeNaoMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeNaoMarcou(mercado,
                     homeTeam, Math.round((homeGolsTotalDoisCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalDoisCincoNaoMarcados,
                     jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
         }
-
-
-        if (Math.round(homeGolsTotalTresCincoMarcados * 100 / jogosCasa) >= porcentagem){
-            String mercado = "homeGolsTotalTresCincoMarcados";
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeMarcou(mercado,
-                    homeTeam, Math.round((homeGolsTotalTresCincoMarcados * 100.0 / jogosCasa)) ,homeGolsTotalTresCincoMarcados, jogosCasa);
-        }
-
+        //GOLS HOME ACIMA NAO MARCADOS 3.5
         if (Math.round(homeGolsTotalTresCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
             String mercado = "homeGolsTotalTresCincoNaoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeNaoMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsMcdAndNaoMcd.formatTextHomeNaoMarcou(mercado,
                     homeTeam, Math.round((homeGolsTotalTresCincoNaoMarcados * 100.0 / jogosCasa)), homeGolsTotalTresCincoNaoMarcados,
                     jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
@@ -663,93 +654,176 @@ public class Estatistica70ou88 {
         //GOLS 1T CASA SOFRIDOS
         if (Math.round(awayGolsTotalPrimeiroTempoZeroCincoMarcados * 100 / jogosCasa) >= porcentagem){
             String mercado = "awayGolsTotalPrimeiroTempoZeroCincoMarcados";
-            SpannableStringBuilder builder = FormatarCoresParaExibicaoAwayGolsMcdRecyclerView.formatTextAwayMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsSofreu(mercado,
                     homeTeam, Math.round((awayGolsTotalPrimeiroTempoZeroCincoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalPrimeiroTempoZeroCincoMarcados, jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
         }
-          //  resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [ SOFREU] Gol 1T > 0.5 em " + Math.round((awayGolsTotalPrimeiroTempoZeroCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalPrimeiroTempoZeroCincoMarcados +")"+ " de " + jogosCasa );
+
         if (Math.round(awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
             String mercado = "awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados";
-            SpannableStringBuilder builder = FormatarCoresParaExibicaoAwayGolsNaoMcdRecyclerView.formatTextAwayNaoMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsNaoSofreu(mercado,
                     homeTeam, Math.round((awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados, jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
         }
-            //resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [NÃO SOFREU] Gol 1T > 0.5 em " + Math.round((awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados +")"+ " de " + jogosCasa );
+
 
         if (Math.round(awayGolsTotalPrimeiroTempoUmCincoMarcados * 100 / jogosCasa) >= porcentagem){
             String mercado = "awayGolsTotalPrimeiroTempoUmCincoMarcados";
-            SpannableStringBuilder builder = FormatarCoresParaExibicaoAwayGolsMcdRecyclerView.formatTextAwayMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsSofreu(mercado,
                     homeTeam, Math.round((awayGolsTotalPrimeiroTempoUmCincoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalPrimeiroTempoUmCincoMarcados, jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
         }
-        //    resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [ SOFREU] Gol 1T > 1.5 em " + Math.round((awayGolsTotalPrimeiroTempoUmCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalPrimeiroTempoUmCincoMarcados +")"+ " de " + jogosCasa );
+
         if (Math.round(awayGolsTotalPrimeiroTempoUmCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
             String mercado = "awayGolsTotalPrimeiroTempoUmCincoNaoMarcados";
-            SpannableStringBuilder builder = FormatarCoresParaExibicaoAwayGolsNaoMcdRecyclerView.formatTextAwayNaoMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsNaoSofreu(mercado,
                     homeTeam, Math.round((awayGolsTotalPrimeiroTempoUmCincoNaoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalPrimeiroTempoUmCincoNaoMarcados, jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
         }
-           // resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [NÃO SOFREU] Gol 1T > 1.5 em " + Math.round((awayGolsTotalPrimeiroTempoUmCincoNaoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalPrimeiroTempoUmCincoNaoMarcados +")"+ " de " + jogosCasa );
+
 
         if (Math.round(awayGolsTotalPrimeiroTempoDoisCincoMarcados * 100 / jogosCasa) >= porcentagem){
             String mercado = "awayGolsTotalPrimeiroTempoDoisCincoMarcados";
-            SpannableStringBuilder builder = FormatarCoresParaExibicaoAwayGolsMcdRecyclerView.formatTextAwayMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsSofreu(mercado,
                     homeTeam, Math.round((awayGolsTotalPrimeiroTempoDoisCincoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalPrimeiroTempoDoisCincoMarcados, jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
         }
-           // resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [ SOFREU] Gol 1T > 2.5 em " + Math.round((awayGolsTotalPrimeiroTempoDoisCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalPrimeiroTempoDoisCincoMarcados +")"+ " de " + jogosCasa );
+
         if (Math.round(awayGolsTotalPrimeiroTempoDoisCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
             String mercado = "awayGolsTotalPrimeiroTempoDoisCincoNaoMarcados";
-            SpannableStringBuilder builder = FormatarCoresParaExibicaoAwayGolsNaoMcdRecyclerView.formatTextAwayNaoMarcou(mercado,
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsNaoSofreu(mercado,
                     homeTeam, Math.round((awayGolsTotalPrimeiroTempoDoisCincoNaoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalPrimeiroTempoDoisCincoNaoMarcados, jogosCasa);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosCasa.add(builder);
         }
-           // resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [NÃO SOFREU] Gol 1T > 2.5 em " + Math.round((awayGolsTotalPrimeiroTempoDoisCincoNaoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalPrimeiroTempoDoisCincoNaoMarcados +")"+ " de " + jogosCasa );
 
 
-        //GOLS 2T CASA SOFRIDO
-        if (Math.round(awayGolsTotalSegundoTempoZeroCincoMarcados * 100 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [ SOFREU] Gol 2T > 0.5 em " + Math.round((awayGolsTotalSegundoTempoZeroCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalSegundoTempoZeroCincoMarcados +")"+ " de " + jogosCasa );
-        if (Math.round(awayGolsTotalSegundoTempoZeroCincoNaoMarcados * 100 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [NÃO SOFREU] Gol 2T > 0.5 em " + Math.round((awayGolsTotalSegundoTempoZeroCincoNaoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalSegundoTempoZeroCincoNaoMarcados +")"+ " de " + jogosCasa );
 
-        if (Math.round(awayGolsTotalSegundoTempoUmCincoMarcados * 100.0 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [ SOFREU] Gol 2T > 1.5 em " + Math.round((awayGolsTotalSegundoTempoUmCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalSegundoTempoUmCincoMarcados +")"+ " de " + jogosCasa );
-        if (Math.round(awayGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [NÃO SOFREU] Gol 2T > 1.5 em " + Math.round((awayGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalSegundoTempoUmCincoNaoMarcados +")"+ " de " + jogosCasa );
+        //GOLS 2T HOME SOFRIDO
+        if (Math.round(awayGolsTotalSegundoTempoZeroCincoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "awayGolsTotalSegundoTempoZeroCincoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsSofreu(mercado,
+                    homeTeam, Math.round((awayGolsTotalSegundoTempoZeroCincoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalSegundoTempoZeroCincoMarcados, jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
+        }
 
-        if (Math.round(awayGolsTotalSegundoTempoDoisCincoMarcados * 100 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [ SOFREU] Gol 2T > 2.5 em " + Math.round((awayGolsTotalSegundoTempoDoisCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalSegundoTempoDoisCincoMarcados +")"+ " de " + jogosCasa );
-        if (Math.round(awayGolsTotalSegundoTempoDoisCincoNaoMarcados * 100.0 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [NÃO SOFREU] Gol 2T > 2.5 em " + (awayGolsTotalSegundoTempoDoisCincoNaoMarcados * 100 / jogosCasa) + "% das" + " partidas(" + awayGolsTotalSegundoTempoDoisCincoNaoMarcados +")"+ " de " + jogosCasa );
+        if (Math.round(awayGolsTotalSegundoTempoUmCincoMarcados * 100.0 / jogosCasa) >= porcentagem){
+            String mercado = "awayGolsTotalSegundoTempoUmCincoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsSofreu(mercado,
+                    homeTeam, Math.round((awayGolsTotalSegundoTempoUmCincoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalSegundoTempoUmCincoMarcados, jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
+
+        }
+
+        if (Math.round(awayGolsTotalSegundoTempoDoisCincoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "awayGolsTotalSegundoTempoDoisCincoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsSofreu(mercado,
+                    homeTeam, Math.round((awayGolsTotalSegundoTempoDoisCincoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalSegundoTempoDoisCincoMarcados, jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
+        }
 
 
-        //GOLS ACIMA SOFRIDOS
-        if (Math.round(awayGolsTotalZeroCincoMarcados * 100 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [SOFREU] Gol TOTAL > 0.5 em " + Math.round((awayGolsTotalZeroCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalZeroCincoMarcados +")"+ " de " + jogosCasa );
-        if (Math.round(awayGolsTotalZeroCincoNaoMarcados * 100 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [NÃO SOFREU] Gol TOTAL > 0.5 em " + Math.round((awayGolsTotalZeroCincoNaoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalZeroCincoNaoMarcados +")"+ " de " + jogosCasa );
+        if (Math.round(awayGolsTotalSegundoTempoZeroCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "awayGolsTotalSegundoTempoZeroCincoNaoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsNaoSofreu(mercado,
+                    homeTeam, Math.round((awayGolsTotalSegundoTempoZeroCincoNaoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalSegundoTempoZeroCincoNaoMarcados, jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
 
-        if (Math.round(awayGolsTotalUmCincoMarcados * 100 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [ SOFREU] Gol TOTAL > 1.5 em " + Math.round((awayGolsTotalUmCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalUmCincoMarcados +")"+ " de " + jogosCasa );
-        if (Math.round(awayGolsTotalUmCincoNaoMarcados * 100 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [NÃO SOFREU] Gol TOTAL > 1.5 em " + Math.round((awayGolsTotalUmCincoNaoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalUmCincoNaoMarcados +")"+ " de " + jogosCasa );
+        }
 
-        if (Math.round(awayGolsTotalDoisCincoMarcados * 100 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [ SOFREU] Gol TOTAL > 2.5 em " + Math.round((awayGolsTotalDoisCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalDoisCincoMarcados +")"+ " de " + jogosCasa );
-        if (Math.round(awayGolsTotalDoisCincoNaoMarcados * 100 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [NÃO SOFREU] Gol TOTAL > 2.5 em " + Math.round((awayGolsTotalDoisCincoNaoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalDoisCincoNaoMarcados +")"+ " de " + jogosCasa );
+        if (Math.round(awayGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosCasa) >= porcentagem){
+            String mercado = "awayGolsTotalSegundoTempoUmCincoNaoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsNaoSofreu(mercado,
+                    homeTeam, Math.round((awayGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalSegundoTempoUmCincoNaoMarcados, jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
 
-        if (Math.round(awayGolsTotalTresCincoMarcados * 100 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [ SOFREU] Gol TOTAL > 3.5 em " + Math.round((awayGolsTotalTresCincoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalTresCincoMarcados +")"+ " de " + jogosCasa );
-        if (Math.round(awayGolsTotalTresCincoNaoMarcados * 100 / jogosCasa) >= porcentagem)
-            resultadosCasa.add("[ " +homeTeam.toUpperCase() + " CASA ]" +" [NÃO SOFREU] Gol TOTAL > 3.5 em " + Math.round((awayGolsTotalTresCincoNaoMarcados * 100.0 / jogosCasa)) + "% das" + " partidas(" + awayGolsTotalTresCincoNaoMarcados +")"+ " de " + jogosCasa );
+        }
+
+        if (Math.round(awayGolsTotalSegundoTempoDoisCincoNaoMarcados * 100.0 / jogosCasa) >= porcentagem){
+            String mercado = "awayGolsTotalSegundoTempoDoisCincoNaoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsNaoSofreu(mercado,
+                    homeTeam, Math.round((awayGolsTotalSegundoTempoDoisCincoNaoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalSegundoTempoDoisCincoNaoMarcados, jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
+
+        }
+
+        //GOLS ACIMA SOFRIDOS HOME
+        if (Math.round(awayGolsTotalZeroCincoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "awayGolsTotalZeroCincoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsSofreu(mercado,
+                    homeTeam, Math.round((awayGolsTotalZeroCincoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalZeroCincoMarcados, jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
+
+        }
+
+        if (Math.round(awayGolsTotalUmCincoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "awayGolsTotalUmCincoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsSofreu(mercado,
+                    homeTeam, Math.round((awayGolsTotalUmCincoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalUmCincoMarcados, jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
+
+        }
+
+        if (Math.round(awayGolsTotalDoisCincoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "awayGolsTotalDoisCincoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsSofreu(mercado,
+                    homeTeam, Math.round((awayGolsTotalDoisCincoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalDoisCincoMarcados, jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
+
+        }
+
+        if (Math.round(awayGolsTotalTresCincoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "awayGolsTotalTresCincoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsSofreu(mercado,
+                    homeTeam, Math.round((awayGolsTotalTresCincoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalTresCincoMarcados, jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
+
+        }
+
+        //------------------INICIO TOTAL GOLS ACIMA NAO MARCADOS AWAY----------------------------------
+        if (Math.round(awayGolsTotalZeroCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "awayGolsTotalZeroCincoNaoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsNaoSofreu(mercado,
+                    homeTeam, Math.round((awayGolsTotalZeroCincoNaoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalZeroCincoNaoMarcados, jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
+        }
+        if (Math.round(awayGolsTotalUmCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "awayGolsTotalUmCincoNaoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsNaoSofreu(mercado,
+                    homeTeam, Math.round((awayGolsTotalUmCincoNaoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalUmCincoNaoMarcados, jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
+        }
+        if (Math.round(awayGolsTotalDoisCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "awayGolsTotalDoisCincoNaoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsNaoSofreu(mercado,
+                    homeTeam, Math.round((awayGolsTotalDoisCincoNaoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalDoisCincoNaoMarcados, jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
+        }
+        if (Math.round(awayGolsTotalTresCincoNaoMarcados * 100 / jogosCasa) >= porcentagem){
+            String mercado = "awayGolsTotalTresCincoNaoMarcados";
+            SpannableStringBuilder builder = CorViewHomeGolsSfdAndNaoSfd.formateTextHomeGolsNaoSofreu(mercado,
+                    homeTeam, Math.round((awayGolsTotalTresCincoNaoMarcados * 100.0 / jogosCasa)) ,awayGolsTotalTresCincoNaoMarcados, jogosCasa);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosCasa.add(builder);
+        }
 
 
 
@@ -1333,220 +1407,432 @@ public class Estatistica70ou88 {
         awayEscanteiosTotalCincoCincoNaoMcd = jogosFora - awayEscanteiosTotalCincoCincoMcd;
 
 
+                //---------AWAY GOLS MARCADOS----------------------------------
 
-
-        //GOLS 1T FORA
+        //GOLS 1T MARCADOS AWAY
         if (Math.round(awayGolsTotalPrimeiroTempoZeroCincoMarcados * 100 / jogosFora) >= porcentagem){
             String mercado = "awayGolsTotalPrimeiroTempoZeroCincoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatarCoresParaExibicaoAwayGolsMcdRecyclerView.formatTextAwayMarcou(mercado,
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayMarcou(mercado,
                     awayTeam, Math.round((awayGolsTotalPrimeiroTempoZeroCincoMarcados * 100.0 / jogosFora)), awayGolsTotalPrimeiroTempoZeroCincoMarcados,
                     jogosFora);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosFora.add(builder);
         }
-          ///  resultadosFora.add("[ " + awayTeam.toUpperCase().toUpperCase() + " FORA ]" +" [ MARCOU] Gol 1T > 0.5 em " + Math.round((awayGolsTotalPrimeiroTempoZeroCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalPrimeiroTempoZeroCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
-            String mercado = "awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados";
-            // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeMarcou(mercado,
-                    awayTeam, Math.round((awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100.0 / jogosFora)), awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados,
-                    jogosFora);
-            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
-            resultadosFora.add(builder);
-        }
-      //      resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" + " [NÃO MARCOU] Gol 1T > 0.5 em " + Math.round((awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados +")"+ " de " + jogosFora );
-
         if (Math.round(awayGolsTotalPrimeiroTempoUmCincoMarcados * 100 / jogosFora) >= porcentagem){
             String mercado = "awayGolsTotalPrimeiroTempoUmCincoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatarCoresParaExibicaoAwayGolsMcdRecyclerView.formatTextAwayMarcou(mercado,
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayMarcou(mercado,
                     awayTeam, Math.round((awayGolsTotalPrimeiroTempoUmCincoMarcados * 100.0 / jogosFora)), awayGolsTotalPrimeiroTempoUmCincoMarcados,
                     jogosFora);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosFora.add(builder);
         }
-          //  resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [ MARCOU] Gol 1T > 1.5 em " + Math.round((awayGolsTotalPrimeiroTempoUmCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalPrimeiroTempoUmCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(awayGolsTotalPrimeiroTempoUmCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
-            String mercado = "awayGolsTotalPrimeiroTempoUmCincoNaoMarcados";
-            // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeMarcou(mercado,
-                    awayTeam, Math.round((awayGolsTotalPrimeiroTempoUmCincoNaoMarcados * 100.0 / jogosFora)), awayGolsTotalPrimeiroTempoUmCincoNaoMarcados,
-                    jogosFora);
-            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
-            resultadosFora.add(builder);
-        }
-        //    resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO MARCOU] Gol 1T > 1.5 em " + Math.round((awayGolsTotalPrimeiroTempoUmCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalPrimeiroTempoUmCincoNaoMarcados +")"+ " de " + jogosFora );
-
         if (Math.round(awayGolsTotalPrimeiroTempoDoisCincoMarcados * 100 / jogosFora) >= porcentagem){
             String mercado = "awayGolsTotalPrimeiroTempoDoisCincoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatarCoresParaExibicaoAwayGolsMcdRecyclerView.formatTextAwayMarcou(mercado,
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayMarcou(mercado,
                     awayTeam, Math.round((awayGolsTotalPrimeiroTempoDoisCincoMarcados * 100.0 / jogosFora)), awayGolsTotalPrimeiroTempoDoisCincoMarcados,
                     jogosFora);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosFora.add(builder);
         }
-        //    resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [ MARCOU] Gol 1T > 2.5 em " + Math.round((awayGolsTotalPrimeiroTempoDoisCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalPrimeiroTempoDoisCincoMarcados +")"+ " de " + jogosFora );
+
+        //GOLS 1T NAO MARCADOS AWAY
+        if (Math.round(awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayNaoMarcou(mercado,
+                    awayTeam, Math.round((awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100.0 / jogosFora)), awayGolsTotalPrimeiroTempoZeroCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+
+        if (Math.round(awayGolsTotalPrimeiroTempoUmCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "awayGolsTotalPrimeiroTempoUmCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayNaoMarcou(mercado,
+                    awayTeam, Math.round((awayGolsTotalPrimeiroTempoUmCincoNaoMarcados * 100.0 / jogosFora)), awayGolsTotalPrimeiroTempoUmCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+
         if (Math.round(awayGolsTotalPrimeiroTempoDoisCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
             String mercado = "awayGolsTotalPrimeiroTempoDoisCincoNaoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatCorViewHomeGolsMcdAndNaoMcdRecyclerView.formatTextHomeMarcou(mercado,
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayNaoMarcou(mercado,
                     awayTeam, Math.round((awayGolsTotalPrimeiroTempoDoisCincoNaoMarcados * 100.0 / jogosFora)), awayGolsTotalPrimeiroTempoDoisCincoNaoMarcados,
                     jogosFora);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosFora.add(builder);
         }
-          //  resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO MARCOU] Gol 1T > 2.5 em " + Math.round((awayGolsTotalPrimeiroTempoDoisCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalPrimeiroTempoDoisCincoNaoMarcados +")"+ " de " + jogosFora );
 
 
-        //GOLS 2T FORA - MARCOU
+
+        //GOLS 2T MARCADOS  AWAY
         if (Math.round(awayGolsTotalSegundoTempoZeroCincoMarcados * 100 / jogosFora) >= porcentagem){
             String mercado = "awayGolsTotalSegundoTempoZeroCincoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatarCoresParaExibicaoAwayGolsMcdRecyclerView.formatTextAwayMarcou(mercado,
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayMarcou(mercado,
                     awayTeam, Math.round((awayGolsTotalSegundoTempoZeroCincoMarcados * 100.0 / jogosFora)), awayGolsTotalSegundoTempoZeroCincoMarcados,
                     jogosFora);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosFora.add(builder);
 
         }
-        //    resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [MARCOU] Gol 2T > 0.5 em " + Math.round((awayGolsTotalSegundoTempoZeroCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalSegundoTempoZeroCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(awayGolsTotalSegundoTempoZeroCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
-
-        }
-        //   resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO MARCOU] Gol 2T > 0.5 em " + Math.round((awayGolsTotalSegundoTempoZeroCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalSegundoTempoZeroCincoNaoMarcados +")"+ " de " + jogosFora );
-
         if (Math.round(awayGolsTotalSegundoTempoUmCincoMarcados * 100.0 / jogosFora) >= porcentagem){
             String mercado = "awayGolsTotalSegundoTempoUmCincoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatarCoresParaExibicaoAwayGolsMcdRecyclerView.formatTextAwayMarcou(mercado,
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayMarcou(mercado,
                     awayTeam, Math.round((awayGolsTotalSegundoTempoUmCincoMarcados * 100.0 / jogosFora)), awayGolsTotalSegundoTempoUmCincoMarcados,
                     jogosFora);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosFora.add(builder);
 
         }
-        //   resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [MARCOU] Gol 2T > 1.5 em " + Math.round((awayGolsTotalSegundoTempoUmCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalSegundoTempoUmCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(awayGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosFora) >= porcentagem){
-
-        }
-        // resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO MARCOU] Gol 2T > 1.5 em " + Math.round((awayGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalSegundoTempoUmCincoNaoMarcados +")"+ " de " + jogosFora );
 
         if (Math.round(awayGolsTotalSegundoTempoDoisCincoMarcados * 100 / jogosFora) >= porcentagem){
             String mercado = "awayGolsTotalSegundoTempoDoisCincoMarcados";
             // Cria o SpannableStringBuilder com as cores formatadas
-            SpannableStringBuilder builder = FormatarCoresParaExibicaoAwayGolsMcdRecyclerView.formatTextAwayMarcou(mercado,
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayMarcou(mercado,
                     awayTeam, Math.round((awayGolsTotalSegundoTempoDoisCincoMarcados * 100.0 / jogosFora)), awayGolsTotalSegundoTempoDoisCincoMarcados,
                     jogosFora);
             // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
             resultadosFora.add(builder);
 
         }
-        //   resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [MARCOU] Gol 2T > 2.5 em " + Math.round((awayGolsTotalSegundoTempoDoisCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalSegundoTempoDoisCincoMarcados +")"+ " de " + jogosFora );
+
+        //GOLS 2T NAO MARCADOS  AWAY
+        if (Math.round(awayGolsTotalSegundoTempoZeroCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "awayGolsTotalSegundoTempoZeroCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayNaoMarcou(mercado,
+                    awayTeam, Math.round((awayGolsTotalSegundoTempoZeroCincoNaoMarcados * 100.0 / jogosFora)), awayGolsTotalSegundoTempoZeroCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+
+        if (Math.round(awayGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosFora) >= porcentagem){
+            String mercado = "awayGolsTotalSegundoTempoUmCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayNaoMarcou(mercado,
+                    awayTeam, Math.round((awayGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosFora)), awayGolsTotalSegundoTempoUmCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+
         if (Math.round(awayGolsTotalSegundoTempoDoisCincoNaoMarcados * 100.0 / jogosFora) >= porcentagem){
-
+            String mercado = "awayGolsTotalSegundoTempoDoisCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayNaoMarcou(mercado,
+                    awayTeam, Math.round((awayGolsTotalSegundoTempoDoisCincoNaoMarcados * 100.0 / jogosFora)), awayGolsTotalSegundoTempoDoisCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
         }
-        //   resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO MARCOU] Gol 2T > 2.5 em " + (awayGolsTotalSegundoTempoDoisCincoNaoMarcados * 100 / jogosFora) + "% das" + " partidas(" + awayGolsTotalSegundoTempoDoisCincoNaoMarcados +")"+ " de " + jogosFora );
 
 
 
-        //GOLS ACIMA MARCADOS FORA
+
+        //GOLS ACIMA MARCADOS AWAY
         if (Math.round(awayGolsTotalZeroCincoMarcados * 100 / jogosFora) >= porcentagem){
-
+            String mercado = "awayGolsTotalZeroCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayMarcou(mercado,
+                    awayTeam, Math.round((awayGolsTotalZeroCincoMarcados * 100.0 / jogosFora)), awayGolsTotalZeroCincoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
         }
-        //    resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [MARCOU] Gol TOTAL > 0.5 em " + Math.round((awayGolsTotalZeroCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalZeroCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(awayGolsTotalZeroCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
-
-        }
-        //     resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO MARCOU] Gol TOTAL > 0.5 em " + Math.round((awayGolsTotalZeroCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalZeroCincoNaoMarcados +")"+ " de " + jogosFora );
-
         if (Math.round(awayGolsTotalUmCincoMarcados * 100 / jogosFora) >= porcentagem){
-
+            String mercado = "awayGolsTotalUmCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayMarcou(mercado,
+                    awayTeam, Math.round((awayGolsTotalUmCincoMarcados * 100.0 / jogosFora)), awayGolsTotalUmCincoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
         }
-        //    resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [ MARCOU] Gol TOTAL > 1.5 em " + Math.round((awayGolsTotalUmCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalUmCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(awayGolsTotalUmCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
-
-        }
-        //    resultadosFora.add("[ " +awayTeam.toUpperCase()+ " FORA ]" +" [NÃO MARCOU] Gol TOTAL > 1.5 em " + Math.round((awayGolsTotalUmCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalUmCincoNaoMarcados +")"+ " de " + jogosFora );
-
         if (Math.round(awayGolsTotalDoisCincoMarcados * 100 / jogosFora) >= porcentagem){
-
+            String mercado = "awayGolsTotalDoisCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayMarcou(mercado,
+                    awayTeam, Math.round((awayGolsTotalDoisCincoMarcados * 100.0 / jogosFora)), awayGolsTotalDoisCincoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
         }
-        //    resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [ MARCOU] Gol TOTAL > 2.5 em " + Math.round((awayGolsTotalDoisCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalDoisCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(awayGolsTotalDoisCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
-
-        }
-        //    resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO MARCOU] Gol TOTAL > 2.5 em " + Math.round((awayGolsTotalDoisCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalDoisCincoNaoMarcados +")"+ " de " + jogosFora );
-
         if (Math.round(awayGolsTotalTresCincoMarcados * 100 / jogosFora) >= porcentagem){
-
+            String mercado = "awayGolsTotalTresCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayMarcou(mercado,
+                    awayTeam, Math.round((awayGolsTotalTresCincoMarcados * 100.0 / jogosFora)), awayGolsTotalTresCincoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
         }
-        //     resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [ MARCOU] Gol TOTAL > 3.5 em " + Math.round((awayGolsTotalTresCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalTresCincoMarcados +")"+ " de " + jogosFora );
+
+
+
+        //GOLS ACIMA NAO MARCADOS AWAY
+        if (Math.round(awayGolsTotalZeroCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "awayGolsTotalZeroCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayNaoMarcou(mercado,
+                    awayTeam, Math.round((awayGolsTotalZeroCincoNaoMarcados * 100.0 / jogosFora)), awayGolsTotalZeroCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+
+        if (Math.round(awayGolsTotalUmCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "awayGolsTotalUmCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayNaoMarcou(mercado,
+                    awayTeam, Math.round((awayGolsTotalUmCincoNaoMarcados * 100.0 / jogosFora)), awayGolsTotalUmCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+
+        if (Math.round(awayGolsTotalDoisCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "awayGolsTotalDoisCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayNaoMarcou(mercado,
+                    awayTeam, Math.round((awayGolsTotalDoisCincoNaoMarcados * 100.0 / jogosFora)), awayGolsTotalDoisCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+
         if (Math.round(awayGolsTotalTresCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
-
+            String mercado = "awayGolsTotalTresCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsMcdAndNaoMcd.formatTextAwayNaoMarcou(mercado,
+                    awayTeam, Math.round((awayGolsTotalTresCincoNaoMarcados * 100.0 / jogosFora)), awayGolsTotalTresCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
         }
-        //    resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO MARCOU] Gol TOTAL > 3.5 em " + Math.round((awayGolsTotalTresCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + awayGolsTotalTresCincoNaoMarcados +")"+ " de " + jogosFora );
 
+//
+//
+//
+//
+//
+//        //-----------------------------------------------DADOS JOGOS FORA--------------------------------------------------------
+//        //GOLS 1T SOFRIDOS AWAY
+        if (Math.round(homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalPrimeiroTempoZeroCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsMarcou(mercado,
+                    awayTeam, Math.round((homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100.0 / jogosFora)), homeGolsTotalPrimeiroTempoZeroCincoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+        if (Math.round(homeGolsTotalPrimeiroTempoUmCincoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalPrimeiroTempoUmCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsMarcou(mercado,
+                    awayTeam, Math.round((homeGolsTotalPrimeiroTempoUmCincoMarcados * 100.0 / jogosFora)), homeGolsTotalPrimeiroTempoUmCincoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+        if (Math.round(homeGolsTotalPrimeiroTempoDoisCincoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalPrimeiroTempoDoisCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsMarcou(mercado,
+                    awayTeam, Math.round((homeGolsTotalPrimeiroTempoDoisCincoMarcados * 100.0 / jogosFora)), homeGolsTotalPrimeiroTempoDoisCincoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+//
+//
+//        //GOLS 1T NAO SOFRIDOS AWAY
+        if (Math.round(homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsNaoMarcados(mercado,
+                    awayTeam, Math.round((homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100.0 / jogosFora)), homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
 
+        if (Math.round(homeGolsTotalPrimeiroTempoUmCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalPrimeiroTempoUmCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsNaoMarcados(mercado,
+                    awayTeam, Math.round((homeGolsTotalPrimeiroTempoUmCincoNaoMarcados * 100.0 / jogosFora)), homeGolsTotalPrimeiroTempoUmCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
 
+        if (Math.round(homeGolsTotalPrimeiroTempoDoisCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalPrimeiroTempoDoisCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsNaoMarcados(mercado,
+                    awayTeam, Math.round((homeGolsTotalPrimeiroTempoDoisCincoNaoMarcados * 100.0 / jogosFora)), homeGolsTotalPrimeiroTempoDoisCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+//
+//
+//
+//        //GOLS 2T SOFRIDOS AWAY
+        if (Math.round(homeGolsTotalSegundoTempoZeroCincoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalSegundoTempoZeroCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsMarcou(mercado,
+                    awayTeam, Math.round((homeGolsTotalSegundoTempoZeroCincoMarcados * 100.0 / jogosFora)), homeGolsTotalSegundoTempoZeroCincoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+        if (Math.round(homeGolsTotalSegundoTempoUmCincoMarcados * 100.0 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalSegundoTempoUmCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsMarcou(mercado,
+                    awayTeam, Math.round((homeGolsTotalSegundoTempoUmCincoMarcados * 100.0 / jogosFora)), homeGolsTotalSegundoTempoUmCincoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+        if (Math.round(homeGolsTotalSegundoTempoDoisCincoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalSegundoTempoDoisCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsMarcou(mercado,
+                    awayTeam, Math.round((homeGolsTotalSegundoTempoDoisCincoMarcados * 100.0 / jogosFora)), homeGolsTotalSegundoTempoDoisCincoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+//
+//
+//
+//        //GOLS 2T NAO SOFRIDOS AWAY
+        if (Math.round(homeGolsTotalSegundoTempoZeroCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalSegundoTempoZeroCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsNaoMarcados(mercado,
+                    awayTeam, Math.round((homeGolsTotalSegundoTempoZeroCincoNaoMarcados * 100.0 / jogosFora)), homeGolsTotalSegundoTempoZeroCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
 
+        if (Math.round(homeGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalSegundoTempoUmCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsNaoMarcados(mercado,
+                    awayTeam, Math.round((homeGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosFora)), homeGolsTotalSegundoTempoUmCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
 
-        //-----------------------------------------------DADOS JOGOS FORA--------------------------------------------------------
-        //GOLS 1T CASA SOFRIDOS
-        if (Math.round(homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [ SOFREU] Gol 1T > 0.5 em " + Math.round((homeGolsTotalPrimeiroTempoZeroCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalPrimeiroTempoZeroCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO SOFREU] Gol 1T > 0.5 em " + Math.round((homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalPrimeiroTempoZeroCincoNaoMarcados +")"+ " de " + jogosFora );
+        if (Math.round(homeGolsTotalSegundoTempoDoisCincoNaoMarcados * 100.0 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalSegundoTempoDoisCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsNaoMarcados(mercado,
+                    awayTeam, Math.round((homeGolsTotalSegundoTempoDoisCincoNaoMarcados * 100.0 / jogosFora)), homeGolsTotalSegundoTempoDoisCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+//
+//
+//
+//        //AWAY GOLS ACIMA SOFRIDOS
+        if (Math.round(homeGolsTotalZeroCincoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalZeroCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsMarcou(mercado,
+                    awayTeam, Math.round((homeGolsTotalZeroCincoMarcados * 100.0 / jogosFora)), homeGolsTotalZeroCincoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+        if (Math.round(homeGolsTotalUmCincoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalUmCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsMarcou(mercado,
+                    awayTeam, Math.round((homeGolsTotalUmCincoMarcados * 100.0 / jogosFora)), homeGolsTotalUmCincoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+        if (Math.round(homeGolsTotalDoisCincoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalDoisCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsMarcou(mercado,
+                    awayTeam, Math.round((homeGolsTotalDoisCincoMarcados * 100.0 / jogosFora)), homeGolsTotalDoisCincoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+        if (Math.round(homeGolsTotalTresCincoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalTresCincoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsMarcou(mercado,
+                    awayTeam, Math.round((homeGolsTotalTresCincoMarcados * 100.0 / jogosFora)), homeGolsTotalTresCincoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
+//
+//
+//
+//        //AWAY GOLS ACIMA NAO SOFRIDOS
+        if (Math.round(homeGolsTotalZeroCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalZeroCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsNaoMarcados(mercado,
+                    awayTeam, Math.round((homeGolsTotalZeroCincoNaoMarcados * 100.0 / jogosFora)), homeGolsTotalZeroCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
 
-        if (Math.round(homeGolsTotalPrimeiroTempoUmCincoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [ SOFREU] Gol 1T > 1.5 em " + Math.round((homeGolsTotalPrimeiroTempoUmCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalPrimeiroTempoUmCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(homeGolsTotalPrimeiroTempoUmCincoNaoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO SOFREU] Gol 1T > 1.5 em " + Math.round((homeGolsTotalPrimeiroTempoUmCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalPrimeiroTempoUmCincoNaoMarcados +")"+ " de " + jogosFora );
+        if (Math.round(homeGolsTotalUmCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalUmCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsNaoMarcados(mercado,
+                    awayTeam, Math.round((homeGolsTotalUmCincoNaoMarcados * 100.0 / jogosFora)), homeGolsTotalUmCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
 
-        if (Math.round(homeGolsTotalPrimeiroTempoDoisCincoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [ SOFREU] Gol 1T > 2.5 em " + Math.round((homeGolsTotalPrimeiroTempoDoisCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalPrimeiroTempoDoisCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(homeGolsTotalPrimeiroTempoDoisCincoNaoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO SOFREU] Gol 1T > 2.5 em " + Math.round((homeGolsTotalPrimeiroTempoDoisCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalPrimeiroTempoDoisCincoNaoMarcados +")"+ " de " + jogosFora );
+        if (Math.round(homeGolsTotalDoisCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalDoisCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsNaoMarcados(mercado,
+                    awayTeam, Math.round((homeGolsTotalDoisCincoNaoMarcados * 100.0 / jogosFora)), homeGolsTotalDoisCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
 
+        if (Math.round(homeGolsTotalTresCincoNaoMarcados * 100 / jogosFora) >= porcentagem){
+            String mercado = "homeGolsTotalTresCincoNaoMarcados";
+            // Cria o SpannableStringBuilder com as cores formatadas
+            SpannableStringBuilder builder = CorViewAwayGolsSfdAndNaoSfd.formateTextAwayGolsNaoMarcados(mercado,
+                    awayTeam, Math.round((homeGolsTotalTresCincoNaoMarcados * 100.0 / jogosFora)), homeGolsTotalTresCincoNaoMarcados,
+                    jogosFora);
+            // Adiciona à lista, assumindo que resultadosCasa pode aceitar CharSequence ou SpannableStringBuilder
+            resultadosFora.add(builder);
+        }
 
-        //GOLS 2T CASA SOFRIDO
-        if (Math.round(homeGolsTotalSegundoTempoZeroCincoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [ SOFREU] Gol 2T > 0.5 em " + Math.round((homeGolsTotalSegundoTempoZeroCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalSegundoTempoZeroCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(homeGolsTotalSegundoTempoZeroCincoNaoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO SOFREU] Gol 2T > 0.5 em " + Math.round((homeGolsTotalSegundoTempoZeroCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalSegundoTempoZeroCincoNaoMarcados +")"+ " de " + jogosFora );
-
-        if (Math.round(homeGolsTotalSegundoTempoUmCincoMarcados * 100.0 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [ SOFREU] Gol 2T > 1.5 em " + Math.round((homeGolsTotalSegundoTempoUmCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalSegundoTempoUmCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(homeGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO SOFREU] Gol 2T > 1.5 em " + Math.round((homeGolsTotalSegundoTempoUmCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalSegundoTempoUmCincoNaoMarcados +")"+ " de " + jogosFora );
-
-        if (Math.round(homeGolsTotalSegundoTempoDoisCincoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [ SOFREU] Gol 2T > 2.5 em " + Math.round((homeGolsTotalSegundoTempoDoisCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalSegundoTempoDoisCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(homeGolsTotalSegundoTempoDoisCincoNaoMarcados * 100.0 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO SOFREU] Gol 2T > 2.5 em " + (homeGolsTotalSegundoTempoDoisCincoNaoMarcados * 100 / jogosFora) + "% das" + " partidas(" + homeGolsTotalSegundoTempoDoisCincoNaoMarcados +")"+ " de " + jogosFora );
-
-
-        //GOLS ACIMA SOFRIDOS
-        if (Math.round(homeGolsTotalZeroCincoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [SOFREU] Gol TOTAL > 0.5 em " + Math.round((homeGolsTotalZeroCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalZeroCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(homeGolsTotalZeroCincoNaoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO SOFREU] Gol TOTAL > 0.5 em " + Math.round((homeGolsTotalZeroCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalZeroCincoNaoMarcados +")"+ " de " + jogosFora );
-
-        if (Math.round(homeGolsTotalUmCincoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [ SOFREU] Gol TOTAL > 1.5 em " + Math.round((homeGolsTotalUmCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalUmCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(homeGolsTotalUmCincoNaoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO SOFREU] Gol TOTAL > 1.5 em " + Math.round((homeGolsTotalUmCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalUmCincoNaoMarcados +")"+ " de " + jogosFora );
-
-        if (Math.round(homeGolsTotalDoisCincoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [ SOFREU] Gol TOTAL > 2.5 em " + Math.round((homeGolsTotalDoisCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalDoisCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(homeGolsTotalDoisCincoNaoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO SOFREU] Gol TOTAL > 2.5 em " + Math.round((homeGolsTotalDoisCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalDoisCincoNaoMarcados +")"+ " de " + jogosFora );
-
-        if (Math.round(homeGolsTotalTresCincoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [ SOFREU] Gol TOTAL > 3.5 em " + Math.round((homeGolsTotalTresCincoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalTresCincoMarcados +")"+ " de " + jogosFora );
-        if (Math.round(homeGolsTotalTresCincoNaoMarcados * 100 / jogosFora) >= porcentagem)
-            resultadosFora.add("[ " +awayTeam.toUpperCase() + " FORA ]" +" [NÃO SOFREU] Gol TOTAL > 3.5 em " + Math.round((homeGolsTotalTresCincoNaoMarcados * 100.0 / jogosFora)) + "% das" + " partidas(" + homeGolsTotalTresCincoNaoMarcados +")"+ " de " + jogosFora );
 
 
 
