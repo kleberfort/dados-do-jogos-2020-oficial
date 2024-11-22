@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.ligaprofissinal2024.argentino_juniors.estatistica.gols;
+package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.bournemouth.estatistica.gols;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -17,7 +17,6 @@ import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadoPartidaSegundoTempoAdapter;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
-
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaGolsBinding;
 import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A2024;
 import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A_2024_Listener;

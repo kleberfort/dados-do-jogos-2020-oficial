@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.ligaprofissinal2024.argentino_juniors.estatistica.gols;
+package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.bournemouth.estatistica.gols;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;

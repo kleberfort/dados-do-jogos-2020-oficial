@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.ligaprofissinal2024.argentino_juniors.estatistica.geral_dois_times;
+package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.bournemouth.estatistica.geral_dois_times;
 
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
