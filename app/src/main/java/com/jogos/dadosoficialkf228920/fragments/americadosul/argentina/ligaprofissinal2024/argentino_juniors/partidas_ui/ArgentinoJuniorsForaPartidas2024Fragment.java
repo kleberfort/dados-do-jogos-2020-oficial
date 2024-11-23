@@ -56,9 +56,6 @@ public class ArgentinoJuniorsForaPartidas2024Fragment extends Fragment implement
         binding.rvListaJogos.setHasFixedSize(true);
         binding.rvListaJogos.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.rvListaJogos.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
-
-
-
         serieAB2024CasaAdapter = new Serie_A_B_2024Adapter(partidas);
         binding.rvListaJogos.setAdapter(serieAB2024CasaAdapter);
 

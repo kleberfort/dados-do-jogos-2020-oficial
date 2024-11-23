@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.databinding.FragmentArgentinoJuniorsEstatisticaCasa2024Binding;
 import com.jogos.dadosoficialkf228920.databinding.FragmentArsenalEstatisticaFora2025Binding;
 
 /**
@@ -24,6 +25,9 @@ public class ArsenalEstatisticaFora2025Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_arsenal_estatistica_casa2025, container, false);
+        binding = FragmentArsenalEstatisticaFora2025Binding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+
+        return  view;
     }
 }

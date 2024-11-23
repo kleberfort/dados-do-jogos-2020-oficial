@@ -1,17 +1,40 @@
 package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.Arsenal2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.AstonVilla2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.Bournemouth2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.Brentford2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.Brighton2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.Chelsea2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.CrystalPalace2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.Evernton2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.Fulham2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.Ipswich2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.LeicesterCity2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.Liverpool2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.ManchesterCity2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.ManchesterUnited2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.Newcastle2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.Nottingham2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.Southampton2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.Tottenham2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.WestHam2024_25Activity;
+import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.Wolves2024_25Activity;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.TimesClasificacaoBrasilA2024Adapter;
 import com.jogos.dadosoficialkf228920.databinding.FragmentListaLigaProfissionalA2024Binding;
 import com.jogos.dadosoficialkf228920.databinding.FragmentListaPremierLeagueA202425Binding;
@@ -20,6 +43,7 @@ import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premi
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_25;
 import com.jogos.dadosoficialkf228920.model.ClassificacaoOficialNovoModelo;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
+import com.jogos.dadosoficialkf228920.model.RecyclerItemClickListener;
 import com.jogos.dadosoficialkf228920.model.comparator.ComparatorPontosVitoriaSaldoGolsProSerieA_B;
 
 import java.util.ArrayList;
@@ -94,6 +118,147 @@ public class ListaPremierLeague_A_2024_25Fragment extends Fragment  implements J
 
         timesClasificacaoBrasilA2024Adapter = new TimesClasificacaoBrasilA2024Adapter(listaOficial);//o adapter vai receber a variazel listaOficial, mas ela esta vazia ainda
         binding.rvLista.setAdapter(timesClasificacaoBrasilA2024Adapter);
+
+
+
+        binding.rvLista.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), binding.rvLista, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                ClassificacaoOficialNovoModelo lista = listaOficial.get(position);
+
+
+                switch (lista.getName()) {
+                    case "Aston Villa":
+                       // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                        Intent intent = new Intent(getContext(), AstonVilla2024_25Activity.class);
+                         startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Arsenal":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), Arsenal2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Brentford":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), Brentford2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Brighton":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), Brighton2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Bournemouth":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), Bournemouth2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Chelsea":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), Chelsea2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Crystal Palace":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), CrystalPalace2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Everton":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), Evernton2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Forest":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), Nottingham2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Fulham":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), Fulham2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Ipswich":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), Ipswich2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Leicester":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), LeicesterCity2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Liverpool":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), Liverpool2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+
+                    case "Man City":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), ManchesterCity2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Man Utd":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), ManchesterUnited2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Newcastle":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), Newcastle2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Southampton":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), Southampton2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Tottenham":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), Tottenham2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "West Ham":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), WestHam2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Wolves":
+                        // listaArgentinaA2024.listaArgentinaAMetodo("Argentinos Jrs");
+                         intent = new Intent(getContext(), Wolves2024_25Activity.class);
+                        startActivity(intent);
+                        Toast.makeText(getContext(), " " + lista.getName(), Toast.LENGTH_LONG).show();
+                        break;
+
+
+                }
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+
+            }
+        }));
 
         return view;
     }

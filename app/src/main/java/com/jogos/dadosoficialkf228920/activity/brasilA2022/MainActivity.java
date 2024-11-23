@@ -330,7 +330,7 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
         adapter.addFragment(new ListaBrasilSerieA_2024_TesteFragment(), "Série A 2024");
         adapter.addFragment(new ListaBrasilSerie_B_2024Fragment(), "Série B 2024");
         adapter.addFragment(new ListaLigaProfissional_A_2024Fragment(), "Liga Profissional 2024");
-        //adapter.addFragment(new ListaPremierLeague_A_2024_25Fragment(), "Premier League A ");
+        adapter.addFragment(new ListaPremierLeague_A_2024_25Fragment(), "Premier League A ");
        // adapter.addFragment(new ListaInglesA2023a24Fragment(), "Inglês A 2023-24");
         //adapter.addFragment(new ListaEspanholA2023a24Fragment(), "Espanhol A 2023-24");
        // adapter.addFragment(new ListaAlemaoA2023a24Fragment(), "Alemão A 2023-24");
