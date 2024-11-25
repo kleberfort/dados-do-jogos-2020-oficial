@@ -12,11 +12,7 @@ import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.databinding.FragmentArgentinoJuniorsEstatisticaCasa2024Binding;
 import com.jogos.dadosoficialkf228920.databinding.FragmentArsenalEstatisticaFora2025Binding;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ArsenalEstatisticaFora2025Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class ArsenalEstatisticaFora2025Fragment extends Fragment {
 
     private FragmentArsenalEstatisticaFora2025Binding binding;

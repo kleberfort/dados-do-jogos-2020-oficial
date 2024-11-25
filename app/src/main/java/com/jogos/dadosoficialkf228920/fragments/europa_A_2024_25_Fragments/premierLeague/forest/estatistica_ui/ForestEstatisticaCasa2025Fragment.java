@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.databinding.FragmentAstonVillaEstatisticaFora2025Binding;
+import com.jogos.dadosoficialkf228920.databinding.FragmentForestEstatisticaCasa2025Binding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,12 +19,16 @@ import com.jogos.dadosoficialkf228920.R;
  */
 public class ForestEstatisticaCasa2025Fragment extends Fragment {
 
-    private ForestEstatisticaCasa2025Fragment binding;
+    private FragmentForestEstatisticaCasa2025Binding binding;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_arsenal_estatistica_casa2025, container, false);
+        binding = FragmentForestEstatisticaCasa2025Binding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+
+        return  view;
     }
 }

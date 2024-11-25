@@ -778,9 +778,9 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosPremi
     public void onJogosPremierLeague_A(List<PartidaNovoModelo> astonVillaCompleto, List<PartidaNovoModelo> arsenalCompleto, List<PartidaNovoModelo> brentfordCompleto, List<PartidaNovoModelo> brigthonCompleto, List<PartidaNovoModelo> bournemouthCompleto, List<PartidaNovoModelo> chelseaCompleto, List<PartidaNovoModelo> crystalPalaceCompleto, List<PartidaNovoModelo> evertonCompleto, List<PartidaNovoModelo> forestCompleto, List<PartidaNovoModelo> fulhamCompleto, List<PartidaNovoModelo> ipswichCompleto, List<PartidaNovoModelo> leicesterCompleto, List<PartidaNovoModelo> liverpoolCompleto, List<PartidaNovoModelo> manCityCompleto, List<PartidaNovoModelo> manUtdCompleto, List<PartidaNovoModelo> newcastleCompleto, List<PartidaNovoModelo> southamptonCompleto, List<PartidaNovoModelo> tottenhamCompleto, List<PartidaNovoModelo> westHamCompleto, List<PartidaNovoModelo> wolvesCompleto) {
         PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
 
-        for (PartidaNovoModelo partida : arsenalCompleto) {
+        for (PartidaNovoModelo partida : astonVillaCompleto) {
 
-            if (partida.getHomeTime().getName().equals("Arsenal")) {
+            if (partida.getHomeTime().getName().equals("Aston Villa")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);

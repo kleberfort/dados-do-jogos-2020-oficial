@@ -583,9 +583,9 @@ public class ForaGolsEstatisticaFragment extends Fragment implements JogosPremie
         PartidaNovoModelo partidaNovoModelo;
 
 
-        for (PartidaNovoModelo partida : arsenalCompleto) {
+        for (PartidaNovoModelo partida : astonVillaCompleto) {
 
-            if (partida.getAwayTime().getName().equals("Arsenal")) {
+            if (partida.getAwayTime().getName().equals("Aston Villa")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);

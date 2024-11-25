@@ -16,8 +16,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaOficialPorcentagemBinding;
-import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A2024;
-import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A_2024_Listener;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_2025_Listener;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_25;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoCasa;
 
@@ -26,10 +26,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CasaEstatisticaGeralFragment extends Fragment implements JogosLigaProfissional_A_2024_Listener {
+public class CasaEstatisticaGeralFragment extends Fragment implements JogosPremierLeague_A_2024_2025_Listener {
 
     private TelaEstatisticaOficialPorcentagemBinding binding;
-    private JogosLigaProfissional_A2024 jogosLigaProfissionalA2024;
+    private JogosPremierLeague_A_2024_25 jogosPremierLeague_a_2024_25;
 
 
     private ResultadosPartidasAdapter resultadosPartidasAdapter;
@@ -92,10 +92,10 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosLigaP
 
 
 
-        jogosLigaProfissionalA2024 = new JogosLigaProfissional_A2024();
-        jogosLigaProfissionalA2024.setupHttpClient();
-        jogosLigaProfissionalA2024.setupDadosJogos();
-        jogosLigaProfissionalA2024.setListener(this);// Registra o fragmento como listener
+        jogosPremierLeague_a_2024_25 = new JogosPremierLeague_A_2024_25();
+        jogosPremierLeague_a_2024_25.setupHttpClient();
+        jogosPremierLeague_a_2024_25.setupDadosJogos();
+        jogosPremierLeague_a_2024_25.setListener(this);// Registra o fragmento como listener
 
 
         binding.tvGols1T05Mcd.setOnClickListener(new View.OnClickListener() {
@@ -753,22 +753,40 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosLigaP
     }
 
 
+    private void showPartidasDialog(List<PartidaNovoModelo> partidas) {
+
+
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
+
+        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
+        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
 
 
 
-        @Override
-        public void onJogosSerieAReady(List<PartidaNovoModelo> argentinoJuniorsCompleto, List<PartidaNovoModelo> atleticoTucumanCompleto, List<PartidaNovoModelo> banfieldCompleto, List<PartidaNovoModelo> barracasCentralCompleto, List<PartidaNovoModelo> belgranoCompleto, List<PartidaNovoModelo> bocaJuniorsCompleto, List<PartidaNovoModelo> centralCordobaCompleto, List<PartidaNovoModelo> defensaJusticiaCompleto, List<PartidaNovoModelo> deportivoRiestraCompleto, List<PartidaNovoModelo> estudiantesLaPrataCompleto, List<PartidaNovoModelo> gimnasiaCompleto, List<PartidaNovoModelo> godoyCruzCompleto, List<PartidaNovoModelo> huracanCompleto, List<PartidaNovoModelo> independienteCompleto, List<PartidaNovoModelo> independienteRivadaviaCompleto, List<PartidaNovoModelo> institutoCompleto, List<PartidaNovoModelo> lanusCompleto, List<PartidaNovoModelo> newellOldBoysCompleto, List<PartidaNovoModelo> platenseCompleto, List<PartidaNovoModelo> racingCompleto, List<PartidaNovoModelo> riverPlateCompleto, List<PartidaNovoModelo> rosarioCentralCompleto, List<PartidaNovoModelo> sanLorenzoCompleto, List<PartidaNovoModelo> sarmientoCompleto, List<PartidaNovoModelo> talleresCompleto, List<PartidaNovoModelo> tigreCompleto, List<PartidaNovoModelo> unionSantaFeCompleto, List<PartidaNovoModelo> velezSarsfieldCompleto) {
-            PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
+        resultadosPartidasAdapter = new ResultadosPartidasAdapter(partidas);
+        recyclerViewPartidas.setAdapter(resultadosPartidasAdapter);
+        //resultadosPartidasAdapter.notifyDataSetChanged();
 
-            for (PartidaNovoModelo partida : argentinoJuniorsCompleto) {
+        bottomSheetDialog.show();
 
-                if (partida.getHomeTime().getName().equals("Argentinos Jrs")) {
-                    partidaNovoModelo = partida;
-                    partida.setDataFormatada(partida.getDate());
-                    this.partidas.add(partidaNovoModelo);
-                }
+    }
 
-            }//fim do for
+
+    @Override
+    public void onJogosPremierLeague_A(List<PartidaNovoModelo> astonVillaCompleto, List<PartidaNovoModelo> arsenalCompleto, List<PartidaNovoModelo> brentfordCompleto, List<PartidaNovoModelo> brigthonCompleto, List<PartidaNovoModelo> bournemouthCompleto, List<PartidaNovoModelo> chelseaCompleto, List<PartidaNovoModelo> crystalPalaceCompleto, List<PartidaNovoModelo> evertonCompleto, List<PartidaNovoModelo> forestCompleto, List<PartidaNovoModelo> fulhamCompleto, List<PartidaNovoModelo> ipswichCompleto, List<PartidaNovoModelo> leicesterCompleto, List<PartidaNovoModelo> liverpoolCompleto, List<PartidaNovoModelo> manCityCompleto, List<PartidaNovoModelo> manUtdCompleto, List<PartidaNovoModelo> newcastleCompleto, List<PartidaNovoModelo> southamptonCompleto, List<PartidaNovoModelo> tottenhamCompleto, List<PartidaNovoModelo> westHamCompleto, List<PartidaNovoModelo> wolvesCompleto) {
+        PartidaNovoModelo partidaNovoModelo = new PartidaNovoModelo();
+
+        for (PartidaNovoModelo partida : bournemouthCompleto) {
+
+            if (partida.getHomeTime().getName().equals("Bournemouth")) {
+                partidaNovoModelo = partida;
+                partida.setDataFormatada(partida.getDate());
+                this.partidas.add(partidaNovoModelo);
+            }
+
+        }//fim do for
 
 
         for (int i = 0; i < partidas.size(); i++) {
@@ -1249,30 +1267,5 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosLigaP
 
 
 
-
-
-
-    }//fim da Interface
-
-    private void showPartidasDialog(List<PartidaNovoModelo> partidas) {
-
-
-        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
-        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
-        bottomSheetDialog.setContentView(bottomSheetView);
-
-        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
-        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
-
-
-
-        resultadosPartidasAdapter = new ResultadosPartidasAdapter(partidas);
-        recyclerViewPartidas.setAdapter(resultadosPartidasAdapter);
-        //resultadosPartidasAdapter.notifyDataSetChanged();
-
-        bottomSheetDialog.show();
-
     }
-
-
 }

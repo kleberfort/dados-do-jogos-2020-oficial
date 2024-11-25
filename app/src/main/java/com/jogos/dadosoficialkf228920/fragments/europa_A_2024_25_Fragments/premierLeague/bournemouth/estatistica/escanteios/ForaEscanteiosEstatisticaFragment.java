@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaEscanteiosBinding;
-import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A2024;
-import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A_2024_Listener;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_2025_Listener;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_25;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import org.jetbrains.annotations.Nullable;
@@ -19,11 +19,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForaEscanteiosEstatisticaFragment extends Fragment implements JogosLigaProfissional_A_2024_Listener {
+public class ForaEscanteiosEstatisticaFragment extends Fragment implements JogosPremierLeague_A_2024_2025_Listener {
 
 
     private TelaEstatisticaEscanteiosBinding binding;
-    private JogosLigaProfissional_A2024 jogosLigaProfissionalA2024;
+    private JogosPremierLeague_A_2024_25 jogosPremierLeague_a_2024_25;
 
 
 
@@ -82,10 +82,10 @@ public class ForaEscanteiosEstatisticaFragment extends Fragment implements Jogos
 
 
 
-        jogosLigaProfissionalA2024 = new JogosLigaProfissional_A2024();
-        jogosLigaProfissionalA2024.setupHttpClient();
-        jogosLigaProfissionalA2024.setupDadosJogos();
-        jogosLigaProfissionalA2024.setListener(this);// Registra o fragmento como listener
+        jogosPremierLeague_a_2024_25 = new JogosPremierLeague_A_2024_25();
+        jogosPremierLeague_a_2024_25.setupHttpClient();
+        jogosPremierLeague_a_2024_25.setupDadosJogos();
+        jogosPremierLeague_a_2024_25.setListener(this);// Registra o fragmento como listener
 
 
         return binding.getRoot();
@@ -99,19 +99,22 @@ public class ForaEscanteiosEstatisticaFragment extends Fragment implements Jogos
     }
 
 
-        @Override
-        public void onJogosSerieAReady(List<PartidaNovoModelo> argentinoJuniorsCompleto, List<PartidaNovoModelo> atleticoTucumanCompleto, List<PartidaNovoModelo> banfieldCompleto, List<PartidaNovoModelo> barracasCentralCompleto, List<PartidaNovoModelo> belgranoCompleto, List<PartidaNovoModelo> bocaJuniorsCompleto, List<PartidaNovoModelo> centralCordobaCompleto, List<PartidaNovoModelo> defensaJusticiaCompleto, List<PartidaNovoModelo> deportivoRiestraCompleto, List<PartidaNovoModelo> estudiantesLaPrataCompleto, List<PartidaNovoModelo> gimnasiaCompleto, List<PartidaNovoModelo> godoyCruzCompleto, List<PartidaNovoModelo> huracanCompleto, List<PartidaNovoModelo> independienteCompleto, List<PartidaNovoModelo> independienteRivadaviaCompleto, List<PartidaNovoModelo> institutoCompleto, List<PartidaNovoModelo> lanusCompleto, List<PartidaNovoModelo> newellOldBoysCompleto, List<PartidaNovoModelo> platenseCompleto, List<PartidaNovoModelo> racingCompleto, List<PartidaNovoModelo> riverPlateCompleto, List<PartidaNovoModelo> rosarioCentralCompleto, List<PartidaNovoModelo> sanLorenzoCompleto, List<PartidaNovoModelo> sarmientoCompleto, List<PartidaNovoModelo> talleresCompleto, List<PartidaNovoModelo> tigreCompleto, List<PartidaNovoModelo> unionSantaFeCompleto, List<PartidaNovoModelo> velezSarsfieldCompleto) {
-            PartidaNovoModelo partidaNovoModelo;
 
-                for (PartidaNovoModelo partida : argentinoJuniorsCompleto) {
 
-                    if (partida.getAwayTime().getName().equals("Argentinos Jrs")) {
-                        partidaNovoModelo = partida;
-                        partida.setDataFormatada(partida.getDate());
-                        this.partidas.add(partidaNovoModelo);
-                    }
 
-                }//fim do for
+    @Override
+    public void onJogosPremierLeague_A(List<PartidaNovoModelo> astonVillaCompleto, List<PartidaNovoModelo> arsenalCompleto, List<PartidaNovoModelo> brentfordCompleto, List<PartidaNovoModelo> brigthonCompleto, List<PartidaNovoModelo> bournemouthCompleto, List<PartidaNovoModelo> chelseaCompleto, List<PartidaNovoModelo> crystalPalaceCompleto, List<PartidaNovoModelo> evertonCompleto, List<PartidaNovoModelo> forestCompleto, List<PartidaNovoModelo> fulhamCompleto, List<PartidaNovoModelo> ipswichCompleto, List<PartidaNovoModelo> leicesterCompleto, List<PartidaNovoModelo> liverpoolCompleto, List<PartidaNovoModelo> manCityCompleto, List<PartidaNovoModelo> manUtdCompleto, List<PartidaNovoModelo> newcastleCompleto, List<PartidaNovoModelo> southamptonCompleto, List<PartidaNovoModelo> tottenhamCompleto, List<PartidaNovoModelo> westHamCompleto, List<PartidaNovoModelo> wolvesCompleto) {
+        PartidaNovoModelo partidaNovoModelo;
+
+        for (PartidaNovoModelo partida : bournemouthCompleto) {
+
+            if (partida.getAwayTime().getName().equals("Bournemouth")) {
+                partidaNovoModelo = partida;
+                partida.setDataFormatada(partida.getDate());
+                this.partidas.add(partidaNovoModelo);
+            }
+
+        }//fim do for
 
 
 
@@ -620,9 +623,6 @@ public class ForaEscanteiosEstatisticaFragment extends Fragment implements Jogos
 
 
         binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
-
     }
-
-
 }
 

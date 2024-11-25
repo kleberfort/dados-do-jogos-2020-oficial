@@ -1,6 +1,5 @@
 package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.bournemouth.estatistica.gols;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
@@ -18,8 +17,8 @@ import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadoPartidaSegundo
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaGolsBinding;
-import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A2024;
-import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A_2024_Listener;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_2025_Listener;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_25;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoGolsSfdFora;
 
@@ -28,11 +27,11 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForaGolsSofridoEstatisticaFragment extends Fragment implements JogosLigaProfissional_A_2024_Listener {
+public class ForaGolsSofridoEstatisticaFragment extends Fragment implements JogosPremierLeague_A_2024_2025_Listener {
 
 
     private TelaEstatisticaGolsBinding binding;
-    private JogosLigaProfissional_A2024 jogosLigaProfissionalA2024;
+    private JogosPremierLeague_A_2024_25 jogosPremierLeague_a_2024_25;
 
     private ResultadosPartidasAdapter resultadosPartidasAdapter;
     private ResultadosPartidasPrimeiroTempoAdapter resultadosPartidasPrimeiroTempoAdapter;
@@ -87,10 +86,10 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
 
 
 
-        jogosLigaProfissionalA2024 = new JogosLigaProfissional_A2024();
-        jogosLigaProfissionalA2024.setupHttpClient();
-        jogosLigaProfissionalA2024.setupDadosJogos();
-        jogosLigaProfissionalA2024.setListener(this);// Registra o fragmento como listener
+        jogosPremierLeague_a_2024_25 = new JogosPremierLeague_A_2024_25();
+        jogosPremierLeague_a_2024_25.setupHttpClient();
+        jogosPremierLeague_a_2024_25.setupDadosJogos();
+        jogosPremierLeague_a_2024_25.setListener(this);// Registra o fragmento como listener
 
         binding.tvGols1T05Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -534,15 +533,59 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
     }//fim do metodo que busca os dados
 
 
-    @SuppressLint("SuspiciousIndentation")
+
+    private void showPartidasDialog(List<PartidaNovoModelo> partidas) {
+
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
+
+        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
+        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        resultadosPartidasAdapter = new ResultadosPartidasAdapter(partidas);
+        recyclerViewPartidas.setAdapter(resultadosPartidasAdapter);
+        //resultadosPartidasAdapter.notifyDataSetChanged();
+
+        bottomSheetDialog.show();
+    }
+    private void showPartidasPrimeiroTempo(List<PartidaNovoModelo> partidas) {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
+
+        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
+        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        resultadosPartidasPrimeiroTempoAdapter = new ResultadosPartidasPrimeiroTempoAdapter(partidas);
+        recyclerViewPartidas.setAdapter(resultadosPartidasPrimeiroTempoAdapter);
+        //resultadosPartidasAdapter.notifyDataSetChanged();
+
+        bottomSheetDialog.show();
+    }
+    private void showPartidasSegundoTempo(List<PartidaNovoModelo> partidas) {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
+
+        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
+        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        resultadoPartidaSegundoTempoAdapter = new ResultadoPartidaSegundoTempoAdapter(partidas);
+        recyclerViewPartidas.setAdapter(resultadoPartidaSegundoTempoAdapter);
+        //resultadosPartidasAdapter.notifyDataSetChanged();
+
+        bottomSheetDialog.show();
+    }
+
     @Override
-    public void onJogosSerieAReady(List<PartidaNovoModelo> argentinoJuniorsCompleto, List<PartidaNovoModelo> atleticoTucumanCompleto, List<PartidaNovoModelo> banfieldCompleto, List<PartidaNovoModelo> barracasCentralCompleto, List<PartidaNovoModelo> belgranoCompleto, List<PartidaNovoModelo> bocaJuniorsCompleto, List<PartidaNovoModelo> centralCordobaCompleto, List<PartidaNovoModelo> defensaJusticiaCompleto, List<PartidaNovoModelo> deportivoRiestraCompleto, List<PartidaNovoModelo> estudiantesLaPrataCompleto, List<PartidaNovoModelo> gimnasiaCompleto, List<PartidaNovoModelo> godoyCruzCompleto, List<PartidaNovoModelo> huracanCompleto, List<PartidaNovoModelo> independienteCompleto, List<PartidaNovoModelo> independienteRivadaviaCompleto, List<PartidaNovoModelo> institutoCompleto, List<PartidaNovoModelo> lanusCompleto, List<PartidaNovoModelo> newellOldBoysCompleto, List<PartidaNovoModelo> platenseCompleto, List<PartidaNovoModelo> racingCompleto, List<PartidaNovoModelo> riverPlateCompleto, List<PartidaNovoModelo> rosarioCentralCompleto, List<PartidaNovoModelo> sanLorenzoCompleto, List<PartidaNovoModelo> sarmientoCompleto, List<PartidaNovoModelo> talleresCompleto, List<PartidaNovoModelo> tigreCompleto, List<PartidaNovoModelo> unionSantaFeCompleto, List<PartidaNovoModelo> velezSarsfieldCompleto) {
+    public void onJogosPremierLeague_A(List<PartidaNovoModelo> astonVillaCompleto, List<PartidaNovoModelo> arsenalCompleto, List<PartidaNovoModelo> brentfordCompleto, List<PartidaNovoModelo> brigthonCompleto, List<PartidaNovoModelo> bournemouthCompleto, List<PartidaNovoModelo> chelseaCompleto, List<PartidaNovoModelo> crystalPalaceCompleto, List<PartidaNovoModelo> evertonCompleto, List<PartidaNovoModelo> forestCompleto, List<PartidaNovoModelo> fulhamCompleto, List<PartidaNovoModelo> ipswichCompleto, List<PartidaNovoModelo> leicesterCompleto, List<PartidaNovoModelo> liverpoolCompleto, List<PartidaNovoModelo> manCityCompleto, List<PartidaNovoModelo> manUtdCompleto, List<PartidaNovoModelo> newcastleCompleto, List<PartidaNovoModelo> southamptonCompleto, List<PartidaNovoModelo> tottenhamCompleto, List<PartidaNovoModelo> westHamCompleto, List<PartidaNovoModelo> wolvesCompleto) {
         PartidaNovoModelo partidaNovoModelo;
 
 
-        for (PartidaNovoModelo partida : argentinoJuniorsCompleto) {
+        for (PartidaNovoModelo partida : bournemouthCompleto) {
 
-            if (partida.getAwayTime().getName().equals("Argentinos Jrs")) {
+            if (partida.getAwayTime().getName().equals("Bournemouth")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);
@@ -553,67 +596,67 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
 
 
         for (int i = 0; i < partidas.size(); i++) {
-        //GOLS 0.5 1°TEMPO
-        if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() > 0)
-        golsTotalPrimeiroTempoZeroCincoMarcados += 1;
-        golsTotalPrimeiroTempoZeroCincoNaoMarcados = partidas.size() - golsTotalPrimeiroTempoZeroCincoMarcados;
+            //GOLS 0.5 1°TEMPO
+            if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() > 0)
+                golsTotalPrimeiroTempoZeroCincoMarcados += 1;
+            golsTotalPrimeiroTempoZeroCincoNaoMarcados = partidas.size() - golsTotalPrimeiroTempoZeroCincoMarcados;
 
 
-        //GOLS 1.5 1°TEMPO
-        if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() > 1)
-        golsTotalPrimeiroTempoUmCincoMarcados += 1;
-        golsTotalPrimeiroTempoUmCincoNaoMarcados = partidas.size() - golsTotalPrimeiroTempoUmCincoMarcados;
+            //GOLS 1.5 1°TEMPO
+            if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() > 1)
+                golsTotalPrimeiroTempoUmCincoMarcados += 1;
+            golsTotalPrimeiroTempoUmCincoNaoMarcados = partidas.size() - golsTotalPrimeiroTempoUmCincoMarcados;
 
 
-        //GOLS 2.5 1°TEMPO
-        if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() > 2)
-        golsTotalPrimeiroTempoDoisCincoMarcados += 1;
-        golsTotalPrimeiroTempoDoisCincoNaoMarcados = partidas.size() - golsTotalPrimeiroTempoDoisCincoMarcados;
+            //GOLS 2.5 1°TEMPO
+            if(partidas.get(i).getHomeEstatisticaJogo().getGolsPrimeiroTempo() > 2)
+                golsTotalPrimeiroTempoDoisCincoMarcados += 1;
+            golsTotalPrimeiroTempoDoisCincoNaoMarcados = partidas.size() - golsTotalPrimeiroTempoDoisCincoMarcados;
 
 
 //                        SEGUNDO TEMPO -----------------------------------------------------------------------
 
-        //GOLS 0.5 2°TEMPO
-        if(partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() > 0)
-        golsTotalSegundoTempoZeroCincoMarcados += 1;
-        golsTotalSegundoTempoZeroCincoNaoMarcados = partidas.size() - golsTotalSegundoTempoZeroCincoMarcados;
+            //GOLS 0.5 2°TEMPO
+            if(partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() > 0)
+                golsTotalSegundoTempoZeroCincoMarcados += 1;
+            golsTotalSegundoTempoZeroCincoNaoMarcados = partidas.size() - golsTotalSegundoTempoZeroCincoMarcados;
 
 
-        //GOLS 1.5 2°TEMPO
-        if(partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() > 1)
-        golsTotalSegundoTempoUmCincoMarcados += 1;
-        golsTotalSegundoTempoUmCincoNaoMarcados = partidas.size() - golsTotalSegundoTempoUmCincoMarcados;
+            //GOLS 1.5 2°TEMPO
+            if(partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() > 1)
+                golsTotalSegundoTempoUmCincoMarcados += 1;
+            golsTotalSegundoTempoUmCincoNaoMarcados = partidas.size() - golsTotalSegundoTempoUmCincoMarcados;
 
 
-        //GOLS 2.5 2°TEMPO
-        if(partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() > 2)
-        golsTotalSegundoTempoDoisCincoMarcados += 1;
-        golsTotalSegundoTempoDoisCincoNaoMarcados = partidas.size() - golsTotalSegundoTempoDoisCincoMarcados;
+            //GOLS 2.5 2°TEMPO
+            if(partidas.get(i).getHomeEstatisticaJogo().getGolsSegundoTempo() > 2)
+                golsTotalSegundoTempoDoisCincoMarcados += 1;
+            golsTotalSegundoTempoDoisCincoNaoMarcados = partidas.size() - golsTotalSegundoTempoDoisCincoMarcados;
 
 //                        GOLS ACIMA -----------------------------------------------------------------------------
 
 
-        //GOLS ACIMA 0.5 TEMPO
-        if(partidas.get(i).getHomeTime().getPlacar() > 0)
-        golsTotalZeroCincoMarcados += 1;
-        golsTotalZeroCincoNaoMarcados = partidas.size() - golsTotalZeroCincoMarcados;
+            //GOLS ACIMA 0.5 TEMPO
+            if(partidas.get(i).getHomeTime().getPlacar() > 0)
+                golsTotalZeroCincoMarcados += 1;
+            golsTotalZeroCincoNaoMarcados = partidas.size() - golsTotalZeroCincoMarcados;
 
-        //GOLS ACIMA 1.5 TEMPO
-        if(partidas.get(i).getHomeTime().getPlacar() > 1)
-        golsTotalUmCincoMarcados += 1;
-        golsTotalUmCincoNaoMarcados = partidas.size() - golsTotalUmCincoMarcados;
-
-
-        //GOLS ACIMA 2.5 TEMPO
-        if(partidas.get(i).getHomeTime().getPlacar() > 2)
-        golsTotalDoisCincoMarcados += 1;
-        golsTotalDoisCincoNaoMarcados = partidas.size() - golsTotalDoisCincoMarcados;
+            //GOLS ACIMA 1.5 TEMPO
+            if(partidas.get(i).getHomeTime().getPlacar() > 1)
+                golsTotalUmCincoMarcados += 1;
+            golsTotalUmCincoNaoMarcados = partidas.size() - golsTotalUmCincoMarcados;
 
 
-        //GOLS ACIMA 3.5 TEMPO
-        if(partidas.get(i).getHomeTime().getPlacar() > 3)
-        golsTotalTresCincoMarcados += 1;
-        golsTotalTresCincoNaoMarcados = partidas.size() - golsTotalTresCincoMarcados;
+            //GOLS ACIMA 2.5 TEMPO
+            if(partidas.get(i).getHomeTime().getPlacar() > 2)
+                golsTotalDoisCincoMarcados += 1;
+            golsTotalDoisCincoNaoMarcados = partidas.size() - golsTotalDoisCincoMarcados;
+
+
+            //GOLS ACIMA 3.5 TEMPO
+            if(partidas.get(i).getHomeTime().getPlacar() > 3)
+                golsTotalTresCincoMarcados += 1;
+            golsTotalTresCincoNaoMarcados = partidas.size() - golsTotalTresCincoMarcados;
 
 
 
@@ -631,22 +674,22 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGols1T05CtPct.setText(String.valueOf(Math.round((double)golsTotalPrimeiroTempoZeroCincoNaoMarcados * 100 / partidas.size()) + "%"));
 
         if(Math.round(((double) golsTotalPrimeiroTempoZeroCincoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGols1T05McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGols1T05McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalPrimeiroTempoZeroCincoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGols1T05McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGols1T05McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalPrimeiroTempoZeroCincoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGols1T05McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGols1T05McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGols1T05McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGols1T05McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
         if(Math.round(((double) golsTotalPrimeiroTempoZeroCincoNaoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGols1T05CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGols1T05CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalPrimeiroTempoZeroCincoNaoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGols1T05CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGols1T05CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalPrimeiroTempoZeroCincoNaoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGols1T05CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGols1T05CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGols1T05CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGols1T05CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
 
         //GOLS 1T 1.5 PORCENTAGEM
@@ -656,22 +699,22 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGols1T15CtPct.setText(String.valueOf(Math.round((double)golsTotalPrimeiroTempoUmCincoNaoMarcados * 100 / partidas.size()) + "%"));
 
         if(Math.round(((double) golsTotalPrimeiroTempoUmCincoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGols1T15McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGols1T15McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalPrimeiroTempoUmCincoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGols1T15McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGols1T15McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalPrimeiroTempoUmCincoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGols1T15McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGols1T15McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGols1T15McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGols1T15McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
         if(Math.round(((double) golsTotalPrimeiroTempoUmCincoNaoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGols1T15CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGols1T15CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalPrimeiroTempoUmCincoNaoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGols1T15CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGols1T15CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalPrimeiroTempoUmCincoNaoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGols1T15CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGols1T15CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGols1T15CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGols1T15CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
 
         //GOLS 1T 2.5 PORCENTAGEM
@@ -681,22 +724,22 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGols1T25CtPct.setText(String.valueOf(Math.round((double)golsTotalPrimeiroTempoDoisCincoNaoMarcados * 100 / partidas.size()) + "%"));
 
         if(Math.round(((double) golsTotalPrimeiroTempoDoisCincoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGols1T25McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGols1T25McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalPrimeiroTempoDoisCincoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGols1T25McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGols1T25McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalPrimeiroTempoDoisCincoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGols1T25McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGols1T25McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGols1T25McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGols1T25McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
         if(Math.round(((double) golsTotalPrimeiroTempoDoisCincoNaoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGols1T25CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGols1T25CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalPrimeiroTempoDoisCincoNaoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGols1T25CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGols1T25CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalPrimeiroTempoDoisCincoNaoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGols1T25CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGols1T25CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGols1T25CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGols1T25CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
         //GOLS 2T 0.5 PORCENTAGEM
 
@@ -704,22 +747,22 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGols2T05CtPct.setText(String.valueOf(Math.round((double)golsTotalSegundoTempoZeroCincoNaoMarcados * 100 / partidas.size()) + "%"));
 
         if(Math.round(((double) golsTotalSegundoTempoZeroCincoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGols2T05McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGols2T05McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalSegundoTempoZeroCincoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGols2T05McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGols2T05McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalSegundoTempoZeroCincoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGols2T05McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGols2T05McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGols2T05McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGols2T05McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
         if(Math.round(((double) golsTotalSegundoTempoZeroCincoNaoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGols2T05CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGols2T05CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalSegundoTempoZeroCincoNaoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGols2T05CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGols2T05CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalSegundoTempoZeroCincoNaoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGols2T05CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGols2T05CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGols2T05CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGols2T05CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
 
         //GOLS 2T 1.5 PORCENTAGEM
@@ -728,22 +771,22 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGols2T15CtPct.setText(String.valueOf(Math.round((double)golsTotalSegundoTempoUmCincoNaoMarcados * 100 / partidas.size()) + "%"));
 
         if(Math.round(((double) golsTotalSegundoTempoUmCincoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGols2T15McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGols2T15McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalSegundoTempoUmCincoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGols2T15McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGols2T15McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalSegundoTempoUmCincoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGols2T15McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGols2T15McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGols2T15McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGols2T15McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
         if(Math.round(((double) golsTotalSegundoTempoUmCincoNaoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGols2T15CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGols2T15CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalSegundoTempoUmCincoNaoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGols2T15CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGols2T15CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalSegundoTempoUmCincoNaoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGols2T15CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGols2T15CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGols2T15CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGols2T15CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
 
         //GOLS 2T 2.5 PORCENTAGEM
@@ -753,22 +796,22 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGols2T25CtPct.setText(String.valueOf(Math.round((double)golsTotalSegundoTempoDoisCincoNaoMarcados * 100 / partidas.size()) + "%"));
 
         if(Math.round(((double) golsTotalSegundoTempoDoisCincoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGols2T25McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGols2T25McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalSegundoTempoDoisCincoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGols2T25McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGols2T25McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalSegundoTempoDoisCincoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGols2T25McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGols2T25McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGols2T25McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGols2T25McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
         if(Math.round(((double) golsTotalSegundoTempoDoisCincoNaoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGols2T25CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGols2T25CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalSegundoTempoDoisCincoNaoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGols2T25CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGols2T25CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalSegundoTempoDoisCincoNaoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGols2T25CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGols2T25CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGols2T25CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGols2T25CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
 
         //GOLS ACIMA 0.5 PORCENTAGEM
@@ -777,22 +820,22 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGolsAcima05CtPct.setText(String.valueOf(Math.round((double)golsTotalZeroCincoNaoMarcados * 100 / partidas.size()) + "%"));
 
         if(Math.round(((double) golsTotalZeroCincoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGolsAcima05McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGolsAcima05McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalZeroCincoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGolsAcima05McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGolsAcima05McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalZeroCincoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGolsAcima05McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGolsAcima05McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGolsAcima05McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGolsAcima05McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
         if(Math.round(((double) golsTotalZeroCincoNaoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGolsAcima05CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGolsAcima05CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalZeroCincoNaoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGolsAcima05CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGolsAcima05CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalZeroCincoNaoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGolsAcima05CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGolsAcima05CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGolsAcima05CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGolsAcima05CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
         //GOLS ACIMA 1.5 PORCENTAGEM
 
@@ -800,22 +843,22 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGolsAcima15CtPct.setText(String.valueOf(Math.round((double)golsTotalUmCincoNaoMarcados * 100 / partidas.size()) + "%"));
 
         if(Math.round(((double) golsTotalUmCincoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGolsAcima15McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGolsAcima15McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalUmCincoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGolsAcima15McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGolsAcima15McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalUmCincoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGolsAcima15McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGolsAcima15McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGolsAcima15McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGolsAcima15McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
         if(Math.round(((double) golsTotalUmCincoNaoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGolsAcima15CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGolsAcima15CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalUmCincoNaoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGolsAcima15CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGolsAcima15CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalUmCincoNaoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGolsAcima15CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGolsAcima15CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGolsAcima15CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGolsAcima15CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
 
         //GOLS ACIMA 2.5 PORCENTAGEM
@@ -824,22 +867,22 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGolsAcima25CtPct.setText(String.valueOf(Math.round((double)golsTotalDoisCincoNaoMarcados * 100 / partidas.size()) + "%"));
 
         if(Math.round(((double) golsTotalDoisCincoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGolsAcima25McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGolsAcima25McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalDoisCincoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGolsAcima25McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGolsAcima25McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalDoisCincoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGolsAcima25McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGolsAcima25McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGolsAcima25McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGolsAcima25McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
         if(Math.round(((double) golsTotalDoisCincoNaoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGolsAcima25CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGolsAcima25CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalDoisCincoNaoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGolsAcima25CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGolsAcima25CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalDoisCincoNaoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGolsAcima25CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGolsAcima25CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGolsAcima25CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGolsAcima25CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
 
         //GOLS ACIMA 3.5 PORCENTAGEM
@@ -849,22 +892,22 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
         binding.tvGolsAcima35CtPct.setText(String.valueOf(Math.round((double)golsTotalTresCincoNaoMarcados * 100 / partidas.size()) + "%"));
 
         if(Math.round(((double) golsTotalTresCincoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGolsAcima35McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGolsAcima35McdPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalTresCincoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGolsAcima35McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGolsAcima35McdPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalTresCincoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGolsAcima35McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGolsAcima35McdPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGolsAcima35McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGolsAcima35McdPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
         if(Math.round(((double) golsTotalTresCincoNaoMarcados * 100) / partidas.size() ) >= 85)
-        binding.tvGolsAcima35CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
+            binding.tvGolsAcima35CtPct.setBackgroundResource(R.drawable.background_fundo_verde);
         else if(Math.round(((double) golsTotalTresCincoNaoMarcados * 100) / partidas.size() ) >= 70)
-        binding.tvGolsAcima35CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
+            binding.tvGolsAcima35CtPct.setBackgroundResource(R.drawable.background_fundo_amarelo);
         else if(Math.round(((double) golsTotalTresCincoNaoMarcados * 100) / partidas.size() ) >= 60)
-        binding.tvGolsAcima35CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
+            binding.tvGolsAcima35CtPct.setBackgroundResource(R.drawable.background_fundo_roxo);
         else
-        binding.tvGolsAcima35CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
+            binding.tvGolsAcima35CtPct.setBackgroundResource(R.drawable.background_fundo_vermelho);
 
 
         //Fim Porcentagem
@@ -926,50 +969,5 @@ public class ForaGolsSofridoEstatisticaFragment extends Fragment implements Jogo
 
         // Defina o texto no TextView
         binding.tvRespostaEstatistica.setText(builder);
-
-        }
-
-    private void showPartidasDialog(List<PartidaNovoModelo> partidas) {
-
-        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
-        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
-        bottomSheetDialog.setContentView(bottomSheetView);
-
-        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
-        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
-
-        resultadosPartidasAdapter = new ResultadosPartidasAdapter(partidas);
-        recyclerViewPartidas.setAdapter(resultadosPartidasAdapter);
-        //resultadosPartidasAdapter.notifyDataSetChanged();
-
-        bottomSheetDialog.show();
-    }
-    private void showPartidasPrimeiroTempo(List<PartidaNovoModelo> partidas) {
-        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
-        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
-        bottomSheetDialog.setContentView(bottomSheetView);
-
-        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
-        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
-
-        resultadosPartidasPrimeiroTempoAdapter = new ResultadosPartidasPrimeiroTempoAdapter(partidas);
-        recyclerViewPartidas.setAdapter(resultadosPartidasPrimeiroTempoAdapter);
-        //resultadosPartidasAdapter.notifyDataSetChanged();
-
-        bottomSheetDialog.show();
-    }
-    private void showPartidasSegundoTempo(List<PartidaNovoModelo> partidas) {
-        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
-        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
-        bottomSheetDialog.setContentView(bottomSheetView);
-
-        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
-        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
-
-        resultadoPartidaSegundoTempoAdapter = new ResultadoPartidaSegundoTempoAdapter(partidas);
-        recyclerViewPartidas.setAdapter(resultadoPartidaSegundoTempoAdapter);
-        //resultadosPartidasAdapter.notifyDataSetChanged();
-
-        bottomSheetDialog.show();
     }
 }

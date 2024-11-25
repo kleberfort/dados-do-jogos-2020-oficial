@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,6 +57,19 @@
                 android:id="@+id/fragmento_estatistica_gols_Sofrido"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:orientation="vertical">
+
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.arsenal.estatistica.cartoes.ForaCartoesEstatisticaFragment"
+                android:id="@+id/fragmento_estatistica_cartoes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
         </LinearLayout>
 
         <LinearLayout
@@ -71,6 +83,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
         </LinearLayout>
+
 
     </LinearLayout>
 

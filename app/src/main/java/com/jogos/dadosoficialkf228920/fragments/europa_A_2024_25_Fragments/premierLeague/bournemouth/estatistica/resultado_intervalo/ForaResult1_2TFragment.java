@@ -17,17 +17,17 @@ import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadoPartidaSegundoTempoAdapter;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaResultadoPrimeiroSegundoTempoBinding;
-import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A2024;
-import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A_2024_Listener;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_2025_Listener;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_25;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ForaResult1_2TFragment extends Fragment implements JogosLigaProfissional_A_2024_Listener {
+public class ForaResult1_2TFragment extends Fragment implements JogosPremierLeague_A_2024_2025_Listener {
 
     private TelaResultadoPrimeiroSegundoTempoBinding binding;
-    private JogosLigaProfissional_A2024 jogosLigaProfissionalA2024;
+    private JogosPremierLeague_A_2024_25 jogosPremierLeague_a_2024_25;
 
     private ResultadosPartidasPrimeiroTempoAdapter resultadosPartidasPrimeiroTempoAdapter;
 
@@ -49,10 +49,10 @@ public class ForaResult1_2TFragment extends Fragment implements JogosLigaProfiss
 
         binding = TelaResultadoPrimeiroSegundoTempoBinding.inflate(inflater, container, false);
 
-        jogosLigaProfissionalA2024 = new JogosLigaProfissional_A2024();
-        jogosLigaProfissionalA2024.setupHttpClient();
-        jogosLigaProfissionalA2024.setupDadosJogos();
-        jogosLigaProfissionalA2024.setListener(this);// Registra o fragmento como listener
+        jogosPremierLeague_a_2024_25 = new JogosPremierLeague_A_2024_25();
+        jogosPremierLeague_a_2024_25.setupHttpClient();
+        jogosPremierLeague_a_2024_25.setupDadosJogos();
+        jogosPremierLeague_a_2024_25.setListener(this);// Registra o fragmento como listener
 
         binding.tv1TempoVitoriaResultado.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,15 +186,54 @@ public class ForaResult1_2TFragment extends Fragment implements JogosLigaProfiss
     }
 
 
+
+    private void showPartidasPrimeiroTempo(List<PartidaNovoModelo> partidas) {
+
+
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
+
+        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
+        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+
+
+        resultadosPartidasPrimeiroTempoAdapter = new ResultadosPartidasPrimeiroTempoAdapter(partidas);
+        recyclerViewPartidas.setAdapter(resultadosPartidasPrimeiroTempoAdapter);
+        //resultadosPartidasAdapter.notifyDataSetChanged();
+
+        bottomSheetDialog.show();
+
+    }
+    private void showPartidasSegundoTempo(List<PartidaNovoModelo> partidas) {
+
+
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
+        bottomSheetDialog.setContentView(bottomSheetView);
+
+        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
+        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+
+
+        resultadoPartidaSegundoTempoAdapter = new ResultadoPartidaSegundoTempoAdapter(partidas);
+        recyclerViewPartidas.setAdapter(resultadoPartidaSegundoTempoAdapter);
+        //resultadosPartidasAdapter.notifyDataSetChanged();
+
+        bottomSheetDialog.show();
+
+    }
+
+
     @Override
-    public void onJogosSerieAReady(List<PartidaNovoModelo> argentinoJuniorsCompleto, List<PartidaNovoModelo> atleticoTucumanCompleto, List<PartidaNovoModelo> banfieldCompleto, List<PartidaNovoModelo> barracasCentralCompleto, List<PartidaNovoModelo> belgranoCompleto, List<PartidaNovoModelo> bocaJuniorsCompleto, List<PartidaNovoModelo> centralCordobaCompleto, List<PartidaNovoModelo> defensaJusticiaCompleto, List<PartidaNovoModelo> deportivoRiestraCompleto, List<PartidaNovoModelo> estudiantesLaPrataCompleto, List<PartidaNovoModelo> gimnasiaCompleto, List<PartidaNovoModelo> godoyCruzCompleto, List<PartidaNovoModelo> huracanCompleto, List<PartidaNovoModelo> independienteCompleto, List<PartidaNovoModelo> independienteRivadaviaCompleto, List<PartidaNovoModelo> institutoCompleto, List<PartidaNovoModelo> lanusCompleto, List<PartidaNovoModelo> newellOldBoysCompleto, List<PartidaNovoModelo> platenseCompleto, List<PartidaNovoModelo> racingCompleto, List<PartidaNovoModelo> riverPlateCompleto, List<PartidaNovoModelo> rosarioCentralCompleto, List<PartidaNovoModelo> sanLorenzoCompleto, List<PartidaNovoModelo> sarmientoCompleto, List<PartidaNovoModelo> talleresCompleto, List<PartidaNovoModelo> tigreCompleto, List<PartidaNovoModelo> unionSantaFeCompleto, List<PartidaNovoModelo> velezSarsfieldCompleto) {
-
-
+    public void onJogosPremierLeague_A(List<PartidaNovoModelo> astonVillaCompleto, List<PartidaNovoModelo> arsenalCompleto, List<PartidaNovoModelo> brentfordCompleto, List<PartidaNovoModelo> brigthonCompleto, List<PartidaNovoModelo> bournemouthCompleto, List<PartidaNovoModelo> chelseaCompleto, List<PartidaNovoModelo> crystalPalaceCompleto, List<PartidaNovoModelo> evertonCompleto, List<PartidaNovoModelo> forestCompleto, List<PartidaNovoModelo> fulhamCompleto, List<PartidaNovoModelo> ipswichCompleto, List<PartidaNovoModelo> leicesterCompleto, List<PartidaNovoModelo> liverpoolCompleto, List<PartidaNovoModelo> manCityCompleto, List<PartidaNovoModelo> manUtdCompleto, List<PartidaNovoModelo> newcastleCompleto, List<PartidaNovoModelo> southamptonCompleto, List<PartidaNovoModelo> tottenhamCompleto, List<PartidaNovoModelo> westHamCompleto, List<PartidaNovoModelo> wolvesCompleto) {
         PartidaNovoModelo partidaNovoModelo;
 
-        for (PartidaNovoModelo partida : argentinoJuniorsCompleto) {
+        for (PartidaNovoModelo partida : bournemouthCompleto) {
 
-            if (partida.getAwayTime().getName().equals("Argentinos Jrs")) {
+            if (partida.getAwayTime().getName().equals("Bournemouth")) {
                 partidaNovoModelo = partida;
                 partida.setDataFormatada(partida.getDate());
                 this.partidas.add(partidaNovoModelo);
@@ -245,50 +284,5 @@ public class ForaResult1_2TFragment extends Fragment implements JogosLigaProfiss
         binding.tv2TempoEmpateResultado.setText(String.valueOf(empateSegundoTempo));
         binding.tv2TempoDerrotaResultado.setText(String.valueOf(derrotaSegundoTempo));
 
-
-
-
-    }//fim da interface
-
-    private void showPartidasPrimeiroTempo(List<PartidaNovoModelo> partidas) {
-
-
-        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
-        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
-        bottomSheetDialog.setContentView(bottomSheetView);
-
-        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
-        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
-
-
-
-        resultadosPartidasPrimeiroTempoAdapter = new ResultadosPartidasPrimeiroTempoAdapter(partidas);
-        recyclerViewPartidas.setAdapter(resultadosPartidasPrimeiroTempoAdapter);
-        //resultadosPartidasAdapter.notifyDataSetChanged();
-
-        bottomSheetDialog.show();
-
     }
-    private void showPartidasSegundoTempo(List<PartidaNovoModelo> partidas) {
-
-
-        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
-        View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
-        bottomSheetDialog.setContentView(bottomSheetView);
-
-        RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
-        recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
-
-
-
-        resultadoPartidaSegundoTempoAdapter = new ResultadoPartidaSegundoTempoAdapter(partidas);
-        recyclerViewPartidas.setAdapter(resultadoPartidaSegundoTempoAdapter);
-        //resultadosPartidasAdapter.notifyDataSetChanged();
-
-        bottomSheetDialog.show();
-
-    }
-
-
-
 }
