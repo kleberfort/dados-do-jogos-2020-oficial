@@ -9,8 +9,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.databinding.ActivityRealSociedad202425Binding;
 
 public class RealSociedad2024_25Activity extends AppCompatActivity {
+
+    private ActivityRealSociedad202425Binding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

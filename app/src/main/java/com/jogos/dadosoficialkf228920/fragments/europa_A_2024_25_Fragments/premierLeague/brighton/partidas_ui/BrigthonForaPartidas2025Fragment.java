@@ -15,6 +15,7 @@ import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.Serie_A_B_2024Adapter;
 import com.jogos.dadosoficialkf228920.databinding.FragmentArsenalForaPartidas2025Binding;
 import com.jogos.dadosoficialkf228920.databinding.FragmentBrightonEstatisticaFora2025Binding;
+import com.jogos.dadosoficialkf228920.databinding.FragmentBrigthonForaPartidas2025Binding;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_2025_Listener;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_25;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
@@ -31,7 +32,8 @@ import java.util.List;
  */
 public class BrigthonForaPartidas2025Fragment extends Fragment implements JogosPremierLeague_A_2024_2025_Listener {
 
-    private FragmentBrightonEstatisticaFora2025Binding binding;
+
+    private FragmentBrigthonForaPartidas2025Binding binding;
 
     private Serie_A_B_2024Adapter serieAB2024CasaAdapter;
     private JogosPremierLeague_A_2024_25 jogosPremierLeague_a_2024_25;
@@ -42,7 +44,7 @@ public class BrigthonForaPartidas2025Fragment extends Fragment implements JogosP
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentBrightonEstatisticaFora2025Binding.inflate(inflater, container, false);
+        binding = FragmentBrigthonForaPartidas2025Binding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
         jogosPremierLeague_a_2024_25 = new JogosPremierLeague_A_2024_25();

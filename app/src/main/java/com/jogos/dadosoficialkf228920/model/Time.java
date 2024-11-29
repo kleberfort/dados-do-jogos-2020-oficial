@@ -2,23 +2,64 @@ package com.jogos.dadosoficialkf228920.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Time {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.google.gson.annotations.SerializedName;
+
+public class Time implements Parcelable {
+
     @SerializedName("nome")
     private String name;
+
     @SerializedName("imagem")
     private String image;
+
     @SerializedName("classificacao")
     private int classification;
+
     @SerializedName("placar")
     private int score;
 
-
-
+    // Construtor padrão
     public Time() {
     }
 
+    // Construtor para Parcelable
+    protected Time(Parcel in) {
+        name = in.readString();
+        image = in.readString();
+        classification = in.readInt();
+        score = in.readInt();
+    }
 
+    // Creator para Parcelable
+    public static final Creator<Time> CREATOR = new Creator<Time>() {
+        @Override
+        public Time createFromParcel(Parcel in) {
+            return new Time(in);
+        }
 
+        @Override
+        public Time[] newArray(int size) {
+            return new Time[size];
+        }
+    };
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(image);
+        dest.writeInt(classification);
+        dest.writeInt(score);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    // Getters e Setters
     public String getName() {
         return name;
     }
@@ -50,7 +91,6 @@ public class Time {
     public void setScore(int score) {
         this.score = score;
     }
-
 
     public String getNome() {
         return name;

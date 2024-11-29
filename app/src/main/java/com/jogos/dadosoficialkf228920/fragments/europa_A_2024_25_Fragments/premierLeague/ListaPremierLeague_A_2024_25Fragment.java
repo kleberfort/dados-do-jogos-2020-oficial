@@ -1,17 +1,28 @@
 package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague;
 
+import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasCasa;
+import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasFora;
+
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jogos.dadosoficialkf228920.R;
@@ -36,9 +47,11 @@ import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.
 import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.WestHam2024_25Activity;
 import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.Wolves2024_25Activity;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.TimesClasificacaoBrasilA2024Adapter;
+import com.jogos.dadosoficialkf228920.adapter.mais70ou90.CarregarEstatistica70_90Adapter;
 import com.jogos.dadosoficialkf228920.databinding.FragmentListaLigaProfissionalA2024Binding;
 import com.jogos.dadosoficialkf228920.databinding.FragmentListaPremierLeagueA202425Binding;
 import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util.JogosLigaProfissional_A2024;
+import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.ListaBrasilSerieA_2024_TesteFragment;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_2025_Listener;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_25;
 import com.jogos.dadosoficialkf228920.model.ClassificacaoOficialNovoModelo;
@@ -98,6 +111,37 @@ public class ListaPremierLeague_A_2024_25Fragment extends Fragment  implements J
     List<ClassificacaoOficialNovoModelo> listaOficial = new ArrayList<>(); ;//estamos iniciando nossa lista vazia
 
 
+    public interface ListaPremierLeague2025_OnClinkInterface{//esse é o codigo de criar a interface // entede essa primeira parte ? ele basicamente
+        void listaPremierLeagueOnClick2025Metodo(String nome);//viu que é uma string ?sim
+    }
+
+    public interface ListaPremierLeague2025_LongClickInterface{
+        void listaPremierLeagueLongClick2025metodo();
+    }
+
+    //2 etapa criamos uma variavel da interface
+    ListaPremierLeague2025_OnClinkInterface listaPremierLeagueOnClick = null;//queremos usar o metodo listaBrasilAMetodo(String nome) mas estamos iniciando ela com o valor null
+    //ou seuja null é igual a nulo ou nada
+    //entende isso ?sim
+
+    ListaPremierLeague2025_LongClickInterface listaPremierLeagueLongClick = null;
+
+
+    //3 etapa iniciamos a variavel
+    @Override
+    public void onAttach(@NonNull Context context) {//
+        super.onAttach(context);
+
+        if(context instanceof ListaPremierLeague2025_OnClinkInterface){
+            listaPremierLeagueOnClick = (ListaPremierLeague2025_OnClinkInterface) context;//aqui iniciamos a nossa variavel... Esse código voce nao precisa entender, só tem que
+            //compreendeu as 3 etapadas ?sim ok
+        }
+
+        if(context instanceof ListaPremierLeague2025_LongClickInterface){
+            listaPremierLeagueLongClick = (ListaPremierLeague2025_LongClickInterface) context;
+        }
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -256,8 +300,134 @@ public class ListaPremierLeague_A_2024_25Fragment extends Fragment  implements J
 
             @Override
             public void onLongItemClick(View view, int position) {
+                // Chama o método da MainActivity
+                listaPremierLeagueLongClick.listaPremierLeagueLongClick2025metodo();
 
-            }
+                // Criação do PopupWindow
+                LayoutInflater inflater = LayoutInflater.from(view.getContext());
+                LinearLayout layoutPopup = (LinearLayout) inflater.inflate(R.layout.layout_porcentagem_estatistica, null);
+                PopupWindow popupWindow = new PopupWindow(layoutPopup,
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        true);
+
+                popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                popupWindow.setOutsideTouchable(true);
+
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+                TextView textTitulo = layoutPopup.findViewById(R.id.titulo_principal);
+                RecyclerView recyclerView = layoutPopup.findViewById(R.id.recycler_view);
+                Button btnMais70Casa = layoutPopup.findViewById(R.id.btn_mais_70_casa);
+                Button btnMais88Casa = layoutPopup.findViewById(R.id.btn_mais_88_casa);
+                Button btnMais70Fora = layoutPopup.findViewById(R.id.btn_mais_70_fora);
+                Button btnMais88Fora = layoutPopup.findViewById(R.id.btn_mais_88_fora);
+
+                String teamName = listaOficial.get(position).getName();
+                textTitulo.setText("Melhores Estatísticas - " + teamName);
+
+
+                recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+                CarregarEstatistica70_90Adapter adapter = new CarregarEstatistica70_90Adapter(new ArrayList<>());
+                recyclerView.setAdapter(adapter);
+
+                // Seleciona a lista correta com base no time
+                List<PartidaNovoModelo> listaSelecionada;
+                switch (teamName) {
+                    case "Aston Villa":
+                        listaSelecionada = astonVillaCompleto;
+                        break;
+                    case "Arsenal":
+                        listaSelecionada = arsenalCompleto;
+                        break;
+                    case "Brentford":
+                        listaSelecionada = brentfordCompleto;
+                        break;
+                    case "Brighton":
+                        listaSelecionada = brigthonCompleto;
+                        break;
+                    case "Bournemouth":
+                        listaSelecionada = bournemouthCompleto;
+                        break;
+                    case "Chelsea":
+                        listaSelecionada = chelseaCompleto;
+                        break;
+                    case "Crystal Palace":
+                        listaSelecionada = crystalPalaceCompleto;
+                        break;
+                    case "Everton":
+                        listaSelecionada = evertonCompleto;
+                        break;
+                    case "Forest":
+                        listaSelecionada = forestCompleto;
+                        break;
+                    case "Fulham":
+                        listaSelecionada = fulhamCompleto;
+                        break;
+                    case "Ipswich":
+                        listaSelecionada = ipswichCompleto;
+                        break;
+                    case "Leicester":
+                        listaSelecionada = leicesterCompleto;
+                        break;
+                    case "Liverpool":
+                        listaSelecionada = liverpoolCompleto;
+                        break;
+                    case "Man City":
+                        listaSelecionada = manCityCompleto;
+                        break;
+                    case "Man Utd":
+                        listaSelecionada = manUtdCompleto;
+                        break;
+                    case "Newcastle":
+                        listaSelecionada = newcastleCompleto;
+                        break;
+                    case "Southampton":
+                        listaSelecionada = southamptonCompleto;
+                        break;
+                    case "Tottenham":
+                        listaSelecionada = tottenhamCompleto;
+                        break;
+                    case "West Ham":
+                        listaSelecionada = westHamCompleto;
+                        break;
+                    case "Wolves":
+                        listaSelecionada = wolvesCompleto;
+                        break;
+                    // Adicione outros times aqui
+                    default:
+                        listaSelecionada = new ArrayList<>(); // Caso o time não seja encontrado
+                        break;
+                }
+
+                // Configuração dos botões para exibir os dados correspondentes
+                btnMais70Casa.setOnClickListener(v -> {
+                    List<CharSequence> estatisticas = melhoresStatisticasCasa(listaSelecionada, teamName, 70);
+                    adapter.setEstatisticas(estatisticas);
+                    adapter.notifyDataSetChanged();
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
+
+                btnMais88Casa.setOnClickListener(v -> {
+                    List<CharSequence> estatisticas = melhoresStatisticasCasa(listaSelecionada, teamName, 88);
+                    adapter.setEstatisticas(estatisticas);
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
+
+                btnMais70Fora.setOnClickListener(v -> {
+                    List<CharSequence> estatisticas = melhoresStatisticasFora(listaSelecionada, teamName, 70);
+                    adapter.setEstatisticas(estatisticas);
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
+
+                btnMais88Fora.setOnClickListener(v -> {
+                    List<CharSequence> estatisticas = melhoresStatisticasFora(listaSelecionada, teamName, 88);
+                    adapter.setEstatisticas(estatisticas);
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
+            }//fim do método onLongClick
+
+
         }));
 
         return view;

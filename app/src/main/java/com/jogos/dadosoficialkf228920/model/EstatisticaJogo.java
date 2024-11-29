@@ -2,13 +2,22 @@ package com.jogos.dadosoficialkf228920.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class EstatisticaJogo {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import com.google.gson.annotations.SerializedName;
+
+public class EstatisticaJogo implements Parcelable {
+
     @SerializedName("escanteiosPrimeiroTempo")
     private int escanteiosPrimeiroTempo;
+
     @SerializedName("escanteiosSegundoTempo")
     private int escanteioSegundoTempo;
+
     @SerializedName("golsPrimeiroTempo")
     private int golsPrimeiroTempo;
+
     @SerializedName("golsSegundoTempo")
     private int golsSegundoTempo;
 
@@ -17,6 +26,53 @@ public class EstatisticaJogo {
     private int golsTotalPrimeiroTempo;
     private int golsTotalSegundoTempo;
 
+    // Construtor padrão
+    public EstatisticaJogo() {
+    }
+
+    // Construtor para Parcelable
+    protected EstatisticaJogo(Parcel in) {
+        escanteiosPrimeiroTempo = in.readInt();
+        escanteioSegundoTempo = in.readInt();
+        golsPrimeiroTempo = in.readInt();
+        golsSegundoTempo = in.readInt();
+        escanteiosTotalPrimeiroTempo = in.readInt();
+        escanteiosTotalSegundoTempo = in.readInt();
+        golsTotalPrimeiroTempo = in.readInt();
+        golsTotalSegundoTempo = in.readInt();
+    }
+
+    // Creator para Parcelable
+    public static final Creator<EstatisticaJogo> CREATOR = new Creator<EstatisticaJogo>() {
+        @Override
+        public EstatisticaJogo createFromParcel(Parcel in) {
+            return new EstatisticaJogo(in);
+        }
+
+        @Override
+        public EstatisticaJogo[] newArray(int size) {
+            return new EstatisticaJogo[size];
+        }
+    };
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(escanteiosPrimeiroTempo);
+        dest.writeInt(escanteioSegundoTempo);
+        dest.writeInt(golsPrimeiroTempo);
+        dest.writeInt(golsSegundoTempo);
+        dest.writeInt(escanteiosTotalPrimeiroTempo);
+        dest.writeInt(escanteiosTotalSegundoTempo);
+        dest.writeInt(golsTotalPrimeiroTempo);
+        dest.writeInt(golsTotalSegundoTempo);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    // Getters e Setters
     public int getEscanteiosPrimeiroTempo() {
         return escanteiosPrimeiroTempo;
     }

@@ -78,7 +78,7 @@
             android:layout_marginTop="4dp"
             android:orientation="vertical">
 
-            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.arsenal.estatistica.escanteios.CasaEscanteiosEstatisticaFragment"
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.chelsea.estatistica.escanteios.CasaEscanteiosEstatisticaFragment"
                 android:id="@+id/fragmento_estatistica_cantos"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>

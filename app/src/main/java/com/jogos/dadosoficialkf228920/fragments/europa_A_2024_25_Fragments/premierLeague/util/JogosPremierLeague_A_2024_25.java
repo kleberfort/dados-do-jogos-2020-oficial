@@ -399,44 +399,6 @@ public class JogosPremierLeague_A_2024_25  {
                 //Essa Classe dividi todos os jogos dos times, seja ele casa ou fora,
                 //Passei aqui um Listener para acessar dentro do meu Frament
 
-//             melhoresStatisticasCasaJogo1(lanusCompleto, "Lanús");
-//             melhoresStatisticasForaJogo1(unionSantaFeCompleto,"Union Santa Fe");
-//
-//             melhoresStatisticasCasaJogo1(centralCordobaCompleto, "Central Córdoba");
-//             melhoresStatisticasForaJogo1(institutoCompleto,"Instituto");
-//
-//             melhoresStatisticasCasaJogo1(riverPlateCompleto, "River Plate");
-//             melhoresStatisticasForaJogo1(atleticoTucumanCompleto,"Atl. Tucuman");
-
-//             melhoresStatisticasCasaJogo1(sanLorenzoCompleto, "San Lorenzo");
-//             melhoresStatisticasForaJogo1(velezSarsfieldCompleto,"Vélez Sársfield");
-
-//             melhoresStatisticasCasaJogo1(racingCompleto, "Racing");
-//            melhoresStatisticasForaJogo1(bocaJuniorsCompleto,"Boca Juniors");
-//
-//             melhoresStatisticasCasaJogo1(tigreCompleto, "Tigre");
-//             melhoresStatisticasForaJogo1(gimnasiaCompleto,"Gimnasia");
-//
-//             melhoresStatisticasCasaJogo1(belgranoCompleto, "Belgrano");
-//             melhoresStatisticasForaJogo1(independienteCompleto,"Independiente");
-
-//             melhoresStatisticasCasaJogo1(godoyCruzCompleto, "Godoy Cruz");
-//             melhoresStatisticasForaJogo1(sarmientoCompleto,"Sarmiento");
-//
-//             melhoresStatisticasCasaJogo1(estudiantesLaPrataCompleto, "Estudiantes");
-//             melhoresStatisticasForaJogo1(platenseCompleto,"Platense");
-//
-//             melhoresStatisticasCasaJogo1(rosarioCentralCompleto, "Rosario");
-//             melhoresStatisticasForaJogo1(talleresCompleto,"Talleres");
-//
-//             melhoresStatisticasCasaJogo1(argentinoJuniorsCompleto, "Argentinos Jrs");
-//             melhoresStatisticasForaJogo1(newellOldBoysCompleto,"Newell Old Boys");
-//
-//             melhoresStatisticasCasaJogo1(barracasCentralCompleto, "Barracas Central");
-//             melhoresStatisticasForaJogo1(banfieldCompleto,"Banfield");
-//
-//             melhoresStatisticasCasaJogo1(independienteRivadaviaCompleto, "Ind. Rivadavia");
-//             melhoresStatisticasForaJogo1(defensaJusticiaCompleto,"Def. Justicia");
 
                 if (listener != null) {
                     Log.d("teste jone" ,"2");
@@ -445,8 +407,6 @@ public class JogosPremierLeague_A_2024_25  {
                     // Chame outros métodos do listener para notificar outras listas, se necessário
                 }
 
-
-                // atleticoPRCasa(atleticoPRCasa);
 
 
                 //Aqui faço para todas as lista, seja casa e fora

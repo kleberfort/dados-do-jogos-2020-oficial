@@ -180,6 +180,7 @@ import com.jogos.dadosoficialkf228920.databinding.ActivityMainBinding;
 import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.ListaLigaProfissional_A_2024Fragment;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.ListaBrasilSerieA_2024_TesteFragment;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ListaBrasilSerie_B_2024Fragment;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.ListaLaLiga_A_2024_25Fragment;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.ListaPremierLeague_A_2024_25Fragment;
 import com.jogos.dadosoficialkf228920.fragments.listajogo.europaA2023a24.alemanha.ListaAlemaoA2023a24Fragment;
 import com.jogos.dadosoficialkf228920.fragments.listajogo.europaA2023a24.espanhol.ListaEspanholA2023a24Fragment;
@@ -196,7 +197,7 @@ import com.unity3d.services.banners.BannerErrorInfo;
 import com.unity3d.services.banners.BannerView;
 import com.unity3d.services.banners.UnityBannerSize;
 
-public class MainActivity extends AppCompatActivity implements ListaInglesA2023a24Fragment.ListaInglesaInterface, ListaEspanholA2023a24Fragment.ListaEspanholaInterface, ListaAlemaoA2023a24Fragment.ListaAlemanhaInterface, ListaItaliaA2023a24Fragment.ListaItalianoInterface, ListaFrancaA2023a24Fragment.ListaFrancesInterface, ListaBrasilSerieA_2024_TesteFragment.ListaBrasilA2024Interface, ListaBrasilSerie_B_2024Fragment.ListaBrasilB2024Interface, ListaLigaProfissional_A_2024Fragment.ListaArgentinaA2024Interface, ListaBrasilSerieA_2024_TesteFragment.ListaBrasilA2024ClickLongInterface, ListaBrasilSerie_B_2024Fragment.ListaBrasilB2024ClickLongInterface, ListaLigaProfissional_A_2024Fragment.ListaArgentinaA2024ClickLongInterface {
+public class MainActivity extends AppCompatActivity implements ListaInglesA2023a24Fragment.ListaInglesaInterface, ListaEspanholA2023a24Fragment.ListaEspanholaInterface, ListaAlemaoA2023a24Fragment.ListaAlemanhaInterface, ListaItaliaA2023a24Fragment.ListaItalianoInterface, ListaFrancaA2023a24Fragment.ListaFrancesInterface, ListaBrasilSerieA_2024_TesteFragment.ListaBrasilA2024Interface, ListaBrasilSerie_B_2024Fragment.ListaBrasilB2024Interface, ListaLigaProfissional_A_2024Fragment.ListaArgentinaA2024Interface, ListaBrasilSerieA_2024_TesteFragment.ListaBrasilA2024ClickLongInterface, ListaBrasilSerie_B_2024Fragment.ListaBrasilB2024ClickLongInterface, ListaLigaProfissional_A_2024Fragment.ListaArgentinaA2024ClickLongInterface, ListaPremierLeague_A_2024_25Fragment.ListaPremierLeague2025_LongClickInterface {
 
     //o que tenho que fazer agora aqui ?posso chamar varias Interfaces?, sim.// ele ja mostrou meio que direto pra mim
     //mas perceba: Tem o nome do fragment e o nome da interface que criamos na lista espanhola,
@@ -328,9 +329,12 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
         binding.viewPager.setAdapter(adapter);
 
         adapter.addFragment(new ListaBrasilSerieA_2024_TesteFragment(), "Série A 2024");
-        adapter.addFragment(new ListaBrasilSerie_B_2024Fragment(), "Série B 2024");
         adapter.addFragment(new ListaLigaProfissional_A_2024Fragment(), "Liga Profissional 2024");
         adapter.addFragment(new ListaPremierLeague_A_2024_25Fragment(), "Premier League A ");
+        adapter.addFragment(new ListaLaLiga_A_2024_25Fragment(), "La Liga A");
+        adapter.addFragment(new ListaBrasilSerie_B_2024Fragment(), "Série B 2024");
+
+
        // adapter.addFragment(new ListaInglesA2023a24Fragment(), "Inglês A 2023-24");
         //adapter.addFragment(new ListaEspanholA2023a24Fragment(), "Espanhol A 2023-24");
        // adapter.addFragment(new ListaAlemaoA2023a24Fragment(), "Alemão A 2023-24");
@@ -1204,6 +1208,13 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
 
     @Override
     public void listaArgentinaAClickLong() {
+        if (intersticialUnityCarregado) {//se intersticialUnityCarregado == true cai dentro do if... intersticialUnityCarregado vai ser true se o intersticial ja foi recebido da Unity
+            UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
+        }
+    }
+
+    @Override
+    public void listaPremierLeagueLongClick2025metodo() {
         if (intersticialUnityCarregado) {//se intersticialUnityCarregado == true cai dentro do if... intersticialUnityCarregado vai ser true se o intersticial ja foi recebido da Unity
             UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
         }

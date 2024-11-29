@@ -9,8 +9,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.databinding.ActivityOsasuna202425Binding;
 
 public class Osasuna2024_25Activity extends AppCompatActivity {
+
+    private ActivityOsasuna202425Binding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

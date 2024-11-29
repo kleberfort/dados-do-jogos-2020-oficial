@@ -9,8 +9,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.databinding.ActivityValencia202425Binding;
 
 public class Valencia2024_25Activity extends AppCompatActivity {
+
+    private ActivityValencia202425Binding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

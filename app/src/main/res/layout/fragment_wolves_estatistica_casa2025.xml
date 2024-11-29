@@ -15,7 +15,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.arsenal.estatistica.geral_dois_times.CasaEstatisticaGeralFragment"
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.wolves.estatistica.geral_dois_times.CasaEstatisticaGeralFragment"
                 android:id="@+id/fragmento_estatistica"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
@@ -28,7 +28,7 @@
             android:layout_marginTop="4dp"
             android:orientation="vertical">
 
-            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.arsenal.estatistica.resultado_intervalo.CasaResult1_2TFragment"
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.wolves.estatistica.resultado_intervalo.CasaResult1_2TFragment"
                 android:id="@+id/fragment_resultado_tempos"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -41,7 +41,7 @@
             android:layout_marginTop="4dp"
             android:orientation="vertical">
 
-            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.arsenal.estatistica.gols.CasaGolsEstatisticaFragment"
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.wolves.estatistica.gols.CasaGolsEstatisticaFragment"
                 android:id="@+id/fragmento_estatistica_gols"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
@@ -53,7 +53,7 @@
             android:layout_marginTop="4dp"
             android:orientation="vertical">
 
-            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.arsenal.estatistica.gols.CasaGolsSofridoEstatisticaFragment"
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.wolves.estatistica.gols.CasaGolsSofridoEstatisticaFragment"
                 android:id="@+id/fragmento_estatistica_gols_Sofrido"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
@@ -66,7 +66,7 @@
             android:layout_marginTop="4dp"
             android:orientation="vertical">
 
-            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.arsenal.estatistica.cartoes.CasaCartoesEstatisticaFragment"
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.wolves.estatistica.cartoes.CasaCartoesEstatisticaFragment"
                 android:id="@+id/fragmento_estatistica_cartoes"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
@@ -78,7 +78,7 @@
             android:layout_marginTop="4dp"
             android:orientation="vertical">
 
-            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.arsenal.estatistica.escanteios.CasaEscanteiosEstatisticaFragment"
+            <fragment android:name="com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.wolves.estatistica.escanteios.CasaEscanteiosEstatisticaFragment"
                 android:id="@+id/fragmento_estatistica_cantos"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>

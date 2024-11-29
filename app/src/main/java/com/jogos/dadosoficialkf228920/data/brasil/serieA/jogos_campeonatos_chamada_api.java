@@ -21,6 +21,9 @@ public interface jogos_campeonatos_chamada_api {
     Call<List<PartidaNovoModelo>> getPremierLeagueA2024_2025();
 
 
+    @GET("all-matchs-la-liga-a-2024-2025.json")
+    Call<List<PartidaNovoModelo>> getLaLiga2024_25();
+
 
 
 }
