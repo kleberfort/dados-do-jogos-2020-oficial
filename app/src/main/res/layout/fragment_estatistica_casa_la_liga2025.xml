@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.europa_A_2024_25_Fragments.laLiga.util.EstatisticaCasaLaLiga2025Fragment">
+    tools:context=".fragments.europa_A_2024_25_Fragments.laLiga.EstatisticaCasaLaLiga2025Fragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

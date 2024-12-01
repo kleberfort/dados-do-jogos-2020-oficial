@@ -1,21 +1,32 @@
 package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga;
 
+import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasCasa;
+import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasFora;
+
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.laLiga.LaLiga2024_25Activity;
 import com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.premierLeague.AstonVilla2024_25Activity;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.TimesClasificacaoBrasilA2024Adapter;
+import com.jogos.dadosoficialkf228920.adapter.mais70ou90.CarregarEstatistica70_90Adapter;
 import com.jogos.dadosoficialkf228920.databinding.FragmentListaLaLigaA202425Binding;
 import com.jogos.dadosoficialkf228920.databinding.FragmentListaPremierLeagueA202425Binding;
 import com.jogos.dadosoficialkf228920.databinding.FragmentListaPrimeiraLigaA202425Binding;
@@ -109,13 +120,22 @@ public class ListaLaLiga_A_2024_25Fragment extends Fragment implements JogosLaLi
         binding.rvLista.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), binding.rvLista, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                ClassificacaoOficialNovoModelo lista = listaOficial.get(position);
+                // Recupera o item clicado com base na posição
+                ClassificacaoOficialNovoModelo itemSelecionado = listaOficial.get(position);
                 Intent intent = null;
 
-                switch (lista.getName()){
+                switch (itemSelecionado.getName()){
                     case "Alavés":
                         intent = new Intent(getContext(), LaLiga2024_25Activity.class);
                         intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(alavesCompleto));
+                        // Passa o nome do item clicado como extra
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+
+                    case "Athletic Club":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(athleticClubCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
                         break;
                 }
 
@@ -128,7 +148,132 @@ public class ListaLaLiga_A_2024_25Fragment extends Fragment implements JogosLaLi
             @Override
             public void onLongItemClick(View view, int position) {
 
-            }
+
+                // Criação do PopupWindow
+                LayoutInflater inflater = LayoutInflater.from(view.getContext());
+                LinearLayout layoutPopup = (LinearLayout) inflater.inflate(R.layout.layout_porcentagem_estatistica, null);
+                PopupWindow popupWindow = new PopupWindow(layoutPopup,
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        true);
+
+                popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                popupWindow.setOutsideTouchable(true);
+
+                popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+                TextView textTitulo = layoutPopup.findViewById(R.id.titulo_principal);
+                RecyclerView recyclerView = layoutPopup.findViewById(R.id.recycler_view);
+                Button btnMais70Casa = layoutPopup.findViewById(R.id.btn_mais_70_casa);
+                Button btnMais88Casa = layoutPopup.findViewById(R.id.btn_mais_88_casa);
+                Button btnMais70Fora = layoutPopup.findViewById(R.id.btn_mais_70_fora);
+                Button btnMais88Fora = layoutPopup.findViewById(R.id.btn_mais_88_fora);
+
+                String teamName = listaOficial.get(position).getName();
+                textTitulo.setText("Melhores Estatísticas - " + teamName);
+
+
+                recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+                CarregarEstatistica70_90Adapter adapter = new CarregarEstatistica70_90Adapter(new ArrayList<>());
+                recyclerView.setAdapter(adapter);
+
+                // Seleciona a lista correta com base no time
+                List<PartidaNovoModelo> listaSelecionada;
+                switch (teamName) {
+                    case "Alavés":
+                        listaSelecionada = alavesCompleto;
+                        break;
+                    case "Athletic Club":
+                        listaSelecionada = athleticClubCompleto;
+                        break;
+                    case "Atl. Madrid":
+                        listaSelecionada = atlMadridCompleto;
+                        break;
+                    case "Barcelona":
+                        listaSelecionada = barcelonaCompleto;
+                        break;
+                    case "Celta":
+                        listaSelecionada = celtaCompleto;
+                        break;
+                    case "Espanyol":
+                        listaSelecionada = espanyolCompleto;
+                        break;
+                    case "Getafe":
+                        listaSelecionada = getafeCompleto;
+                        break;
+                    case "Girona":
+                        listaSelecionada = gironaCompleto;
+                        break;
+                    case "Las Palmas":
+                        listaSelecionada = lasPalmasCompleto;
+                        break;
+                    case "Leganés":
+                        listaSelecionada = leganesCompleto;
+                        break;
+                    case "Mallorca":
+                        listaSelecionada = mallorcaCompleto;
+                        break;
+                    case "Osasuna":
+                        listaSelecionada = osasunaCompleto;
+                        break;
+                    case "Rayo Vallecano":
+                        listaSelecionada = rayoVallecanoCompleto;
+                        break;
+                    case "Real Betis":
+                        listaSelecionada = realBetisCompleto;
+                        break;
+                    case "Real Madrid":
+                        listaSelecionada = realMadridCompleto;
+                        break;
+                    case "Real Sociedad":
+                        listaSelecionada = realSociedadCompleto;
+                        break;
+                    case "Real Valladolid":
+                        listaSelecionada = realValladolidCompleto;
+                        break;
+                    case "Sevilla":
+                        listaSelecionada = sevillaCompleto;
+                        break;
+                    case "Valencia":
+                        listaSelecionada = valenciaCompleto;
+                        break;
+                    case "Villarreal":
+                        listaSelecionada = villarrealCompleto;
+                        break;
+                    // Adicione outros times aqui
+                    default:
+                        listaSelecionada = new ArrayList<>(); // Caso o time não seja encontrado
+                        break;
+                }
+
+                // Configuração dos botões para exibir os dados correspondentes
+                btnMais70Casa.setOnClickListener(v -> {
+                    List<CharSequence> estatisticas = melhoresStatisticasCasa(listaSelecionada, teamName, 70);
+                    adapter.setEstatisticas(estatisticas);
+                    adapter.notifyDataSetChanged();
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
+
+                btnMais88Casa.setOnClickListener(v -> {
+                    List<CharSequence> estatisticas = melhoresStatisticasCasa(listaSelecionada, teamName, 88);
+                    adapter.setEstatisticas(estatisticas);
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
+
+                btnMais70Fora.setOnClickListener(v -> {
+                    List<CharSequence> estatisticas = melhoresStatisticasFora(listaSelecionada, teamName, 70);
+                    adapter.setEstatisticas(estatisticas);
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
+
+                btnMais88Fora.setOnClickListener(v -> {
+                    List<CharSequence> estatisticas = melhoresStatisticasFora(listaSelecionada, teamName, 88);
+                    adapter.setEstatisticas(estatisticas);
+                    recyclerView.setVisibility(View.VISIBLE);
+                });
+            }//fim do método onLongClick
+
+
         }));
 
             return view;

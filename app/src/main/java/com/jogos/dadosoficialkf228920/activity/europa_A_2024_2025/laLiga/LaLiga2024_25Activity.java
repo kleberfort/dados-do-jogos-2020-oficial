@@ -3,12 +3,10 @@ package com.jogos.dadosoficialkf228920.activity.europa_A_2024_2025.laLiga;
 import android.os.Bundle;
 import android.util.Log;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
@@ -16,10 +14,6 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.adapter.adapteFragment.LaLigaPagerAdapter;
 import com.jogos.dadosoficialkf228920.databinding.ActivityLaLiga202425Binding;
-import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.JogosCasaLaLiga2025Fragment;
-import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.util.EstatisticaCasaLaLiga2025Fragment;
-import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.util.EstatisticaForaLaLiga2025Fragment;
-import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.util.JogosForaLaLiga2025Fragment;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import java.util.ArrayList;
@@ -39,6 +33,8 @@ public class LaLiga2024_25Activity extends AppCompatActivity {
 
         // Recupera a lista do Intent
         listaPartidas = getIntent().getParcelableArrayListExtra("lista_partidas");
+        // Recupera o nome do time do Intent
+        String nomeTime = getIntent().getStringExtra("nome_time");
 
         // Verifica se a lista não é nula ou vazia antes de passar para os Fragmentos
         if (listaPartidas != null && !listaPartidas.isEmpty()) {
@@ -49,13 +45,13 @@ public class LaLiga2024_25Activity extends AppCompatActivity {
 
             // Configura o ViewPager2 com o adaptador
             LaLigaPagerAdapter pagerAdapter;
-            pagerAdapter = new LaLigaPagerAdapter(this, listaPartidas);
+            pagerAdapter = new LaLigaPagerAdapter(this, listaPartidas, nomeTime);
 
             // Configura o ViewPager2
             ViewPager2 viewPager = findViewById(R.id.viewPager);
-            viewPager.setAdapter(pagerAdapter);
+            viewPager.setAdapter(pagerAdapter);  // Configura o adaptador aqui primeiro
 
-            // Configura o TabLayout para as abas
+            // Agora, configura o TabLayout para as abas
             TabLayout tabLayout = findViewById(R.id.tabLayout);
             new TabLayoutMediator(tabLayout, viewPager, new TabLayoutMediator.TabConfigurationStrategy() {
                 @Override
