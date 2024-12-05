@@ -48,6 +48,10 @@ public class LaLigaPagerAdapter extends FragmentStateAdapter {
             case 2:
                 // Estatísticas Casa
                 fragment = new EstatisticaCasaLaLiga2025Fragment(); // Exemplo, substitua pelo fragmento correto
+                Bundle estatisticaCasa = new Bundle();
+                estatisticaCasa.putParcelableArrayList("partidas_casa", filtrarPartidasCasa(listaPartidas));
+                estatisticaCasa.putString("nome_time", nomeTime);
+                fragment.setArguments(estatisticaCasa);
                 break;
             case 3:
                 // Estatísticas Fora
