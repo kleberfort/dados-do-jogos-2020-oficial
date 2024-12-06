@@ -7,10 +7,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.EstatisticaCasaLaLiga2025Fragment;
-import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.EstatisticaForaLaLiga2025Fragment;
-import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.JogosCasaLaLiga2025Fragment;
-import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.JogosForaLaLiga2025Fragment;
+import com.jogos.dadosoficialkf228920.fragments.EstatisticaCasaLaLiga2025Fragment;
+import com.jogos.dadosoficialkf228920.fragments.EstatisticaForaLaLiga2025Fragment;
+import com.jogos.dadosoficialkf228920.fragments.JogosCasaLaLiga2025Fragment;
+import com.jogos.dadosoficialkf228920.fragments.JogosForaLaLiga2025Fragment;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import java.util.ArrayList;

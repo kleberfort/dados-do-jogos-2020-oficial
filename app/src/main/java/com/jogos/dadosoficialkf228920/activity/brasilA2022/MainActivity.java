@@ -197,7 +197,12 @@ import com.unity3d.services.banners.BannerErrorInfo;
 import com.unity3d.services.banners.BannerView;
 import com.unity3d.services.banners.UnityBannerSize;
 
-public class MainActivity extends AppCompatActivity implements ListaInglesA2023a24Fragment.ListaInglesaInterface, ListaEspanholA2023a24Fragment.ListaEspanholaInterface, ListaAlemaoA2023a24Fragment.ListaAlemanhaInterface, ListaItaliaA2023a24Fragment.ListaItalianoInterface, ListaFrancaA2023a24Fragment.ListaFrancesInterface, ListaBrasilSerieA_2024_TesteFragment.ListaBrasilA2024Interface, ListaBrasilSerie_B_2024Fragment.ListaBrasilB2024Interface, ListaLigaProfissional_A_2024Fragment.ListaArgentinaA2024Interface, ListaBrasilSerieA_2024_TesteFragment.ListaBrasilA2024ClickLongInterface, ListaBrasilSerie_B_2024Fragment.ListaBrasilB2024ClickLongInterface, ListaLigaProfissional_A_2024Fragment.ListaArgentinaA2024ClickLongInterface, ListaPremierLeague_A_2024_25Fragment.ListaPremierLeague2025_LongClickInterface {
+public class MainActivity extends AppCompatActivity implements ListaInglesA2023a24Fragment.ListaInglesaInterface, ListaEspanholA2023a24Fragment.ListaEspanholaInterface,
+        ListaAlemaoA2023a24Fragment.ListaAlemanhaInterface, ListaItaliaA2023a24Fragment.ListaItalianoInterface, ListaFrancaA2023a24Fragment.ListaFrancesInterface,
+        ListaBrasilSerieA_2024_TesteFragment.ListaBrasilA2024Interface, ListaBrasilSerie_B_2024Fragment.ListaBrasilB2024Interface,
+        ListaLigaProfissional_A_2024Fragment.ListaArgentinaA2024Interface, ListaBrasilSerieA_2024_TesteFragment.ListaBrasilA2024ClickLongInterface,
+        ListaBrasilSerie_B_2024Fragment.ListaBrasilB2024ClickLongInterface, ListaLigaProfissional_A_2024Fragment.ListaArgentinaA2024ClickLongInterface,
+        ListaPremierLeague_A_2024_25Fragment.ListaPremierLeague2025_LongClickInterface, ListaLaLiga_A_2024_25Fragment.Lista_LongClickInterface{
 
     //o que tenho que fazer agora aqui ?posso chamar varias Interfaces?, sim.// ele ja mostrou meio que direto pra mim
     //mas perceba: Tem o nome do fragment e o nome da interface que criamos na lista espanhola,
@@ -283,23 +288,23 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
         //mas antes de publicar tente colocar mais times  somente copiando o que fizemos
 
         //Quando irei publicar, tenho que tirar o parametro "textMode" e para teste coloco depois do parametro unityGameId.
-//        UnityAds.initialize(this, unityGameID, new IUnityAdsInitializationListener() {
-//            @Override
-//            public void onInitializationComplete() {
-//
-//                Log.d("testeunity", "completo");
-//                //quando a comunicao acontece com sucesso.. comunicao do Aplicativo com a Unity
-//            }
-//
-//            @Override
-//            public void onInitializationFailed(UnityAds.UnityAdsInitializationError error, String message) {
-//                //quando coloco o this la em cima esse metodo é chamado para falar qual foi o erro
-//                //Esse erro é referente a Unity
-//
-//                Log.d("testeunity-", message);
-//
-//            }
-//        });
+        UnityAds.initialize(this, unityGameID, new IUnityAdsInitializationListener() {
+            @Override
+            public void onInitializationComplete() {
+
+                Log.d("testeunity", "completo");
+                //quando a comunicao acontece com sucesso.. comunicao do Aplicativo com a Unity
+            }
+
+            @Override
+            public void onInitializationFailed(UnityAds.UnityAdsInitializationError error, String message) {
+                //quando coloco o this la em cima esse metodo é chamado para falar qual foi o erro
+                //Esse erro é referente a Unity
+
+                Log.d("testeunity-", message);
+
+            }
+        });
 
 
         relativeLayoutBannerUnity = binding.adViewContainerMainActivityUnity;
@@ -1191,6 +1196,15 @@ public class MainActivity extends AppCompatActivity implements ListaInglesA2023a
         }//fim do else
 
     }
+
+
+    @Override
+    public void listaLaLiga2024_25LongClickmetodo() {
+        if (intersticialUnityCarregado) {//se intersticialUnityCarregado == true cai dentro do if... intersticialUnityCarregado vai ser true se o intersticial ja foi recebido da Unity
+            UnityAds.show(MainActivity.this, intersticialAdUnitId, new UnityAdsShowOptions(), showListener);
+        }
+    }
+
 
     @Override
     public void listaBrasilAClickLong() {

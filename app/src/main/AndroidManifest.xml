@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DadosDosJogos2020Oficial">
         <activity
+            android:name=".activity.europa_A_2024_2025.serieA.SerieA2024_25Activity"
+            android:exported="false" />
+        <activity
             android:name=".activity.europa_A_2024_2025.laLiga.LaLiga2024_25Activity"
             android:exported="false" />
         <activity

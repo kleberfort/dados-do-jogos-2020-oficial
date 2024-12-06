@@ -3,11 +3,13 @@ package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLi
 import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasCasa;
 import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasFora;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,6 +34,7 @@ import com.jogos.dadosoficialkf228920.databinding.FragmentListaPremierLeagueA202
 import com.jogos.dadosoficialkf228920.databinding.FragmentListaPrimeiraLigaA202425Binding;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.util.JogosLaLiga_A_2024_2025_Listener;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.util.JogosLaLiga_A_2024_25;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.ListaPremierLeague_A_2024_25Fragment;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_25;
 import com.jogos.dadosoficialkf228920.model.ClassificacaoOficialNovoModelo;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
@@ -90,6 +93,36 @@ public class ListaLaLiga_A_2024_25Fragment extends Fragment implements JogosLaLi
     List<ClassificacaoOficialNovoModelo> listaOficial = new ArrayList<>(); ;//estamos iniciando nossa lista vazia
 
 
+    public interface Lista_OnClinkInterface{//esse é o codigo de criar a interface // entede essa primeira parte ? ele basicamente
+        void listaOnClickMetodo(String nome);//viu que é uma string ?sim
+    }
+
+    public interface Lista_LongClickInterface{
+        void listaLaLiga2024_25LongClickmetodo();
+    }
+
+    //2 etapa criamos uma variavel da interface
+    Lista_OnClinkInterface listaOnClick = null;//queremos usar o metodo listaBrasilAMetodo(String nome) mas estamos iniciando ela com o valor null
+    //ou seuja null é igual a nulo ou nada
+    //entende isso ?sim
+    Lista_LongClickInterface listaLongClick = null;
+
+    //3 etapa iniciamos a variavel
+    @Override
+    public void onAttach(@NonNull Context context) {//
+        super.onAttach(context);
+
+        if(context instanceof Lista_OnClinkInterface){
+            listaOnClick = (Lista_OnClinkInterface) context;//aqui iniciamos a nossa variavel... Esse código voce nao precisa entender, só tem que
+            //compreendeu as 3 etapadas ?sim ok
+        }
+
+        if(context instanceof Lista_LongClickInterface){
+            listaLongClick = (Lista_LongClickInterface) context;
+        }
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -97,14 +130,10 @@ public class ListaLaLiga_A_2024_25Fragment extends Fragment implements JogosLaLi
         binding = FragmentListaLaLigaA202425Binding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-
-
-
         jogosLaLigaA202425 = new JogosLaLiga_A_2024_25();
         jogosLaLigaA202425.setupHttpClient();
         jogosLaLigaA202425.setupDadosJogos();
         jogosLaLigaA202425.setListener(this);// Registra o fragmento como listener
-
 
         binding.rvLista.setHasFixedSize(true);
         binding.rvLista.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -112,9 +141,6 @@ public class ListaLaLiga_A_2024_25Fragment extends Fragment implements JogosLaLi
 
         timesClasificacaoBrasilA2024Adapter = new TimesClasificacaoBrasilA2024Adapter(listaOficial);//o adapter vai receber a variazel listaOficial, mas ela esta vazia ainda
         binding.rvLista.setAdapter(timesClasificacaoBrasilA2024Adapter);
-
-
-
 
 
         binding.rvLista.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), binding.rvLista, new RecyclerItemClickListener.OnItemClickListener() {
@@ -131,10 +157,19 @@ public class ListaLaLiga_A_2024_25Fragment extends Fragment implements JogosLaLi
                         // Passa o nome do item clicado como extra
                         intent.putExtra("nome_time", itemSelecionado.getName());
                         break;
-
                     case "Athletic Club":
                         intent = new Intent(getContext(), LaLiga2024_25Activity.class);
                         intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(athleticClubCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Atl. Madrid":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(atlMadridCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Barcelona":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(barcelonaCompleto));
                         intent.putExtra("nome_time", itemSelecionado.getName());
                         break;
                     case "Celta":
@@ -142,9 +177,79 @@ public class ListaLaLiga_A_2024_25Fragment extends Fragment implements JogosLaLi
                         intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(celtaCompleto));
                         intent.putExtra("nome_time", itemSelecionado.getName());
                         break;
+                    case "Espanyol":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(espanyolCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Getafe":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(getafeCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Girona":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(gironaCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Las Palmas":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(lasPalmasCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Leganés":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(leganesCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
                     case "Mallorca":
                         intent = new Intent(getContext(), LaLiga2024_25Activity.class);
                         intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(mallorcaCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Osasuna":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(osasunaCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Rayo Vallecano":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(rayoVallecanoCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Real Betis":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(realBetisCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Real Madrid":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(realMadridCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Real Sociedad":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(realSociedadCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Real Valladolid":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(realValladolidCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Sevilla":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(sevillaCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Valencia":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(valenciaCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Villarreal":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(villarrealCompleto));
                         intent.putExtra("nome_time", itemSelecionado.getName());
                         break;
                 }
@@ -157,7 +262,7 @@ public class ListaLaLiga_A_2024_25Fragment extends Fragment implements JogosLaLi
 
             @Override
             public void onLongItemClick(View view, int position) {
-
+                listaLongClick.listaLaLiga2024_25LongClickmetodo();
 
                 // Criação do PopupWindow
                 LayoutInflater inflater = LayoutInflater.from(view.getContext());

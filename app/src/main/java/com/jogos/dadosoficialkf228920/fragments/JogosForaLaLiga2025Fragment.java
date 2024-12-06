@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga;
+package com.jogos.dadosoficialkf228920.fragments;
 
 import android.os.Bundle;
 
