@@ -20,13 +20,16 @@ import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaCartoesBinding;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoCartoesMcdCasa;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class CasaCartoesEstatisticaUtilFragment extends Fragment {
 
-     private TelaEstatisticaCartoesBinding binding;
-     private ArrayList<PartidaNovoModelo> partidasCasa; // Ajuste o tipo conforme necessário
+    private TelaEstatisticaCartoesBinding binding;
+
+    private ArrayList<PartidaNovoModelo> partidasCasa; // Ajuste o tipo conforme necessário
     private String nomeTime;
 
     private ResultadosPartidasAdapter resultadosPartidasAdapter;
@@ -73,9 +76,12 @@ public class CasaCartoesEstatisticaUtilFragment extends Fragment {
     private int cartoesAmareloVermelhoTotalTresCincoMarcados;
     private int cartoesAmareloVermelhoTotalTresCincoNaoMarcados;
     private List<PartidaNovoModelo> partidas = new ArrayList<>();
+
+
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         binding = TelaEstatisticaCartoesBinding.inflate(inflater, container, false);
 
 
@@ -89,8 +95,10 @@ public class CasaCartoesEstatisticaUtilFragment extends Fragment {
         if (partidasCasa != null && nomeTime != null) {
             // Chamar um método para processar os dados recebidos
             cartoesEstatisticaCasa(partidasCasa);
-          partidas = partidasCasa;
+            partidas = partidasCasa;
         }
+
+
 
         binding.tvAmarelo1T05Mcd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -254,6 +262,8 @@ public class CasaCartoesEstatisticaUtilFragment extends Fragment {
         return binding.getRoot();
 
     }
+
+
 
     private void handleTextViewClick(int textViewId) {
         List<PartidaNovoModelo> jogos = new ArrayList<>();

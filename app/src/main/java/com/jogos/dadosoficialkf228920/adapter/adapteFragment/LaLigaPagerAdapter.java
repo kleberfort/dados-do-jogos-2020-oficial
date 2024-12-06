@@ -56,6 +56,10 @@ public class LaLigaPagerAdapter extends FragmentStateAdapter {
             case 3:
                 // Estatísticas Fora
                 fragment = new EstatisticaForaLaLiga2025Fragment(); // Exemplo, substitua pelo fragmento correto
+                Bundle estatisticaFora = new Bundle();
+                estatisticaFora.putParcelableArrayList("partidas_fora", filtrarPartidasFora(listaPartidas));
+                estatisticaFora.putString("nome_time", nomeTime);
+                fragment.setArguments(estatisticaFora);
                 break;
             default:
                 throw new IllegalArgumentException("Posição inválida no ViewPager2: " + position);

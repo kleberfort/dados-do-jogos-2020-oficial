@@ -14,9 +14,12 @@ import androidx.fragment.app.FragmentTransaction;
 import com.jogos.dadosoficialkf228920.databinding.FragmentEstatisticaCasaLaLiga2025Binding;
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ceara_ui.estatistica.escanteios.CasaEscanteiosEstatisticaFragment;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
-import com.jogos.dadosoficialkf228920.util.estatistica.cartoes.CasaCartoesEstatisticaFragment;
 import com.jogos.dadosoficialkf228920.util.estatistica_util.cartoes.CasaCartoesEstatisticaUtilFragment;
+import com.jogos.dadosoficialkf228920.util.estatistica_util.escanteios.CasaEscanteiosEstatisticaUtilFragment;
 import com.jogos.dadosoficialkf228920.util.estatistica_util.geral_dois_times.CasaGeralEstatisticaUtilFragment;
+import com.jogos.dadosoficialkf228920.util.estatistica_util.gols.CasaGolsEstatisticaUtilFragment;
+import com.jogos.dadosoficialkf228920.util.estatistica_util.gols.CasaGolsSofridoEstatisticaUtilFragment;
+import com.jogos.dadosoficialkf228920.util.estatistica_util.resultado_intervalo.CasaResultadoPrimeiro_Segunto_EstatisticaUtilFragment;
 
 import java.util.ArrayList;
 
@@ -46,19 +49,36 @@ public class EstatisticaCasaLaLiga2025Fragment extends Fragment {
         return binding.getRoot();
     }
 
-
     private void carregarFragments() {
         CasaGeralEstatisticaUtilFragment fragmentCasaGeral = new CasaGeralEstatisticaUtilFragment();
+        CasaResultadoPrimeiro_Segunto_EstatisticaUtilFragment fragmentcasaResultado = new CasaResultadoPrimeiro_Segunto_EstatisticaUtilFragment();
+        CasaGolsEstatisticaUtilFragment fragmentCasaGolsMarcados = new CasaGolsEstatisticaUtilFragment();
+        CasaGolsSofridoEstatisticaUtilFragment fragmentCasaGolsSofrido = new CasaGolsSofridoEstatisticaUtilFragment();
+        CasaCartoesEstatisticaUtilFragment fragmentCasaCartoes = new CasaCartoesEstatisticaUtilFragment();
+        CasaEscanteiosEstatisticaUtilFragment fragmentCasaEscanteios = new CasaEscanteiosEstatisticaUtilFragment();
+
+
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList("partidas_casa", partidasCasa); // Envia a lista
         bundle.putString("nome_time", nomeTime); // Envia o nome do time
+
+
         fragmentCasaGeral.setArguments(bundle);
+        fragmentcasaResultado.setArguments(bundle);
+        fragmentCasaGolsMarcados.setArguments(bundle);
+        fragmentCasaGolsSofrido.setArguments(bundle);
+        fragmentCasaCartoes.setArguments(bundle);
+        fragmentCasaEscanteios.setArguments(bundle);
 
-        // Adicionar o fragmento fragmentCartoes
+        // Adicionar os fragmentos
         adicionarFragmento(fragmentCasaGeral);
+        adicionarFragmento(fragmentcasaResultado);
+        adicionarFragmento(fragmentCasaGolsMarcados);
+        adicionarFragmento(fragmentCasaGolsSofrido);
+        adicionarFragmento(fragmentCasaCartoes);
+        adicionarFragmento(fragmentCasaEscanteios);
 
-        // Adicionar o fragmento CasaEscanteiosEstatisticaUtilFragment
-        adicionarFragmento(new CasaEscanteiosEstatisticaFragment());
+
     }
 
     private void adicionarFragmento(Fragment fragment) {

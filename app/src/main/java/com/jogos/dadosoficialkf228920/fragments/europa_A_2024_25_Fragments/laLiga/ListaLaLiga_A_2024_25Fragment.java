@@ -137,6 +137,16 @@ public class ListaLaLiga_A_2024_25Fragment extends Fragment implements JogosLaLi
                         intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(athleticClubCompleto));
                         intent.putExtra("nome_time", itemSelecionado.getName());
                         break;
+                    case "Celta":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(celtaCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
+                    case "Mallorca":
+                        intent = new Intent(getContext(), LaLiga2024_25Activity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(mallorcaCompleto));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        break;
                 }
 
                 if (intent != null) {

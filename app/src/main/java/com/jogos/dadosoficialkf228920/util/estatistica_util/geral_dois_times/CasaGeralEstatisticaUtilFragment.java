@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +21,8 @@ import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaOficialPorcenta
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoCasa;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,6 +32,9 @@ public class CasaGeralEstatisticaUtilFragment extends Fragment {
 
     private ArrayList<PartidaNovoModelo> partidasCasa; // Ajuste o tipo conforme necessário
     private String nomeTime;
+
+
+
     private ResultadosPartidasAdapter resultadosPartidasAdapter;
 
     private int golsTotalPrimeiroTempoZeroCincoMarcados;
@@ -84,9 +88,9 @@ public class CasaGeralEstatisticaUtilFragment extends Fragment {
     private List<PartidaNovoModelo> partidas = new ArrayList<>();
 
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         binding = TelaEstatisticaOficialPorcentagemBinding.inflate(inflater, container, false);
 
 
@@ -99,7 +103,7 @@ public class CasaGeralEstatisticaUtilFragment extends Fragment {
         // Verificar se os dados foram recebidos corretamente
         if (partidasCasa != null && nomeTime != null) {
             // Chamar um método para processar os dados recebidos
-            casaGeralEstatisticaCasa(partidasCasa);
+            geralCasaEstatisticaCasa(partidasCasa);
             partidas = partidasCasa;
         }
 
@@ -757,8 +761,8 @@ public class CasaGeralEstatisticaUtilFragment extends Fragment {
         }//fim do switch
     }
 
+    public void geralCasaEstatisticaCasa(List<PartidaNovoModelo> partidas){
 
-    public void casaGeralEstatisticaCasa(List<PartidaNovoModelo> partidas){
         for (int i = 0; i < partidas.size(); i++) {
 
             //GOLS 0.5 1°TEMPO
@@ -1260,4 +1264,3 @@ public class CasaGeralEstatisticaUtilFragment extends Fragment {
     }
 
 }
-
