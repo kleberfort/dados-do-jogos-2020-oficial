@@ -36,6 +36,7 @@ import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLig
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.util.JogosLaLiga_A_2024_25;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.ListaPremierLeague_A_2024_25Fragment;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_25;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.serieA.util.JogosSeriaAItalia_2024_25;
 import com.jogos.dadosoficialkf228920.model.ClassificacaoOficialNovoModelo;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import com.jogos.dadosoficialkf228920.model.RecyclerItemClickListener;
@@ -134,6 +135,9 @@ public class ListaLaLiga_A_2024_25Fragment extends Fragment implements JogosLaLi
         jogosLaLigaA202425.setupHttpClient();
         jogosLaLigaA202425.setupDadosJogos();
         jogosLaLigaA202425.setListener(this);// Registra o fragmento como listener
+
+        JogosSeriaAItalia_2024_25 jogosSeriaAItalia202425 = new JogosSeriaAItalia_2024_25();
+        jogosSeriaAItalia202425.setupDadosJogos();
 
         binding.rvLista.setHasFixedSize(true);
         binding.rvLista.setLayoutManager(new LinearLayoutManager(getContext()));

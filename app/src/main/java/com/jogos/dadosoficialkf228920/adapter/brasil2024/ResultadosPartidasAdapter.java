@@ -8,9 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.jogos.dadosoficialkf228920.adapter.europa2023a24.alemanha.augsburg.resultado.AugsburgCasaResultadoAdapter;
 import com.jogos.dadosoficialkf228920.databinding.LayoutResultadoPartidasBinding;
-import com.jogos.dadosoficialkf228920.model.Partida;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import java.util.List;
@@ -45,16 +43,16 @@ public class ResultadosPartidasAdapter extends RecyclerView.Adapter<ResultadosPa
         holder.binding.tvDataJogo.setText(result.getDate());
 
         //DADOS TIME CASA
-        holder.binding.tvNomeCasa.setText(result.getHomeTime().getNome());
+        holder.binding.tvNomeCasa.setText(result.getHomeTime().getName());
         holder.binding.tvClassificacaoCasa.setText(String.valueOf(result.getHomeTime().getClassificacao()));
         holder.binding.tvPlacarCasa.setText(String.valueOf(result.getHomeTime().getPlacar()));
-        Glide.with(context).load(result.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
+        Glide.with(context).load(result.getHomeTime().getImage()).into(holder.binding.ivTimeCasa);
 
         //DADOS TIME FORA
-        holder.binding.tvNomeFora.setText(result.getAwayTime().getNome());
+        holder.binding.tvNomeFora.setText(result.getAwayTime().getName());
         holder.binding.tvClassificacaoFora.setText(String.valueOf(result.getAwayTime().getClassificacao()));
         holder.binding.tvPlacarFora.setText(String.valueOf(result.getAwayTime().getPlacar()));
-        Glide.with(context).load(result.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+        Glide.with(context).load(result.getAwayTime().getImage()).into(holder.binding.ivTimeFora);
 
     }
 

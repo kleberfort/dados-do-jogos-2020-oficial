@@ -5,8 +5,6 @@ import com.google.gson.annotations.SerializedName;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.google.gson.annotations.SerializedName;
-
 public class Time implements Parcelable {
 
     @SerializedName("nome")
@@ -66,6 +64,7 @@ public class Time implements Parcelable {
 
     public void setName(String name) {
         this.name = name;
+
     }
 
     public String getImage() {
@@ -92,21 +91,6 @@ public class Time implements Parcelable {
         this.score = score;
     }
 
-    public String getNome() {
-        return name;
-    }
-
-    public void setNome(String nome) {
-        this.name = nome;
-    }
-
-    public String getImagem() {
-        return image;
-    }
-
-    public void setImagem(String imagem) {
-        this.image = imagem;
-    }
 
     public int getClassificacao() {
         return classification;

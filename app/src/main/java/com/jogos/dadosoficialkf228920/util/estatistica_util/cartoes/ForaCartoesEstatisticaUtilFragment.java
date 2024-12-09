@@ -930,7 +930,7 @@ public class ForaCartoesEstatisticaUtilFragment extends Fragment {
 
         binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
 
-        String nome = partidas.get(0).getAwayTime().getNome();
+        String nome = partidas.get(0).getAwayTime().getName();
         String totalJogos = String.valueOf(partidas.size());
         String totalAmrlVmlMcd = String.valueOf(cartoesAmareloVermelhoTotalZeroCincoMarcados );
         String totalAmrlVmlMcdPct = String.valueOf(Math.round(((double)cartoesAmareloVermelhoTotalZeroCincoMarcados * 100 ) / partidas.size()));

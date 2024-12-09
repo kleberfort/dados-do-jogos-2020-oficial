@@ -52,6 +52,23 @@ public class PartidaNovoModelo implements Parcelable {
     // Construtor padrão
     public PartidaNovoModelo() {}
 
+
+    public PartidaNovoModelo(String description, int round, String date, LocalDate dataFormatada,
+                             Time homeTime, Time awayTime, EstatisticaCartoes homeCartoes,
+                             EstatisticaCartoes awayCartoes, EstatisticaJogo homeEstatisticaJogo,
+                             EstatisticaJogo awayEstatisticaJogo) {
+        this.description = description;
+        this.round = round;
+        this.date = date;
+        this.dataFormatada = dataFormatada;
+        this.homeTime = homeTime;
+        this.awayTime = awayTime;
+        this.homeCartoes = homeCartoes;
+        this.awayCartoes = awayCartoes;
+        this.homeEstatisticaJogo = homeEstatisticaJogo;
+        this.awayEstatisticaJogo = awayEstatisticaJogo;
+    }
+
     // Construtor para Parcelable
     protected PartidaNovoModelo(Parcel in) {
         description = in.readString();

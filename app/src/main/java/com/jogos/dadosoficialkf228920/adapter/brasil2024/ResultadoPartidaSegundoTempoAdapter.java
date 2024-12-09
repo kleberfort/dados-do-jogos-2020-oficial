@@ -45,14 +45,14 @@ public class ResultadoPartidaSegundoTempoAdapter extends RecyclerView.Adapter<Re
         holder.binding.tvDataJogo.setText(result.getDate());
 
         //DADOS TIME CASA
-        holder.binding.tvNomeCasa.setText(result.getHomeTime().getNome());
+        holder.binding.tvNomeCasa.setText(result.getHomeTime().getName());
         holder.binding.tvClassificacaoCasa.setText(String.valueOf(result.getHomeTime().getClassificacao()));
-        Glide.with(context).load(result.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
+        Glide.with(context).load(result.getHomeTime().getImage()).into(holder.binding.ivTimeCasa);
 
         //DADOS TIME FORA
-        holder.binding.tvNomeFora.setText(result.getAwayTime().getNome());
+        holder.binding.tvNomeFora.setText(result.getAwayTime().getName());
         holder.binding.tvClassificacaoFora.setText(String.valueOf(result.getAwayTime().getClassificacao()));
-        Glide.with(context).load(result.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+        Glide.with(context).load(result.getAwayTime().getImage()).into(holder.binding.ivTimeFora);
 
 
         // RESULTADO PRIMEIRO TEMPO

@@ -44,16 +44,16 @@ public class Serie_A_B_2024Adapter extends RecyclerView.Adapter<Serie_A_B_2024Ad
         holder.binding.tvDataJogo.setText(partida.getDate());
 
         //DADOS TIME CASA
-        holder.binding.tvNomeCasa.setText(partida.getHomeTime().getNome());
+        holder.binding.tvNomeCasa.setText(partida.getHomeTime().getName());
         holder.binding.tvclassicacaoCasa.setText(String.valueOf(partida.getHomeTime().getClassificacao()));
         holder.binding.tvPlacarCasa.setText(String.valueOf(partida.getHomeTime().getPlacar()));
-        Glide.with(context).load(partida.getHomeTime().getImagem()).into(holder.binding.ivTimeCasa);
+        Glide.with(context).load(partida.getHomeTime().getImage()).into(holder.binding.ivTimeCasa);
 
         //DADOS TIME FORA
-        holder.binding.tvNomeFora.setText(partida.getAwayTime().getNome());
+        holder.binding.tvNomeFora.setText(partida.getAwayTime().getName());
         holder.binding.tvClassificacaoFora.setText(String.valueOf(partida.getAwayTime().getClassificacao()));
         holder.binding.tvPlacarFora.setText(String.valueOf(partida.getAwayTime().getPlacar()));
-        Glide.with(context).load(partida.getAwayTime().getImagem()).into(holder.binding.ivTimeFora);
+        Glide.with(context).load(partida.getAwayTime().getImage()).into(holder.binding.ivTimeFora);
 
 
 //        /* Cartoes Home */

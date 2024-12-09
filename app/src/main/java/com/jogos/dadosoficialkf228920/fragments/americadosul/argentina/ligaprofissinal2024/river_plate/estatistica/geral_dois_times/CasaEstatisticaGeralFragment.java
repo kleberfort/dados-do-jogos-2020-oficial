@@ -1238,7 +1238,7 @@ public class CasaEstatisticaGeralFragment extends Fragment implements JogosLigaP
 
         binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
 
-        String nome = partidas.get(0).getHomeTime().getNome();
+        String nome = partidas.get(0).getHomeTime().getName();
         String totalJogos = String.valueOf(partidas.size());
         String totalGolsMcd = String.valueOf(golsTotalZeroCincoMarcados );
         String totalGolsMcdPct = String.valueOf(Math.round(((double)golsTotalZeroCincoMarcados * 100 ) / partidas.size()));

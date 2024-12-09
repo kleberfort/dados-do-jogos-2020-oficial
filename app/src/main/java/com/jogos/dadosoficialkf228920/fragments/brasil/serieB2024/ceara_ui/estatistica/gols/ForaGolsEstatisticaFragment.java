@@ -915,7 +915,7 @@ public class ForaGolsEstatisticaFragment extends Fragment implements JogosSerieB
 
         binding.tvTotalJogos.setText(String.valueOf(partidas.size()));
 
-        String nome = partidas.get(0).getAwayTime().getNome();
+        String nome = partidas.get(0).getAwayTime().getName();
         String totalJogos = String.valueOf(partidas.size());
         String totalGolsMcd = String.valueOf(golsTotalZeroCincoMarcados );
         String totalGolsMcdPct = String.valueOf(Math.round(((double)golsTotalZeroCincoMarcados * 100 ) / partidas.size()));
