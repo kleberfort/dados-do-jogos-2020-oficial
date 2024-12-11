@@ -91,4 +91,14 @@ public class EstatisticaCartoes implements Parcelable {
     public void setCartaoVermelhoSegundoTempo(int cartaoVermelhoSegundoTempo) {
         this.cartaoVermelhoSegundoTempo = cartaoVermelhoSegundoTempo;
     }
+
+    @Override
+    public String toString() {
+        return "EstatisticaCartoes{" +
+                "cartaoAmareloPrimeiroTempo=" + cartaoAmareloPrimeiroTempo +
+                ", cartaoAmareloSegundoTempo=" + cartaoAmareloSegundoTempo +
+                ", cartaoVermelhoPrimeiroTempo=" + cartaoVermelhoPrimeiroTempo +
+                ", cartaoVermelhoSegundoTempo=" + cartaoVermelhoSegundoTempo +
+                '}';
+    }
 }

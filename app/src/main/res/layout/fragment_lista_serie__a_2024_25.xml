@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".fragments.europa_A_2024_25_Fragments.serieA.ListaSerie_A_2024_25Fragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- RecyclerView para a lista -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvLista"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent" />
 
 </FrameLayout>

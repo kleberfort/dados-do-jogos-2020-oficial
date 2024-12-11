@@ -21,6 +21,7 @@ public class EstatisticaJogo implements Parcelable {
     @SerializedName("golsSegundoTempo")
     private int golsSegundoTempo;
 
+
     private int escanteiosTotalPrimeiroTempo;
     private int escanteiosTotalSegundoTempo;
     private int golsTotalPrimeiroTempo;
@@ -135,6 +136,13 @@ public class EstatisticaJogo implements Parcelable {
 
     public void setGolsTotalSegundoTempo(int golsTotalSegundoTempo) {
         this.golsTotalSegundoTempo = golsTotalSegundoTempo;
+    }
+
+    public int escanteiosTotal(){
+        return escanteiosPrimeiroTempo + escanteioSegundoTempo;
+    }
+    public int golsTotal(){
+        return golsPrimeiroTempo + golsSegundoTempo;
     }
 
     @Override

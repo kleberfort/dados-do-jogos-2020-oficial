@@ -85,6 +85,7 @@ import com.jogos.dadosoficialkf228920.fragments.brasil.serieA2024.ListaBrasilSer
 import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ListaBrasilSerie_B_2024Fragment;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.ListaLaLiga_A_2024_25Fragment;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.ListaPremierLeague_A_2024_25Fragment;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.serieA.ListaSerie_A_2024_25Fragment;
 import com.jogos.dadosoficialkf228920.model.ViewPagerAdapter;
 import com.unity3d.ads.IUnityAdsLoadListener;
 import com.unity3d.ads.IUnityAdsShowListener;
@@ -233,6 +234,7 @@ public class MainActivity extends AppCompatActivity implements
         adapter.addFragment(new ListaLigaProfissional_A_2024Fragment(), "Liga Profissional 2024");
         adapter.addFragment(new ListaPremierLeague_A_2024_25Fragment(), "Premier League A ");
         adapter.addFragment(new ListaLaLiga_A_2024_25Fragment(), "La Liga A");
+        adapter.addFragment(new ListaSerie_A_2024_25Fragment(), "Serie A Italia");
         adapter.addFragment(new ListaBrasilSerie_B_2024Fragment(), "Série B 2024");
 
 
