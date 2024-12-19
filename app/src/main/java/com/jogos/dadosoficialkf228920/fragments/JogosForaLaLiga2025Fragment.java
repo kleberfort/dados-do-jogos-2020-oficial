@@ -15,8 +15,10 @@ import com.jogos.dadosoficialkf228920.adapter.brasil2024.Serie_A_B_2024Adapter;
 import com.jogos.dadosoficialkf228920.databinding.FragmentJogosCasaLaLiga2025Binding;
 import com.jogos.dadosoficialkf228920.databinding.FragmentJogosForaLaLiga2025Binding;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
+import com.jogos.dadosoficialkf228920.model.comparator.ComparatorDatasPartidas;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class JogosForaLaLiga2025Fragment extends Fragment {
@@ -56,7 +58,11 @@ public class JogosForaLaLiga2025Fragment extends Fragment {
         // Configure o RecyclerView
         binding.rvListaJogos.setLayoutManager(new LinearLayoutManager(getContext()));
         serieAB2024CasaAdapter = new Serie_A_B_2024Adapter(partidasFora);
+
+        Collections.sort(partidasFora, new ComparatorDatasPartidas());
         binding.rvListaJogos.setAdapter(serieAB2024CasaAdapter);
+
+
     }
 
     @Override

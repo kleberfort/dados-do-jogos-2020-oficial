@@ -1,4 +1,4 @@
-package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.ligue1;
+package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.eredivisie;
 
 import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasCasa;
 import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasFora;
@@ -31,12 +31,12 @@ import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.activity.carregarDadosActivity.CarregarDadosFragmentsActivity;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.TimesClasificacaoBrasilA2024Adapter;
 import com.jogos.dadosoficialkf228920.adapter.mais70ou90.CarregarEstatistica70_90Adapter;
-import com.jogos.dadosoficialkf228920.databinding.FragmentListaLigue1A202425Binding;
-import com.jogos.dadosoficialkf228920.databinding.FragmentListaPremierLeagueA202425Binding;
+import com.jogos.dadosoficialkf228920.databinding.FragmentListaEredivisieA202425Binding;
+import com.jogos.dadosoficialkf228920.databinding.FragmentListaLaLigaA202425Binding;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.bundesliga.ListaBundesliga_A_2024_25Fragment;
-import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.ligue1.util.JogosLigue1_A_2024_25;
-import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.ligue1.util.JogosLigue1_A_2024_25_Listener;
-import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_25;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.eredivisie.util.JogosEredivisie_A_2024_25;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.eredivisie.util.JogosEredivisie_A_2024_25_Listener;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.util.JogosLaLiga_A_2024_25;
 import com.jogos.dadosoficialkf228920.model.ClassificacaoOficialNovoModelo;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import com.jogos.dadosoficialkf228920.model.RecyclerItemClickListener;
@@ -48,12 +48,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+public class ListaEredivisie_A_2024_25Fragment extends Fragment implements JogosEredivisie_A_2024_25_Listener {
 
-public class ListaLigue1_A_2024_25Fragment extends Fragment implements JogosLigue1_A_2024_25_Listener {
-
-    private FragmentListaLigue1A202425Binding binding;
-
-    private JogosLigue1_A_2024_25 jogosLigue1A202425;
+    private FragmentListaEredivisieA202425Binding binding;
+    private JogosEredivisie_A_2024_25 eredivisieA202425;
     private TimesClasificacaoBrasilA2024Adapter timesClasificacaoBrasilA2024Adapter;
 
 
@@ -61,52 +59,51 @@ public class ListaLigue1_A_2024_25Fragment extends Fragment implements JogosLigu
     List<ClassificacaoOficialNovoModelo> listaOficial = new ArrayList<>();
     private HashMap<String, Map<String, List<PartidaNovoModelo>>> partidasPorTime;
 
-    public interface ListaLigue1_2025_OnClinkInterface{//esse é o codigo de criar a interface // entede essa primeira parte ? ele basicamente
-        void listaLigue1_OnClick2025Metodo(String nome);//viu que é uma string ?sim
+
+    public interface ListaEredivise2025_OnClinkInterface{//esse é o codigo de criar a interface // entede essa primeira parte ? ele basicamente
+        void listaErediviseOnClick2025Metodo(String nome);//viu que é uma string ?sim
     }
 
-    public interface ListaLigue1_2025_LongClickInterface{
-        void listaLigue1_LongClick2025metodo();
+    public interface ListaEredivise2025_LongClickInterface{
+        void listaErediviseLongClick2025metodo();
     }
 
     //2 etapa criamos uma variavel da interface
-    ListaLigue1_2025_OnClinkInterface listaLigue1_OnClick = null;//queremos usar o metodo listaBrasilAMetodo(String nome) mas estamos iniciando ela com o valor null
+    ListaEredivise2025_OnClinkInterface listaErediviseOnClick = null;//queremos usar o metodo listaBrasilAMetodo(String nome) mas estamos iniciando ela com o valor null
     //ou seuja null é igual a nulo ou nada
     //entende isso ?sim
 
     //2 etapa criamos uma variavel da interface
-    ListaLigue1_2025_LongClickInterface listaLigue1_LongClick = null;
+    ListaEredivise2025_LongClickInterface listaErediviseLongClick = null;
 
     //3 etapa iniciamos a variavel
     @Override
     public void onAttach(@NonNull Context context) {//
         super.onAttach(context);
 
-        if(context instanceof ListaLigue1_2025_OnClinkInterface){
-            listaLigue1_OnClick = (ListaLigue1_2025_OnClinkInterface) context;//aqui iniciamos a nossa variavel... Esse código voce nao precisa entender, só tem que
+        if(context instanceof ListaEredivise2025_OnClinkInterface){
+            listaErediviseOnClick = (ListaEredivise2025_OnClinkInterface) context;//aqui iniciamos a nossa variavel... Esse código voce nao precisa entender, só tem que
             //compreendeu as 3 etapadas ?sim ok
         }
 
-        if(context instanceof ListaLigue1_2025_LongClickInterface){
-            listaLigue1_LongClick = (ListaLigue1_2025_LongClickInterface) context;
+        if(context instanceof ListaEredivise2025_LongClickInterface){
+            listaErediviseLongClick = (ListaEredivise2025_LongClickInterface) context;
         }
 
     }
-
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentListaLigue1A202425Binding.inflate(inflater, container, false);
+        binding = FragmentListaEredivisieA202425Binding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-
-        jogosLigue1A202425 = new JogosLigue1_A_2024_25();
-        jogosLigue1A202425.setupHttpClient();
-        jogosLigue1A202425.setupDadosJogos();
-        jogosLigue1A202425.setListener(this);// Registra o fragmento como listener
+        eredivisieA202425 = new JogosEredivisie_A_2024_25();
+        eredivisieA202425.setupHttpClient();
+        eredivisieA202425.setupDadosJogos();
+        eredivisieA202425.setListener(this);// Registra o fragmento como listener
 
 
         binding.rvLista.setHasFixedSize(true);
@@ -116,7 +113,6 @@ public class ListaLigue1_A_2024_25Fragment extends Fragment implements JogosLigu
         timesClasificacaoBrasilA2024Adapter = new TimesClasificacaoBrasilA2024Adapter(listaOficial);//o adapter vai receber a variazel listaOficial, mas ela esta vazia ainda
         binding.rvLista.setAdapter(timesClasificacaoBrasilA2024Adapter);
 
-
         // Incrementar o contador de acessos
         SharedPreferences preferences = requireContext().getSharedPreferences("ContadorAcessos", Context.MODE_PRIVATE);
         int acessos = preferences.getInt("contador", 0); // Recupera o contador atual
@@ -124,6 +120,7 @@ public class ListaLigue1_A_2024_25Fragment extends Fragment implements JogosLigu
         preferences.edit().putInt("contador", acessos).apply(); // Salva o novo valor
 
         Log.d("acessos ","onCreate: "+ acessos );
+
 
         binding.rvLista.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), binding.rvLista, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
@@ -137,7 +134,7 @@ public class ListaLigue1_A_2024_25Fragment extends Fragment implements JogosLigu
                 String name = itemSelecionado.getName();
 
                 if (acessos >= 3) {
-                    listaLigue1_OnClick.listaLigue1_OnClick2025Metodo(name);
+                    listaErediviseOnClick.listaErediviseOnClick2025Metodo(name);
                     // Reinicia o contador para zero
                     preferences.edit().putInt("contador", 0).apply();
                 }else {
@@ -147,7 +144,6 @@ public class ListaLigue1_A_2024_25Fragment extends Fragment implements JogosLigu
                 }
 
                 Log.d("acessos", "onItemClick: " + acessos);
-                // Verifica se o mapa foi carregado e acessa os jogos do time
                 if (partidasPorTime != null) {
                     Map<String, List<PartidaNovoModelo>> jogosTime = partidasPorTime.get(itemSelecionado.getName());
 
@@ -178,7 +174,7 @@ public class ListaLigue1_A_2024_25Fragment extends Fragment implements JogosLigu
 
             @Override
             public void onLongItemClick(View view, int position) {
-                listaLigue1_LongClick.listaLigue1_LongClick2025metodo();
+                listaErediviseLongClick.listaErediviseLongClick2025metodo();
                 // Recupera o item selecionado com base na posição
                 ClassificacaoOficialNovoModelo itemSelecionado = listaOficial.get(position);
 
@@ -261,10 +257,8 @@ public class ListaLigue1_A_2024_25Fragment extends Fragment implements JogosLigu
         return view;
     }
 
-
     @Override
-    public void onJogosLigue1_A_franca(HashMap<String, Map<String, List<PartidaNovoModelo>>> partidasPorTime) {
-
+    public void onJogosEredivisie_A(HashMap<String, Map<String, List<PartidaNovoModelo>>> partidasPorTime) {
         this.partidasPorTime = partidasPorTime;
         // Itera sobre o HashMap para processar cada time
         for (Map.Entry<String, Map<String, List<PartidaNovoModelo>>> entry : partidasPorTime.entrySet()) {
@@ -356,11 +350,7 @@ public class ListaLigue1_A_2024_25Fragment extends Fragment implements JogosLigu
 
         //Mas entenda que o código abaixo sempre vai atualizar a lista inteira
         timesClasificacaoBrasilA2024Adapter.notifyDataSetChanged();
-
     }
-
-
-
 
 
 }

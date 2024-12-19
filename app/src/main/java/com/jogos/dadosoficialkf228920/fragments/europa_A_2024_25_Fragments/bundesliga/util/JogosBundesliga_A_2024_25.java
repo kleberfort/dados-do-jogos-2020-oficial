@@ -1,8 +1,9 @@
-package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util;
+package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.bundesliga.util;
 
 import android.util.Log;
 
 import com.jogos.dadosoficialkf228920.data.brasil.serieA.Jogos_campeonatos_chamada_api;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.util.JogosLaLiga_A_2024_2025_Listener;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import java.util.ArrayList;
@@ -16,23 +17,21 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class JogosPremierLeague_A_2024_25  {
+public class JogosBundesliga_A_2024_25 {
 
-    private JogosPremierLeague_A_2024_2025_Listener listener;
+    private JogosBundesliga_A_2024_25_Listener listener;
+
     private Jogos_campeonatos_chamada_api jogos_campeonatos_chamada_api;
-
 
     HashMap<String, Map<String, List<PartidaNovoModelo>>> partidasPorTime = new HashMap<>();
 
-
-    public void setListener(JogosPremierLeague_A_2024_2025_Listener listener) {
+    public void setListener(JogosBundesliga_A_2024_25_Listener listener){
         this.listener = listener;
     }
 
-
     public void setupHttpClient() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/refs/heads/master/europa-a-2024-2025/premier-league/")
+                .baseUrl("https://raw.githubusercontent.com/kleberfort/dados-jogos-partidas-oficial-2022-api/refs/heads/master/europa-a-2024-2025/bundesliga/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -40,7 +39,7 @@ public class JogosPremierLeague_A_2024_25  {
     }
 
     public void setupDadosJogos() {
-        jogos_campeonatos_chamada_api.getPremierLeagueA2024_2025().enqueue(new Callback<List<PartidaNovoModelo>>() {
+        jogos_campeonatos_chamada_api.getBundesliga2024_25().enqueue(new Callback<List<PartidaNovoModelo>>() {
             @Override
             public void onResponse(Call<List<PartidaNovoModelo>> call, Response<List<PartidaNovoModelo>> response) {
                 if(response.isSuccessful()){
@@ -70,7 +69,7 @@ public class JogosPremierLeague_A_2024_25  {
 
                 }
                 if(listener != null){
-                    listener.onJogosPremierLeague_A(partidasPorTime);
+                    listener.onJogosBundesliga_A(partidasPorTime);
                 }
 
             }
@@ -84,6 +83,5 @@ public class JogosPremierLeague_A_2024_25  {
 
 
     }
-
 
 }

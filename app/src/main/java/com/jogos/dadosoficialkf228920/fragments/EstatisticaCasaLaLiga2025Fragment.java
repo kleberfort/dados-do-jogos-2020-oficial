@@ -12,7 +12,6 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.jogos.dadosoficialkf228920.databinding.FragmentEstatisticaCasaLaLiga2025Binding;
-import com.jogos.dadosoficialkf228920.fragments.brasil.serieB2024.ceara_ui.estatistica.escanteios.CasaEscanteiosEstatisticaFragment;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import com.jogos.dadosoficialkf228920.util.estatistica_util.cartoes.CasaCartoesEstatisticaUtilFragment;
 import com.jogos.dadosoficialkf228920.util.estatistica_util.escanteios.CasaEscanteiosEstatisticaUtilFragment;

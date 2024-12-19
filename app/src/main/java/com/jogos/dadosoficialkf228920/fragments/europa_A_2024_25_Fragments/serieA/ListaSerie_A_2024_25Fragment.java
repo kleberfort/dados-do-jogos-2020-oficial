@@ -1,110 +1,95 @@
 package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.serieA;
 
+import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasCasa;
+import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasFora;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jogos.dadosoficialkf228920.R;
+import com.jogos.dadosoficialkf228920.activity.carregarDadosActivity.CarregarDadosFragmentsActivity;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.TimesClasificacaoBrasilA2024Adapter;
-import com.jogos.dadosoficialkf228920.databinding.FragmentListaLaLigaA202425Binding;
+import com.jogos.dadosoficialkf228920.adapter.mais70ou90.CarregarEstatistica70_90Adapter;
 import com.jogos.dadosoficialkf228920.databinding.FragmentListaSerieA202425Binding;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.bundesliga.ListaBundesliga_A_2024_25Fragment;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.serieA.util.JogosSeriaAItalia_2024_25;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.serieA.util.JogosSerieAItalia2024_2025_Listener;
 import com.jogos.dadosoficialkf228920.model.ClassificacaoOficialNovoModelo;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
+import com.jogos.dadosoficialkf228920.model.RecyclerItemClickListener;
 import com.jogos.dadosoficialkf228920.model.comparator.ComparatorPontosVitoriaSaldoGolsProSerieA_B;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
-public class ListaSerie_A_2024_25Fragment extends Fragment  implements JogosSerieAItalia2024_2025_Listener {
+public class ListaSerie_A_2024_25Fragment extends Fragment implements JogosSerieAItalia2024_2025_Listener {
 
     private FragmentListaSerieA202425Binding binding;
 
+    private JogosSeriaAItalia_2024_25 jogosSeriaAItalia202425;
     private TimesClasificacaoBrasilA2024Adapter timesClasificacaoBrasilA2024Adapter;
 
-    String nome = null;
-    String imagem = null;
+    // Lista para armazenar a classificação final
+    List<ClassificacaoOficialNovoModelo> listaOficial = new ArrayList<>();
+    private HashMap<String, Map<String, List<PartidaNovoModelo>>> partidasPorTime;
 
+    public interface ListaSerieAItalia2025_OnClinkInterface{//esse é o codigo de criar a interface // entede essa primeira parte ? ele basicamente
+        void listaSerieAItaliaOnClick2025Metodo(String nome);//viu que é uma string ?sim
+    }
 
-    Integer totalGolsPro = 0;
-    Integer totalGolsContra = 0;
-    Integer totalsaldoGols = 0;
+    public interface ListaSerieAItalia2025_LongClickInterface{
+        void listaSerieAItaliaLongClick2025metodo();
+    }
 
-    Integer totalJogos = 0;
+    //2 etapa criamos uma variavel da interface
+    ListaSerieAItalia2025_OnClinkInterface listaSerieAItaliaOnClick = null;//queremos usar o metodo listaBrasilAMetodo(String nome) mas estamos iniciando ela com o valor null
+    //ou seuja null é igual a nulo ou nada
+    //entende isso ?sim
 
-    Integer totalVitoria = 0;
-    Integer totalEmpate = 0;
-    Integer totalDerrota = 0;
-    Integer totalPontos = 0;
+    //2 etapa criamos uma variavel da interface
+    ListaSerieAItalia2025_LongClickInterface listaSerieAItaliaLongClick = null;
 
-    private List<PartidaNovoModelo> atalantaCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> atalantaFora = new ArrayList<>();
+    //3 etapa iniciamos a variavel
+    @Override
+    public void onAttach(@NonNull Context context) {//
+        super.onAttach(context);
 
-    private List<PartidaNovoModelo> bolognaCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> bolognaFora = new ArrayList<>();
+        if(context instanceof ListaSerieAItalia2025_OnClinkInterface){
+            listaSerieAItaliaOnClick = (ListaSerieAItalia2025_OnClinkInterface) context;//aqui iniciamos a nossa variavel... Esse código voce nao precisa entender, só tem que
+            //compreendeu as 3 etapadas ?sim ok
+        }
 
-    private List<PartidaNovoModelo> cagliariCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> cagliariFora = new ArrayList<>();
+        if(context instanceof ListaSerieAItalia2025_LongClickInterface){
+            listaSerieAItaliaLongClick = (ListaSerieAItalia2025_LongClickInterface) context;
+        }
 
+    }
 
-    private List<PartidaNovoModelo> comoCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> comoFora = new ArrayList<>();
-
-    private List<PartidaNovoModelo> empoliCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> empoliFora = new ArrayList<>();
-
-    private List<PartidaNovoModelo> fiorentinaCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> fiorentinaFora = new ArrayList<>();
-
-    private List<PartidaNovoModelo> genoaCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> genoaFora = new ArrayList<>();
-
-    private List<PartidaNovoModelo> interCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> interFora = new ArrayList<>();
-
-    private List<PartidaNovoModelo> juventusCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> juventusFora = new ArrayList<>();
-
-    private List<PartidaNovoModelo> lazioCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> lazioFora = new ArrayList<>();
-
-    private List<PartidaNovoModelo> lecceCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> lecceFora = new ArrayList<>();
-
-    private List<PartidaNovoModelo> milanCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> milanFora = new ArrayList<>();
-
-    private List<PartidaNovoModelo> monzaCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> monzaFora = new ArrayList<>();
-    private List<PartidaNovoModelo> napoliCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> napoliFora = new ArrayList<>();
-
-    private List<PartidaNovoModelo> parmaCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> parmaFora = new ArrayList<>();
-
-    private List<PartidaNovoModelo> romaCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> romaFora = new ArrayList<>();
-    private List<PartidaNovoModelo> torinoCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> torinoFora = new ArrayList<>();
-
-    private List<PartidaNovoModelo> udineseCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> udineseFora = new ArrayList<>();
-
-    private List<PartidaNovoModelo> veneziaCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> veneziaFora = new ArrayList<>();
-
-    private List<PartidaNovoModelo> veronaCasa = new ArrayList<>();
-    private List<PartidaNovoModelo> veronaFora = new ArrayList<>();
-
-
-    List<ClassificacaoOficialNovoModelo> listaOficial = new ArrayList<>(); ;//estamos iniciando nossa lista vazia
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -113,1315 +98,251 @@ public class ListaSerie_A_2024_25Fragment extends Fragment  implements JogosSeri
         binding = FragmentListaSerieA202425Binding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        return view;
 
+        jogosSeriaAItalia202425 = new JogosSeriaAItalia_2024_25();
+        jogosSeriaAItalia202425.setupHttpClient();
+        jogosSeriaAItalia202425.setupDadosJogos();
+        jogosSeriaAItalia202425.setListener(this);// Registra o fragmento como listener
+
+
+        binding.rvLista.setHasFixedSize(true);
+        binding.rvLista.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.rvLista.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
+
+        timesClasificacaoBrasilA2024Adapter = new TimesClasificacaoBrasilA2024Adapter(listaOficial);//o adapter vai receber a variazel listaOficial, mas ela esta vazia ainda
+        binding.rvLista.setAdapter(timesClasificacaoBrasilA2024Adapter);
+
+        // Incrementar o contador de acessos
+        SharedPreferences preferences = requireContext().getSharedPreferences("ContadorAcessos", Context.MODE_PRIVATE);
+        int acessos = preferences.getInt("contador", 0); // Recupera o contador atual
+        acessos++; // Incrementa
+        preferences.edit().putInt("contador", acessos).apply(); // Salva o novo valor
+
+        Log.d("acessos ","onCreate: "+ acessos );
+
+        binding.rvLista.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), binding.rvLista, new RecyclerItemClickListener.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                // Recuperar contador de acessos
+                SharedPreferences preferences = getContext().getSharedPreferences("ContadorAcessos", Context.MODE_PRIVATE);
+                int acessos = preferences.getInt("contador", 0);
+
+                // Recupera o item clicado com base na posição
+                ClassificacaoOficialNovoModelo itemSelecionado = listaOficial.get(position);
+                String name = itemSelecionado.getName();
+
+                if (acessos >= 3) {
+                    listaSerieAItaliaOnClick.listaSerieAItaliaOnClick2025Metodo(name);
+                    // Reinicia o contador para zero
+                    preferences.edit().putInt("contador", 0).apply();
+                }else {
+                    // Incrementa o contador
+                    acessos++;
+                    preferences.edit().putInt("contador", acessos).apply();
+                }
+
+                Log.d("acessos", "onItemClick: " + acessos);
+                // Verifica se o mapa foi carregado e acessa os jogos do time
+                if (partidasPorTime != null) {
+                    Map<String, List<PartidaNovoModelo>> jogosTime = partidasPorTime.get(itemSelecionado.getName());
+
+                    if (jogosTime != null) {
+                        // Combina partidas em uma única lista
+                        List<PartidaNovoModelo> listaPartidas = new ArrayList<>();
+                        if (jogosTime.get("casa") != null) {
+                            listaPartidas.addAll(jogosTime.get("casa"));
+                        }
+                        if (jogosTime.get("fora") != null) {
+                            listaPartidas.addAll(jogosTime.get("fora"));
+                        }
+
+                        // Inicia a Activity com os dados
+                        Intent intent = new Intent(getContext(), CarregarDadosFragmentsActivity.class);
+                        intent.putParcelableArrayListExtra("lista_partidas", new ArrayList<>(listaPartidas));
+                        intent.putExtra("nome_time", itemSelecionado.getName());
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(getContext(), "Nenhuma partida encontrada para o time selecionado", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getContext(), "Dados das partidas não carregados", Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+                listaSerieAItaliaLongClick.listaSerieAItaliaLongClick2025metodo();
+                // Recupera o item selecionado com base na posição
+                ClassificacaoOficialNovoModelo itemSelecionado = listaOficial.get(position);
+
+                // Verifica se o mapa foi carregado e acessa os jogos do time
+                if (partidasPorTime != null) {
+                    Map<String, List<PartidaNovoModelo>> jogosTime = partidasPorTime.get(itemSelecionado.getName());
+
+                    if (jogosTime != null) {
+                        // Combina partidas em uma única lista
+                        List<PartidaNovoModelo> listaPartidas = new ArrayList<>();
+                        if (jogosTime.get("casa") != null) {
+                            listaPartidas.addAll(jogosTime.get("casa"));
+                        }
+                        if (jogosTime.get("fora") != null) {
+                            listaPartidas.addAll(jogosTime.get("fora"));
+                        }
+
+                        // Criação do PopupWindow
+                        LayoutInflater inflater = LayoutInflater.from(view.getContext());
+                        LinearLayout layoutPopup = (LinearLayout) inflater.inflate(R.layout.layout_porcentagem_estatistica, null);
+                        PopupWindow popupWindow = new PopupWindow(layoutPopup,
+                                LinearLayout.LayoutParams.MATCH_PARENT,
+                                LinearLayout.LayoutParams.WRAP_CONTENT,
+                                true);
+
+                        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                        popupWindow.setOutsideTouchable(true);
+                        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+                        // Configuração do layout do PopupWindow
+                        TextView textTitulo = layoutPopup.findViewById(R.id.titulo_principal);
+                        RecyclerView recyclerView = layoutPopup.findViewById(R.id.recycler_view);
+                        Button btnMais70Casa = layoutPopup.findViewById(R.id.btn_mais_70_casa);
+                        Button btnMais88Casa = layoutPopup.findViewById(R.id.btn_mais_88_casa);
+                        Button btnMais70Fora = layoutPopup.findViewById(R.id.btn_mais_70_fora);
+                        Button btnMais88Fora = layoutPopup.findViewById(R.id.btn_mais_88_fora);
+
+                        String teamName = itemSelecionado.getName();
+                        textTitulo.setText("Melhores Estatísticas - " + teamName);
+
+                        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+                        CarregarEstatistica70_90Adapter adapter = new CarregarEstatistica70_90Adapter(new ArrayList<>());
+                        recyclerView.setAdapter(adapter);
+
+                        // Configuração dos botões para exibir estatísticas
+                        btnMais70Casa.setOnClickListener(v -> {
+                            List<CharSequence> estatisticas = melhoresStatisticasCasa(listaPartidas, teamName, 70);
+                            adapter.setEstatisticas(estatisticas);
+                            recyclerView.setVisibility(View.VISIBLE);
+                        });
+
+                        btnMais88Casa.setOnClickListener(v -> {
+                            List<CharSequence> estatisticas = melhoresStatisticasCasa(listaPartidas, teamName, 88);
+                            adapter.setEstatisticas(estatisticas);
+                            recyclerView.setVisibility(View.VISIBLE);
+                        });
+
+                        btnMais70Fora.setOnClickListener(v -> {
+                            List<CharSequence> estatisticas = melhoresStatisticasFora(listaPartidas, teamName, 70);
+                            adapter.setEstatisticas(estatisticas);
+                            recyclerView.setVisibility(View.VISIBLE);
+                        });
+
+                        btnMais88Fora.setOnClickListener(v -> {
+                            List<CharSequence> estatisticas = melhoresStatisticasFora(listaPartidas, teamName, 88);
+                            adapter.setEstatisticas(estatisticas);
+                            recyclerView.setVisibility(View.VISIBLE);
+                        });
+                    } else {
+                        Toast.makeText(getContext(), "Nenhuma partida encontrada para o time selecionado", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getContext(), "Dados das partidas não carregados", Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        }));
+
+        return view;
     }
 
+
     @Override
-    public void onJogosSerieAItalia_2024_25(List<PartidaNovoModelo> allMatchsSerieACompleto) {
+    public void onJogosSerieAItalia_2024_25(HashMap<String, Map<String, List<PartidaNovoModelo>>> partidasPorTime) {
+        this.partidasPorTime = partidasPorTime;
+        // Itera sobre o HashMap para processar cada time
+        for (Map.Entry<String, Map<String, List<PartidaNovoModelo>>> entry : partidasPorTime.entrySet()) {
+            String nomeTime = entry.getKey();
+            Map<String, List<PartidaNovoModelo>> jogos = entry.getValue();
 
-        for (PartidaNovoModelo partida : allMatchsSerieACompleto) {
+            // Inicializa os valores da classificação
+            String image = null;
+            int pontos = 0;
+            int golsPro = 0;
+            int golsContra = 0;
+            int saldoGols = 0;
+            int jogosTotais = 0;
+            int vitorias = 0;
+            int empates = 0;
+            int derrotas = 0;
 
-            if (partida.getHomeTime().getName().equals("Atalanta")) {
-                partida.setDataFormatada(partida.getDate());
-                atalantaCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Atalanta")) {
-                partida.setDataFormatada(partida.getDate());
-                atalantaFora.add(partida);
-                //Log.i("Data" ,"Data da partida " + partida.getDate());
-                //Log.i("Partida", "partida arsenal fora " + partida.getDataFormatada());
-            }
+            // Processa os jogos em casa
+            List<PartidaNovoModelo> jogosCasa = jogos.get("casa");
+            if (jogosCasa != null) {
+                for (PartidaNovoModelo partida : jogosCasa) {
+                    image = partida.getHomeTime().getImage();
+                    int golsFeitos = partida.getHomeTime().getScore();
+                    int golsSofridos = partida.getAwayTime().getScore();
 
-            if (partida.getHomeTime().getName().equals("Bologna")) {
-                partida.setDataFormatada(partida.getDate());
-                bolognaCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Bologna")) {
-                partida.setDataFormatada(partida.getDate());
-                bolognaFora.add(partida);
-            }
+                    golsPro += golsFeitos;
+                    golsContra += golsSofridos;
 
-            if (partida.getHomeTime().getName().equals("Cagliari")) {
-                partida.setDataFormatada(partida.getDate());
-                cagliariCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Cagliari")) {
-                partida.setDataFormatada(partida.getDate());
-                cagliariFora.add(partida);
-            }
+                    if (golsFeitos > golsSofridos) {
+                        vitorias++;
+                    } else if (golsFeitos == golsSofridos) {
+                        empates++;
+                    } else {
+                        derrotas++;
+                    }
 
-            if (partida.getHomeTime().getName().equals("Como")) {
-                partida.setDataFormatada(partida.getDate());
-                comoCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Como")) {
-                partida.setDataFormatada(partida.getDate());
-                comoFora.add(partida);
-            }
-
-            if (partida.getHomeTime().getName().equals("Empoli")) {
-                partida.setDataFormatada(partida.getDate());
-                empoliCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Empoli")) {
-                partida.setDataFormatada(partida.getDate());
-                empoliFora.add(partida);
-            }
-
-            if (partida.getHomeTime().getName().equals("Fiorentina")) {
-                partida.setDataFormatada(partida.getDate());
-                fiorentinaCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Fiorentina")) {
-                partida.setDataFormatada(partida.getDate());
-                fiorentinaFora.add(partida);
-            }
-
-            if (partida.getHomeTime().getName().equals("Genoa")) {
-                partida.setDataFormatada(partida.getDate());
-                genoaCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Genoa")) {
-                partida.setDataFormatada(partida.getDate());
-                genoaFora.add(partida);
-            }
-
-            if (partida.getHomeTime().getName().equals("Inter")) {
-                partida.setDataFormatada(partida.getDate());
-                interCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Inter")) {
-                partida.setDataFormatada(partida.getDate());
-                interFora.add(partida);
-            }
-
-            if (partida.getHomeTime().getName().equals("Juventus")) {
-                partida.setDataFormatada(partida.getDate());
-                juventusCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Juventus")) {
-                partida.setDataFormatada(partida.getDate());
-                juventusFora.add(partida);
-            }
-
-            if (partida.getHomeTime().getName().equals("Lazio")) {
-                partida.setDataFormatada(partida.getDate());
-                lazioCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Lazio")) {
-                partida.setDataFormatada(partida.getDate());
-                lazioFora.add(partida);
-            }
-
-            if (partida.getHomeTime().getName().equals("Lecce")) {
-                partida.setDataFormatada(partida.getDate());
-                lecceCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Lecce")) {
-                partida.setDataFormatada(partida.getDate());
-                lecceFora.add(partida);
-            }
-
-            if (partida.getHomeTime().getName().equals("Milan")) {
-                partida.setDataFormatada(partida.getDate());
-                milanCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Milan")) {
-                partida.setDataFormatada(partida.getDate());
-                milanFora.add(partida);
-            }
-            if (partida.getHomeTime().getName().equals("Monza")) {
-                partida.setDataFormatada(partida.getDate());
-                monzaCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Monza")) {
-                partida.setDataFormatada(partida.getDate());
-                monzaFora.add(partida);
-            }
-
-            if (partida.getHomeTime().getName().equals("Napoli")) {
-                partida.setDataFormatada(partida.getDate());
-                napoliCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Napoli")) {
-                partida.setDataFormatada(partida.getDate());
-                napoliFora.add(partida);
-            }
-
-            if (partida.getHomeTime().getName().equals("Parma")) {
-                partida.setDataFormatada(partida.getDate());
-                parmaCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Parma")) {
-                partida.setDataFormatada(partida.getDate());
-                parmaFora.add(partida);
-            }
-
-            if (partida.getHomeTime().getName().equals("Roma")) {
-                partida.setDataFormatada(partida.getDate());
-                romaCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Roma")) {
-                partida.setDataFormatada(partida.getDate());
-                romaFora.add(partida);
-            }
-
-            if (partida.getHomeTime().getName().equals("Torino")) {
-                partida.setDataFormatada(partida.getDate());
-                torinoCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Torino")) {
-                partida.setDataFormatada(partida.getDate());
-                torinoFora.add(partida);
-            }
-
-            if (partida.getHomeTime().getName().equals("Udinese")) {
-                partida.setDataFormatada(partida.getDate());
-                udineseCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Udinese")) {
-                partida.setDataFormatada(partida.getDate());
-                udineseFora.add(partida);
-            }
-
-            if (partida.getHomeTime().getName().equals("Venezia")) {
-                partida.setDataFormatada(partida.getDate());
-                veneziaCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Venezia")) {
-                partida.setDataFormatada(partida.getDate());
-                veneziaFora.add(partida);
-            }
-
-            if (partida.getHomeTime().getName().equals("Verona")) {
-                partida.setDataFormatada(partida.getDate());
-                veronaCasa.add(partida);
-            }
-            if (partida.getAwayTime().getName().equals("Verona")) {
-                partida.setDataFormatada(partida.getDate());
-                veronaFora.add(partida);
-            }
-
-        }//fim do for
-
-        Log.d("Partidas Serie A", "Partidas " + allMatchsSerieACompleto);
-
-        ClassificacaoOficialNovoModelo classificacaoOficialNovoModelo = new ClassificacaoOficialNovoModelo();
-
-
-        String name = null;
-        String image = null;
-        Integer pontos = 0;
-        Integer golsPro = 0;
-        Integer golsContra = 0;
-        Integer saldoGols = 0;
-        Integer jogos = 0;
-        Integer vitoria = 0;
-        Integer empate = 0;
-        Integer derrota = 0;
-
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Atalanta")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
+                    jogosTotais++;
                 }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
             }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Atalanta")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
+
+            // Processa os jogos fora
+            List<PartidaNovoModelo> jogosFora = jogos.get("fora");
+            if (jogosFora != null) {
+                for (PartidaNovoModelo partida : jogosFora) {
+                    image = partida.getAwayTime().getImage();
+                    int golsFeitos = partida.getAwayTime().getScore();
+                    int golsSofridos = partida.getHomeTime().getScore();
+
+                    golsPro += golsFeitos;
+                    golsContra += golsSofridos;
+
+                    if (golsFeitos > golsSofridos) {
+                        vitorias++;
+                    } else if (golsFeitos == golsSofridos) {
+                        empates++;
+                    } else {
+                        derrotas++;
+                    }
+
+                    jogosTotais++;
                 }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for bournemouth
-
-        ClassificacaoOficialNovoModelo classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-
-        listaOficial.add(classifica);//adicionamos as informacoes na nossa variavel que foi passada para o adapter na linha 110.
-        //essa variavel listaOficial esta associada ao nosso adapter, pois fizemos isso na linha 110
-        //entendeu essa parte ?sim
-
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Bologna")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
             }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Bologna")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
 
-        }//fim do for brentford
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);
-
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Cagliari")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Cagliari")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for brighton
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Como")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Como")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for burnley
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Empoli")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Empoli")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for chelsea
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);
-
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Fiorentina")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Fiorentina")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for crystalPalace
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);
-
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Genoa")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Genoa")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for everton
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);
-
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Inter")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Inter")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for fulham
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);
-
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Juventus")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Juventus")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for liverpool
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);
-
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Lazio")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Lazio")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for luton
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Lecce")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Lecce")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for city
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);
-
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Milan")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Milan")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for unitede
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);
-
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Monza")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Monza")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for newcastle
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);
-
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Napoli")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Napoli")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for nottingham
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Parma")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Parma")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for sheffield
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Roma")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Roma")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for tottenham
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);//aqui modifiquei a variavel
-
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) {
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Torino")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Torino")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if arsenal
-
-        }//fim do for westHam
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);//aqui modifiquei a variavel
-
-
-        //isso que fiz vai funcionar tambem.. masss podemos ter um problema de travar.. POis quando a lista é grande
-        //e fico pedindo para o adapter atualizar para o usuario ele pode demorar e isso pode até fazer o app travar
-        //entendeu ?sim, e agora?
-        //por isso que nós fazemos o controle e avisamos o adapter para ele atualizar.. POis se toda vez que voce for modificar a variavel listaficial e o adapter
-        //atualizar automaticamente pode acontecer esses problemas de travar o app.. entendeu ?sim, e qual seria outra melhor abordagem neste contexto?
-        //fazer isso que 'nós fizemos ..pedir para o adapter atualizat a lista somente depois que inserimos tudo dentro da variavel listaOFICIAL
-        //ENTENDEU ?pois é, aqui e adicionado a cada laço for percorrido e la no final e adicionado o útimo objeto.. ISSO
-
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) { //inicio do for
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Udinese")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Udinese")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if
-
-        }//fim do for
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);//aqui modifiquei a variavel
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) { //inicio do for
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Venezia")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Venezia")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if
-
-        }//fim do for
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);//aqui modifiquei a variavel
-
-        name = null;
-        image = null;
-        pontos = 0;
-        golsPro = 0;
-        golsContra = 0;
-        saldoGols = 0;
-        jogos = 0;
-        vitoria = 0;
-        empate = 0;
-        derrota = 0;
-
-
-        for (int i = 0; i < allMatchsSerieACompleto.size(); i++) { //inicio do for
-            if (allMatchsSerieACompleto.get(i).getHomeTime().getName().equals("Verona")) {
-                name = allMatchsSerieACompleto.get(i).getHomeTime().getName();
-                image = allMatchsSerieACompleto.get(i).getHomeTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() == allMatchsSerieACompleto.get(i).getAwayTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }
-            if (allMatchsSerieACompleto.get(i).getAwayTime().getName().equals("Verona")) {
-                name = allMatchsSerieACompleto.get(i).getAwayTime().getName();
-                image = allMatchsSerieACompleto.get(i).getAwayTime().getImage();
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    vitoria += 1;
-                } else if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() == allMatchsSerieACompleto.get(i).getHomeTime().getScore()) {
-                    empate += 1;
-                } else {
-                    derrota += 1;
-                }
-                if (allMatchsSerieACompleto.get(i).getAwayTime().getScore() > 0)
-                    golsPro += allMatchsSerieACompleto.get(i).getAwayTime().getScore();
-                if (allMatchsSerieACompleto.get(i).getHomeTime().getScore() > 0)
-                    golsContra += allMatchsSerieACompleto.get(i).getHomeTime().getScore();
-                jogos += 1;
-                pontos = (vitoria * 3) + empate;
-                saldoGols = golsPro - golsContra;
-            }//fim do segundo if
-
-        }//fim do for
-
-
-
-        classifica = new ClassificacaoOficialNovoModelo(name, image, pontos, golsPro, golsContra, saldoGols, jogos, vitoria, empate, derrota);
-        listaOficial.add(classifica);//aqui modificamos a variavel listaOficial.. Essa variuavel nao esta vazia mais.// Só que pro adapter ela ainda esta vazia
+            // Calcula pontos e saldo de gols
+            pontos = (vitorias * 3) + empates;
+            saldoGols = golsPro - golsContra;
+
+            // Cria o modelo de classificação
+            ClassificacaoOficialNovoModelo classifica = new ClassificacaoOficialNovoModelo(
+                    nomeTime,
+                    image,
+                    pontos,
+                    golsPro,
+                    golsContra,
+                    saldoGols,
+                    jogosTotais,
+                    vitorias,
+                    empates,
+                    derrotas
+            );
+
+            // Adiciona à lista de classificação
+            listaOficial.add(classifica);
+        }
 
         listaOficial.sort(new ComparatorPontosVitoriaSaldoGolsProSerieA_B());
         //Collections.sort(minhaLista);
@@ -1429,8 +350,5 @@ public class ListaSerie_A_2024_25Fragment extends Fragment  implements JogosSeri
 
         //Mas entenda que o código abaixo sempre vai atualizar a lista inteira
         timesClasificacaoBrasilA2024Adapter.notifyDataSetChanged();
-
-
-
     }
 }

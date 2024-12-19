@@ -13,11 +13,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DadosDosJogos2020Oficial">
+        <activity
+            android:name=".activity.carregarDadosActivity.CarregarDadosFragmentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.premierLeague.PremierLeague2024_25Activity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.ligaPortugal.PrimeiraLigaPorgugalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.europa_A_2024_2025.bundesliga.Bundesliga2024_25Activity"
+            android:exported="false" />
 
         <property
             android:name="android.adservices.AD_SERVICES_CONFIG"
-            tools:replace="android:resource"
-            android:resource="@xml/ga_ad_services_config" />
+            android:resource="@xml/ga_ad_services_config"
+            tools:replace="android:resource" />
 
         <activity
             android:name=".activity.europa_A_2024_2025.serieA.SerieA2024_25Activity"
@@ -79,7 +91,6 @@
         <activity
             android:name=".activity.europa_A_2024_2025.eredivisie.Ajax2024_25Activity"
             android:exported="false" />
-
         <activity
             android:name=".activity.europa_A_2024_2025.primeiraLiga.Vitoria2024_25Activity"
             android:exported="false" />
@@ -239,7 +250,6 @@
         <activity
             android:name=".activity.europa_A_2024_2025.bundesliga.Augsburg2024_25Activity"
             android:exported="false" />
-
         <activity
             android:name=".activity.europa_A_2024_2025.premierLeague.Southampton2024_25Activity"
             android:exported="false" />
@@ -411,7 +421,6 @@
         <activity
             android:name=".activity.brasil.serieB2024.Novorizontino2024Activity"
             android:exported="false" />
-
         <activity
             android:name=".activity.brasil.serieB2024.Ituano2024Activity"
             android:exported="false" />
@@ -545,7 +554,6 @@
             android:exported="false"
             android:label="@string/atletico_go"
             android:parentActivityName=".activity.brasil.serieA2024.AtleticoPR2024Activity" /> <!-- Campeonato Alemão Serie A 2023 - 2024 -->
-
         <activity
             android:name=".activity.brasilA2022.MainActivity"
             android:exported="true">

@@ -285,8 +285,6 @@ public class CasaResultadoPrimeiro_Segunto_EstatisticaUtilFragment extends Fragm
         RecyclerView recyclerViewPartidas = bottomSheetView.findViewById(R.id.recyclerViewPartidas);
         recyclerViewPartidas.setLayoutManager(new LinearLayoutManager(requireContext()));
 
-
-
         resultadoPartidaSegundoTempoAdapter = new ResultadoPartidaSegundoTempoAdapter(partidas);
         recyclerViewPartidas.setAdapter(resultadoPartidaSegundoTempoAdapter);
         //resultadosPartidasPrimeiroTempoAdapter.notifyDataSetChanged();

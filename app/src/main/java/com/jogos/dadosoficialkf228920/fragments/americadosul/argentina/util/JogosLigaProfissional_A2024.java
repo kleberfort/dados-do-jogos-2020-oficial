@@ -1,11 +1,9 @@
 package com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.util;
 
 import android.util.Log;
-import android.widget.Toast;
 
-import com.jogos.dadosoficialkf228920.data.brasil.serieA.jogos_campeonatos_chamada_api;
+import com.jogos.dadosoficialkf228920.data.brasil.serieA.Jogos_campeonatos_chamada_api;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
-import com.unity3d.services.core.properties.ClientProperties;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class JogosLigaProfissional_A2024 {
 
     private JogosLigaProfissional_A_2024_Listener listener;
-    private jogos_campeonatos_chamada_api jogosSerieACasaEFora2024Api;
+    private Jogos_campeonatos_chamada_api jogosSerieACasaEFora2024Api;
 
 
     private List<PartidaNovoModelo> argentinosJunioresCasa = new ArrayList<>();
@@ -122,7 +120,7 @@ public class JogosLigaProfissional_A2024 {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        jogosSerieACasaEFora2024Api = retrofit.create(jogos_campeonatos_chamada_api.class);
+        jogosSerieACasaEFora2024Api = retrofit.create(Jogos_campeonatos_chamada_api.class);
     }
 
     public void setupDadosJogos() {
