@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.List;
+
 public class Time implements Parcelable {
 
     @SerializedName("nome")
@@ -19,8 +21,20 @@ public class Time implements Parcelable {
     @SerializedName("placar")
     private int score;
 
+    @SerializedName("gols")
+    private List<PlayedNameGols> goals;
+
     // Construtor padrão
     public Time() {
+    }
+
+    // Construtor completo
+    public Time(String name, String image, int classification, int score, List<PlayedNameGols> goals) {
+        this.name = name;
+        this.image = image;
+        this.classification = classification;
+        this.score = score;
+        this.goals = goals;
     }
 
     // Construtor para Parcelable
@@ -29,9 +43,9 @@ public class Time implements Parcelable {
         image = in.readString();
         classification = in.readInt();
         score = in.readInt();
+        goals = in.createTypedArrayList(PlayedNameGols.CREATOR);
     }
 
-    // Creator para Parcelable
     public static final Creator<Time> CREATOR = new Creator<Time>() {
         @Override
         public Time createFromParcel(Parcel in) {
@@ -50,6 +64,7 @@ public class Time implements Parcelable {
         dest.writeString(image);
         dest.writeInt(classification);
         dest.writeInt(score);
+        dest.writeTypedList(goals);
     }
 
     @Override
@@ -107,14 +122,23 @@ public class Time implements Parcelable {
     public void setPlacar(int placar) {
         this.score = placar;
     }
+public List<PlayedNameGols> getGoals() {
+    return goals;
+}
 
-    @Override
-    public String toString() {
-        return "Time{" +
-                "name='" + name + '\'' +
-                ", image='" + image + '\'' +
-                ", classification=" + classification +
-                ", score=" + score +
-                '}';
-    }
+public void setGoals(List<PlayedNameGols> goals) {
+    this.goals = goals;
+}
+
+// Método toString
+@Override
+public String toString() {
+    return "Time{" +
+            "name='" + name + '\'' +
+            ", image='" + image + '\'' +
+            ", classification=" + classification +
+            ", score=" + score +
+            ", goals=" + goals +
+            '}';
+}
 }

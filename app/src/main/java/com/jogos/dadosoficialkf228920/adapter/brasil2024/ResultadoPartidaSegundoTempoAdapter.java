@@ -9,15 +9,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.jogos.dadosoficialkf228920.databinding.LayoutResultadoPartidasBinding;
+import com.jogos.dadosoficialkf228920.model.MatchNewModelDate;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import java.util.List;
 
 public class ResultadoPartidaSegundoTempoAdapter extends RecyclerView.Adapter<ResultadoPartidaSegundoTempoAdapter.ViewHolder> {
 
-    private List<PartidaNovoModelo> lista;
+    private List<MatchNewModelDate> lista;
 
-    public ResultadoPartidaSegundoTempoAdapter(List<PartidaNovoModelo> lista) {
+    public ResultadoPartidaSegundoTempoAdapter(List<MatchNewModelDate> lista) {
         this.lista = lista;
     }
 
@@ -35,12 +36,12 @@ public class ResultadoPartidaSegundoTempoAdapter extends RecyclerView.Adapter<Re
     public void onBindViewHolder(@NonNull ResultadoPartidaSegundoTempoAdapter.ViewHolder holder, int position) {
 
         Context context = holder.itemView.getContext();
-        PartidaNovoModelo result = lista.get(position);
+        MatchNewModelDate result = lista.get(position);
 
 
 
         //DADOS DO JOGO
-        holder.binding.tvNomeTime.setText(result.getName());
+        holder.binding.tvNomeTime.setText(result.getDescription());
         holder.binding.tvRodada.setText("Rodada: " + String.valueOf(result.getRound()));
         holder.binding.tvDataJogo.setText(result.getDate());
 

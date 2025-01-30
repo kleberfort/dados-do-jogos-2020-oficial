@@ -4,18 +4,15 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.jogos.dadosoficialkf228920.R;
-import com.jogos.dadosoficialkf228920.adapter.adapteFragment.LaLigaPagerAdapter;
-import com.jogos.dadosoficialkf228920.adapter.brasil2024.Serie_A_B_2024Adapter;
+import com.jogos.dadosoficialkf228920.adapter.brasil2024.CarregarFinalizacaoFaltaImpedimentoAdapter;
+import com.jogos.dadosoficialkf228920.adapter.brasil2024.DadosGeralAdapter;
 import com.jogos.dadosoficialkf228920.databinding.FragmentJogosCasaLaLiga2025Binding;
-import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
+import com.jogos.dadosoficialkf228920.model.MatchNewModelDate;
 import com.jogos.dadosoficialkf228920.model.comparator.ComparatorDatasPartidas;
 
 import java.util.ArrayList;
@@ -24,8 +21,9 @@ import java.util.Collections;
 public class JogosCasaLaLiga2025Fragment extends Fragment {
 
     private FragmentJogosCasaLaLiga2025Binding binding;
-    private ArrayList<PartidaNovoModelo> partidasCasa;
-    private Serie_A_B_2024Adapter serieAB2024CasaAdapter;
+    private ArrayList<MatchNewModelDate> partidasCasa;
+    private DadosGeralAdapter dadosGeralAdapter;
+    private CarregarFinalizacaoFaltaImpedimentoAdapter carregarFinalizacaoFaltaImpedimentoAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,10 +34,13 @@ public class JogosCasaLaLiga2025Fragment extends Fragment {
         if (getArguments() != null) {
             partidasCasa = getArguments().getParcelableArrayList("partidas_casa");
         }
-
-
         // Inicialize o RecyclerView e o Adapter
         configurarRecyclerView();
+
+        // Configura o botão para alternar entre os RecyclerViews
+        binding.btnAbrirDadosResumido.setOnClickListener(v -> alternarRecyclerViews());
+
+
         return binding.getRoot();
     }
 
@@ -49,16 +50,30 @@ public class JogosCasaLaLiga2025Fragment extends Fragment {
             partidasCasa = new ArrayList<>();
         }
 
-        // Configure o RecyclerView
-        binding.rvListaJogos.setLayoutManager(new LinearLayoutManager(getContext()));
-        serieAB2024CasaAdapter = new Serie_A_B_2024Adapter(partidasCasa);
-
         Collections.sort(partidasCasa, new ComparatorDatasPartidas());
-        binding.rvListaJogos.setAdapter(serieAB2024CasaAdapter);
 
+        // Configure o RecyclerView da lista geral
+        binding.rvListaJogos.setLayoutManager(new LinearLayoutManager(getContext()));
+        dadosGeralAdapter = new DadosGeralAdapter(partidasCasa);
+        binding.rvListaJogos.setAdapter(dadosGeralAdapter);
 
+        // Configure o RecyclerView da lista resumida
+        binding.rvListaJogosResumo.setLayoutManager(new LinearLayoutManager(getContext()));
+        carregarFinalizacaoFaltaImpedimentoAdapter = new CarregarFinalizacaoFaltaImpedimentoAdapter(partidasCasa,"casa");
+        binding.rvListaJogosResumo.setAdapter(carregarFinalizacaoFaltaImpedimentoAdapter);
 
     }
+
+    private void alternarRecyclerViews() {
+        if (binding.rvListaJogos.getVisibility() == View.VISIBLE) {
+            binding.rvListaJogos.setVisibility(View.GONE);
+            binding.rvListaJogosResumo.setVisibility(View.VISIBLE);
+        } else {
+            binding.rvListaJogos.setVisibility(View.VISIBLE);
+            binding.rvListaJogosResumo.setVisibility(View.GONE);
+        }
+    }
+
 
     @Override
     public void onDestroyView() {

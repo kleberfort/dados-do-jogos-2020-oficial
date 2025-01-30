@@ -9,15 +9,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.jogos.dadosoficialkf228920.databinding.ListaJogosEstatisticaCartoesBrasil2024AdapterBinding;
+import com.jogos.dadosoficialkf228920.model.MatchNewModelDate;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import java.util.List;
 
 public class Serie_A_B_2024Adapter extends RecyclerView.Adapter<Serie_A_B_2024Adapter.ViewHolder>{
 
-    private List<PartidaNovoModelo> lista;
+    private List<MatchNewModelDate> lista;
 
-    public Serie_A_B_2024Adapter(List<PartidaNovoModelo> augsburgCasa) {
+    public Serie_A_B_2024Adapter(List<MatchNewModelDate> augsburgCasa) {
         this.lista = augsburgCasa;
     }
 
@@ -36,7 +37,7 @@ public class Serie_A_B_2024Adapter extends RecyclerView.Adapter<Serie_A_B_2024Ad
 
         Context context = holder.itemView.getContext();
 
-        PartidaNovoModelo partida= lista.get(position);
+        MatchNewModelDate partida= lista.get(position);
 
         //DADOS DO JOGO
         holder.binding.tvDescricaco.setText(partida.getDescription());
@@ -131,6 +132,7 @@ public class Serie_A_B_2024Adapter extends RecyclerView.Adapter<Serie_A_B_2024Ad
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
         private ListaJogosEstatisticaCartoesBrasil2024AdapterBinding binding;
+
 
         public ViewHolder(ListaJogosEstatisticaCartoesBrasil2024AdapterBinding binding) {
             super(binding.getRoot());

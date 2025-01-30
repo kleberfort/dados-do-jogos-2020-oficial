@@ -1,7 +1,7 @@
 package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.ligue1;
 
-import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasCasa;
-import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88.melhoresStatisticasFora;
+import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88NewModel.melhoresStatisticasCasa;
+import static com.jogos.dadosoficialkf228920.util.estatistica70and88.Estatistica70ou88NewModel.melhoresStatisticasFora;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,13 +9,6 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -27,18 +20,21 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.activity.carregarDadosActivity.CarregarDadosFragmentsActivity;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.TimesClasificacaoBrasilA2024Adapter;
 import com.jogos.dadosoficialkf228920.adapter.mais70ou90.CarregarEstatistica70_90Adapter;
 import com.jogos.dadosoficialkf228920.databinding.FragmentListaLigue1A202425Binding;
-import com.jogos.dadosoficialkf228920.databinding.FragmentListaPremierLeagueA202425Binding;
-import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.bundesliga.ListaBundesliga_A_2024_25Fragment;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.ligue1.util.JogosLigue1_A_2024_25;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.ligue1.util.JogosLigue1_A_2024_25_Listener;
-import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.util.JogosPremierLeague_A_2024_25;
 import com.jogos.dadosoficialkf228920.model.ClassificacaoOficialNovoModelo;
-import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
+import com.jogos.dadosoficialkf228920.model.MatchNewModelDate;
 import com.jogos.dadosoficialkf228920.model.RecyclerItemClickListener;
 import com.jogos.dadosoficialkf228920.model.comparator.ComparatorPontosVitoriaSaldoGolsProSerieA_B;
 
@@ -59,7 +55,7 @@ public class ListaLigue1_A_2024_25Fragment extends Fragment implements JogosLigu
 
     // Lista para armazenar a classificação final
     List<ClassificacaoOficialNovoModelo> listaOficial = new ArrayList<>();
-    private HashMap<String, Map<String, List<PartidaNovoModelo>>> partidasPorTime;
+    private HashMap<String, Map<String, List<MatchNewModelDate>>> partidasPorTime;
 
     public interface ListaLigue1_2025_OnClinkInterface{//esse é o codigo de criar a interface // entede essa primeira parte ? ele basicamente
         void listaLigue1_OnClick2025Metodo(String nome);//viu que é uma string ?sim
@@ -149,11 +145,11 @@ public class ListaLigue1_A_2024_25Fragment extends Fragment implements JogosLigu
                 Log.d("acessos", "onItemClick: " + acessos);
                 // Verifica se o mapa foi carregado e acessa os jogos do time
                 if (partidasPorTime != null) {
-                    Map<String, List<PartidaNovoModelo>> jogosTime = partidasPorTime.get(itemSelecionado.getName());
+                    Map<String, List<MatchNewModelDate>> jogosTime = partidasPorTime.get(itemSelecionado.getName());
 
                     if (jogosTime != null) {
                         // Combina partidas em uma única lista
-                        List<PartidaNovoModelo> listaPartidas = new ArrayList<>();
+                        List<MatchNewModelDate> listaPartidas = new ArrayList<>();
                         if (jogosTime.get("casa") != null) {
                             listaPartidas.addAll(jogosTime.get("casa"));
                         }
@@ -184,11 +180,11 @@ public class ListaLigue1_A_2024_25Fragment extends Fragment implements JogosLigu
 
                 // Verifica se o mapa foi carregado e acessa os jogos do time
                 if (partidasPorTime != null) {
-                    Map<String, List<PartidaNovoModelo>> jogosTime = partidasPorTime.get(itemSelecionado.getName());
+                    Map<String, List<MatchNewModelDate>> jogosTime = partidasPorTime.get(itemSelecionado.getName());
 
                     if (jogosTime != null) {
                         // Combina partidas em uma única lista
-                        List<PartidaNovoModelo> listaPartidas = new ArrayList<>();
+                        List<MatchNewModelDate> listaPartidas = new ArrayList<>();
                         if (jogosTime.get("casa") != null) {
                             listaPartidas.addAll(jogosTime.get("casa"));
                         }
@@ -263,13 +259,13 @@ public class ListaLigue1_A_2024_25Fragment extends Fragment implements JogosLigu
 
 
     @Override
-    public void onJogosLigue1_A_franca(HashMap<String, Map<String, List<PartidaNovoModelo>>> partidasPorTime) {
+    public void onJogosLigue1_A_franca(HashMap<String, Map<String, List<MatchNewModelDate>>> partidasPorTime) {
 
         this.partidasPorTime = partidasPorTime;
         // Itera sobre o HashMap para processar cada time
-        for (Map.Entry<String, Map<String, List<PartidaNovoModelo>>> entry : partidasPorTime.entrySet()) {
+        for (Map.Entry<String, Map<String, List<MatchNewModelDate>>> entry : partidasPorTime.entrySet()) {
             String nomeTime = entry.getKey();
-            Map<String, List<PartidaNovoModelo>> jogos = entry.getValue();
+            Map<String, List<MatchNewModelDate>> jogos = entry.getValue();
 
             // Inicializa os valores da classificação
             String image = null;
@@ -283,9 +279,9 @@ public class ListaLigue1_A_2024_25Fragment extends Fragment implements JogosLigu
             int derrotas = 0;
 
             // Processa os jogos em casa
-            List<PartidaNovoModelo> jogosCasa = jogos.get("casa");
+            List<MatchNewModelDate> jogosCasa = jogos.get("casa");
             if (jogosCasa != null) {
-                for (PartidaNovoModelo partida : jogosCasa) {
+                for (MatchNewModelDate partida : jogosCasa) {
                     image = partida.getHomeTime().getImage();
                     int golsFeitos = partida.getHomeTime().getScore();
                     int golsSofridos = partida.getAwayTime().getScore();
@@ -306,9 +302,9 @@ public class ListaLigue1_A_2024_25Fragment extends Fragment implements JogosLigu
             }
 
             // Processa os jogos fora
-            List<PartidaNovoModelo> jogosFora = jogos.get("fora");
+            List<MatchNewModelDate> jogosFora = jogos.get("fora");
             if (jogosFora != null) {
-                for (PartidaNovoModelo partida : jogosFora) {
+                for (MatchNewModelDate partida : jogosFora) {
                     image = partida.getAwayTime().getImage();
                     int golsFeitos = partida.getAwayTime().getScore();
                     int golsSofridos = partida.getHomeTime().getScore();

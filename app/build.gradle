@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    compileSdk 34
+    compileSdk 35
 
     namespace "com.jogos.dadosoficialkf228920"
 
@@ -16,8 +16,8 @@ android {
         applicationId "com.jogos.dadosoficialkf228920"
         minSdk 27
         targetSdk 34
-        versionCode 37 //trigéssima setima atualização
-        versionName "3.1.4" // melhorado a visualizacao das telas e implementado os campeonatos PremierLeague e LaLiga.
+        versionCode 41 //quadragéssima primeira atualização
+        versionName "3.1.8" // dados resumido finalizacao e finalizacao no gol casa e fora.
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

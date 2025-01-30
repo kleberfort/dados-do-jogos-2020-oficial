@@ -37,19 +37,6 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTituloCanto"
         app:layout_constraintVertical_bias="0.34" />
 
-    <Spinner
-        android:id="@+id/spnJogos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_marginStart="4dp"
-        android:entries="@array/array_brasileiro_rodada_ate_19"
-        app:layout_constraintBottom_toBottomOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.009"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.8" />
 
     <TextView
         android:id="@+id/textView4"

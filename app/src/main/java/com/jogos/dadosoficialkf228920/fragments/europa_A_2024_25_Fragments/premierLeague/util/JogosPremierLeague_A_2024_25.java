@@ -3,6 +3,7 @@ package com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.prem
 import android.util.Log;
 
 import com.jogos.dadosoficialkf228920.data.brasil.serieA.Jogos_campeonatos_chamada_api;
+import com.jogos.dadosoficialkf228920.model.MatchNewModelDate;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class JogosPremierLeague_A_2024_25  {
     private Jogos_campeonatos_chamada_api jogos_campeonatos_chamada_api;
 
 
-    HashMap<String, Map<String, List<PartidaNovoModelo>>> partidasPorTime = new HashMap<>();
+    HashMap<String, Map<String, List<MatchNewModelDate>>> partidasPorTime = new HashMap<>();
 
 
     public void setListener(JogosPremierLeague_A_2024_2025_Listener listener) {
@@ -39,15 +40,18 @@ public class JogosPremierLeague_A_2024_25  {
         jogos_campeonatos_chamada_api = retrofit.create(Jogos_campeonatos_chamada_api.class);
     }
 
+
+
     public void setupDadosJogos() {
-        jogos_campeonatos_chamada_api.getPremierLeagueA2024_2025().enqueue(new Callback<List<PartidaNovoModelo>>() {
+
+        jogos_campeonatos_chamada_api.getPremierLeagueA2024_2025().enqueue(new Callback<List<MatchNewModelDate>>() {
             @Override
-            public void onResponse(Call<List<PartidaNovoModelo>> call, Response<List<PartidaNovoModelo>> response) {
-                if(response.isSuccessful()){
-                    List<PartidaNovoModelo> partidas = response.body();
+            public void onResponse(Call<List<MatchNewModelDate>> call, Response<List<MatchNewModelDate>> response) {
+                if (response.isSuccessful()) {
+                    List<MatchNewModelDate> partidas = response.body();
 
                     if (partidas != null) {
-                        for (PartidaNovoModelo partida : partidas) {
+                        for (MatchNewModelDate partida : partidas) {
                             // Time da casa
                             String homeTeam = partida.getHomeTime().getName();
                             partida.setDataFormatada(partida.getDate());
@@ -63,25 +67,23 @@ public class JogosPremierLeague_A_2024_25  {
                                     .computeIfAbsent("fora", k -> new ArrayList<>())
                                     .add(partida);
                         }
-                    }else {
+                    } else {
                         Log.e("API_ERROR", "Erro ao carregar partidas: " + response.message());
                     }
 
 
                 }
-                if(listener != null){
+                if (listener != null) {
                     listener.onJogosPremierLeague_A(partidasPorTime);
                 }
 
             }
 
-
             @Override
-            public void onFailure(Call<List<PartidaNovoModelo>> call, Throwable t) {
+            public void onFailure(Call<List<MatchNewModelDate>> call, Throwable t) {
                 Log.e("API_ERROR", "Falha ao carregar partidas", t);
             }
         });
-
 
     }
 

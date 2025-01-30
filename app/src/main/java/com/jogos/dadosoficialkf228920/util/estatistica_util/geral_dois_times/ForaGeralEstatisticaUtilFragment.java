@@ -17,6 +17,7 @@ import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaEscanteiosBinding;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaOficialPorcentagemBinding;
+import com.jogos.dadosoficialkf228920.model.MatchNewModelDate;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoFora;
 
@@ -28,7 +29,7 @@ import java.util.List;
 public class ForaGeralEstatisticaUtilFragment extends Fragment {
 
     private TelaEstatisticaOficialPorcentagemBinding binding;
-    private ArrayList<PartidaNovoModelo> partidasFora; // Ajuste o tipo conforme necessário
+    private ArrayList<MatchNewModelDate> partidasFora; // Ajuste o tipo conforme necessário
     private String nomeTime;
 
     private ResultadosPartidasAdapter resultadosPartidasAdapter;
@@ -81,7 +82,7 @@ public class ForaGeralEstatisticaUtilFragment extends Fragment {
 
 
 
-    private List<PartidaNovoModelo> partidas = new ArrayList<>();
+    private List<MatchNewModelDate> partidas = new ArrayList<>();
 
 
     @Override
@@ -334,7 +335,7 @@ public class ForaGeralEstatisticaUtilFragment extends Fragment {
     }
 
     private void handleTextViewClick(int textViewId) {
-        List<PartidaNovoModelo> jogos = new ArrayList<>();
+        List<MatchNewModelDate> jogos = new ArrayList<>();
 
         switch (textViewId) {
             case 1:
@@ -758,7 +759,7 @@ public class ForaGeralEstatisticaUtilFragment extends Fragment {
         }//fim do switch
     }
 
-    public void geralEstatisticaFora(List<PartidaNovoModelo> partidas){
+    public void geralEstatisticaFora(List<MatchNewModelDate> partidas){
 
         for (int i = 0; i < partidas.size(); i++) {
 
@@ -1237,7 +1238,7 @@ public class ForaGeralEstatisticaUtilFragment extends Fragment {
         binding.tvRespostaEstatistica.setText(builder);
     }//fim da interface
 
-    private void showPartidasDialog(List<PartidaNovoModelo> partidas) {
+    private void showPartidasDialog(List<MatchNewModelDate> partidas) {
 
 
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());

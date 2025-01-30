@@ -17,6 +17,7 @@ import com.jogos.dadosoficialkf228920.fragments.americadosul.argentina.ListaLiga
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.bundesliga.ListaBundesliga_A_2024_25Fragment;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.eredivisie.ListaEredivisie_A_2024_25Fragment;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.laLiga.ListaLaLiga_A_2024_25Fragment;
+import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.ligaCampeoes.LigaCampeoes2024_25Fragment;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.ligue1.ListaLigue1_A_2024_25Fragment;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.premierLeague.ListaPremierLeague_A_2024_25Fragment;
 import com.jogos.dadosoficialkf228920.fragments.europa_A_2024_25_Fragments.primeiraLiga.ListaPrimeiraLiga_A_2024_25Fragment;
@@ -124,23 +125,23 @@ public class MainActivity extends AppCompatActivity implements ListaPremierLeagu
         //mas antes de publicar tente colocar mais times  somente copiando o que fizemos
 
         //Quando irei publicar, tenho que tirar o parametro "textMode" e para teste coloco depois do parametro unityGameId.
-        UnityAds.initialize(this, unityGameID, new IUnityAdsInitializationListener() {
-            @Override
-            public void onInitializationComplete() {
-
-                Log.d("testeunity", "completo");
-                //quando a comunicao acontece com sucesso.. comunicao do Aplicativo com a Unity
-            }
-
-            @Override
-            public void onInitializationFailed(UnityAds.UnityAdsInitializationError error, String message) {
-                //quando coloco o this la em cima esse metodo é chamado para falar qual foi o erro
-                //Esse erro é referente a Unity
-
-                Log.d("testeunity-", message);
-
-            }
-        });
+//        UnityAds.initialize(this, unityGameID, new IUnityAdsInitializationListener() {
+//            @Override
+//            public void onInitializationComplete() {
+//
+//                Log.d("testeunity", "completo");
+//                //quando a comunicao acontece com sucesso.. comunicao do Aplicativo com a Unity
+//            }
+//
+//            @Override
+//            public void onInitializationFailed(UnityAds.UnityAdsInitializationError error, String message) {
+//                //quando coloco o this la em cima esse metodo é chamado para falar qual foi o erro
+//                //Esse erro é referente a Unity
+//
+//                Log.d("testeunity-", message);
+//
+//            }
+//        });
 
 
         relativeLayoutBannerUnity = binding.adViewContainerMainActivityUnity;
@@ -176,6 +177,8 @@ public class MainActivity extends AppCompatActivity implements ListaPremierLeagu
         adapter.addFragment(new ListaPrimeiraLiga_A_2024_25Fragment(), "Primeira Liga A");
         adapter.addFragment(new ListaLigue1_A_2024_25Fragment(), "Ligue 1");
         adapter.addFragment(new ListaEredivisie_A_2024_25Fragment(), "Eredivisie A");
+        adapter.addFragment(new LigaCampeoes2024_25Fragment(), "Liga dos Campeões");
+
 
         binding.viewPager.setOffscreenPageLimit(adapter.getItemCount());
 

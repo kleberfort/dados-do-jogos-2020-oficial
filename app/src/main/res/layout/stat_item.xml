@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="8dp">
+
+    <!-- Linha com valores e categoria -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="2dp">
+
+        <!-- Valor do time da casa -->
+        <TextView
+            android:id="@+id/stat_home_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <!-- Nome da categoria -->
+        <TextView
+            android:id="@+id/stat_category_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Categoria"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingHorizontal="8dp" />
+
+        <!-- Valor do time visitante -->
+        <TextView
+            android:id="@+id/stat_away_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Barra de progresso -->
+    <ProgressBar
+        android:id="@+id/stat_progress"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:progress="50"
+        android:max="100"
+        android:progressDrawable="@drawable/progress_bar_drawable"
+        style="?android:attr/progressBarStyleHorizontal" />
+</LinearLayout>

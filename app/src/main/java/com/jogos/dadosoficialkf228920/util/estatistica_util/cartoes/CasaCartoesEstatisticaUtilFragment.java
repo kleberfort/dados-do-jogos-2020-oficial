@@ -17,6 +17,7 @@ import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadoPartidaSegundo
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapter;
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaCartoesBinding;
+import com.jogos.dadosoficialkf228920.model.MatchNewModelDate;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoCartoesMcdCasa;
 
@@ -29,7 +30,7 @@ public class CasaCartoesEstatisticaUtilFragment extends Fragment {
 
     private TelaEstatisticaCartoesBinding binding;
 
-    private ArrayList<PartidaNovoModelo> partidasCasa; // Ajuste o tipo conforme necessário
+    private ArrayList<MatchNewModelDate> partidasCasa; // Ajuste o tipo conforme necessário
     private String nomeTime;
 
     private ResultadosPartidasAdapter resultadosPartidasAdapter;
@@ -75,7 +76,7 @@ public class CasaCartoesEstatisticaUtilFragment extends Fragment {
 
     private int cartoesAmareloVermelhoTotalTresCincoMarcados;
     private int cartoesAmareloVermelhoTotalTresCincoNaoMarcados;
-    private List<PartidaNovoModelo> partidas = new ArrayList<>();
+    private List<MatchNewModelDate> partidas = new ArrayList<>();
 
 
 
@@ -266,7 +267,7 @@ public class CasaCartoesEstatisticaUtilFragment extends Fragment {
 
 
     private void handleTextViewClick(int textViewId) {
-        List<PartidaNovoModelo> jogos = new ArrayList<>();
+        List<MatchNewModelDate> jogos = new ArrayList<>();
 
         switch (textViewId) {
             case 1:
@@ -549,7 +550,7 @@ public class CasaCartoesEstatisticaUtilFragment extends Fragment {
 
     }//fim do metodo que busca os dados
 
-    public void cartoesEstatisticaCasa(List<PartidaNovoModelo> partidas){
+    public void cartoesEstatisticaCasa(List<MatchNewModelDate> partidas){
 
         for (int i = 0; i < partidas.size(); i++) {
 
@@ -934,7 +935,7 @@ public class CasaCartoesEstatisticaUtilFragment extends Fragment {
 
     }
 
-    private void showPartidasDialog(List<PartidaNovoModelo> partidas) {
+    private void showPartidasDialog(List<MatchNewModelDate> partidas) {
 
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
@@ -949,7 +950,7 @@ public class CasaCartoesEstatisticaUtilFragment extends Fragment {
 
         bottomSheetDialog.show();
     }
-    private void showPartidasPrimeiroTempo(List<PartidaNovoModelo> partidas) {
+    private void showPartidasPrimeiroTempo(List<MatchNewModelDate> partidas) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
         bottomSheetDialog.setContentView(bottomSheetView);
@@ -963,7 +964,7 @@ public class CasaCartoesEstatisticaUtilFragment extends Fragment {
 
         bottomSheetDialog.show();
     }
-    private void showPartidasSegundoTempo(List<PartidaNovoModelo> partidas) {
+    private void showPartidasSegundoTempo(List<MatchNewModelDate> partidas) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
         bottomSheetDialog.setContentView(bottomSheetView);

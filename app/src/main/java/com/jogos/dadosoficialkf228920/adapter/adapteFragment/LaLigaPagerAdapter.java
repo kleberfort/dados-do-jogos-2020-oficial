@@ -11,16 +11,16 @@ import com.jogos.dadosoficialkf228920.fragments.EstatisticaCasaLaLiga2025Fragmen
 import com.jogos.dadosoficialkf228920.fragments.EstatisticaForaLaLiga2025Fragment;
 import com.jogos.dadosoficialkf228920.fragments.JogosCasaLaLiga2025Fragment;
 import com.jogos.dadosoficialkf228920.fragments.JogosForaLaLiga2025Fragment;
-import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
+import com.jogos.dadosoficialkf228920.model.MatchNewModelDate;
 
 import java.util.ArrayList;
 
 public class LaLigaPagerAdapter extends FragmentStateAdapter {
 
-    private ArrayList<PartidaNovoModelo> listaPartidas;
+    private ArrayList<MatchNewModelDate> listaPartidas;
     private String nomeTime;
 
-    public LaLigaPagerAdapter(@NonNull FragmentActivity fragmentActivity, ArrayList<PartidaNovoModelo> listaPartidas, String nomeTime) {
+    public LaLigaPagerAdapter(@NonNull FragmentActivity fragmentActivity, ArrayList<MatchNewModelDate> listaPartidas, String nomeTime) {
         super(fragmentActivity);
         this.listaPartidas = listaPartidas;
         this.nomeTime = nomeTime;
@@ -74,9 +74,9 @@ public class LaLigaPagerAdapter extends FragmentStateAdapter {
     }
 
     // Métodos de filtragem
-    private ArrayList<PartidaNovoModelo> filtrarPartidasCasa(ArrayList<PartidaNovoModelo> lista) {
-        ArrayList<PartidaNovoModelo> partidasCasa = new ArrayList<>();
-        for (PartidaNovoModelo partida : lista) {
+    private ArrayList<MatchNewModelDate> filtrarPartidasCasa(ArrayList<MatchNewModelDate> lista) {
+        ArrayList<MatchNewModelDate> partidasCasa = new ArrayList<>();
+        for (MatchNewModelDate partida : lista) {
             if (partida.getHomeTime().getName().equals(nomeTime)) {
                 partidasCasa.add(partida);
             }
@@ -84,9 +84,9 @@ public class LaLigaPagerAdapter extends FragmentStateAdapter {
         return partidasCasa;
     }
 
-    private ArrayList<PartidaNovoModelo> filtrarPartidasFora(ArrayList<PartidaNovoModelo> lista) {
-        ArrayList<PartidaNovoModelo> partidasFora = new ArrayList<>();
-        for (PartidaNovoModelo partida : lista) {
+    private ArrayList<MatchNewModelDate> filtrarPartidasFora(ArrayList<MatchNewModelDate> lista) {
+        ArrayList<MatchNewModelDate> partidasFora = new ArrayList<>();
+        for (MatchNewModelDate partida : lista) {
             if (partida.getAwayTime().getName().equals(nomeTime)) {
                 partidasFora.add(partida);
             }

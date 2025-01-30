@@ -17,6 +17,7 @@ import com.jogos.dadosoficialkf228920.R;
 import com.jogos.dadosoficialkf228920.adapter.adapteFragment.LaLigaPagerAdapter;
 import com.jogos.dadosoficialkf228920.databinding.ActivityBundesliga202425Binding;
 import com.jogos.dadosoficialkf228920.databinding.ActivityCarregarDadosFragmentsBinding;
+import com.jogos.dadosoficialkf228920.model.MatchNewModelDate;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class CarregarDadosFragmentsActivity extends AppCompatActivity {
 
     private ActivityCarregarDadosFragmentsBinding binding;
 
-    private ArrayList<PartidaNovoModelo> listaPartidas;
+    private ArrayList<MatchNewModelDate> listaPartidas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <!-- Botão acima dos RecyclerViews -->
+    <Button
+        android:id="@+id/btn_abrir_dados_resumido"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Dados Resumo Fora"
+        android:textSize="16sp"
+        android:backgroundTint="@color/primary_700"
+        android:textColor="@android:color/white" />
 
+    <!-- FrameLayout para alternar os RecyclerViews -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- RecyclerView padrão -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvListaJogos"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            />
 
-    </LinearLayout>
+        <!-- RecyclerView alternativo -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListaJogosResumo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            />
 
-</FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>

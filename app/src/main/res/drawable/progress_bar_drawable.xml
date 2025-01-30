@@ -1,0 +1,21 @@
+<!-- progress_bar_drawable.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Fundo da barra de progresso -->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <solid android:color="#D3D3D3" /> <!-- Cor cinza-claro para o fundo -->
+            <corners android:radius="8dp" /> <!-- Borda arredondada -->
+        </shape>
+    </item>
+
+    <!-- Progresso da barra -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <solid android:color="#FFCC80" /> <!-- Cor laranja para o progresso -->
+                <corners android:radius="8dp" /> <!-- Borda arredondada -->
+            </shape>
+        </clip>
+    </item>
+</layer-list>

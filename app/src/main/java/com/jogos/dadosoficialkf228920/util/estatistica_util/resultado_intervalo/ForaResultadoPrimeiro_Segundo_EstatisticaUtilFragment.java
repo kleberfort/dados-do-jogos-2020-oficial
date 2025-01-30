@@ -18,6 +18,7 @@ import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadoPartidaSegundo
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaEscanteiosBinding;
 import com.jogos.dadosoficialkf228920.databinding.TelaResultadoPrimeiroSegundoTempoBinding;
+import com.jogos.dadosoficialkf228920.model.MatchNewModelDate;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ import java.util.List;
 public class ForaResultadoPrimeiro_Segundo_EstatisticaUtilFragment extends Fragment {
 
     private TelaResultadoPrimeiroSegundoTempoBinding binding;
-    private ArrayList<PartidaNovoModelo> partidasFora; // Ajuste o tipo conforme necessário
+    private ArrayList<MatchNewModelDate> partidasFora; // Ajuste o tipo conforme necessário
     private String nomeTime;
 
     private ResultadosPartidasPrimeiroTempoAdapter resultadosPartidasPrimeiroTempoAdapter;
@@ -41,7 +42,7 @@ public class ForaResultadoPrimeiro_Segundo_EstatisticaUtilFragment extends Fragm
     private int empateSegundoTempo;
     private int derrotaSegundoTempo;
 
-    private List<PartidaNovoModelo> partidas = new ArrayList<>();
+    private List<MatchNewModelDate> partidas = new ArrayList<>();
 
     @Nullable
     @Override
@@ -112,7 +113,7 @@ public class ForaResultadoPrimeiro_Segundo_EstatisticaUtilFragment extends Fragm
 
     private void handleTextViewClick(int textViewId) {
 
-        List<PartidaNovoModelo> jogos = new ArrayList<>();
+        List<MatchNewModelDate> jogos = new ArrayList<>();
 
         switch (textViewId) {
             case 1:
@@ -194,7 +195,7 @@ public class ForaResultadoPrimeiro_Segundo_EstatisticaUtilFragment extends Fragm
     }
 
 
-    public void resultadoIntervaloEstatisticaFora(List<PartidaNovoModelo> partidas){
+    public void resultadoIntervaloEstatisticaFora(List<MatchNewModelDate> partidas){
 
         for (int i = 0; i < partidas.size(); i++) {
 
@@ -244,7 +245,7 @@ public class ForaResultadoPrimeiro_Segundo_EstatisticaUtilFragment extends Fragm
 
     }//fim da interface
 
-    private void showPartidasPrimeiroTempo(List<PartidaNovoModelo> partidas) {
+    private void showPartidasPrimeiroTempo(List<MatchNewModelDate> partidas) {
 
 
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
@@ -263,7 +264,7 @@ public class ForaResultadoPrimeiro_Segundo_EstatisticaUtilFragment extends Fragm
         bottomSheetDialog.show();
 
     }
-    private void showPartidasSegundoTempo(List<PartidaNovoModelo> partidas) {
+    private void showPartidasSegundoTempo(List<MatchNewModelDate> partidas) {
 
 
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());

@@ -18,6 +18,7 @@ import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapt
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaCartoesBinding;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaEscanteiosBinding;
+import com.jogos.dadosoficialkf228920.model.MatchNewModelDate;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import org.jetbrains.annotations.Nullable;
@@ -29,7 +30,7 @@ public class CasaEscanteiosEstatisticaUtilFragment extends Fragment {
 
     private TelaEstatisticaEscanteiosBinding binding;
 
-    private ArrayList<PartidaNovoModelo> partidasCasa; // Ajuste o tipo conforme necessário
+    private ArrayList<MatchNewModelDate> partidasCasa; // Ajuste o tipo conforme necessário
     private String nomeTime;
 
     private ResultadosPartidasAdapter resultadosPartidasAdapter;
@@ -85,7 +86,7 @@ public class CasaEscanteiosEstatisticaUtilFragment extends Fragment {
 
 
 
-    private List<PartidaNovoModelo> partidas = new ArrayList<>();
+    private List<MatchNewModelDate> partidas = new ArrayList<>();
 
 
 
@@ -346,7 +347,7 @@ public class CasaEscanteiosEstatisticaUtilFragment extends Fragment {
     }
 
     private void handleTextViewClick(int textViewId) {
-        List<PartidaNovoModelo> jogos = new ArrayList<>();
+        List<MatchNewModelDate> jogos = new ArrayList<>();
 
         switch (textViewId) {
             case 1:
@@ -710,7 +711,7 @@ public class CasaEscanteiosEstatisticaUtilFragment extends Fragment {
     }
 
 
-    public void escanteiosEstatisticaCasa(List<PartidaNovoModelo> partidas){
+    public void escanteiosEstatisticaCasa(List<MatchNewModelDate> partidas){
 
         for (int i = 0; i < partidas.size(); i++) {
             //ESCANTEIOS 0.5 1°TEMPO
@@ -1214,7 +1215,7 @@ public class CasaEscanteiosEstatisticaUtilFragment extends Fragment {
 
     }
 
-    private void showPartidasDialog(List<PartidaNovoModelo> partidas) {
+    private void showPartidasDialog(List<MatchNewModelDate> partidas) {
 
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
@@ -1229,7 +1230,7 @@ public class CasaEscanteiosEstatisticaUtilFragment extends Fragment {
 
         bottomSheetDialog.show();
     }
-    private void showPartidasPrimeiroTempo(List<PartidaNovoModelo> partidas) {
+    private void showPartidasPrimeiroTempo(List<MatchNewModelDate> partidas) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
         bottomSheetDialog.setContentView(bottomSheetView);
@@ -1243,7 +1244,7 @@ public class CasaEscanteiosEstatisticaUtilFragment extends Fragment {
 
         bottomSheetDialog.show();
     }
-    private void showPartidasSegundoTempo(List<PartidaNovoModelo> partidas) {
+    private void showPartidasSegundoTempo(List<MatchNewModelDate> partidas) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
         bottomSheetDialog.setContentView(bottomSheetView);

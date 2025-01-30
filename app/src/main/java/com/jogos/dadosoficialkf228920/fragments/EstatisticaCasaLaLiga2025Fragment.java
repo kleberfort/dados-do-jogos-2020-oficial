@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.jogos.dadosoficialkf228920.databinding.FragmentEstatisticaCasaLaLiga2025Binding;
+import com.jogos.dadosoficialkf228920.model.MatchNewModelDate;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import com.jogos.dadosoficialkf228920.util.estatistica_util.cartoes.CasaCartoesEstatisticaUtilFragment;
 import com.jogos.dadosoficialkf228920.util.estatistica_util.escanteios.CasaEscanteiosEstatisticaUtilFragment;
@@ -26,7 +27,7 @@ import java.util.ArrayList;
 public class EstatisticaCasaLaLiga2025Fragment extends Fragment {
 
     private FragmentEstatisticaCasaLaLiga2025Binding binding;
-    private ArrayList<PartidaNovoModelo> partidasCasa; // Ajuste o tipo conforme necessário
+    private ArrayList<MatchNewModelDate> partidasCasa; // Ajuste o tipo conforme necessário
     private String nomeTime;
 
 

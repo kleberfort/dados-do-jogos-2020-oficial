@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Informações adicionais: Descrição, Rodada e Data -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/purple_claro"
+            android:padding="8dp">
+
+            <!-- Descrição -->
+            <TextView
+                android:id="@+id/match_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descrição da partida"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:gravity="center"
+                android:paddingBottom="4dp" />
+
+            <!-- Rodada -->
+            <TextView
+                android:id="@+id/match_round"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rodada: 15"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:paddingBottom="4dp" />
+
+            <!-- Data do jogo -->
+            <TextView
+                android:id="@+id/match_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data: 05/01/2025"
+                android:textSize="14sp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- Header: Nomes dos times, placar e imagens -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="4dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/img_castelao_dois"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                <ImageView
+                    android:id="@+id/ivTimeCasa"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/tvNomeCasa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivTimeCasa"
+                    app:layout_constraintEnd_toStartOf="@+id/tvPlacarCasa"
+                    app:layout_constraintStart_toEndOf="@+id/ivTimeCasa"
+                    app:layout_constraintTop_toTopOf="@+id/ivTimeCasa"
+                    tools:text="nome Casa" />
+
+                <TextView
+                    android:id="@+id/tvPlacarCasa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_borda_titulo_coluna"
+                    android:textColor="@color/primary_700"
+                    android:overScrollMode="never"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textView4"
+                    app:layout_constraintStart_toEndOf="@+id/tvNomeCasa"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.428"
+                    tools:text="99" />
+
+                <ImageView
+                    android:id="@+id/ivTimeFora"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/tvNomeFora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="12dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivTimeFora"
+                    app:layout_constraintEnd_toStartOf="@+id/ivTimeFora"
+                    app:layout_constraintStart_toEndOf="@+id/tvPlacarFora"
+                    app:layout_constraintTop_toTopOf="@+id/ivTimeFora"
+                    tools:text="nome Fora" />
+
+                <TextView
+                    android:id="@+id/tvPlacarFora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/background_borda_titulo_coluna"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/primary_700"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/tvNomeFora"
+                    app:layout_constraintStart_toEndOf="@+id/textView4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.428"
+                    tools:text="99" />
+
+                <TextView
+                    android:id="@+id/tvclassicacaoCasa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/background_classification"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toEndOf="@+id/ivTimeCasa"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="11" />
+
+                <TextView
+                    android:id="@+id/tvClassificacaoFora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/background_classification"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toStartOf="@+id/ivTimeFora"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="11" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="X"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvPlacarCasa"
+                    app:layout_constraintEnd_toStartOf="@+id/tvPlacarFora"
+                    app:layout_constraintStart_toEndOf="@+id/tvPlacarCasa"
+                    app:layout_constraintTop_toTopOf="@+id/tvPlacarCasa" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <!-- Gols: Nomes dos jogadores e tempos -->
+        <LinearLayout
+            android:id="@+id/goals_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:background="#EFEFEF">
+
+            <!-- Jogadores do time da casa -->
+            <LinearLayout
+                android:id="@+id/home_goals_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="end">
+                <!-- Os gols do time da casa serão adicionados dinamicamente aqui -->
+            </LinearLayout>
+
+            <!-- Figura da bola no meio -->
+            <ImageView
+                android:id="@+id/ball_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="16dp"
+                android:src="@drawable/ic_ball_black_24dp"
+                android:contentDescription="Imagem da Bola" />
+
+            <!-- Jogadores do time visitante -->
+            <LinearLayout
+                android:id="@+id/away_goals_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <!-- Os gols do time visitante serão adicionados dinamicamente aqui -->
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Estatísticas com barras de progresso -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- posse de bola -->
+            <include
+                android:id="@+id/stat_posse_bola"
+                layout="@layout/stat_item" />
+            <!-- gols -->
+            <include
+                android:id="@+id/stat_gols"
+                layout="@layout/stat_item" />
+            <!-- escanteios -->
+            <include
+                android:id="@+id/stat_escanteios"
+                layout="@layout/stat_item" />
+            <!-- amarelo -->
+            <include
+                android:id="@+id/stat_amarelo"
+                layout="@layout/stat_item" />
+            <!-- vermelho -->
+            <include
+                android:id="@+id/stat_vermelho"
+                layout="@layout/stat_item" />
+            <!-- finalizacoes -->
+            <include
+                android:id="@+id/stat_finalizacoes"
+                layout="@layout/stat_item" />
+            <!-- finalizacoes no gol -->
+            <include
+                android:id="@+id/stat_finalizacoes_gol"
+                layout="@layout/stat_item" />
+            <!-- tiros de meta -->
+            <include
+                android:id="@+id/stat_tiros_de_meta"
+                layout="@layout/stat_item" />
+            <!-- faltas -->
+            <include
+                android:id="@+id/stat_faltas"
+                layout="@layout/stat_item" />
+            <!-- laterais -->
+            <include
+                android:id="@+id/stat_laterais"
+                layout="@layout/stat_item" />
+            <!-- passes -->
+            <include
+                android:id="@+id/stat_passes"
+                layout="@layout/stat_item" />
+            <!-- desarmes -->
+            <include
+                android:id="@+id/stat_desarmes"
+                layout="@layout/stat_item" />
+            <!-- impedimentos -->
+            <include
+                android:id="@+id/stat_impedimentos"
+                layout="@layout/stat_item" />
+
+            <include
+                android:id="@+id/estatistica_primeiro_tempo"
+                android:visibility="gone"
+                layout="@layout/estatistica_tempo" />
+            <include
+                android:id="@+id/estatistica_segundo_tempo"
+                android:visibility="gone"
+                layout="@layout/estatistica_tempo" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+</androidx.cardview.widget.CardView>

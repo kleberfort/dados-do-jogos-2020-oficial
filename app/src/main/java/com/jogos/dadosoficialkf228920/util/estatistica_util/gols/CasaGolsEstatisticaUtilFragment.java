@@ -19,6 +19,7 @@ import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasAdapt
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaEscanteiosBinding;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaGolsBinding;
+import com.jogos.dadosoficialkf228920.model.MatchNewModelDate;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 import com.jogos.dadosoficialkf228920.util.FormatarCoresTextoGolsMcdCasa;
 
@@ -30,7 +31,7 @@ import java.util.List;
 public class CasaGolsEstatisticaUtilFragment extends Fragment {
     private TelaEstatisticaGolsBinding binding;
 
-    private ArrayList<PartidaNovoModelo> partidasCasa; // Ajuste o tipo conforme necessário
+    private ArrayList<MatchNewModelDate> partidasCasa; // Ajuste o tipo conforme necessário
     private String nomeTime;
 
 
@@ -73,7 +74,7 @@ public class CasaGolsEstatisticaUtilFragment extends Fragment {
     private int golsTotalTresCincoMarcados;
     private int golsTotalTresCincoNaoMarcados;
 
-    private List<PartidaNovoModelo> partidas = new ArrayList<>();
+    private List<MatchNewModelDate> partidas = new ArrayList<>();
 
 
     @Override
@@ -284,7 +285,7 @@ public class CasaGolsEstatisticaUtilFragment extends Fragment {
     }
 
     private void handleTextViewClick(int textViewId) {
-        List<PartidaNovoModelo> jogos = new ArrayList<>();
+        List<MatchNewModelDate> jogos = new ArrayList<>();
 
         switch (textViewId) {
             case 1:
@@ -537,7 +538,7 @@ public class CasaGolsEstatisticaUtilFragment extends Fragment {
     }//fim do metodo que busca os dados
 
 
-    public void golsCasaMarcadosEstatisticaCasa(List<PartidaNovoModelo> partidas){
+    public void golsCasaMarcadosEstatisticaCasa(List<MatchNewModelDate> partidas){
 
         for (int i = 0; i < partidas.size(); i++) {
             //GOLS 0.5 1°TEMPO
@@ -903,7 +904,7 @@ public class CasaGolsEstatisticaUtilFragment extends Fragment {
         binding.tvRespostaEstatistica.setText(builder);
 
     }
-    private void showPartidasDialog(List<PartidaNovoModelo> partidas) {
+    private void showPartidasDialog(List<MatchNewModelDate> partidas) {
 
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
@@ -918,7 +919,7 @@ public class CasaGolsEstatisticaUtilFragment extends Fragment {
 
         bottomSheetDialog.show();
     }
-    private void showPartidasPrimeiroTempo(List<PartidaNovoModelo> partidas) {
+    private void showPartidasPrimeiroTempo(List<MatchNewModelDate> partidas) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
         bottomSheetDialog.setContentView(bottomSheetView);
@@ -932,7 +933,7 @@ public class CasaGolsEstatisticaUtilFragment extends Fragment {
 
         bottomSheetDialog.show();
     }
-    private void showPartidasSegundoTempo(List<PartidaNovoModelo> partidas) {
+    private void showPartidasSegundoTempo(List<MatchNewModelDate> partidas) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         View bottomSheetView = getLayoutInflater().inflate(R.layout.bottom_sheet_partidas, null);
         bottomSheetDialog.setContentView(bottomSheetView);

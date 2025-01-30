@@ -1,0 +1,327 @@
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@android:color/white"
+    android:padding="8dp">
+
+    <!-- Layout principal dos times -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+    <!-- Layout principal dos times -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/img_castelao_dois"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/ivTimeCasa"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tvNomeCasa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivTimeCasa"
+                app:layout_constraintEnd_toStartOf="@+id/tvPlacarCasa"
+                app:layout_constraintStart_toEndOf="@+id/ivTimeCasa"
+                app:layout_constraintTop_toTopOf="@+id/ivTimeCasa"
+                tools:text="nome Casa" />
+
+            <TextView
+                android:id="@+id/tvPlacarCasa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_borda_titulo_coluna"
+                android:textColor="@color/primary_700"
+                android:overScrollMode="never"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView4"
+                app:layout_constraintStart_toEndOf="@+id/tvNomeCasa"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.428"
+                tools:text="99" />
+
+            <ImageView
+                android:id="@+id/ivTimeFora"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/tvNomeFora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/white"
+                android:layout_marginTop="12dp"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ivTimeFora"
+                app:layout_constraintEnd_toStartOf="@+id/ivTimeFora"
+                app:layout_constraintStart_toEndOf="@+id/tvPlacarFora"
+                app:layout_constraintTop_toTopOf="@+id/ivTimeFora"
+                tools:text="nome Fora" />
+
+            <TextView
+                android:id="@+id/tvPlacarFora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_borda_titulo_coluna"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/primary_700"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tvNomeFora"
+                app:layout_constraintStart_toEndOf="@+id/textView4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.428"
+                tools:text="99" />
+
+            <TextView
+                android:id="@+id/tvclassicacaoCasa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/background_classification"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/ivTimeCasa"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="11" />
+
+            <TextView
+                android:id="@+id/tvClassificacaoFora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/background_classification"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toStartOf="@+id/ivTimeFora"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="11" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPlacarCasa"
+                app:layout_constraintEnd_toStartOf="@+id/tvPlacarFora"
+                app:layout_constraintStart_toEndOf="@+id/tvPlacarCasa"
+                app:layout_constraintTop_toTopOf="@+id/tvPlacarCasa" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <!-- Gols e tempos -->
+    <LinearLayout
+        android:id="@+id/goals_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        android:background="#EFEFEF">
+
+        <!-- Jogadores do time da casa -->
+        <LinearLayout
+            android:id="@+id/home_goals_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="end">
+            <!-- Os gols do time da casa serão adicionados dinamicamente -->
+        </LinearLayout>
+
+        <!-- Imagem da bola -->
+        <ImageView
+            android:id="@+id/ball_image"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginHorizontal="16dp"
+            android:src="@drawable/ic_ball_black_24dp"
+            android:contentDescription="Bola" />
+
+        <!-- Jogadores do time visitante -->
+        <LinearLayout
+            android:id="@+id/away_goals_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <!-- Os gols do time visitante serão adicionados dinamicamente -->
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Campos com títulos P, F, FG, FT, I -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingTop="8dp">
+
+        <!-- Títulos -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="P"
+            android:background="@drawable/cell_border"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="F"
+            android:background="@drawable/cell_border"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="FG"
+            android:background="@drawable/cell_border"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="FT"
+            android:background="@drawable/cell_border"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="I"
+            android:background="@drawable/cell_border"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Campos em branco -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingVertical="4dp">
+
+        <TextView
+            android:id="@+id/tvPorcentagem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/cell_border"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvFinalizacao"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/cell_border"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvFinalizacaoGol"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/cell_border"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvFalta"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/cell_border"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvImpedimentos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/cell_border"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <!-- Legenda abaixo dos campos -->
+    <TextView
+        android:id="@+id/tvLegenda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Legenda: P (Posse de bola), F (Finalização), FG (Finalização no Gol), FT (Falta), I (Impedimento)"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:gravity="center"
+        android:padding="8dp" />
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

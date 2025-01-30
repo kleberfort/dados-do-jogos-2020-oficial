@@ -20,6 +20,7 @@ import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadoPartidaSegundo
 import com.jogos.dadosoficialkf228920.adapter.brasil2024.ResultadosPartidasPrimeiroTempoAdapter;
 import com.jogos.dadosoficialkf228920.databinding.TelaEstatisticaEscanteiosBinding;
 import com.jogos.dadosoficialkf228920.databinding.TelaResultadoPrimeiroSegundoTempoBinding;
+import com.jogos.dadosoficialkf228920.model.MatchNewModelDate;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class CasaResultadoPrimeiro_Segunto_EstatisticaUtilFragment extends Fragm
 
     private TelaResultadoPrimeiroSegundoTempoBinding binding;
 
-    private ArrayList<PartidaNovoModelo> partidasCasa; // Ajuste o tipo conforme necessário
+    private ArrayList<MatchNewModelDate> partidasCasa; // Ajuste o tipo conforme necessário
     private String nomeTime;
 
 
@@ -45,7 +46,7 @@ public class CasaResultadoPrimeiro_Segunto_EstatisticaUtilFragment extends Fragm
     private int empateSegundoTempo;
     private int derrotaSegundoTempo;
 
-    private List<PartidaNovoModelo> partidas = new ArrayList<>();
+    private List<MatchNewModelDate> partidas = new ArrayList<>();
 
     @Nullable
     @Override
@@ -116,7 +117,7 @@ public class CasaResultadoPrimeiro_Segunto_EstatisticaUtilFragment extends Fragm
 
     private void handleTextViewClick(int textViewId) {
 
-        List<PartidaNovoModelo> jogos = new ArrayList<>();
+        List<MatchNewModelDate> jogos = new ArrayList<>();
 
         switch (textViewId) {
             case 1:
@@ -201,7 +202,7 @@ public class CasaResultadoPrimeiro_Segunto_EstatisticaUtilFragment extends Fragm
     }
 
 
-    public void resultadoIntervaloEstatisticaCasa(List<PartidaNovoModelo> partidas){
+    public void resultadoIntervaloEstatisticaCasa(List<MatchNewModelDate> partidas){
 
         for (int i = 0; i < partidas.size(); i++) {
 
@@ -254,7 +255,7 @@ public class CasaResultadoPrimeiro_Segunto_EstatisticaUtilFragment extends Fragm
     }//fim da interface
 
     @SuppressLint("NotifyDataSetChanged")
-    private void showPartidasPrimeiroTempo(List<PartidaNovoModelo> partidas) {
+    private void showPartidasPrimeiroTempo(List<MatchNewModelDate> partidas) {
 
 
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
@@ -275,7 +276,7 @@ public class CasaResultadoPrimeiro_Segunto_EstatisticaUtilFragment extends Fragm
 
     }
 
-    private void showPartidasSegundoTempo(List<PartidaNovoModelo> partidas) {
+    private void showPartidasSegundoTempo(List<MatchNewModelDate> partidas) {
 
 
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());

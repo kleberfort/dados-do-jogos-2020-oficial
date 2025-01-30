@@ -1,17 +1,16 @@
 package com.jogos.dadosoficialkf228920.model.comparator;
 
+import com.jogos.dadosoficialkf228920.model.MatchNewModelDate;
 import com.jogos.dadosoficialkf228920.model.PartidaNovoModelo;
 
 import java.util.Comparator;
 
-public class ComparatorDatasPartidas implements Comparator<PartidaNovoModelo> {
+public class ComparatorDatasPartidas implements Comparator<MatchNewModelDate> {
 
 
     @Override
-    public int compare(PartidaNovoModelo partida1, PartidaNovoModelo partida2) {
-        return partida2.getDataFormatada().compareTo(partida1.getDataFormatada());
+    public int compare(MatchNewModelDate m1, MatchNewModelDate m2) {
+        // Substitua "getData()" pelo método correto que retorna a data da partida
+        return m2.getDataFormatada().compareTo(m1.getDataFormatada()); // Ordena em ordem decrescente
     }
-
-
-
 }

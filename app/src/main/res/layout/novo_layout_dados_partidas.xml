@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header: Nomes dos times, placar e imagens -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="4dp">
+
+            <!-- Imagem do time da casa -->
+            <ImageView
+                android:id="@+id/image_home"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="Imagem Time Casa" />
+
+            <!-- Nome do time da casa -->
+            <TextView
+                android:id="@+id/name_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Aston Villa"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <!-- Nome da partida (placar) -->
+            <TextView
+                android:id="@+id/match_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 - 1"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:paddingHorizontal="16dp" />
+
+            <!-- Nome do time visitante -->
+            <TextView
+                android:id="@+id/name_away"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Man City"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center" />
+
+            <!-- Imagem do time visitante -->
+            <ImageView
+                android:id="@+id/image_away"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:contentDescription="Imagem Time Visitante" />
+        </LinearLayout>
+
+        <!-- Gols: Nomes dos jogadores e tempos -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:background="#EFEFEF">
+
+            <!-- Jogadores do time da casa -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="end">
+
+                <!-- Exemplo de gol do time da casa -->
+                <TextView
+                    android:id="@+id/goals_home_player1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="John McGinn 24'"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:gravity="end"
+                    android:paddingBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/goals_home_player2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ollie Watkins 55'"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:gravity="end"
+                    android:paddingBottom="4dp" />
+            </LinearLayout>
+
+            <!-- Figura da bola no meio -->
+            <ImageView
+                android:id="@+id/ball_image"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="16dp"
+                android:src="@drawable/ic_ball"
+                android:contentDescription="Imagem da Bola" />
+
+            <!-- Jogadores do time visitante -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- Exemplo de gol do time visitante -->
+                <TextView
+                    android:id="@+id/goals_away_player1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Erling Haaland 68'"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:paddingBottom="4dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Estatísticas com barras de progresso -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- posse de bola -->
+            <include
+                android:id="@+id/stat_posse_bola"
+                layout="@layout/stat_item" />
+            <!-- gols -->
+            <include
+                android:id="@+id/stat_gols"
+                layout="@layout/stat_item" />
+            <!-- escanteios -->
+            <include
+                android:id="@+id/stat_escanteios"
+                layout="@layout/stat_item" />
+            <!-- amarelo -->
+            <include
+                android:id="@+id/stat_amarelo"
+                layout="@layout/stat_item" />
+            <!-- vermelho -->
+            <include
+                android:id="@+id/stat_vermelho"
+                layout="@layout/stat_item" />
+            <!-- finalizacoes -->
+            <include
+                android:id="@+id/stat_finalizacoes"
+                layout="@layout/stat_item" />
+            <!-- finalizacoes no gol -->
+            <include
+                android:id="@+id/stat_finalizacoes_gol"
+                layout="@layout/stat_item" />
+            <!-- tiros de meta -->
+            <include
+                android:id="@+id/stat_tiros_de_meta"
+                layout="@layout/stat_item" />
+            <!-- faltas -->
+            <include
+                android:id="@+id/stat_faltas"
+                layout="@layout/stat_item" />
+            <!-- laterais -->
+            <include
+                android:id="@+id/stat_laterais"
+                layout="@layout/stat_item" />
+            <!-- passes -->
+            <include
+                android:id="@+id/stat_passes"
+                layout="@layout/stat_item" />
+            <!-- desarmes -->
+            <include
+                android:id="@+id/stat_desarmes"
+                layout="@layout/stat_item" />
+            <!-- impedimentos -->
+            <include
+                android:id="@+id/stat_impedimentos"
+                layout="@layout/stat_item" />
+
+            <include
+                android:id="@+id/estatistica_primeiro_tempo"
+                layout="@layout/estatistica_tempo" />
+            <include
+                android:id="@+id/estatistica_segundo_tempo"
+                layout="@layout/estatistica_tempo" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
