@@ -1,0 +1,4 @@
+package com.jogos.dadosoficialkf228920.model.partidas;
+
+public class Time {
+}
